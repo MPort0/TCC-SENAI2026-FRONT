@@ -6,13 +6,22 @@
 }
 
 body {
-    background-color: #030614;
+    background-color: #00092D;
     color: #ffffff;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+}
+
+.logo-e-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    margin-bottom: 20px;
 }
 
 .page-container {
@@ -104,11 +113,11 @@ body {
 /* Ícone do olho fechado e aberto dentro do campo de senha */
 .olho-fechado,
 .olho-aberto {
-  position: absolute;
-  right: 14px;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+    position: absolute;
+    right: 14px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
 
 
