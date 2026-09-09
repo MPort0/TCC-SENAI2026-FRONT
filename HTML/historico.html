@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avalia Histórico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/historico.css">
+</head>
+<body>
+        <div class="app">
+        
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+        
+                <div class="menu">
+        
+                    <a href="#" class="menu-item">
+                        <span class="icon">⌂</span>
+                        <span>Home</span>
+                    </a>
+        
+                    <a href="#" class="menu-item">
+                        <span class="icon">▱</span>
+                        <span>Criar currículo</span>
+                    </a>
+        
+                    <a href="#" class="menu-item">
+                        <span class="icon">◉</span>
+                        <span>Simulação</span>
+                    </a>
+        
+                    <a href="#" class="menu-item active">
+                        <span class="icon">◷</span>
+                        <span>Histórico</span>
+                    </a>
+        
+                    <a href="#" class="menu-item">
+                        <span class="icon">◉</span>
+                        <span>Perfil</span>
+                    </a>
+        
+                    <a href="#" class="menu-item">
+                        <span class="icon">○</span>
+                        <span>Painel Admin</span>
+                    </a>
+        
+                </div>
+        
+        
+                <!-- PARTE INFERIOR -->
+                <div class="sidebar-bottom">
+        
+                    <button class="bottom-button">
+                        <span>↪</span>
+                        <span>Sair</span>
+                    </button>
+        
+                    <button class="bottom-button">
+                        <span>◉</span>
+                        <span>Suporte</span>
+                    </button>
+        
+                </div>
+        
+            </aside>
+        
+        
+            <!-- CONTEÚDO PRINCIPAL -->
+            <main class="content">
+        
+                <h1>Entrevistas realizadas</h1>
+        
+                <div class="interviews-list">
+        
+                    <!-- ENTREVISTA 1 -->
+                    <div class="interview-card">
+        
+                        <div class="interview-info">
+                            <h2>Desenvolvedor Front-end HTML/CSS</h2>
+                            <p>24/08/2026</p>
+                        </div>
+        
+                        <div class="score">
+                            9.0
+                        </div>
+        
+                        <button class="arrow" onclick="openInterview(1)">
+                            ›
+                        </button>
+        
+                    </div>
+        
+        
+                    <!-- ENTREVISTA 2 -->
+                    <div class="interview-card">
+        
+                        <div class="interview-info">
+                            <h2>Desenvolvedor Front-end HTML/CSS</h2>
+                            <p>24/08/2026</p>
+                        </div>
+        
+                        <div class="score">
+                            9.0
+                        </div>
+        
+                        <button class="arrow" onclick="openInterview(2)">
+                            ›
+                        </button>
+        
+                    </div>
+        
+        
+                    <!-- ENTREVISTA 3 -->
+                    <div class="interview-card">
+        
+                        <div class="interview-info">
+                            <h2>Desenvolvedor Front-end HTML/CSS</h2>
+                            <p>24/08/2026</p>
+                        </div>
+        
+                        <div class="score">
+                            9.0
+                        </div>
+        
+                        <button class="arrow" onclick="openInterview(3)">
+                            ›
+                        </button>
+        
+                    </div>
+        
+        
+                    <!-- ENTREVISTA 4 -->
+                    <div class="interview-card">
+        
+                        <div class="interview-info">
+                            <h2>Desenvolvedor Front-end HTML/CSS</h2>
+                            <p>24/08/2026</p>
+                        </div>
+        
+                        <div class="score">
+                            9.0
+                        </div>
+        
+                        <button class="arrow" onclick="openInterview(4)">
+                            ›
+                        </button>
+        
+                    </div>
+        
+                </div>
+        
+            </main>
+        
+        
+            <!-- BOTÃO DE SUPORTE FLUTUANTE -->
+            <button class="floating-support" onclick="openSupport()">
+                <span>✉</span>
+            </button>
+        
+        </div>
+        
+        
+        <!-- MODAL -->
+        <div id="modal" class="modal">
+        
+            <div class="modal-content">
+
+                </div>
+            </div>
+    <script src="../js/historico.js"></script>
+</body>
+</html>
