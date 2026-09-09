@@ -132,6 +132,7 @@ body {
     align-items: center;
     margin-bottom: 24px;
     font-size: 13px;
+    gap: 20px;
 }
 
 /* Checkbox customizada */
