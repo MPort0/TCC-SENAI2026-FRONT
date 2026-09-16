@@ -1,233 +1,385 @@
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
-    font-family: sans-serif;
+
+    font-family: 'Poppins', Arial, sans-serif;
+
+    /* font-size: 13px; */
+
 }
 
 body {
+
     background: #02082d;
+
     color: white;
+
     min-height: 100vh;
+
     display: flex;
+
 }
 
 .sidebar {
+
     width: 264px;
+
     min-height: 100vh;
+
     border-right: 1px solid #fff;
+
     display: flex;
+
     flex-direction: column;
+
     padding: 62px 22px 38px;
+
     flex-shrink: 0;
+
 }
 
 .nav {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 8px;
+
 }
 
 .nav-item {
+
     height: 50px;
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
+
     padding: 0 27px;
+
     border-radius: 7px;
+
     color: #e5e8f3;
+
     text-decoration: none;
+
     font-size: 15px;
+
     font-weight: 400;
+
 }
 
 .nav-item .icon {
+
     width: 17px;
+
     display: inline-flex;
+
     justify-content: center;
+
     font-size: 17px;
+
     opacity: 0.95;
+
 }
 
 .nav-item:hover {
+
     background: #3d527f;
+
 }
 
 .nav-item.active {
+
     background: #6784c2;
+
 }
 
 .sidebar-bottom {
+
     margin-top: auto;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 30px;
+
 }
 
-.sidebar-bottom span {
-    color: #e5e8f3;
-    font-size: 13px;
-}
+/* !!! */
 
 .sidebar-bottom svg {
+
     flex-shrink: 0;
+
 }
 
 .content {
+
     width: calc(100% - 225px);
+
     padding: 45px 8%;
+
 }
 
 .content h1 {
+
     font-size: 30px;
+
     text-align: center;
+
     margin-bottom: 40px;
+
     font-weight: bold;
+
 }
 
 form {
+
     width: 50%;
+
     margin-left: 25%;
+
 }
 
 .form-group {
+
     width: 100%;
+
     margin-bottom: 25px;
+
 }
 
 .form-group label {
+
     display: block;
+
     color: white;
+
     font-size: 20px;
+
     font-weight: bold;
+
     margin-bottom: 8px;
+
 }
 
 .input-wrapper {
+
     width: 100%;
+
     background: #344a7c;
+
     border: 2px solid #6686c8;
+
     border-radius: 7px;
+
     padding: 15px;
+
     transition: 0.2s;
+
 }
 
 .input-wrapper:focus-within {
+
     border-color: #91aef0;
+
     box-shadow: 0 0 0 2px rgba(102, 134, 200, 0.2);
+
 }
 
 .input-wrapper input,
+
 .input-wrapper textarea {
+
     width: 100%;
+
     background: transparent;
+
     border: none;
+
     outline: none;
+
     color: white;
+
     font-size: 18px;
+
     resize: none;
+
 }
 
 .input-wrapper input::placeholder,
+
 .input-wrapper textarea::placeholder {
+
     color: #b8c1d8;
+
 }
 
 .form-group:first-of-type .input-wrapper {
+
     height: 105px;
+
 }
 
 .form-group:first-of-type textarea {
+
     height: 70px;
+
 }
 
 .form-group:nth-of-type(2) .input-wrapper {
+
     height: 195px;
+
 }
 
 .form-group:nth-of-type(2) textarea {
+
     height: 155px;
+
 }
 
 .two-columns {
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 35px;
+
 }
 
 .two-columns .input-wrapper {
+
     height: 127px;
+
 }
 
 .two-columns textarea {
+
     height: 90px;
+
 }
 
 .form-group:last-of-type .input-wrapper {
+
     height: 105px;
+
 }
 
 .form-group:last-of-type input {
+
     height: 127px;
+
 }
 
 .buttons {
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 35px;
+
     margin-top: 22px;
+
 }
 
 button {
+
     height: 52px;
+
     border-radius: 7px;
+
     font-size: 18px;
+
     font-weight: bold;
+
     cursor: pointer;
+
 }
 
 .export {
+
     background: transparent;
+
     color: #aeb6ce;
+
     border: 1px solid #7181aa;
+
 }
 
 .export:hover {
+
     background: #111b45;
+
 }
 
 .simulation {
+
     background: #6784c2;
+
     color: white;
+
     border: none;
+
 }
 
 .simulation:hover {
+
     background: #7795d3;
+
 }
 
 @media (max-width: 760px) {
+
     .sidebar {
+
         width: 100%;
+
         min-height: auto;
+
         height: auto;
+
         border-right: 0;
+
         border-bottom: 1px solid #fff;
+
         padding: 12px;
+
     }
 
     .nav {
+
         flex-direction: row;
+
         overflow-x: auto;
+
     }
 
     .nav-item {
+
         min-width: max-content;
+
         padding: 0 14px;
+
     }
 
     .sidebar-bottom {
+
         display: none;
+
     }
+
 }

@@ -24,7 +24,7 @@ html,
 body {
     width: 100%;
     min-height: 100%;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
 }
