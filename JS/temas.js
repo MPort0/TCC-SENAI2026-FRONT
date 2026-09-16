@@ -1,27 +1,22 @@
-// Função para aplicar o tema no HTML e salvar no navegador
+// Função para aplicar o tema no HTML
 function aplicarTema(tema) {
     document.documentElement.setAttribute('data-theme', tema);
-    localStorage.setItem('temaPreferido', tema);
 }
 
-// Executa assim que a página carrega
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Verifica se o usuário já escolheu um tema antes. Se não, o padrão é o escuro ('dark')
-    const temaSalvo = localStorage.getItem('temaPreferido') || 'dark';
-    aplicarTema(temaSalvo);
-
-    // 2. Escuta o clique do botão de alternar tema
-    const botaoTema = document.getElementById('toggle-theme');
+function verificarTemaPorHorario() {
+    const horaAtual = new Date().getHours();
     
-    if (botaoTema) {
-        botaoTema.addEventListener('click', () => {
-            // Verifica o tema atual do HTML
-            const temaAtual = document.documentElement.getAttribute('data-theme');
-            
-            // Se for escuro vira claro, se for claro vira escuro
-            const novoTema = temaAtual === 'dark' ? 'light' : 'dark';
-            
-            aplicarTema(novoTema);
-        });
+    // Se a hora do computador for 9 ou mais (ex: 09:00, 13:00, 20:00), entra no escuro
+    // Se colocar um horario como 9:30, nn vai dar certo, tem q dar uma pesquisada pra ver como funciona
+    if (horaAtual >= 18) {
+        return 'dark';
+    } else {
+        return 'light';
     }
+}
+
+// Executa automaticamente assim que a página carrega
+document.addEventListener('DOMContentLoaded', () => {
+    const temaDefinido = verificarTemaPorHorario();
+    aplicarTema(temaDefinido);
 });

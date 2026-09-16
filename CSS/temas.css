@@ -43,7 +43,7 @@
     --bg-social-hover: #f1f5f9;
     --border-social-hover: #5F7FBF;
     
-    --card-shadow: 0 10px 30px rgba(100, 116, 139, 0.2); /* Sombra baseada em #64748B */
+    --card-shadow: 0px 10px 24px 6px rgba(100, 116, 139, 1);/* Sombra baseada em #64748B */
 
     --cor-path-2: #5F7FBF; /* A cor que você pediu para o modo claro */
 }
