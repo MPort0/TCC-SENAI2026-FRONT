@@ -169,6 +169,7 @@ body {
 
 .check-icon {
     display: none;
+    pointer-events: none;
 }
 
 .lembrar-senha.active .checkbox {
