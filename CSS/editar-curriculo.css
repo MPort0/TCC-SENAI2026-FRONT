@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 body {
@@ -11,6 +11,8 @@ body {
     min-height: 100vh;
     display: flex;
 }
+
+
 
 .sidebar {
     width: 264px;
@@ -206,6 +208,43 @@ button {
 .simulation:hover {
     background: #7795d3;
 }
+.lia {
+    position: fixed !important;
+    /* sempre fixo na tela */
+    right: 2% !important;
+    /* mesma distância da borda direita */
+    bottom: 5% !important;
+    /* mesma distância da borda inferior */
+    width: 3.3rem !important;
+    /* tamanho fixo */
+    aspect-ratio: 1 !important;
+    /* quadrado */
+    border: none !important;
+    border-radius: 0.5rem !important;
+    background: #627dbc !important;
+    /* cor fixa (igual ao perfil) */
+    cursor: pointer !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+}
+
+.lia svg {
+    width: 90% !important;
+    /* ícone proporcional */
+    height: auto !important;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 650px) {
+    .lia {
+        right: 5% !important;
+        bottom: 4% !important;
+    }
+}
+
 
 @media (max-width: 760px) {
     .sidebar {
@@ -216,12 +255,12 @@ button {
         border-bottom: 1px solid #fff;
         padding: 12px;
     }
-
+    
     .nav {
         flex-direction: row;
         overflow-x: auto;
     }
-
+    
     .nav-item {
         min-width: max-content;
         padding: 0 14px;
