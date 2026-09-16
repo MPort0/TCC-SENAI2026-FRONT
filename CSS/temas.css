@@ -1,0 +1,49 @@
+/* VARIÁVEIS - MODO ESCURO (PADRÃO ATUAL DO SEU SITE) */
+:root {
+    --bg-page: #00092D;
+    --bg-card: #080d24;
+    --border-card: #1a2342;
+    --bg-input: #050817;
+    --border-input: #1e2a4a;
+    --text-primary: #ffffff;
+    --text-secondary: #8c9bba;
+    --text-labels: #e2e8f0;
+    --text-placeholder: #4a5568;
+    --icon-stroke: #718096;
+    
+    /* Cores de destaque no modo escuro */
+    --color-primary: #5372e7;
+    --color-primary-hover: #4260d6;
+    --color-link: #6382f7;
+    --bg-social-hover: #0b112c;
+    --border-social-hover: #2d3f6e;
+    
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+        --cor-path-2: #ffffff; /* Cor do segundo path no modo escuro */
+}
+
+/* VARIÁVEIS - MODO CLARO (ATUALIZADO COM SEU CONTRASTE, BORDAS E SOMBRAS) */
+[data-theme="light"] {
+    --bg-page: #EEF4FF;
+    --bg-card: #ffffff;
+    --border-card: transparent;
+    --bg-input: #ffffff;
+    --border-input: #94A3B8; /* Contorno pedido por você */
+    --text-primary: #000000;
+    --text-secondary: #64748B;
+    --text-labels: #334155;
+    --text-placeholder: #94A3B8;
+    --icon-stroke: #5F7FBF;
+    
+    /* Cores de contraste pedidas por você */
+    --color-primary: #5F7FBF;       /* Botão Principal */
+    --color-primary-hover: #4b6aa3; /* Botão Hover levemente mais escuro */
+    --color-link: #5F7FBF;          /* Links e esqueci minha senha */
+    --bg-social-hover: #f1f5f9;
+    --border-social-hover: #5F7FBF;
+    
+    --card-shadow: 0 10px 30px rgba(100, 116, 139, 0.2); /* Sombra baseada em #64748B */
+
+    --cor-path-2: #5F7FBF; /* A cor que você pediu para o modo claro */
+}
