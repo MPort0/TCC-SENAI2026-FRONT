@@ -20,11 +20,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%; /* Garante que o container alinhe os itens ao centro corretamente */
 }
 
 .logo {
     margin-bottom: 20px;
+    max-width: 150px; /* AJUSTE AQUI: Impede a logo de crescer e esticar o card */
+    width: 100%;      /* Faz a logo se adaptar proporcionalmente */
+    height: auto;     /* Mantém a proporção sem amassar o desenho */
+    display: block;
 }
+
 /* Seleciona o segundo path de dentro do seu SVG da logo */
 .logo path:nth-of-type(2) {
     fill: var(--cor-path-2);
