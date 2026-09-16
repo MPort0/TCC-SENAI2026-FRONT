@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -6,23 +7,36 @@
 }
 
 body {
-    background-color: #00092D;
-    color: #ffffff;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .logo-e-login {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%; /* Garante que o container alinhe os itens ao centro corretamente */
 }
 
 .logo {
     margin-bottom: 20px;
+    max-width: 150px; /* AJUSTE AQUI: Impede a logo de crescer e esticar o card */
+    width: 100%;      /* Faz a logo se adaptar proporcionalmente */
+    height: auto;     /* Mantém a proporção sem amassar o desenho */
+    display: block;
 }
+
+/* Seleciona o segundo path de dentro do seu SVG da logo */
+.logo path:nth-of-type(2) {
+    fill: var(--cor-path-2);
+    transition: fill 0.3s ease; /* Faz a mudança de cor ficar suave */
+}
+
 
 .page-container {
     display: flex;
@@ -34,24 +48,26 @@ body {
 }
 
 .login-card {
-    background-color: #080d24;
-    border: 1px solid #1a2342;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card); 
     border-radius: 16px;
     padding: 40px 32px;
     width: 100%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--card-shadow);        
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; 
 }
+
 
 .title {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 8px;
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 .subtitle {
     font-size: 14px;
-    color: #8c9bba;
+    color: var(--text-secondary);
     margin-bottom: 32px;
 }
 
@@ -65,7 +81,7 @@ body {
 .form-group label {
     font-size: 13px;
     font-weight: 500;
-    color: #e2e8f0;
+    color: var(--text-labels);
 }
 
 .input-wrapper {
@@ -76,22 +92,22 @@ body {
 
 .input-wrapper input {
     width: 100%;
-    background-color: #050817;
-    border: 1px solid #1e2a4a;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-input);
     border-radius: 8px;
     padding: 12px 16px 12px 42px;
-    color: #ffffff;
+    color: var(--text-primary);
     font-size: 14px;
     outline: none;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, background-color 0.3s, color 0.3s;
 }
 
 .input-wrapper input::placeholder {
-    color: #4a5568;
+    color: var(--text-placeholder);
 }
 
 .input-wrapper input:focus {
-    border-color: #5F7FBF;
+    border-color: var(--color-primary);
 }
 
 .input-icon {
@@ -99,7 +115,7 @@ body {
     left: 14px;
     width: 18px;
     height: 18px;
-    stroke: #718096;
+    stroke: var(--icon-stroke);
     fill: none;
     stroke-width: 2;
     stroke-linecap: round;
@@ -110,7 +126,6 @@ body {
     padding-right: 42px;
 }
 
-/* Ícone do olho fechado e aberto dentro do campo de senha */
 .olho-fechado,
 .olho-aberto {
     position: absolute;
@@ -120,12 +135,10 @@ body {
     cursor: pointer;
 }
 
-
 .olho-aberto {
     display: none;
 }
 
-/* Opções abaixo do campo */
 .form-options {
     display: flex;
     justify-content: space-between;
@@ -135,35 +148,33 @@ body {
     gap: 20px;
 }
 
-/* Checkbox customizada */
 .lembrar-senha {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #e2e8f0;
+    color: var(--text-labels);
     cursor: pointer;
 }
 
 .lembrar-senha .checkbox {
     width: 16px;
     height: 16px;
-    border: 1px solid #1e2a4a;
+    border: 1px solid var(--border-input);
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--bg-input);
 }
 
-/* Ícone de check escondido por padrão */
 .check-icon {
     display: none;
     pointer-events: none;
 }
 
-/* Quando ativo */
 .lembrar-senha.active .checkbox {
-    background-color: #5F7FBF;
-    border-color: #5F7FBF;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary-hover);
 }
 
 .lembrar-senha.active .check-icon {
@@ -171,7 +182,7 @@ body {
 }
 
 .forgot-password {
-    color: #5F7FBF;
+    color: var(--color-link);
     text-decoration: none;
     font-weight: 500;
 }
@@ -182,8 +193,8 @@ body {
 
 .btn-submit {
     width: 100%;
-    background-color: #5F7FBF;
-    color: #ffffff;
+    background-color: var(--color-primary);
+    color: #ffffff; /* O texto interno do botão azul continua branco nos dois temas */
     border: none;
     border-radius: 8px;
     padding: 12px;
@@ -194,7 +205,7 @@ body {
 }
 
 .btn-submit:hover {
-    background-color: #6286cf;
+    background-color: var(--color-primary-hover);
 }
 
 .divider {
@@ -202,7 +213,7 @@ body {
     align-items: center;
     text-align: center;
     margin: 24px 0;
-    color: #718096;
+    color: var(--text-placeholder);
     font-size: 12px;
 }
 
@@ -210,7 +221,7 @@ body {
 .divider::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid #1e2a4a;
+    border-bottom: 1px solid var(--border-input);
 }
 
 .divider span {
@@ -229,30 +240,30 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background-color: #050817;
-    border: 1px solid #1e2a4a;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-input);
     border-radius: 8px;
     padding: 10px;
-    color: #ffffff;
+    color: var(--text-primary);
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
-    transition: border-color 0.2s, background-color 0.2s;
+    transition: border-color 0.2s, background-color 0.2s, color 0.3s;
 }
 
 .btn-social:hover {
-    background-color: #0b112c;
-    border-color: #2d3f6e;
+    background-color: var(--bg-social-hover);
+    border-color: var(--border-social-hover);
 }
 
 .signup-prompt {
     text-align: center;
     font-size: 13px;
-    color: #8c9bba;
+    color: var(--text-secondary);
 }
 
 .signup-prompt a {
-    color: #5F7FBF;
+    color: var(--color-link);
     text-decoration: none;
     font-weight: 600;
     margin-left: 4px;
@@ -269,10 +280,10 @@ body {
 }
 
 .footer-links a {
-    color: #718096;
+    color: var(--text-placeholder);
     text-decoration: none;
 }
 
 .footer-links a:hover {
-    color: #a0aec0;
-}
+    color: var(--text-secondary);
+} 
