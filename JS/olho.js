@@ -17,6 +17,6 @@ olhoAberto.addEventListener('click', () => {
 });
 
 // lembrar de mim
-document.querySelector('.lembrar-senha').addEventListener('click', function () {
+document.querySelector('.lembrar-senha').addEventListener('click', function (e) {
     this.classList.toggle('active');
 });

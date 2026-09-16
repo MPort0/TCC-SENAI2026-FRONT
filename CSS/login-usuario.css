@@ -91,7 +91,7 @@ body {
 }
 
 .input-wrapper input:focus {
-    border-color: #5372e7;
+    border-color: #5F7FBF;
 }
 
 .input-icon {
@@ -157,12 +157,13 @@ body {
 /* Ícone de check escondido por padrão */
 .check-icon {
     display: none;
+    pointer-events: none;
 }
 
 /* Quando ativo */
 .lembrar-senha.active .checkbox {
-    background-color: #5372e7;
-    border-color: #4260d6;
+    background-color: #5F7FBF;
+    border-color: #5F7FBF;
 }
 
 .lembrar-senha.active .check-icon {
@@ -170,7 +171,7 @@ body {
 }
 
 .forgot-password {
-    color: #6382f7;
+    color: #5F7FBF;
     text-decoration: none;
     font-weight: 500;
 }
@@ -181,7 +182,7 @@ body {
 
 .btn-submit {
     width: 100%;
-    background-color: #5372e7;
+    background-color: #5F7FBF;
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -193,7 +194,7 @@ body {
 }
 
 .btn-submit:hover {
-    background-color: #4260d6;
+    background-color: #6286cf;
 }
 
 .divider {
@@ -251,7 +252,7 @@ body {
 }
 
 .signup-prompt a {
-    color: #6382f7;
+    color: #5F7FBF;
     text-decoration: none;
     font-weight: 600;
     margin-left: 4px;
