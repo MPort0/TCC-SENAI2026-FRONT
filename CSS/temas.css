@@ -1,8 +1,8 @@
 /* temas.css */
 
-/* ==========================================================================
-   CORES DO MODO ESCURO (PADRÃO ATUAL DO SITE)
-   ========================================================================== */
+/*
+CORES DO MODO ESCURO (PADRÃO ATUAL DO SITE)
+*/
 :root {
     --bg-page: #00092D;
     /* Login, Cadastro: Cor de fundo principal da página */
@@ -70,9 +70,9 @@
 
 }
 
-/* ==========================================================================
-   CORES DO MODO CLARO (ATIVADO AUTOMATICAMENTE PELO HORÁRIO)
-   ========================================================================== */
+/* 
+CORES DO MODO CLARO (ATIVADO AUTOMATICAMENTE PELO HORÁRIO)
+*/
 [data-theme="light"] {
     --bg-page: #EEF4FF;
     /* Login, Cadastro: Cor de fundo principal da página no claro */
@@ -117,16 +117,16 @@
     /* Perfil: Cor dos títulos secundários ("Meus dados", "Currículos") */
     --muted: #64748B;
     /* Perfil: Cor do subtítulo do usuário no claro */
-    
-    
-    
+
+
+
     --muted-2: #64748B;
     /* Perfil: Cor do texto interno e placeholders dos inputs */
 
 
     --primary: #5F7FBF;
     /* Perfil: Cor da borda do input com foco no claro */
-    
+
     --primary-button: #5F7FBF;
     /* Perfil: Cor de fundo do botão "Salvar alterações" no claro */
     --active: #D0E1FF;

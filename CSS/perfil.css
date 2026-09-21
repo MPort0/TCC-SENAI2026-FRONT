@@ -33,9 +33,9 @@ input {
     transition: background-color 0.3s;
 }
 
-/* =========================
+/* 
 MENU LATERAL
-========================= */
+ */
 
 .sidebar {
     width: 16.3%;
@@ -104,9 +104,9 @@ MENU LATERAL
     transition: color 0.3s;
 }
 
-/* =========================
+/* 
 CONTEÚDO
-========================= */
+ */
 
 .content {
     width: 83.7%;
@@ -121,9 +121,9 @@ CONTEÚDO
     font-weight: 700;
 }
 
-/* =========================
+/* 
 USUÁRIO
-========================= */
+ */
 
 .user-heading {
     width: 100%;
@@ -163,9 +163,9 @@ USUÁRIO
     transition: color 0.3s;
 }
 
-/* =========================
+/* 
 FORMULÁRIO
-========================= */
+ */
 
 .profile-form {
     width: 60%;
@@ -226,9 +226,9 @@ FORMULÁRIO
     transform: translateY(0.06rem);
 }
 
-/* =========================
+/* 
 CURRÍCULOS
-========================= */
+ */
 
 .content hr {
     border: 0;
@@ -326,9 +326,9 @@ CURRÍCULOS
     margin-top: 0.6rem;
 }
 
-/* =========================
+/* 
 BOTÃO FLUTUANTE
-========================= */
+ */
 
 .lia {
     position: fixed !important;
@@ -359,9 +359,9 @@ BOTÃO FLUTUANTE
     }
 }
 
-/* =========================
+/* 
 TABLET
-========================= */
+ */
 
 @media (max-width: 900px) {
     .sidebar {
@@ -388,9 +388,9 @@ TABLET
     }
 }
 
-/* =========================
+/* 
 CELULAR
-========================= */
+ */
 
 @media (max-width: 650px) {
     .sidebar {
