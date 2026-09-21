@@ -1,18 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-:root {
-    --bg: #02082c;
-    --sidebar-border: #505873;
-    --text: #ffffff;
-    --muted: #98aaca;
-    --muted-2: #94a3b8;
-    --primary: #5f7fbf;
-    --primary-button: #495e97;
-    --active: #627dbc;
-    --avatar: #0d0b6c;
-    --card: #1b2550;
-    --card-border: #2d3a68;
-}
+/* perfil.css */
 
 * {
     box-sizing: border-box;
@@ -24,9 +10,10 @@ html,
 body {
     width: 100%;
     min-height: 100%;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body {
@@ -43,11 +30,12 @@ input {
     min-height: 100vh;
     display: flex;
     background: var(--bg);
+    transition: background-color 0.3s;
 }
 
-/* =========================
-   MENU LATERAL
-   ========================= */
+/* 
+MENU LATERAL
+ */
 
 .sidebar {
     width: 16.3%;
@@ -57,6 +45,7 @@ input {
     flex-direction: column;
     padding: 5vh 1.4%;
     flex-shrink: 0;
+    transition: border-color 0.3s;
 }
 
 .nav {
@@ -77,6 +66,7 @@ input {
     color: var(--text);
     text-decoration: none;
     font-size: clamp(0.8rem, 0.9vw, 1rem);
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .nav-item .icon {
@@ -84,6 +74,14 @@ input {
     display: inline-flex;
     justify-content: center;
     font-size: 1rem;
+}
+
+/* Força os ícones internos do menu a ficarem escuros no tema claro para dar leitura */
+[data-theme="light"] .nav-item svg path {
+    fill: #334155;
+}
+[data-theme="light"] .nav-item.active svg path {
+    fill: #5f7fbf;
 }
 
 .nav-item.active {
@@ -103,16 +101,17 @@ input {
     text-decoration: none;
     font-size: clamp(0.7rem, 0.8vw, 0.9rem);
     white-space: nowrap;
+    transition: color 0.3s;
 }
 
-/* =========================
-   CONTEÚDO
-   ========================= */
+/* 
+CONTEÚDO
+ */
 
 .content {
     width: 83.7%;
     min-height: 100vh;
-    padding: 8vh 8.5% 8vh 8.5%;
+    padding: 8vh 8.5% 8vh 8.5%;    
 }
 
 .profile-section h1,
@@ -122,9 +121,9 @@ input {
     font-weight: 700;
 }
 
-/* =========================
-   USUÁRIO
-   ========================= */
+/* 
+USUÁRIO
+ */
 
 .user-heading {
     width: 100%;
@@ -144,6 +143,8 @@ input {
     font-size: clamp(2.2rem, 3.2vw, 3.2rem);
     font-weight: 500;
     flex-shrink: 0;
+    color: var(--avatar-text);
+    transition: background-color 0.3s;
 }
 
 .user-name {
@@ -155,16 +156,16 @@ input {
     font-weight: 600;
 }
 
-
 .user-subtitle {
     margin-top: 0.45rem;
     color: var(--muted);
     font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+    transition: color 0.3s;
 }
 
-/* =========================
-   FORMULÁRIO
-   ========================= */
+/* 
+FORMULÁRIO
+ */
 
 .profile-form {
     width: 60%;
@@ -184,14 +185,20 @@ input {
 .profile-form input {
     width: 100%;
     height: 3.4rem;
-    border: 0.06rem solid #36436c;
+    border: 0.06rem solid var(--border-input);
     border-radius: 0.55rem;
     outline: none;
-    background: transparent;
+    background: var(--bg-input);
     color: var(--muted-2);
     padding: 0 1.05rem;
     font-size: clamp(0.8rem, 0.95vw, 1rem);
     margin-bottom: 1.25rem;
+    transition: border-color 0.3s, color 0.3s;
+}
+
+/* Atualiza a borda do input de forma dinâmica se o tema mudar */
+[data-theme="light"] .profile-form input {
+    border-color: var(--sidebar-border);
 }
 
 .profile-form input:focus {
@@ -204,11 +211,11 @@ input {
     border: 0;
     border-radius: 0.5rem;
     background: var(--primary-button);
-    color: #d8deea;
+    color: #ffffff; /* Ajustado para dar excelente leitura em ambos os temas */
     font-size: clamp(0.85rem, 1vw, 1rem);
     font-weight: 700;
     cursor: pointer;
-    transition: filter 0.2s, transform 0.1s;
+    transition: filter 0.2s, transform 0.1s, background-color 0.3s;
 }
 
 .profile-form button:hover {
@@ -219,15 +226,20 @@ input {
     transform: translateY(0.06rem);
 }
 
-/* =========================
-   CURRÍCULOS
-   ========================= */
+/* 
+CURRÍCULOS
+ */
 
 .content hr {
     border: 0;
     border-top: 0.06rem solid #3b4564;
     margin: 6% 0 4%;
     width: 100%;
+    transition: border-color 0.3s;
+}
+
+[data-theme="light"] .content hr {
+    border-top-color: var(--sidebar-border);
 }
 
 .resume-grid {
@@ -246,10 +258,12 @@ input {
     overflow: visible;
     background: var(--card);
     min-width: 0;
+    transition: background-color 0.3s;
 }
 
 .resume-card.empty {
     border: 0.06rem solid var(--card-border);
+    transition: border-color 0.3s;
 }
 
 .card-edit {
@@ -265,6 +279,7 @@ input {
     font-size: clamp(1.2rem, 1.7vw, 1.6rem);
     cursor: pointer;
     z-index: 2;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .resume-preview {
@@ -311,38 +326,42 @@ input {
     margin-top: 0.6rem;
 }
 
-/* =========================
-   BOTÃO FLUTUANTE
-   ========================= */
+/* 
+BOTÃO FLUTUANTE
+ */
 
 .lia {
-    position: fixed;
-    right: 2%;
-    bottom: 5%;
-    width: clamp(2.8rem, 3.2vw, 3.3rem);
-    aspect-ratio: 1;
-    border: none;
-    border-radius: 0.5rem;
-    background: var(--active);
-    cursor: pointer;
-
-    display: flex;
-    /* centraliza o conteúdo */
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    /* remove espaçamento extra */
+    position: fixed !important;
+    right: 2% !important;
+    bottom: 5% !important;
+    width: 3.3rem !important;
+    aspect-ratio: 1 !important;
+    border: none !important;
+    border-radius: 0.5rem !important;
+    background: #627dbc !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
 }
 
 .lia svg {
-    width: 70%;
-    /* SVG se adapta ao botão */
-    height: auto;
+    width: 90% !important;
+    height: auto !important;
 }
 
-/* =========================
-   TABLET
-   ========================= */
+/* Ajuste para telas menores */
+@media (max-width: 650px) {
+    .lia {
+        right: 5% !important;
+        bottom: 4% !important;
+    }
+}
+
+/* 
+TABLET
+ */
 
 @media (max-width: 900px) {
     .sidebar {
@@ -369,108 +388,27 @@ input {
     }
 }
 
-/* =========================
-   CELULAR
-   ========================= */
+/* 
+CELULAR
+ */
 
 @media (max-width: 650px) {
-    .app {
-        display: block;
-    }
-
     .sidebar {
         width: 100%;
         min-height: auto;
-        height: auto;
-        border-right: 0;
+        border-right: none;
         border-bottom: 0.06rem solid var(--sidebar-border);
-        padding: 0.7rem 2%;
+        padding: 2vh 5%;
     }
-
-    .nav {
-        width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
-        gap: 0.3rem;
-        scrollbar-width: none;
+    .app {
+        flex-direction: column;
     }
-
-    .nav::-webkit-scrollbar {
-        display: none;
-    }
-
-    .nav-item {
-        width: auto;
-        min-width: max-content;
-        min-height: 2.8rem;
-        padding: 0 0.8rem;
-    }
-
-    .sidebar-bottom {
-        display: none;
-    }
-
     .content {
         width: 100%;
-        padding: 7% 6% 15%;
+        padding: 4vh 5%;
     }
-
-    .user-heading {
-        gap: 5%;
-        margin-top: 6%;
-    }
-
-    .avatar {
-        width: 22%;
-        min-width: 4.5rem;
-    }
-
     .profile-form {
         width: 100%;
-        max-width: none;
         margin-left: 0;
-        margin-top: 5%;
-    }
-
-    .content hr {
-        margin: 10% 0 7%;
-    }
-
-    .resume-grid {
-        grid-template-columns: 1fr;
-        gap: 8%;
-        margin-top: 7%;
-    }
-
-    .resume-card {
-        aspect-ratio: 1.5 / 1;
-    }
-
-    .lia {
-        right: 5%;
-        bottom: 4%;
-    }
-}
-
-/* =========================
-   CELULARES PEQUENOS
-   ========================= */
-
-@media (max-width: 400px) {
-    .content {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .nav-item {
-        font-size: 0.75rem;
-    }
-
-    .user-name {
-        font-size: 1.35rem;
-    }
-
-    .user-subtitle {
-        font-size: 0.8rem;
     }
 }
