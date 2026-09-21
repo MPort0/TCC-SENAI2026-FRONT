@@ -1,4 +1,5 @@
-/* RESET */
+/* RESET 12 */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,8 +14,10 @@
     --card-dark: #202d59;
     --text: #ffffff;
     --muted: #c5c9d7;
-    --yellow: #c5c9d7;
+    --grafic: #c5c9d7;
     --red: #ff3b30;
+    --green: #14AE5C;
+    --active: #5b76b8;
 }
 
 body {
@@ -24,11 +27,11 @@ body {
     display: flex;
 }
 
-
 /* SIDEBAR */
 
 .sidebar {
-    width: 264px;
+    /* width: 264px; */
+    width: 300px;
     min-height: 100vh;
     border-right: 1px solid var(--sidebar-border);
     display: flex;
@@ -87,19 +90,19 @@ body {
     color: var(--muted);
 }
 
-
 /* MAIN */
 
 .main-content {
     flex: 1;
     min-width: 0;
     position: relative;
-    padding: 45px 60px;
+    /* padding: 45px 60px; */
+    padding: 60px 23px;
 }
 
 .content {
     width: 100%;
-    max-width: 590px;
+    max-width: 736px;
     margin: 0 auto;
 }
 
@@ -107,9 +110,8 @@ h1 {
     font-size: 30px;
     line-height: 1.2;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
-
 
 /* RESUMO */
 
@@ -118,23 +120,23 @@ h1 {
     background: #ffffff33;
     border: 1px solid #c5c9d7;
     border-radius: 7px;
-    padding: 11px 10px;
-    margin-bottom: 19px;
+    padding: 16px 20px;
+    margin-bottom: 25px;
 }
 
 .summary strong {
     display: block;
-    font-size: 11px;
+    font-size: 16px;
+    /* resumo da avaliação */
     line-height: 1.3;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
 }
 
 .summary p {
-    font-size: 12px;
-    line-height: 1.35;
+    font-size: 14px;
+    line-height: 1.4;
     color: #f0f0f0;
 }
-
 
 /* CARDS */
 
@@ -145,7 +147,7 @@ h1 {
 }
 
 .card h2 {
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: .1px;
 }
@@ -161,12 +163,11 @@ h1 {
     flex-shrink: 0;
 }
 
-
 /* GRÁFICO */
 
 .performance {
-    height: 196px;
-    padding: 15px 16px;
+    height: 260px;
+    padding: 18px 20px;
     margin-bottom: 30px;
 }
 
@@ -176,7 +177,7 @@ h1 {
 
 .chart {
     display: flex;
-    height: 145px;
+    height: 175px;
 }
 
 .chart-labels {
@@ -205,14 +206,14 @@ h1 {
 }
 
 .bar-row {
-    height: 58px;
+    height: 68px;
     display: flex;
     align-items: center;
 }
 
 .bar {
-    height: 38px;
-    background: var(--yellow);
+    height: 42px;
+    background: var(--grafic);
     border-radius: 0 7px 7px 0;
 }
 
@@ -250,20 +251,17 @@ h1 {
     left: 50%;
 }
 
-
-/* PONTOS / ERROS */
-
 .cards-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 18px;
+    gap: 34px;
+    margin-bottom: 25px;
 }
 
 .strengths,
 .errors {
-    min-height: 104px;
-    padding: 13px;
+    min-height: 165px;
+    padding: 20px;
 }
 
 .strengths h2,
@@ -281,7 +279,7 @@ h1 {
 
 .green-icon,
 .red-icon {
-    font-size: 14px;
+    font-size: 10px;
     margin-right: 4px;
 }
 
@@ -295,8 +293,8 @@ h1 {
 .strengths li,
 .errors li,
 .suggestions li {
-    font-size: 12px;
-    line-height: 1.45;
+    font-size: 14px;
+    line-height: 1.55;
     color: #f1f2f6;
 }
 
@@ -304,18 +302,17 @@ h1 {
     color: #d4d6df;
 }
 
-
 /* SUGESTÕES */
 
 .suggestions {
-    min-height: 59px;
-    padding: 12px 14px;
-    margin-bottom: 23px;
+    min-height: 78px;
+    padding: 16px 20px;
+    margin-bottom: 30px;
 }
 
 .suggestions h2 {
     color: #7392d0;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .book-icon {
@@ -327,20 +324,19 @@ h1 {
     padding-left: 8px;
 }
 
-
 /* BOTÕES */
 
 .actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 90;
+    gap: 32px;
+    padding: 0;
 }
 
 .btn {
-    height: 35px;
+    height: 45px;
     border-radius: 7px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -370,7 +366,6 @@ h1 {
     background: #6c87c9;
 }
 
-
 /* BOTÃO FLUTUANTE */
 
 .floating-button {
@@ -394,9 +389,8 @@ h1 {
     position: absolute;
     right: -3px;
     bottom: -4px;
-    font-size: 12px;
+    font-size: 10px;
 }
-
 
 /* RESPONSIVIDADE */
 
