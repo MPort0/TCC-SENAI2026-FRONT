@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
-
+    <link rel="stylesheet" href="../CSS/temas.css">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
             <h1 class="title">Login</h1>
             <p class="subtitle">Bem-vindo de volta! Por favor, insira seus dados.</p>
             
-            <form onsubmit="event.preventDefault();">
+            <form onsubmit="event.preventDefault();" autoComplete="off">
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <div class="input-wrapper">
@@ -76,19 +76,12 @@
                     
                     
                     <div class="form-options">
-                    <label class="lembrar-senha">
-                        <div class="checkbox">
-                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="10" height="10"
-                            viewBox="0 0 24 24">
-                                <path
-                                    d="M 20.738281 5.9941406 A 1.250125 1.250125 0 0 0 19.878906 6.3730469 L 9 17.234375 L 4.1152344 12.361328 A 1.250125 1.250125 0 1 0 2.3496094 14.130859 L 8.1171875 19.884766 A 1.250125 1.250125 0 0 0 9.8828125 19.884766 L 21.644531 8.140625 A 1.250125 1.250125 0 0 0 20.738281 5.9941406 z"
-                                    fill="white">
-                                </path>
-                            </svg>
-                        </div>
-                        <span>Lembrar da senha</span>
-                    </label>
-                    
+                        <label class="lembrar-senha">
+                            <input type="checkbox" id="lembrar" hidden>
+                            <img id="checkbox" src="../IMG/checkbox-vazio.svg" alt="lembrar senha">
+                            <span>Lembrar de mim</span>
+                        </label>
+
                     <a href="#" class="forgot-password">Esqueci minha senha</a>
                 </div>
 
@@ -135,6 +128,6 @@
 </div>
 
 </body>
-<script src="../JS/login-usuario.js"></script>
+<script src="../JS/olho.js"></script>
 
 </html>

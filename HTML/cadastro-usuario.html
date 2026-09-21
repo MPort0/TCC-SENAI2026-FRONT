@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Conta</title>
     <link rel="stylesheet" href="../CSS/cadastro.css">
-    <script src="../JS/cadastro.js" defer></script> <!-- defer carrega com segurança o js -->
+    <script src="../JS/cadastro.js" defer></script>
     <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
 </head>
 
@@ -20,9 +20,7 @@
 
         <h1 class="title">Criar conta</h1>
 
-        <!-- Nome/email -->
-
-        <form onsubmit="event.preventDefault();">
+        <form id="formCadastro">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" placeholder="Insira seu nome">
@@ -33,41 +31,36 @@
                 <input type="email" id="email" placeholder="Insira seu e-mail">
             </div>
 
-        <!-- Senha/Confirmar Senha -->
-
             <div class="form-group">
                 <label for="senha">Senha:</label>
                 <div class="input-wrapper">
                     <input type="password" id="senha" placeholder="Digite sua senha">
-                    
                     <img src="../IMG/ocultar-senha.svg" 
-                    id="icone-senha"
-                    alt="Ocultar senha" 
-                    class="toggle-icon"
-                    onclick="toggleSenha()">
-
+                         id="icone-senha"
+                         alt="Ocultar senha" 
+                         class="toggle-icon"
+                         onclick="toggleSenha()">
                 </div>
             </div>
 
+            <!-- IDS ALINHADOS COM O JS -->
             <ul id="regras-senha">
-                <li id="caracteres">Mínimo de 8 caracteres</li>
-                <li id="maiuscula">Pelo menos uma letra maiúscula</li>
-                <li id="minuscula">Pelo menos uma letra minúscula</li>
-                <li id="numero">Pelo menos um número</li>
-                <li id="especial">Pelo menos um caractere especial</li>
+                <li id="regra-caracteres">Mínimo de 8 caracteres</li>
+                <li id="regra-maiuscula">Pelo menos uma letra maiúscula</li>
+                <li id="regra-minuscula">Pelo menos uma letra minúscula</li>
+                <li id="regra-numero">Pelo menos um número</li>
+                <li id="regra-especial">Pelo menos um caractere especial</li>
             </ul>
 
             <div class="form-group">
                 <label for="confirmar-senha">Confirmar senha:</label>
                 <div class="input-wrapper">
                     <input type="password" id="confirmar-senha" placeholder="Confirme sua senha">
-                    
                     <img src="../IMG/ocultar-senha.svg" 
-                    id="icone-confirmarSenha"
-                    alt="Ocultar senha" 
-                    class="toggle-icon"
-                    onclick="toggleConfirmar()">
-                    
+                         id="icone-confirmarSenha"
+                         alt="Ocultar senha" 
+                         class="toggle-icon"
+                         onclick="toggleConfirmar()">
                 </div>
             </div>
 
@@ -75,7 +68,5 @@
         </form>
     </div>
 
-    <script src="../JS/cadastro.js"></script>
 </body>
-
 </html>

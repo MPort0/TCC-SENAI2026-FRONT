@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('formCadastro');
-    const email = document.getElementById('email');
     const inputSenha = document.getElementById('senha');
     const iconeOlho = document.getElementById('icone-senha');
     const inputConfirmar = document.getElementById('confirmar-senha');
     const iconeVer = document.getElementById('icone-confirmarSenha');
     const btnContinuar = document.getElementById('btnContinuar');
 
+    // DECLARAÇÃO OBRIGATÓRIA DA VARIÁVEL
+    let senhaValida = false;
+
     // OLHINHO SENHA    
     window.toggleSenha = function() {
+        if (!inputSenha || !iconeOlho) return;
         if (inputSenha.type === 'password') {
             inputSenha.type = 'text';
             iconeOlho.setAttribute('src', '../IMG/ver-senha.svg');
@@ -20,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // OLHINHO CONFIRMAR SENHA
     window.toggleConfirmar = function() {
+        if (!inputConfirmar || !iconeVer) return;
         if (inputConfirmar.type === 'password') {
             inputConfirmar.type = 'text';
             iconeVer.setAttribute('src', '../IMG/ver-senha.svg');
@@ -30,30 +33,34 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // REGRAS DE NEGÓCIO PARA SENHA VALIDADOS EM TEMPO REAL
-    inputSenha.addEventListener('input', () => {
-        const valor = inputSenha.value;
+    if (inputSenha) {
+        inputSenha.addEventListener('input', () => {
+            const valor = inputSenha.value;
 
-        const regras = {
-            caracteres: valor.length >= 8,
-            maiuscula: /[A-Z]/.test(valor),
-            minuscula: /[a-z]/.test(valor),
-            especial: /[!@#$%&*(),.:{}|<>_-]/.test(valor),
-            numero: /[0-9]/.test(valor)
-        };
+            const regras = {
+                caracteres: valor.length >= 8,
+                maiuscula: /[A-Z]/.test(valor),
+                minuscula: /[a-z]/.test(valor),
+                especial: /[!@#$%&*(),.:{}|<>_-]/.test(valor),
+                numero: /[0-9]/.test(valor)
+            };
 
-        // VISUAL DAS REGRAS
-        atualizarVisualRegra('regra-caracteres', regras.caracteres);
-        atualizarVisualRegra('regra-maiuscula', regras.maiuscula);
-        atualizarVisualRegra('regra-minuscula', regras.minuscula);
-        atualizarVisualRegra('regra-especial', regras.especial);
-        atualizarVisualRegra('regra-numero', regras.numero);
+            // VISUAL DAS REGRAS
+            atualizarVisualRegra('regra-caracteres', regras.caracteres);
+            atualizarVisualRegra('regra-maiuscula', regras.maiuscula);
+            atualizarVisualRegra('regra-minuscula', regras.minuscula);
+            atualizarVisualRegra('regra-especial', regras.especial);
+            atualizarVisualRegra('regra-numero', regras.numero);
 
-        // VERIFICAÇÃO SE AS REGRAS FORAM ATENDIDAS
-        senhaValida = Object.values(regras).every(v => v === true);
-    });
+            // VERIFICAÇÃO SE AS REGRAS FORAM ATENDIDAS
+            senhaValida = Object.values(regras).every(v => v === true);
+        });
+    }
 
-    function atualizarVisualRegra(id, ehValido){
+    function atualizarVisualRegra(id, ehValido) {
         const elemento = document.getElementById(id);
+        if (!elemento) return; // Evita travar a aplicação caso o elemento não exista no DOM
+
         if (ehValido) {
             elemento.classList.add('valido');
         } else {
@@ -66,20 +73,17 @@ document.addEventListener('DOMContentLoaded', () => {
         btnContinuar.addEventListener('click', function(event) {
             event.preventDefault();
 
-            const nome = document.querySelector('#nome').value.trim();
-            const email = document.querySelector('#email').value.trim();
-            const senha = document.querySelector('#senha').value.trim();
-            const confirmarSenha = document.querySelector('#confirmar-senha').value.trim();
+            const nomeEl = document.querySelector('#nome');
+            const emailEl = document.querySelector('#email');
+
+            const nome = nomeEl ? nomeEl.value.trim() : '';
+            const email = emailEl ? emailEl.value.trim() : '';
+            const senha = inputSenha ? inputSenha.value.trim() : '';
+            const confirmarSenha = inputConfirmar ? inputConfirmar.value.trim() : '';
 
             // VERIFICANDO CAMPOS VAZIOS 
             if (nome === "" || email === "" || senha === "" || confirmarSenha === "") {
                 alert("Ops! Preencha todos os campos para entrar.");
-                return;
-            }
-
-            // VÊ SE AS REGRAS DE NEGÓCIO FORAM ATENDIDAS
-            if (!senhaValida) {
-                alert("Ops! A senha não atende aos requisitos de segurança.");
                 return;
             }
 
@@ -90,18 +94,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            // VÊ SE AS REGRAS DE NEGÓCIO FORAM ATENDIDAS
+            if (!senhaValida) {
+                alert("Ops! A senha não atende aos requisitos de segurança.");
+                return;
+            }
+
             // VERIFICAÇÃO DE SENHAS IGUAIS
             if (senha !== confirmarSenha) {
                 alert("As senhas não coincidem!");
                 return;
             }
 
-            // SALVA A SENHA USANDO O EMAIL DO USER COMO CHAVE
+            // SALVA A SENHA E SALVA ESTADO
             localStorage.setItem(email, senha);
+            localStorage.setItem('emailEmCadastro', email);
 
             alert("Cadastro realizado com sucesso!");
-
-            localStorage.setItem('emailEmCadastro', email);
             window.location.href = "../HTML/login-usuario.html";
         });
     }

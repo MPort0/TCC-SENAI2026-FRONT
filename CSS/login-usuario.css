@@ -154,31 +154,17 @@ body {
     gap: 8px;
     color: var(--text-labels);
     cursor: pointer;
+    user-select: none;
 }
 
-.lembrar-senha .checkbox {
-    width: 16px;
-    height: 16px;
-    border: 1px solid var(--border-input);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--bg-input);
-}
-
-.check-icon {
+/* Esconde o checkbox padrão do navegador */
+.lembrar-senha input[type="checkbox"] {
     display: none;
-    pointer-events: none;
 }
 
-.lembrar-senha.active .checkbox {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary-hover);
-}
-
-.lembrar-senha.active .check-icon {
-    display: block;
+.lembrar-senha img {
+    width: 18px;
+    height: 18px;
 }
 
 .forgot-password {

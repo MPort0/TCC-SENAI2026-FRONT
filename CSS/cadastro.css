@@ -24,6 +24,13 @@ ul {
     min-height: 12vh;
 }
 
+.regras {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
 .register-card {
     background-color: #00092d;
     border: 1px solid #121e3f;
