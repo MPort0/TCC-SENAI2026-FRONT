@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const iconeVer = document.getElementById('icone-confirmarSenha');
     const btnContinuar = document.getElementById('btnContinuar');
 
-    // DECLARAÇÃO OBRIGATÓRIA DA VARIÁVEL
     let senhaValida = false;
 
     // OLHINHO SENHA    
@@ -32,6 +31,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // 1. FUNÇÃO DE VALIDAÇÃO VISUAL DA BORDA (COLOCADA NO ESCOPO CORRETO)
+    function validarCoincidencia() {
+        if (!inputConfirmar || !inputSenha) return;
+
+        if (inputConfirmar.value.length > 0) {
+            if (inputSenha.value === inputConfirmar.value) {
+                inputConfirmar.style.borderColor = "#28a745"; // Verde
+            } else {
+                inputConfirmar.style.borderColor = "#dc3545"; // Vermelho
+            }
+        } else {
+            inputConfirmar.style.borderColor = "#4d6cae"; // Cor padrão
+        }
+    }
+
+    // 2. ESCUTA A DIGITAÇÃO NO CAMPO DE CONFIRMAÇÃO
+    if (inputConfirmar) {
+        inputConfirmar.addEventListener('input', validarCoincidencia);
+    }
+
     // REGRAS DE NEGÓCIO PARA SENHA VALIDADOS EM TEMPO REAL
     if (inputSenha) {
         inputSenha.addEventListener('input', () => {
@@ -54,12 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // VERIFICAÇÃO SE AS REGRAS FORAM ATENDIDAS
             senhaValida = Object.values(regras).every(v => v === true);
+
+            // Reavalia a confirmação caso a senha principal mude
+            validarCoincidencia();
         });
     }
 
     function atualizarVisualRegra(id, ehValido) {
         const elemento = document.getElementById(id);
-        if (!elemento) return; // Evita travar a aplicação caso o elemento não exista no DOM
+        if (!elemento) return;
 
         if (ehValido) {
             elemento.classList.add('valido');

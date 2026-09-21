@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 inputConfirmar.style.borderColor = "#dc3545"; // Vermelho
             }
         } else {
-            inputConfirmar.style.borderColor = "#7463F6"; // Roxo padrão
+            inputConfirmar.style.borderColor = "#4d6cae"; // Roxo padrão
         }
     }
 

@@ -17,60 +17,33 @@ body {
     padding: 20px;
 }
 
-ul {
-    font-size: 12px;
-    text-align: left;
-    color: #94a3b8;
-    min-height: 12vh;
-}
-
-/* .regras {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-} */
-
 .regras {
-    list-style: none;
-    margin-bottom: 20px;
+    width: 100%;
+    margin: 12px 0 20px 0; /* Espaçamento entre o campo de senha e o próximo campo */
+}
+
+/* Lista */
+#regras-senha {
+    list-style-type: disc;
+    list-style-position: outside; /* Garante que se o texto quebrar de linha, fique alinhado abaixo do texto */
+    padding-left: 18px;            /* Recuo exato para a bolinha alinhar com o início da caixa do input */
+    margin: 0;
+    font-size: 12px;
+    color: #94a3b8;
     text-align: left;
-    margin: 15px 0 20px 0;
-    padding: 0;
 }
 
-.regras li {
-    font-size: 12px;
-    color: #9a9a9a;
-    margin-bottom: 4px;
-    padding-left: 15px;
-    display: flex;
-    position: relative;
-    transition: all 0.3s ease;
-    align-items: center;
+/* Cada item da regra */
+#regras-senha li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
 }
 
-/* Adiciona um ✅ nas regras aplicadas */
-.regras li::before {
-    content: "•";
-    color: #9a9a9a;
-    margin-right: 8px;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
+/* Estilo para quando a regra for atendida via JS */
+#regras-senha li.valido {
+    color: #28a745; /* Verde para regras atendidas */
 }
-
-.regras li.valido {
-    color: #7463F6;
-    font-weight: 600;
-}
-
-.regras li.valido::before {
-    color: #7463F6;
-    content: "✓";
-    font-size: 12px;
-}
-
 .register-card {
     background-color: #00092d;
     border: 1px solid #121e3f;
@@ -79,6 +52,7 @@ ul {
     width: 100%;
     max-width: 440px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    box-sizing: border-box; /* não deixa o padding estourar a largura de pequenas telas*/
 }
 
 .btn-back {

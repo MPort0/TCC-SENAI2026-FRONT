@@ -17,18 +17,29 @@ body {
     padding: 20px;
 }
 
-ul {
-    font-size: 12px;
-    text-align: left;
-    color: #94a3b8;
-    min-height: 12vh;
-}
 
 .regras {
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
     justify-content: center;
+}
+
+.regras, ul {
+    list-style-position: inside;
+    padding-left: 4px;
+    margin: 12px 0 20px 0;
+    font-size: 12px;
+    color: #94a3b8;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.regras li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+    transition: color 0.3s ease;
 }
 
 .register-card {
@@ -39,6 +50,18 @@ ul {
     width: 100%;
     max-width: 440px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    box-sizing: border-box; /* não deixa o padding estourar a largura de pequenas telas*/
+}
+
+/* Estilo para quando a regra for atendida via JS */
+#regras-senha li.valido {
+    color: #28a745; /* Verde para regras atendidas */
+}
+
+@media (max-width: 480px) {
+    .register-card {
+        padding: 24px 20px;
+    }
 }
 
 .btn-back {
