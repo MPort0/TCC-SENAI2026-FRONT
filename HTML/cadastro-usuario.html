@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Conta</title>
     <link rel="stylesheet" href="../CSS/cadastro.css">
-    <script src="../JS/cadastro.js" defer></script>
+    <script src="../JS/cadastro.js" defer></script> <!-- defer carrega com segurança o js -->
 </head>
 
 <body>
@@ -20,7 +20,8 @@
         <h1 class="title">Criar conta</h1>
 
         <!-- Nome/email -->
-        <form id="formCadastro">
+
+        <form onsubmit="event.preventDefault();">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" placeholder="Insira seu nome">
@@ -31,7 +32,8 @@
                 <input type="email" id="email" placeholder="Insira seu e-mail">
             </div>
 
-            <!-- Senha/Confirmar Senha -->
+        <!-- Senha/Confirmar Senha -->
+
             <div class="form-group">
                 <label for="senha">Senha:</label>
                 <div class="input-wrapper">
@@ -42,17 +44,9 @@
                     alt="Ocultar senha" 
                     class="toggle-icon"
                     onclick="toggleSenha()">
+
                 </div>
             </div>
-
-            <!-- REGRAS DA SENHA COM OS IDS CORRIGIDOS -->
-            <ul class="regras-senha">
-                <li id="regra-caracteres">Deve ter no mínimo 8 caracteres</li>
-                <li id="regra-maiuscula">Pelo menos uma letra maiúscula</li>
-                <li id="regra-minuscula">Pelo menos uma letra minúscula</li>
-                <li id="regra-numero">Pelo menos um número</li>
-                <li id="regra-especial">Pelo menos um caracter especial (ex: !, @, #, &...)</li>
-            </ul>
 
             <div class="form-group">
                 <label for="confirmar-senha">Confirmar senha:</label>
@@ -64,6 +58,7 @@
                     alt="Ocultar senha" 
                     class="toggle-icon"
                     onclick="toggleConfirmar()">
+                    
                 </div>
             </div>
 
@@ -71,5 +66,7 @@
         </form>
     </div>
 
+    <script src="../JS/cadastro.js"></script>
 </body>
+
 </html>
