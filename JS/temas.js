@@ -8,7 +8,7 @@ function verificarTemaPorHorario() {
     
     // Se a hora do computador for 9 ou mais (ex: 09:00, 13:00, 20:00), entra no escuro
     // Se colocar um horario como 9:30, nn vai dar certo, tem q dar uma pesquisada pra ver como funciona
-    if (horaAtual >= 12) {
+    if (horaAtual >= 20) {
         return 'dark';
     } else {
         return 'light';

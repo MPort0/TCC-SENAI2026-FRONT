@@ -6,10 +6,11 @@
 }
 
 body {
-    background: #02082d;
-    color: white;
+    background: var(--bg-page);
+    color: var(--text);
     min-height: 100vh;
     display: flex;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 
@@ -17,7 +18,7 @@ body {
 .sidebar {
     width: 264px;
     min-height: 100vh;
-    border-right: 1px solid #fff;
+    border-right: 0.06rem solid var(--sidebar-border);
     display: flex;
     flex-direction: column;
     padding: 62px 22px 38px;
@@ -37,7 +38,7 @@ body {
     gap: 10px;
     padding: 0 27px;
     border-radius: 7px;
-    color: #e5e8f3;
+    color: var(--text);
     text-decoration: none;
     font-size: 15px;
     font-weight: 400;
@@ -51,12 +52,19 @@ body {
     opacity: 0.95;
 }
 
+[data-theme="light"] .nav-item svg path {
+    fill: #334155;
+}
+[data-theme="light"] .nav-item.active svg path {
+    fill: #5f7fbf;
+}
+
 .nav-item:hover {
     background: #3d527f;
 }
 
 .nav-item.active {
-    background: #6784c2;
+    background: var(--active);
 }
 
 .sidebar-bottom {
@@ -68,7 +76,7 @@ body {
 }
 
 .sidebar-bottom span {
-    color: #e5e8f3;
+    color: var(--text);
     font-size: 13px;
 }
 
@@ -100,7 +108,7 @@ form {
 
 .form-group label {
     display: block;
-    color: white;
+    color: var(--text);
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
@@ -108,16 +116,15 @@ form {
 
 .input-wrapper {
     width: 100%;
-    background: #344a7c;
-    border: 2px solid #6686c8;
+    background: var(--input-editar-curriculo);
+    border: 2px solid var(--border-editar-curriculo);
     border-radius: 7px;
     padding: 15px;
     transition: 0.2s;
 }
 
 .input-wrapper:focus-within {
-    border-color: #91aef0;
-    box-shadow: 0 0 0 2px rgba(102, 134, 200, 0.2);
+    border-color: var(--border-editar-curriculo);
 }
 
 .input-wrapper input,
@@ -133,7 +140,7 @@ form {
 
 .input-wrapper input::placeholder,
 .input-wrapper textarea::placeholder {
-    color: #b8c1d8;
+    color: var(--color-text-input-editar-curriculo);
 }
 
 .form-group:first-of-type .input-wrapper {
@@ -191,7 +198,7 @@ button {
 
 .export {
     background: transparent;
-    color: #aeb6ce;
+    color: var(--border-editar-curriculo);
     border: 1px solid #7181aa;
 }
 
@@ -206,7 +213,7 @@ button {
 }
 
 .simulation:hover {
-    background: #7795d3;
+    background: #3057a7;
 }
 .lia {
     position: fixed !important;

@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Currículo</title>
-    <link rel="stylesheet" href="../CSS/editar-curriculo.css">
+
     <link rel="stylesheet" href="../CSS/temas.css">
+    <link rel="stylesheet" href="../CSS/editar-curriculo.css">
+    <script src="../JS/temas.js"  defer></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -209,7 +212,8 @@
             <button onclick="abrirJanelaArquivos()" type="button" class="export">
                 Exportar PDF
             </button>
-            <input type="file" id="meu-pdf-input" accept=".pdf" style="display: none;" onchange="arquivoAdicionado(this)">
+            <input type="file" id="meu-pdf-input" accept=".pdf" style="display: none;"
+                onchange="arquivoAdicionado(this)">
 
             <button type="submit" class="simulation">
                 Nova simulação
@@ -230,5 +234,5 @@
 </main>
 
 </body>
-    <script src="../JS/editar-curriculo.js"></script>
+
 </html>

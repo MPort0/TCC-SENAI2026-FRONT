@@ -145,4 +145,7 @@ CORES DO MODO CLARO (ATIVADO AUTOMATICAMENTE PELO HORÁRIO)
     /*Perfil: Cor do fundo dos inputs*/
     --border-form-input: #5F7FBF;
     /* Perfil: Cor dos da borda dos inputs */
+    --input-editar-curriculo: #5F7FBF9C;
+    --border-editar-curriculo: #5F7FBF;
+    --color-text-input-editar-curriculo: #fff;
 }
