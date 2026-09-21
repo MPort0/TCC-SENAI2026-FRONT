@@ -1,51 +1,148 @@
-/* VARIÁVEIS - MODO ESCURO (PADRÃO ATUAL DO SEU SITE) */
+/* temas.css */
+
+/* ==========================================================================
+   CORES DO MODO ESCURO (PADRÃO ATUAL DO SITE)
+   ========================================================================== */
 :root {
     --bg-page: #00092D;
+    /* Login, Cadastro: Cor de fundo principal da página */
     --bg-card: #080d24;
+    /* Login, Cadastro: Cor de fundo do card central */
     --border-card: #1a2342;
+    /* Login, Cadastro: Cor da borda do card central */
     --bg-input: #050817;
+    /* Login, Cadastro: Cor de fundo dos inputs e botões sociais */
     --border-input: #1e2a4a;
+    /* Login, Cadastro: Cor da borda dos inputs e botões sociais */
     --text-primary: #ffffff;
+    /* Login, Cadastro, Perfil: Cor dos textos e títulos principais */
     --text-secondary: #8c9bba;
+    /* Login, Cadastro: Cor dos textos secundários e subtítulos */
     --text-labels: #e2e8f0;
+    /* Login, Cadastro: Cor das etiquetas (labels) acima dos inputs */
     --text-placeholder: #4a5568;
+    /* Login, Cadastro: Cor do texto de dica (placeholder) nos inputs */
     --icon-stroke: #718096;
-    
-    /* Cores de destaque no modo escuro */
+    /* Login, Cadastro: Cor dos contornos dos ícones de login */
     --color-primary: #5372e7;
+    /* Login, Cadastro: Cor principal do botão de enviar (submit) */
     --color-primary-hover: #4260d6;
+    /* Login, Cadastro: Cor do botão de enviar no hover */
     --color-link: #6382f7;
+    /* Login, Cadastro: Cor dos links e do "Esqueci minha senha" */
     --bg-social-hover: #0b112c;
+    /* Login, Cadastro: Cor de fundo dos botões sociais no hover */
     --border-social-hover: #2d3f6e;
-    
+    /* Login, Cadastro: Cor da borda dos botões sociais no hover */
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    /* Login, Cadastro: Sombra projetada do card */
+    --cor-path-2: #ffffff;
+    /* Login, Perfil: Cor do segundo path (desenho interno) da logo */
 
-        --cor-path-2: #ffffff; /* Cor do segundo path no modo escuro */
+    --bg: #02082c;
+    /* Perfil: Cor de fundo principal da página e do app */
+    --sidebar-border: #505873;
+    /* Perfil: Cor da divisória do menu lateral e bordas dos inputs */
+    --text: #ffffff;
+    /* Perfil: Cor dos títulos internos e textos principais */
+    --muted: #98aaca;
+    /* Perfil: Cor do subtítulo do usuário abaixo do nome */
+    --muted-2: #94a3b8;
+    /* Perfil: Cor do texto digitado dentro dos inputs */
+    --primary: #5f7fbf;
+    /* Perfil: Cor da borda do input selecionado (focus) */
+    --primary-button: #495e97;
+    /* Perfil: Cor de fundo do botão "Salvar alterações" */
+    --active: #627dbc;
+    /* Perfil: Cor do item ativo no menu e botão flutuante */
+    --avatar: #0d0b6c;
+    /* Perfil: Cor de fundo do círculo do avatar */
+    --card: #1b2550;
+    /* Perfil: Cor de fundo dos blocos de currículos salvos */
+    --card-border: #2d3a68;
+    /* Perfil: Cor da borda dos blocos de currículos vazios */
+    --avatar: #0d0b6c;
+    /* Perfil: Cor de fundo do círculo do avatar */
+    --avatar-text: #ffffff;
+    /* Perfil: Cor da letra dentro do avatar no escuro */
+    --input-form: #050817;
+    /* Perfil: fundo do input */
+
 }
 
-/* VARIÁVEIS - MODO CLARO (ATUALIZADO COM SEU CONTRASTE, BORDAS E SOMBRAS) */
+/* ==========================================================================
+   CORES DO MODO CLARO (ATIVADO AUTOMATICAMENTE PELO HORÁRIO)
+   ========================================================================== */
 [data-theme="light"] {
     --bg-page: #EEF4FF;
+    /* Login, Cadastro: Cor de fundo principal da página no claro */
     --bg-card: #ffffff;
+    /* Login, Cadastro: Cor de fundo do card central no claro */
     --border-card: transparent;
-    --bg-input: #ffffff;
-    --border-input: #94A3B8; /* Contorno pedido por você */
+    /* Login, Cadastro: Cor da borda do card central no claro */
+    --bg-input: #E2E8F0;
+    /* Login, Cadastro: Cor de fundo dos inputs e botões sociais */
+    --border-input: #94A3B8;
+    /* Login, Cadastro: Cor da borda dos inputs e botões sociais */
     --text-primary: #000000;
+    /* Login, Cadastro, Perfil: Cor dos textos e títulos no claro */
     --text-secondary: #64748B;
+    /* Login, Cadastro: Cor dos textos secundários no claro */
     --text-labels: #334155;
+    /* Login, Cadastro: Cor das etiquetas (labels) no claro */
     --text-placeholder: #94A3B8;
+    /* Login, Cadastro: Cor do placeholder no claro */
     --icon-stroke: #5F7FBF;
-    
-    /* Cores de contraste pedidas por você */
-    --color-primary: #5F7FBF;       /* Botão Principal */
-    --color-primary-hover: #4b6aa3; /* Botão Hover levemente mais escuro */
-    --color-link: #5F7FBF;          /* Links e esqueci minha senha */
+    /* Login, Cadastro: Cor das linhas dos ícones no claro */
+    --color-primary: #5F7FBF;
+    /* Login, Cadastro: Cor principal do botão de enviar no claro */
+    --color-primary-hover: #4b6aa3;
+    /* Login, Cadastro: Cor do botão de enviar no hover claro */
+    --color-link: #5F7FBF;
+    /* Login, Cadastro: Cor dos links no claro */
     --bg-social-hover: #f1f5f9;
+    /* Login, Cadastro: Cor de fundo dos botões sociais no hover claro */
     --border-social-hover: #5F7FBF;
+    /* Login, Cadastro: Cor da borda dos botões sociais no hover claro */
+    --card-shadow: 0 10px 30px rgba(100, 116, 139, 0.2);
+    /* Login, Cadastro: Sombra suave do card no claro */
+    --cor-path-2: #5F7FBF;
+    /* Login, Perfil: Cor do segundo path da logo no claro */
+
+    --bg: #EEF4FF;
+    /* Perfil: Cor de fundo principal da página no claro */
+    --sidebar-border: #94A3B8;
+    /* Perfil: Cor da linha divisória do menu lateral no claro */
+    --text: #5F7FBF;
+    /* Perfil: Cor dos títulos secundários ("Meus dados", "Currículos") */
+    --muted: #64748B;
+    /* Perfil: Cor do subtítulo do usuário no claro */
     
-    --card-shadow: 0px 10px 24px 6px rgba(100, 116, 139, 1);/* Sombra baseada em #64748B */
+    
+    
+    --muted-2: #64748B;
+    /* Perfil: Cor do texto interno e placeholders dos inputs */
 
-    --cor-path-2: #5F7FBF; /* A cor que você pediu para o modo claro */
+
+    --primary: #5F7FBF;
+    /* Perfil: Cor da borda do input com foco no claro */
+    
+    --primary-button: #5F7FBF;
+    /* Perfil: Cor de fundo do botão "Salvar alterações" no claro */
+    --active: #D0E1FF;
+    /* Perfil: Cor de fundo do item selecionado no menu no claro */
+    --avatar: #D0E1FF;
+    /* Perfil: Cor de fundo do círculo do avatar no claro */
+    --card: #ffffff;
+    /* Perfil: Cor de fundo dos blocos de currículos no claro */
+    --card-border: #94A3B8;
+    /* Perfil: Cor da borda dos blocos de currículos no claro */
+    --avatar: #5F7FBF;
+    /* Perfil: Cor de fundo do círculo do avatar no claro */
+    --avatar-text: #ffffff;
+    /* Perfil: Cor da letra dentro do avatar no claro */
+    --input-form: #E2E8F0;
+    /*Perfil: Cor do fundo dos inputs*/
+    --border-form-input: #5F7FBF;
+    /* Perfil: Cor dos da borda dos inputs */
 }
-
-
