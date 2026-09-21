@@ -17,6 +17,13 @@ body {
     padding: 20px;
 }
 
+ul {
+    font-size: 12px;
+    text-align: left;
+    color: #94a3b8;
+    min-height: 12vh;
+}
+
 .register-card {
     background-color: #00092d;
     border: 1px solid #121e3f;
