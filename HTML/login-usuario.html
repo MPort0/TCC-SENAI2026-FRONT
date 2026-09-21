@@ -31,7 +31,7 @@
                 <h1 class="title">Login</h1>
                 <p class="subtitle">Bem-vindo de volta! Por favor, insira seus dados.</p>
 
-                <form onsubmit="event.preventDefault();">
+                <form>
                     <div class="form-group">
                         <label for="email">Email:</label>
                         <div class="input-wrapper">
@@ -50,17 +50,12 @@
                             <img class="olho-fechado" width="24" height="24" src="../IMG/ocultar-senha.svg"
                                 alt="Ícone de olho fechado">
 
-
-
-
-
                             <!-- olho aberto -->
                             <img class="olho-aberto" width="24" height="24" src="../IMG/ver-senha.svg"
                                 alt="Ícone de olho aberto">
 
                         </div>
                     </div>
-
 
                     <div class="form-options">
                         <label class="lembrar-senha">
@@ -74,7 +69,9 @@
                         <a href="#" class="forgot-password">Esqueci minha senha</a>
                     </div>
 
-                    <button type="submit" class="btn-submit" href="cadastro-usuario.html">Entrar</button>
+                    <button type="submit" class="btn-submit">
+                        Entrar
+                    </button>
 
                     <div class="divider">
                         <span>OU</span>
@@ -103,11 +100,13 @@
             </footer>
 
         </div>
-        
+
     </div>
 
 </body>
 <script src="../JS/olho.js"></script>
 <script src="../JS/temas.js"></script>
+<script src="../JS/ipback-end.js"></script>
+<script src="../JS/login.js"></script>
 
 </html>
