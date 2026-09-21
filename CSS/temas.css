@@ -67,7 +67,9 @@ CORES DO MODO ESCURO (PADRÃO ATUAL DO SITE)
     /* Perfil: Cor da letra dentro do avatar no escuro */
     --input-form: #050817;
     /* Perfil: fundo do input */
-
+    --input-editar-curriculo: #5F7FBF9C;
+    --border-editar-curriculo: #5F7FBF;
+    --color-text-input-editar-curriculo: #fff;
 }
 
 /* 
