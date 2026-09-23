@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             showAlert('Login realizado com sucesso!');
-            window.location.href = '../HTML/home-usuario.html';
+            window.location.href = '../HTML/home.html';
         } catch (error) {
             console.error(error);
             showAlert('Erro de rede ao fazer login. Tente novamente.');

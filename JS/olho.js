@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 4. SUBMIT E VALIDAÇÃO DE LOGIN
-    function realizarLogin(event) {
+/*     function realizarLogin(event) {
         if (event) event.preventDefault();
 
         const emailDigitado = inputEmail ? inputEmail.value.trim() : '';
@@ -96,5 +96,5 @@ document.addEventListener('DOMContentLoaded', () => {
         formLogin.addEventListener('submit', realizarLogin);
     } else if (btnEntrar) {
         btnEntrar.addEventListener('click', realizarLogin);
-    }
-});
+    } */
+}); 

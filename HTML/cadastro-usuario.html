@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Conta</title>
     <link rel="stylesheet" href="../CSS/cadastro.css">
-    <script src="../JS/cadastro.js" defer></script>
     <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
 </head>
 
@@ -35,11 +34,8 @@
                 <label for="senha">Senha:</label>
                 <div class="input-wrapper">
                     <input type="password" id="senha" placeholder="Digite sua senha">
-                    <img src="../IMG/ocultar-senha.svg" 
-                         id="icone-senha"
-                         alt="Ocultar senha" 
-                         class="toggle-icon"
-                         onclick="toggleSenha()">
+                    <img src="../IMG/ocultar-senha.svg" id="icone-senha" alt="Ocultar senha" class="toggle-icon"
+                        onclick="toggleSenha()">
                 </div>
             </div>
 
@@ -56,18 +52,18 @@
                 <label for="confirmar-senha">Confirmar senha:</label>
                 <div class="input-wrapper">
                     <input type="password" id="confirmar-senha" placeholder="Confirme sua senha">
-                    <img src="../IMG/ocultar-senha.svg" 
-                         id="icone-confirmarSenha"
-                         alt="Ocultar senha" 
-                         class="toggle-icon"
-                         onclick="toggleConfirmar()">
+                    <img src="../IMG/ocultar-senha.svg" id="icone-confirmarSenha" alt="Ocultar senha"
+                        class="toggle-icon" onclick="toggleConfirmar()">
                 </div>
-                <button href="home.html"type="submit" class="btn-submit">Criar conta</button>
-        </div>
+                <button type="submit" class="btn-submit">Criar conta</button>
+            </div>
 
-            <button id="btnContinuar" type="submit" class="btn-submit">Criar conta</button>
         </form>
     </div>
 
 </body>
+
+<script src="../JS/cadastro.js" defer></script>
+<script src="../JS/ipback.js"></script>
+
 </html>

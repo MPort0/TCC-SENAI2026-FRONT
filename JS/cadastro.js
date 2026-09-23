@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const iconeOlho = document.getElementById('icone-senha');
     const inputConfirmar = document.getElementById('confirmar-senha');
     const iconeVer = document.getElementById('icone-confirmarSenha');
-    const btnContinuar = document.getElementById('btnContinuar');
+    const form = document.getElementById('formCadastro');
 
     let senhaValida = false;
 
     // OLHINHO SENHA    
-    window.toggleSenha = function() {
+    window.toggleSenha = function () {
         if (!inputSenha || !iconeOlho) return;
         if (inputSenha.type === 'password') {
             inputSenha.type = 'text';
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // OLHINHO CONFIRMAR SENHA
-    window.toggleConfirmar = function() {
+    window.toggleConfirmar = function () {
         if (!inputConfirmar || !iconeVer) return;
         if (inputConfirmar.type === 'password') {
             inputConfirmar.type = 'text';
@@ -91,8 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // VALIDAR CAMPOS E SUBMIT
-    if (btnContinuar) {
-        btnContinuar.addEventListener('click', function(event) {
+
+    if (form) {
+        form.addEventListener('submit', async function (event) {
             event.preventDefault();
 
             const nomeEl = document.querySelector('#nome');
@@ -103,14 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const senha = inputSenha ? inputSenha.value.trim() : '';
             const confirmarSenha = inputConfirmar ? inputConfirmar.value.trim() : '';
 
-            // VERIFICANDO CAMPOS VAZIOS 
+            // VERIFICANDO CAMPOS VAZIOS
             if (nome === "" || email === "" || senha === "" || confirmarSenha === "") {
-                alert("Ops! Preencha todos os campos para entrar.");
+                alert("Ops! Preencha todos os campos.");
                 return;
             }
 
             // VERIFICAÇÃO DE EMAIL VÁLIDO
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
             if (!emailRegex.test(email)) {
                 alert("Ops! Por favor, insira um e-mail válido.");
                 return;
@@ -128,12 +130,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // SALVA A SENHA E SALVA ESTADO
-            localStorage.setItem(email, senha);
-            localStorage.setItem('emailEmCadastro', email);
+            // ENVIA PARA O BACKEND
+            try {
+                const response = await fetch(`${window.API_BASE}/cadastro`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: nome,
+                        email: email,
+                        password: senha
+                    })
+                });
 
-            alert("Cadastro realizado com sucesso!");
-            window.location.href = "../HTML/login-usuario.html";
+                const data = await response.json();
+
+                if (!response.ok) {
+                    alert(data.error || "Erro ao realizar cadastro.");
+                    return;
+                }
+
+                alert("Cadastro realizado com sucesso!");
+
+                window.location.href = "../HTML/home.html";
+
+            } catch (error) {
+                console.error(error);
+                alert("Erro ao conectar com o servidor.");
+            }
         });
     }
 });
