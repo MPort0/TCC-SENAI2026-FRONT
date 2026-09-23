@@ -1,96 +1,197 @@
-.fundo{
-    background-color: #00092D
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 264px;
-  min-height: 100vh;
-  border-right: 1px solid var(--sidebar-border);
-  display: flex;
-  flex-direction: column;
-  padding: 62px 22px 38px;
-  flex-shrink: 0;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #02082e;
+    color: white;
 }
- 
-.nav {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+
+.app {
+    display: flex;
+    min-height: 100vh;
 }
- 
-.nav-item {
-  height: 51px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 27px;
-  border-radius: 7px;
-  color: var(--text);
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 400;
+
+
+/* ================= CONTEÚDO ================= */
+
+.main-content {
+    flex: 1;
+    display: flex;
+    padding: 35px 105px 50px ;
+    margin-left: 284px;
+    
+    
 }
- 
-.nav-item .icon {
-  width: 17px;
-  display: inline-flex;
-  justify-content: center;
-  font-size: 17px;
-  opacity: .95;
+
+.topo{
+    margin-right: 200px;
 }
- 
-.nav-item.active {
-  background: var(--active);
+
+.primeira-escrita h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
 }
- 
-.sidebar-bottom {
-  margin-top: auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 62px;
-  gap: 30px;
+
+.subtitulo {
+    color: #66708e;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 28px;
 }
- 
-.sidebar-bottom a {
-  color: var(--text);
-  text-decoration: none;
-  font-size: 13px;
-  white-space: nowrap;
+
+
+/* ================= PROGRESSO ================= */
+
+.bloquinho {
+    width: 850px;
+    height: 205px;
+    padding: 16px;
+    background: #00093c;
+    border: 1px solid #94a3b8;
+    border-radius: 8px;
 }
- 
-.sidebar-bottom a:hover {
-  color: var(--muted);
+
+.seu-progresso {
+    font-size: 18px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
- 
-/* Responsividade da sidebar */
-@media (max-width: 1000px) {
-  .sidebar {
-    width: 220px;
-  }
+
+.progresso {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
 }
- 
-@media (max-width: 760px) {
-  .sidebar {
-    width: 100%;
-    min-height: auto;
-    height: auto;
-    border-right: 0;
-    border-bottom: 1px solid var(--sidebar-border);
-    padding: 12px;
-  }
- 
-  .nav {
-    flex-direction: row;
-    overflow-x: auto;
-  }
- 
-  .nav-item {
-    min-width: max-content;
-    padding: 0 14px;
-  }
- 
-  .sidebar-bottom {
-    display: none;
-  }
+
+/* NÚMEROS DO PROGRESSO */
+.numero {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.numero strong {
+    font-size: 40px;
+}
+
+.numero span {
+    font-size: 15px;
+    color: #7d88a4;
+}
+
+
+/* BOTÕES */
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 12px;
+}
+
+.numero button {
+    border: none;
+    margin-top: 20px;
+    border-radius: 6px;
+    background: #6685c5;
+    color: white;
+    padding: 8px 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nova-entrevista .botao-outline .novo-curriculo {
+    font-size: 15px;
+}
+
+.botoes .botao-outline {
+    background: transparent;
+    border: 1px solid #6685c5;
+}
+
+
+/* ================= COMO FUNCIONA ================= */
+
+.bloquinho-2 {
+    width: 850px;
+    height: 230px;
+    padding: 16px;
+    margin-top: 8px;
+    background: #00093c;
+    border: 1px solid #94a3b8;
+    border-radius: 8px;
+}
+
+.bloquinho-2 > h2 {
+    font-size: 18px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.etapas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.etapa {
+    min-height: 120px;
+    padding: 8px;
+    background: #00052d;
+    border-radius: 5px;
+}
+
+.numero-etapa {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #25386c;
+    font-size: 22px;
+    margin-bottom: 7px;
+}
+
+.etapa h3 {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.etapa p {
+    color: #66708e;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+
+/* ================= DICAS ================= */
+
+.bloquinho-5 {
+    width: 850px;
+    height: 230px;
+    padding: 14px;
+    margin-top: 12px;
+    background: #00093c;
+    border: 1px solid #94a3b8;
+    border-radius: 8px;
+}
+
+.bloquinho-5 h2 {
+    color: #94a3b8;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.bloquinho-5 p {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 6px;
 }
