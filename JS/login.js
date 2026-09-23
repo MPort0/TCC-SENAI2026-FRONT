@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password')?.value.trim();
 
         if (!email || !password) {
-            return showAlert('Email e senha são obrigatórios.');
+            return showAlert('Email e senha são obrigatórios.'); 
         }
 
         try {

@@ -1,0 +1,1 @@
+window.API_BASE = window.__API_BASE__;  ((location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:3000' : 'http://10.92.199.17:3000');
