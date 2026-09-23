@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return showAlert(data.error || 'Email ou senha incorretos.');
             }
 
-            // Salva dados do usuário no localStorage para uso em toda a aplicação
+            // Salva dados do usuário no localStorage (WEB) para uso em toda a aplicação
             if (data.user) {
                 localStorage.setItem('userEmail', data.user.email);
                 localStorage.setItem('userName', data.user.name);
