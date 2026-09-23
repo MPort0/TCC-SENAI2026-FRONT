@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueci minha senha</title>
+    <link rel="stylesheet" href="../CSS/esqueci-senha.css">
+    <script src="../JS/esqueci-senha.js" defer></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
+</head>
+<body>
+
+<div class="register-card">
+    <a href="../HTML/login-usuario.html" class="btn-back">
+        <img src="../IMG/seta-voltar.svg" alt="Voltar">
+        Voltar
+    </a>
+
+    <h1 class="title">Redefinir senha</h1>
+
+    <form id="formCadastro">
+        <div class="form-group">
+            <label for="email">E-mail da sua conta:</label>
+            <input type="email" id="email" placeholder="Insira seu e-mail">
+        </div>
+
+        <div class="form-group">
+            <label for="senha">Crie uma nova senha:</label>
+            <div class="input-wrapper">
+                <input type="password" id="senha" placeholder="Digite sua senha">
+                <img src="../IMG/ocultar-senha.svg" 
+                     id="icone-senha"
+                     alt="Ocultar senha" 
+                     class="toggle-icon"
+                     onclick="toggleSenha()">
+            </div>
+            <!-- Elemento de aviso para senha antiga -->
+            <p id="aviso-senha-antiga" style="display: none; color: #dc3545; font-size: 12px; margin-top: 6px;">
+                A nova senha não pode ser igual à senha antiga!
+            </p>
+        </div>
+
+        <!-- REGRAS DA SENHA -->
+         <div class="regras">
+
+            <ul id="regras-senha">
+                <li id="regra-caracteres">Mínimo de 8 caracteres</li>
+                <li id="regra-maiuscula">Pelo menos uma letra maiúscula</li>
+                <li id="regra-minuscula">Pelo menos uma letra minúscula</li>
+                <li id="regra-numero">Pelo menos um número</li>
+                <li id="regra-especial">Pelo menos um caractere especial</li>
+            </ul>
+         </div>
+        <div class="form-group">
+            <label for="confirmar-senha">Confirme sua nova senha:</label>
+            <div class="input-wrapper">
+                <input type="password" id="confirmar-senha" placeholder="Confirme sua senha">
+                <img src="../IMG/ocultar-senha.svg" 
+                     id="icone-confirmarSenha"
+                     alt="Ocultar senha" 
+                     class="toggle-icon"
+                     onclick="toggleConfirmar()">
+            </div>
+        </div>
+
+        <button id="btnContinuar" type="submit" class="btn-submit">Redefinir senha</button>
+    </form>
+</div>
+
+</body>
+</html>
