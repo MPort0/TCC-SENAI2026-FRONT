@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso e Política de Privacidade</title>
+    <link rel="stylesheet" href="../CSS/termos-uso.css">
+    <link rel="stylesheet" href="../CSS/temas.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
+</head>
+<body>
+    
+<div class="app-container">
+        <!-- Top Bar / Header -->
+        <header>
+            <div class="header-top">
+                <div class="brand-info">
+                    <h1><i class="fa-solid fa-shield-halved"></i> Central Legal</h1>
+                    <p>Transparência, privacidade e controle em um só lugar.</p>
+                </div>
+                <div class="controls-group">
+                    <button class="theme-toggle-btn" id="themeToggleBtn">
+                        <i class="fa-solid fa-moon"></i>
+                        <span id="themeText">Modo Escuro</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="nav-and-search">
+                <div class="tabs-container">
+                    <button class="tab-btn active" data-tab="termos">
+                        <i class="fa-solid fa-file-contract"></i> Termos de Uso
+                    </button>
+                    <button class="tab-btn" data-tab="privacidade">
+                        <i class="fa-solid fa-user-lock"></i> Política de Privacidade
+                    </button>
+                </div>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar nas cláusulas...">
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Grid Layout -->
+        <div class="main-content">
+            <!-- Mobile Toggle Sidebar -->
+            <button class="sidebar-toggle-mobile" id="sidebarToggleMobile">
+                <span><i class="fa-solid fa-list-ul"></i> Índice do Documento</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar" id="sidebarNav">
+                <div class="sidebar-title">Neste Documento</div>
+                <ul class="sidebar-nav" id="sidebarList">
+                    <!-- Gerado via JS dinamicamente com base na aba ativa -->
+                </ul>
+            </aside>
+
+            <!-- Document Content -->
+            <main class="document-card">
+                <article id="tab-termos" class="tab-content active">
+                    <div class="doc-section" id="t-intro">
+                        <h2>1. Introdução e Aceitação</h2>
+                        <div class="tldr-box">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div class="tldr-box-content">
+                                <h4>Em Miúdos (TL;DR)</h4>
+                                <p>Ao criar uma conta ou navegar neste site, você concorda expressamente com nossas regras. Se não concordar, infelizmente não poderá utilizar nossos serviços.</p>
+                            </div>
+                        </div>
+                        <p>Bem-vindo à nossa plataforma. Estes Termos de Uso regem o acesso e a utilização dos nossos serviços, websites e aplicações oferecidas. Ao utilizar nossos serviços, você confirma que leu, compreendeu e aceitou integralmente todas as condições estabelecidas neste documento.</p>
+                        <p>Estes termos constituem um contrato vinculativo entre você ("Usuário") e a nossa empresa. Caso não concorde com qualquer disposição aqui presente, orientamos que interrompa imediatamente o uso do sistema.</p>
+                    </div>
+
+                    <div class="doc-section" id="t-cadastro">
+                        <h2>2. Cadastro e Segurança da Conta</h2>
+                        <div class="tldr-box">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div class="tldr-box-content">
+                                <h4>Em Miúdos (TL;DR)</h4>
+                                <p>Você é responsável por manter sua senha em segredo e por todas as ações realizadas na sua conta. Use dados reais no cadastro.</p>
+                            </div>
+                        </div>
+                        <p>Para ter acesso a funcionalidades exclusivas, você deverá realizar um cadastro fornecendo informações precisas, atualizadas e completas.</p>
+                        <ul>
+                            <li>A guarda e o sigilo de sua senha de acesso são de sua inteira responsabilidade.</li>
+                            <li>Não é permitido compartilhar suas credenciais de acesso com terceiros.</li>
+                            <li>Notifique-nos imediatamente caso suspeite de qualquer violação de segurança ou uso não autorizado de sua conta.</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-section" id="t-regras">
+                        <h2>3. Regras de Conduta e Uso Aceitável</h2>
+                        <div class="tldr-box">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div class="tldr-box-content">
+                                <h4>Em Miúdos (TL;DR)</h4>
+                                <p>Não utilize o sistema para fins ilícitos, invasão de privacidade, ataques cibernéticos ou envio de spam. Respeite os outros usuários.</p>
+                            </div>
+                        </div>
+                        <p>Você se compromete a utilizar a plataforma de forma ética e em conformidade com as leis vigentes. É estritamente proibido:</p>
+                        <ul>
+                            <li>Tentar violar a segurança, fazer engenharia reversa ou sobrecarregar nossos servidores.</li>
+                            <li>Publicar conteúdos ofensivos, ilegais, difamatórios ou que violem direitos de terceiros.</li>
+                            <li>Utilizar robôs, scrapers ou automações não autorizadas para coletar dados.</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-section" id="t-propriedade">
+                        <h2>4. Propriedade Intelectual</h2>
+                        <div class="tldr-box">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div class="tldr-box-content">
+                                <h4>Em Miúdos (TL;DR)</h4>
+                                <p>Todo o design, código, marca e conteúdo desta plataforma pertencem a nós. Você não tem permissão para copiar ou vender nosso material.</p>
+                            </div>
+                        </div>
+                        <p>Todos os direitos de propriedade intelectual relativos ao software, marcas, logotipos, layouts e conteúdos produzidos por nós são de nossa propriedade exclusiva ou foram devidamente licenciados.</p>
+                    </div>
+
+                    <div class="doc-section" id="t-cancelamento">
+                        <h2>5. Cancelamento e Rescisão</h2>
+                        <div class="tldr-box">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div class="tldr-box-content">
+                                <h4>Em Miúdos (TL;DR)</h4>
+                                <p>Você pode encerrar sua conta a qualquer momento nas configurações. Também podemos suspender contas que violem estes termos.</p>
+                            </div>
+                        </div>
+                        <p>O usuário poderá solicitar o encerramento de sua conta a qualquer momento através do painel de controle. Reservamo-nos o direito de suspender ou encerrar contas que violem nossos termos de uso sem aviso prévio.</p>
+                    </div>
+                </article>
+
+                <article id="tab-privacidade" class="tab-content">
+                    <div class="doc-section" id="p-coleta">
+                        <h2>1. Coleta de Dados Pessoais</h2>
+                        <div class="tldr-box">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div class="tldr-box-content">
+                                <h4>Em Miúdos (TL;DR)</h4>
+                                <p>Coletamos dados que você nos fornece (como nome e e-mail) e dados de navegação (como IP e cookies) para fazer o serviço funcionar.</p>
+                            </div>
+                        </div>
+                        <p>Em conformidade com a LGPD (Lei Geral de Proteção de Dados), coletamos apenas os dados estritamente necessários para a prestação dos nossos serviços:</p>
+                        <ul>
+                            <li><strong>Dados fornecidos diretamente:</strong> Nome completo, endereço de e-mail, telefone e informações de pagamento.</li>
+                            <li><strong>Dados de navegação:</strong> Endereço IP, tipo de navegador, páginas visitadas e tempo de permanência.</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-section" id="p-uso">
+                        <h2>2. Como Utilizamos seus Dados</h2>
+                        <div class="tldr-box">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div class="tldr-box-content">
+                                <h4>Em Miúdos (TL;DR)</h4>
+                                <p>Usamos suas informações para manter sua conta, processar pagamentos, dar suporte e, com sua permissão, enviar novidades.</p>
+                            </div>
+                        </div>
+                        <p>As informações coletadas são utilizadas com os seguintes propósitos:</p>
+                        <ul>
+                            <li>Prover, operar e manter nossas ferramentas funcionais.</li>
+                            <li>Processar transações e enviar confirmações relativas às compras.</li>
+                            <li>Enviar notificações técnicas, atualizações de segurança e mensagens de suporte.</li>
+                            <li>Prevenir fraudes e garantir a segurança operacional da plataforma.</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-section" id="p-compartilhamento">
+                        <h2>3. Compartilhamento com Terceiros</h2>
+                        <div class="tldr-box">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div class="tldr-box-content">
+                                <h4>Em Miúdos (TL;DR)</h4>
+                                <p>Não vendemos seus dados. Compartilhamos apenas com parceiros essenciais (ex: processadores de pagamento e servidores em nuvem).</p>
+                            </div>
+                        </div>
+                        <p>Não comercializamos seus dados pessoais com terceiros. O compartilhamento ocorre estritamente com parceiros operacionais necessários para execução do serviço (como gateways de pagamento, hospedagem em nuvem e ferramentas de envio de e-mail) e obrigações legais.</p>
+                    </div>
+
+                    <div class="doc-section" id="p-direitos">
+                        <h2>4. Seus Direitos (LGPD)</h2>
+                        <div class="tldr-box">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div class="tldr-box-content">
+                                <h4>Em Miúdos (TL;DR)</h4>
+                                <p>Você tem o direito de ver, corrigir, exportar ou pedir a exclusão total de seus dados da nossa base a qualquer momento.</p>
+                            </div>
+                        </div>
+                        <p>Como titular dos dados, você possui os seguintes direitos garantidos por lei:</p>
+                        <ul>
+                            <li>Confirmar a existência de tratamento de dados.</li>
+                            <li>Acessar seus dados pessoais cadastrados.</li>
+                            <li>Corrigir dados incompletos, inexatos ou desatualizados.</li>
+                            <li>Solicitar a eliminação completa dos seus dados pessoais dos nossos registros.</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-section" id="p-contato">
+                        <h2>5. Contato do Encarregado (DPO)</h2>
+                        <div class="tldr-box">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div class="tldr-box-content">
+                                <h4>Em Miúdos (TL;DR)</h4>
+                                <p>Qualquer dúvida sobre sua privacidade pode ser enviada diretamente para nosso Encarregado de Dados em dpo@exemplo.com.</p>
+                            </div>
+                        </div>
+                        <p>Caso tenha dúvidas sobre esta política de privacidade ou deseje exercer seus direitos de titular, entre em contato com nosso Encarregado de Proteção de Dados (DPO) através do e-mail <strong>dpo@exemplo.com</strong>.</p>
+                    </div>
+                </article>
+            </main>
+        </div>
+
+        <div class="consent-footer">
+            <div class="consent-title">Confirmação de Aceite</div>
+            <div class="checkbox-group">
+                <label class="checkbox-item">
+                    <input type="checkbox" id="checkTerms">
+                    <span>Li, compreendi e aceito integralmente os <strong>Termos de Uso</strong> e a <strong>Política de Privacidade</strong>. <span style="color: red;">*</span></span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" id="checkMarketing">
+                    <span>Aceito receber ofertas, novidades e e-mails de comunicação da plataforma. (Opcional)</span>
+                </label>
+            </div>
+            <div class="actions-row">
+                <button class="btn-confirm" id="btnConfirm" disabled>
+                    <i class="fa-solid fa-check"></i> Confirmar e Continuar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Registro de Log -->
+    <div class="modal-overlay" id="logModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <i class="fa-solid fa-circle-check"></i>
+                <h3>Consentimento Registrado!</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Seu aceite foi processado e registrado com sucesso em nosso sistema de auditoria legal (Log registrado).</p>
+            <div class="log-box" id="logDetails">
+                <!-- Preenchido via JS -->
+            </div>
+            <button class="btn-modal-close" id="btnCloseModal">Concluir</button>
+        </div>
+    </div>
+
+
+  <!-- Vinculamos o arquivo JavaScript externo -->
+  <script src="../JS/termos-uso.js"></script>
+</body>
+</html>
