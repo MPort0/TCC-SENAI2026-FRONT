@@ -29,14 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 return showAlert(data.error || 'Email ou senha incorretos.');
             }
 
-            // Salva dados do usuário no localStorage para uso em toda a aplicação
+            // Salva dados do usuário no localStorage (WEB) para uso em toda a aplicação
             if (data.user) {
                 localStorage.setItem('userEmail', data.user.email);
                 localStorage.setItem('userName', data.user.name);
             }
 
             showAlert('Login realizado com sucesso!');
-            window.location.href = '../HTML/home-usuario.html';
+            window.location.href = '../HTML/home.html';
         } catch (error) {
             console.error(error);
             showAlert('Erro de rede ao fazer login. Tente novamente.');
