@@ -28,11 +28,36 @@ function toggleMenu() {
     menu.classList.toggle("show");
 }
 
-function attachFile() {
-    const input = document.createElement("input");
-    input.type = "file";
+function attachImage() {
 
-    input.accept = "image/*,.pdf,.doc,.docx,.txt"; // Tipos de arquivos permitidos
+    const input = document.createElement("input");
+
+    input.type = "file";
+    input.accept = "image/*";
+
+    input.onchange = function () {
+
+        const arquivo = input.files[0];
+
+        if (!arquivo) {
+            return;
+        }
+
+        const chat = document.getElementById("chat");
+
+        const messageElement = document.createElement("div");
+        messageElement.classList.add("image-message");
+
+        const imagem = document.createElement("img");
+
+        imagem.src = URL.createObjectURL(arquivo);
+        imagem.classList.add("chat-image");
+
+        messageElement.appendChild(imagem);
+        chat.appendChild(messageElement);
+
+        chat.scrollTop = chat.scrollHeight;
+    };
 
     input.click();
 }
@@ -42,45 +67,35 @@ const fileInput = document.getElementById("fileInput");
 fileInput.addEventListener("change", function () {
 
     const arquivos = this.files;
-
-    if (arquivos.length === 0) {
-        return;
-    }
-
-    for (const arquivo of arquivos) {
-        console.log("Arquivo selecionado:", arquivo.name);
-    }
-});
-
-fileInput.addEventListener("change", function () {
-
-    const arquivos = this.files;
     const chat = document.getElementById("chat");
 
     for (const arquivo of arquivos) {
 
-        // Verifica se é uma imagem
         if (arquivo.type.startsWith("image/")) {
+
+            const messageElement = document.createElement("div");
+            messageElement.classList.add("image-message");
 
             const imagem = document.createElement("img");
 
             imagem.src = URL.createObjectURL(arquivo);
             imagem.classList.add("chat-image");
 
-            chat.appendChild(imagem);
+            messageElement.appendChild(imagem);
+            chat.appendChild(messageElement);
 
         } else {
 
-            // Para outros arquivos, mostra apenas o nome
             const mensagem = document.createElement("div");
 
-            mensagem.classList.add("file-message");
+            mensagem.classList.add("user-message");
             mensagem.textContent = "📎 " + arquivo.name;
 
             chat.appendChild(mensagem);
         }
     }
 
-    // Permite selecionar o mesmo arquivo novamente depois
     this.value = "";
+
+    chat.scrollTop = chat.scrollHeight;
 });
