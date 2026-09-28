@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Devolutiva Final</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../CSS/devolutiva.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="nav">
+
+            <a class="nav-item" href="#">
+                <span class="icon">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M15.9017 8.35826L11.4293 3.88594L4.38297 10.9323H5.96318V18.8831H8.94472V12.92H13.914V18.8831H16.8955V10.9323H18.4757L16.8955 9.35211V5.96309H15.9017V8.35826ZM1.98779 11.9262L11.4293 2.48462L14.9078 5.96309V4.96924H17.8894V8.94463L20.8709 11.9262H17.8894V19.877H12.9201V13.9139H9.93857V19.877H4.96934V11.9262H1.98779Z"
+                            fill="white"
+                        />
+                    </svg>
+                </span>
+
+                <span>Home</span>
+            </a>
+
+
+            <a class="nav-item" href="#">
+                <span class="icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9998 4.56996C14.0107 4.49083 14.0025 4.41025 13.9758 4.33496L13.9628 4.27196C13.926 4.11874 13.8652 3.97227 13.7828 3.83796C13.6908 3.68796 13.5608 3.55796 13.3008 3.29796L10.7108 0.707961C10.4518 0.447961 10.3218 0.317961 10.1708 0.224961C10.0183 0.131575 9.85033 0.0662135 9.67481 0.0319605C9.59952 0.00530569 9.51894 -0.00292397 9.43981 0.00796054C9.32881 0.00396054 9.19381 0.00396054 9.01481 0.00396054H6.80481C5.12481 0.00396054 4.28481 0.00396055 3.64481 0.330961C3.08169 0.619599 2.62345 1.07783 2.33481 1.64096C2.00781 2.28296 2.00781 3.12096 2.00781 4.80096V11.201C2.00781 12.881 2.00781 13.721 2.33481 14.361C2.62345 14.9241 3.08169 15.3823 3.64481 15.671C4.28681 15.998 5.12481 15.998 6.80481 15.998H9.20481C10.8848 15.998 11.7248 15.998 12.3648 15.671C12.9288 15.3834 13.3873 14.9249 13.6748 14.361C14.0018 13.719 14.0018 12.881 14.0018 11.201V4.98996C14.0018 4.81196 14.0018 4.67696 13.9968 4.56496L13.9998 4.56996ZM9.19981 14.97H6.79981C5.94281 14.97 5.35981 14.97 4.90981 14.932C4.47181 14.897 4.24681 14.832 4.09081 14.752C3.71451 14.5602 3.40856 14.2543 3.21681 13.878C3.13681 13.722 3.07181 13.498 3.03681 13.059C2.99981 12.609 2.99881 12.029 2.99881 11.169V4.76896C2.99881 3.91196 2.99981 3.32896 3.03681 2.87896C3.07281 2.44096 3.13781 2.21596 3.21681 2.05996C3.40881 1.68396 3.71481 1.37796 4.09081 1.18596C4.24681 1.10596 4.47181 1.04096 4.90981 1.00596C5.35981 0.969961 5.93981 0.969961 6.79981 0.969961H8.99981V4.46996C8.99981 4.60257 9.05249 4.72975 9.14626 4.82351C9.24003 4.91728 9.3672 4.96996 9.49981 4.96996H12.9998V11.17C12.9998 12.027 12.9998 12.61 12.9618 13.06C12.9268 13.498 12.8618 13.723 12.7818 13.879C12.5901 14.2553 12.2841 14.5612 11.9078 14.753C11.7518 14.833 11.5278 14.898 11.0888 14.933C10.6388 14.97 10.0598 14.97 9.19981 14.97ZM9.99981 1.36996L12.5898 3.95996H9.99981V1.36996Z" fill="white"/>
+                    </svg>
+                </span>
+
+                <span>Criar currículo</span>
+            </a>
+
+
+            <a class="nav-item active" href="#">
+                <span class="icon">
+                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none">
+
+                        <path
+                            d="M6.22188 13.0094C6.07187 13.0094 5.928 12.9499 5.82192 12.8438C5.71584 12.7377 5.65625 12.5938 5.65625 12.4438V5.65627C5.6563 5.55989 5.68098 5.46512 5.72794 5.38096C5.7749 5.2968 5.84259 5.22603 5.92458 5.17537C6.00657 5.12472 6.10015 5.09585 6.19643 5.09152C6.29271 5.08718 6.3885 5.10752 6.47472 5.1506L13.2623 8.54437C13.3561 8.5914 13.435 8.6636 13.4901 8.75291C13.5453 8.84221 13.5745 8.94509 13.5745 9.05005C13.5745 9.155 13.5453 9.25788 13.4901 9.34718C13.435 9.43649 13.3561 9.50869 13.2623 9.55572L6.47472 12.9495C6.39623 12.9888 6.30967 13.0094 6.22188 13.0094ZM6.78751 6.57146V11.5286L11.7447 9.05005L6.78751 6.57146Z"
+                            fill="white"
+                        />
+
+                        <path
+                            d="M9.05016 2.26248C10.3926 2.26248 11.7049 2.66057 12.8211 3.40639C13.9373 4.15222 14.8073 5.21229 15.321 6.45255C15.8348 7.69281 15.9692 9.05756 15.7073 10.3742C15.4454 11.6909 14.7989 12.9003 13.8497 13.8496C12.9004 14.7988 11.691 15.4453 10.3743 15.7072C9.05769 15.9691 7.69294 15.8346 6.45268 15.3209C5.21241 14.8072 4.15234 13.9372 3.40652 12.821C2.66069 11.7048 2.26261 10.3925 2.26261 9.05003C2.26261 7.24986 2.97772 5.52342 4.25064 4.25051C5.52355 2.9776 7.24999 2.26248 9.05016 2.26248ZM9.05016 1.13123C7.48397 1.13123 5.95295 1.59566 4.65071 2.46579C3.34846 3.33592 2.33349 4.57266 1.73413 6.01964C1.13478 7.46661 0.97796 9.05882 1.28351 10.5949C1.58906 12.131 2.34325 13.542 3.45072 14.6495C4.55818 15.7569 5.96918 16.5111 7.50528 16.8167C9.04138 17.1222 10.6336 16.9654 12.0806 16.3661C13.5275 15.7667 14.7643 14.7517 15.6344 13.4495C16.5045 12.1472 16.969 10.6162 16.969 9.05003C16.969 6.94984 16.1347 4.93566 14.6496 3.45059C13.1645 1.96553 11.1504 1.13123 9.05016 1.13123Z"
+                            fill="white"
+                        />
+
+                    </svg>
+                </span>
+
+                <span>Simulação</span>
+            </a>
+
+
+            <a class="nav-item" href="#">
+                <span class="icon">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.59813 3.58962C6.28616 0.905054 10.6558 0.9336 13.3603 3.63841C16.0659 6.34438 16.0933 10.7172 13.4056 13.4052C10.7178 16.0933 6.34559 16.0659 3.63996 13.3599C2.03659 11.7563 1.37449 9.56866 1.6588 7.49416C1.69864 7.20346 1.96656 7.00015 2.2572 7.03999C2.54785 7.07984 2.75117 7.34775 2.71133 7.63845C2.47054 9.39533 3.03092 11.2482 4.39117 12.6086C6.68906 14.9068 10.3886 14.9199 12.6543 12.6539C14.9201 10.3878 14.9069 6.68788 12.609 4.38971C10.3123 2.0927 6.61541 2.07838 4.34934 4.34093L4.8789 4.34359C5.17226 4.34506 5.40888 4.5841 5.40741 4.8775C5.40593 5.1709 5.16692 5.40755 4.87356 5.40608L3.07068 5.39702C2.7794 5.39555 2.54364 5.15975 2.54218 4.86844L2.53312 3.06534C2.53164 2.77195 2.76826 2.5329 3.06162 2.53142C3.35499 2.52995 3.594 2.7666 3.59547 3.06L3.59813 3.58962ZM8.50006 5.13451C8.79341 5.13451 9.03124 5.37236 9.03124 5.66576V8.27907L10.6463 9.89428C10.8537 10.1018 10.8537 10.4381 10.6463 10.6455C10.4388 10.853 10.1025 10.853 9.89509 10.6455L7.96887 8.71916V5.66576C7.96887 5.37236 8.2067 5.13451 8.50006 5.13451Z" fill="white"/>
+                    </svg>
+
+                </span>
+
+                <span>Histórico</span>
+            </a>
+
+
+            <a class="nav-item" href="#">
+                <span class="icon">
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none">
+                        <circle
+                            cx="8.5"
+                            cy="8.5"
+                            r="7.08"
+                            stroke="white"
+                            stroke-width="1.5"
+                        />
+
+                        <circle
+                            cx="8.5"
+                            cy="6.74"
+                            r="2.32"
+                            stroke="white"
+                            stroke-width="1.5"
+                        />
+
+                        <path
+                            d="M3.73 13.73C3.8 12.4 5.8 10.61 8.5 10.61C11.2 10.61 13.2 12.4 13.27 13.73"
+                            stroke="white"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                        />
+                    </svg>
+                </span>
+
+                <span>Perfil</span>
+            </a>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <span>Sair</span>
+
+            <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+
+            <span>Suporte</span>
+
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
+                <circle
+                    cx="10"
+                    cy="10"
+                    r="7.5"
+                    stroke="white"
+                    stroke-width="1"
+                />
+
+                <path
+                    d="M7.7 7.6C7.9 6.5 8.8 5.7 10.1 5.7C11.5 5.7 12.4 6.5 12.4 7.7C12.4 9 11.5 9.5 10.8 10.1C10.3 10.5 10 10.9 10 11.6"
+                    stroke="white"
+                    stroke-width="1"
+                />
+
+                <circle
+                    cx="10"
+                    cy="14.2"
+                    r=".65"
+                    fill="white"
+                />
+            </svg>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <div class="content">
+
+            <h1>Devolutiva Final</h1>
+
+
+            <!-- RESUMO -->
+            <section class="summary">
+
+                <strong>RESUMO DA AVALIAÇÃO:</strong>
+
+                <p>
+                    O candidato exibe um conhecimento fundamental sólido e boa compreensão teórica 
+                    dos conceitos de HTML/CSS. A comunicação é clara e articulada.
+                    No entanto, a aplicação prática apresenta lacunas na estruturação de
+                    soluções complexas e na fundamentação técnica, indicando necessidade
+                    de maior experiência prática para atingir um nível pleno.
+                    O desempenho reflete um perfil de nível intermediário promissor.
+                </p>
+
+            </section>
+
+
+            <!-- DESEMPENHO -->
+            <section class="card performance">
+
+                <h2>DESEMPENHO POR COMPETÊNCIA:</h2>
+
+
+                <div class="metric">
+
+                    <div class="metric-name">
+                        Competências fundamentais
+                    </div>
+
+                    <div class="metric-track">
+                        <div class="metric-fill one"></div>
+                    </div>
+
+                    <div class="metric-value">
+                        Bom
+                    </div>
+
+                    <div class="metric-scale">
+                        <span>Ruim</span>
+                        <span>Regular</span>
+                        <span>Bom</span>
+                        <span>Excelente</span>
+                    </div>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <div class="metric-name">
+                        Aplicação prática
+                    </div>
+
+                    <div class="metric-track">
+                        <div class="metric-fill two"></div>
+                    </div>
+
+                    <div class="metric-value">
+                        Regular
+                    </div>
+
+                    <div class="metric-scale">
+                        <span>Ruim</span>
+                        <span>Regular</span>
+                        <span>Bom</span>
+                        <span>Excelente</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PONTOS FORTES / ERROS -->
+            <div class="cards-row">
+
+                <section class="card strengths">
+
+                    <h2>
+
+                        <span class="card-titulo">
+
+                            <svg width="18" height="18" viewBox="0 0 23 23" fill="none">
+
+                                <circle
+                                    cx="11.5"
+                                    cy="11.5"
+                                    r="8.6"
+                                    stroke="#14AE5C"
+                                    stroke-width="1.5"
+                                />
+
+                                <path
+                                    d="M7.2 11.6L10.1 14.2L16 8.1"
+                                    stroke="#14AE5C"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                            </svg>
+
+                            PONTOS FORTES
+
+                        </span>
+
+                    </h2>
+
+
+                    <ul>
+                        <li>Demonstra domínio conceitual do tema</li>
+                        <li>Comunicação clara e objetiva</li>
+                    </ul>
+
+                </section>
+
+
+                <section class="card errors">
+
+                    <h2>
+
+                        <span class="card-titulo">
+
+                            <svg width="18" height="18" viewBox="0 0 20 18" fill="none">
+
+                                <path
+                                    d="M10 1L18.7 16.3H1.3L10 1Z"
+                                    stroke="#ff3b30"
+                                    stroke-width="1.2"
+                                />
+
+                                <path
+                                    d="M10 6V10.5"
+                                    stroke="#ff3b30"
+                                    stroke-width="1.2"
+                                    stroke-linecap="round"
+                                />
+
+                                <circle
+                                    cx="10"
+                                    cy="13.4"
+                                    r=".7"
+                                    fill="#ff3b30"
+                                />
+
+                            </svg>
+
+                            PRINCIPAIS ERROS
+
+                        </span>
+
+                    </h2>
+
+
+                    <ul>
+                        <li>Faltam exemplos concretos para sustentar argumentos</li>
+                        <li>A resposta poderia ser mais detalhada</li>
+                    </ul>
+
+                </section>
+
+            </div>
+
+
+            <!-- SUGESTÕES -->
+            <section class="card suggestions">
+
+                <h2>
+
+                    <span class="card-titulo">
+
+                        <svg width="18" height="18" viewBox="0 0 23 23" fill="none">
+
+                            <path
+                                d="M11.5 19.2V5.8M11.5 5.8C11.5 5.8 10.1 3.9 6.7 3.9C3.4 3.9 1.9 5.8 1.9 5.8V19.2C1.9 19.2 3.4 18.3 6.7 18.3C10.1 18.3 11.5 19.2 11.5 19.2ZM11.5 5.8C11.5 5.8 12.9 3.9 16.3 3.9C19.6 3.9 21.1 5.8 21.1 5.8V19.2C21.1 19.2 19.6 18.3 16.3 18.3C12.9 18.3 11.5 19.2 11.5 19.2Z"
+                                stroke="#5F7FBF"
+                                stroke-width="1.6"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+
+                        </svg>
+
+                        SUGESTÕES DE ESTUDO
+
+                    </span>
+
+                </h2>
+
+
+                <ul>
+                    <li>Reforçar boas práticas em HTML/CSS</li>
+                </ul>
+
+            </section>
+
+
+            <!-- BOTÕES -->
+            <div class="actions">
+
+                <button class="btn btn-outline" type="button">
+
+                    <svg width="18" height="18" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.4375 14.0625V12.5H18.75V20.3125H20.3125V17.1875H22.6562V15.625H20.3125V14.0625H23.4375ZM14.8438 20.3125H11.7188V12.5H14.8438C15.4652 12.5006 16.0609 12.7477 16.5003 13.1872C16.9397 13.6266 17.1869 14.2223 17.1875 14.8438V17.9688C17.1869 18.5902 16.9397 19.1859 16.5003 19.6253C16.0609 20.0648 15.4652 20.3119 14.8438 20.3125ZM13.2812 18.75H14.8438C15.051 18.75 15.2497 18.6677 15.3962 18.5212C15.5427 18.3747 15.625 18.176 15.625 17.9688V14.8438C15.625 14.6365 15.5427 14.4378 15.3962 14.2913C15.2497 14.1448 15.051 14.0625 14.8438 14.0625H13.2812V18.75ZM8.59375 12.5H4.6875V20.3125H6.25V17.9688H8.59375C9.00796 17.9681 9.40503 17.8033 9.69792 17.5104C9.99081 17.2175 10.1556 16.8205 10.1562 16.4062V14.0625C10.1562 13.6481 9.99163 13.2507 9.6986 12.9576C9.40558 12.6646 9.00815 12.5 8.59375 12.5ZM6.25 16.4062V14.0625H8.59375L8.59453 16.4062H6.25Z" fill="white"/>
+                    <path d="M17.1875 10.9379V7.81286C17.1903 7.71018 17.1707 7.60813 17.1303 7.51372C17.0898 7.41932 17.0294 7.3348 16.9531 7.26598L11.4844 1.79723C11.4159 1.72057 11.3314 1.65985 11.2369 1.61935C11.1425 1.57886 11.0402 1.55957 10.9375 1.56286H3.125C2.71098 1.5641 2.31427 1.72911 2.02151 2.02187C1.72875 2.31463 1.56374 2.71134 1.5625 3.12536V21.8754C1.5625 22.2898 1.72712 22.6872 2.02015 22.9802C2.31317 23.2732 2.7106 23.4379 3.125 23.4379H15.625V21.8754H3.125V3.12536H9.375V7.81286C9.37624 8.22688 9.54125 8.62359 9.83401 8.91635C10.1268 9.20911 10.5235 9.37412 10.9375 9.37536H15.625V10.9379H17.1875ZM10.9375 7.81286V3.43786L15.3125 7.81286H10.9375Z" fill="white"/>
+                    </svg>
+
+                    Baixar PDF
+
+                </button>
+
+
+                <button class="btn btn-primary" type="button">
+
+                    <svg width="18" height="18" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1.625C6.71836 1.625 1.625 6.71836 1.625 13C1.625 19.2816 6.71836 24.375 13 24.375C19.2816 24.375 24.375 19.2816 24.375 13C24.375 6.71836 19.2816 1.625 13 1.625ZM13 22.4453C7.78477 22.4453 3.55469 18.2152 3.55469 13C3.55469 7.78477 7.78477 3.55469 13 3.55469C18.2152 3.55469 22.4453 7.78477 22.4453 13C22.4453 18.2152 18.2152 22.4453 13 22.4453Z" fill="#E2E8F0"/>
+                    <path d="M18.266 12.6725L10.7479 7.21349C10.6876 7.16929 10.6162 7.1427 10.5417 7.13668C10.4671 7.13067 10.3924 7.14547 10.3258 7.17943C10.2592 7.21339 10.2033 7.26518 10.1644 7.32902C10.1255 7.39287 10.1051 7.46626 10.1055 7.54102V18.459C10.1055 18.7916 10.4813 18.9795 10.7479 18.7865L18.266 13.3275C18.3179 13.2901 18.3602 13.2409 18.3894 13.184C18.4185 13.127 18.4337 13.064 18.4337 13C18.4337 12.936 18.4185 12.873 18.3894 12.816C18.3602 12.7591 18.3179 12.7099 18.266 12.6725ZM11.7254 16.0748V9.9252L15.958 13L11.7254 16.0748Z" fill="#E2E8F0"/>
+                    </svg>
+
+                    Nova Entrevista
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="floating-button"
+            aria-label="Ajuda"
+        >
+            ◇
+        </button>
+
+    </main>
+
+</body>
+</html>
