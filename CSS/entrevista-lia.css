@@ -139,17 +139,21 @@ input {
     color: white;
     padding: 12px 14px;
     border-radius: 14px;
-    max-width: 60%;
+    max-width: 70%;
+    width: fit-content;
     margin-left: auto;
     margin-bottom: 15px;
     font-size: 14px;
-    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .input-area {
     position: relative;
-    width: 53%;
-    height: 47px;
+    width: 90%;
+    max-width: 700px;
+    height: 51px;
     margin: 0 auto 14px;
     background: #394e82;
     border-radius: 20px;
