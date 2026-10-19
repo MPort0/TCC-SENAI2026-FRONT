@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-sidebar);
+  padding: 32px 20px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   HEADER / LOGO
+   ========================================================================== */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 36px;
+  padding-left: 8px;
+}
+
+.logo-badge {
+  width: 44px;
+  height: 44px;
+  background-color: var(--badge-bg);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-blue);
+}
+
+.logo-badge svg {
+  width: 22px;
+  height: 22px;
+}
+
+.brand-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.brand-dark {
+  color: var(--text-primary);
+}
+
+.brand-blue {
+  color: var(--primary-blue);
+  margin-left: 2px;
+}
+
+/* ==========================================================================
+   NAVEGAÇÃO PRINCIPAL
+   ========================================================================== */
+.nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2b3674; /* Cor dos ícones/textos normais */
+  transition: all 0.2s ease;
+}
+
+.nav-item svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2px;
+  color: #2b3674;
+}
+
+/* Item Ativo (Início) */
+.nav-item.active {
+  background-color: var(--active-bg);
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.nav-item.active svg {
+  color: var(--primary-blue);
+}
+
+.nav-item:hover:not(.active) {
+  background-color: var(--badge-bg);
+}
+
+/* ==========================================================================
+   RODAPÉ / USUÁRIO
+   ========================================================================== */
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 8px;
+}
+
+.user-avatar {
+  width: 44px;
+  height: 44px;
+  background-color: var(--badge-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--avatar-icon);
+  flex-shrink: 0;
+}
+
+.user-avatar svg {
+  width: 22px;
+  height: 22px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.user-nome {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.user-email {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--divider-color);
+  width: 100%;
+}
+
+.bottom-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
