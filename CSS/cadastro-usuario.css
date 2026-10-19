@@ -1,0 +1,175 @@
+/* cadastro.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-page);
+    /* Mesmo fundo do Login */
+    color: var(--text-primary);
+    /* Mesmo texto principal */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logo-e-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* Garante que o container alinhe os itens ao centro corretamente */
+}
+
+.logo {
+    margin-bottom: 20px;
+    max-width: 150px;
+    /* AJUSTE AQUI: Impede a logo de crescer e esticar o card */
+    width: 100%;
+    /* Faz a logo se adaptar proporcionalmente */
+    height: auto;
+    /* Mantém a proporção sem amassar o desenho */
+    display: block;
+}
+
+/* Seleciona o segundo path de dentro do seu SVG da logo */
+.logo path:nth-of-type(2) {
+    fill: var(--cor-path-2);
+    transition: fill 0.3s ease;
+    /* Faz a mudança de cor ficar suave */
+}
+
+.register-card {
+    background-color: var(--bg-card);
+    /* Mesmo fundo de card do Login */
+    border: 1px solid var(--border-card);
+    /* Mesma borda de card do Login */
+    border-radius: 16px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: var(--card-shadow);
+    /* Mesma sombra do Login */
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    /* Mesma cor secundária do Login */
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    transition: color 0.2s;
+}
+
+.btn-back:hover {
+    color: var(--text-primary);
+}
+
+.btn-back svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 28px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-labels);
+    /* Mesma cor de label do Login */
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    background-color: var(--bg-input);
+    /* Mesmo fundo de input do Login */
+    border: 1px solid var(--border-input);
+    /* Mesma borda de input do Login */
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, background-color 0.3s, color 0.3s;
+}
+
+input::placeholder {
+    color: var(--text-placeholder);
+    /* Mesmo placeholder do Login */
+}
+
+input:focus {
+    border-color: var(--color-primary);
+    /* Mesma cor de foco do Login */
+}
+
+.input-wrapper input {
+    padding-right: 44px;
+}
+
+.olho-fechado,
+.olho-aberto {
+    position: absolute;
+    right: 14px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.olho-aberto {
+    display: none;
+}   
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--color-primary);
+    /* Mesmo botão azul do Login */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-primary-hover);
+}
