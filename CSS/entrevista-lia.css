@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #02082c;
+    --sidebar-border: #505873;
+    --text: #ffffff;
+    --muted: #98aaca;
+    --muted-2: #94a3b8;
+    --primary: #5f7fbf;
+    --primary-button: #495e97;
+    --active: #627dbc;
+    --avatar: #0d0b6c;
+    --card: #1b2550;
+    --card-border: #2d3a68;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+body {
+    min-height: 100vh;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background: var(--bg);
+}
+
+/* =========================
+   MENU LATERAL
+   ========================= */
+
+.sidebar {
+    width: 16.3%;
+    min-height: 100vh;
+    border-right: 0.06rem solid var(--sidebar-border);
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 1.4%;
+    flex-shrink: 0;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    width: 100%;
+    min-height: 3.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0 1.7rem;
+    border-radius: 0.45rem;
+    color: var(--text);
+    text-decoration: none;
+    font-size: clamp(0.8rem, 0.9vw, 1rem);
+}
+
+.nav-item .icon {
+    width: 1.1rem;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.nav-item.active {
+    background: var(--active);
+}
+
+.sidebar-bottom {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.sidebar-bottom a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: clamp(0.7rem, 0.8vw, 0.9rem);
+    white-space: nowrap;
+}
+
+/* =========================
+   ENTREVISTA
+========================= */
+
+.interview {
+    flex: 1;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.interview-header {
+    padding: 32px 39px;
+}
+
+.interview-header svg {
+    width: 150px;
+    height: auto;
+}
+
+.chat {
+    flex: 1;
+    display: flex;
+    flex-direction:column;
+    padding: 20px 40px;
+    overflow-y: auto;
+}
+
+.user-message {
+    background: #3f568d;
+    color: white;
+    padding: 12px 14px;
+    border-radius: 14px;
+    max-width: 60%;
+    margin-left: auto;
+    margin-bottom: 15px;
+    font-size: 14px;
+    word-wrap: break-word;
+    transform: translate(-331px, 228px);
+}
+
+.input-area {
+    position: relative;
+    width: 53%;
+    height: 47px;
+    margin: 0 auto 14px;
+    background: #394e82;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 3px 5px;
+    transform: translateY(-23px);
+}
+
+.input-area input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transform: translateX(6px);
+}
+
+.input-area input::placeholder {
+    color: #aeb8d0;
+}
+
+.add-menu {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    background: #3f568d;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+.add-menu.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-menu svg {
+    width: 18px;
+    height: 19px;
+    margin-right: 1px;
+    transform: translate(-2px, 2px);
+}
+
+.add-menu button {
+    background: transparent;
+    border: none;
+    color: #aeb8d0;
+    padding: 8px 1px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.chat-image {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 12px;
+    display: block;
+    transform: translate(897px, 456px);
+}
+
+/* =========================
+   BOTÕES FUNCIONAIS
+========================= */
+
+.add-button,
+.language-button,
+.send-button {
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.add-button {
+    width: 36px;
+    font-size: 24px;
+}
+
+.language-button {
+    font-size: 9px;
+    margin-right: 4px;
+}
+
+.send-button {
+    transform: translateY(2px);
+}

@@ -5,97 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Conta</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/cadastro.css">
     <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
-    <link rel="stylesheet" href="../CSS/cadastro-usuario.css">
-    <link rel="stylesheet" href="../CSS/temas.css">
 </head>
 
 <body>
-    <div class="logo-e-login">
-        <svg class="logo" width="112" height="36" viewBox="0 0 112 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="36" height="36" rx="8" fill="#5F7FBF" />
-            <path
-                d="M15.2067 20.4219C15.6647 20.872 16.2217 21.2067 16.8343 21.3997C17.447 21.5927 18.0985 21.6396 18.738 21.5354L22.9352 20.8504L22.2053 23.0791C22.1761 23.1689 22.1298 23.2526 22.069 23.325C22.0083 23.3972 21.934 23.4565 21.851 23.5004L21.8481 23.5016L21.8462 23.5018L21.8356 23.5074L21.8069 23.5232L21.7014 23.574C21.1561 23.8232 20.5891 24.0208 20.0095 24.1636C18.9325 24.4283 17.4497 24.5935 15.9431 24.1188C14.4364 23.6441 13.3306 22.6629 12.611 21.8322C12.2498 21.4128 11.9778 21.0231 11.7954 20.7352C11.7034 20.589 11.6342 20.4732 11.588 20.3884L11.5324 20.2858L11.5104 20.2473L11.5093 20.2424C11.4676 20.1594 11.4424 20.0683 11.4358 19.9748C11.4291 19.8814 11.4409 19.787 11.4703 19.6973L12.2003 17.4705L15.2067 20.4219ZM18.757 11.7337C19.1649 11.6747 19.5789 11.7072 19.9687 11.83C20.3585 11.9528 20.7148 12.1626 21.0113 12.4435L26.5188 17.6563C26.6147 17.7471 26.6826 17.8648 26.7151 17.9942C26.7474 18.1235 26.7433 18.2601 26.7025 18.3885C26.6616 18.5171 26.5853 18.6321 26.4835 18.7206C26.3818 18.809 26.2581 18.8673 26.1265 18.8886L18.5424 20.1239C18.1188 20.1931 17.687 20.1621 17.2812 20.0342C16.8753 19.9063 16.5064 19.6844 16.2031 19.3861L11.5793 14.8455L10.576 17.9094C10.5167 18.0902 10.3892 18.2413 10.2216 18.3297C10.0539 18.4181 9.8594 18.4361 9.68147 18.38C9.50369 18.3239 9.35672 18.1987 9.27285 18.0312C9.18896 17.8635 9.17453 17.6671 9.23384 17.4861L10.5868 13.3564C10.6244 13.2193 10.7016 13.095 10.8079 13.0006C10.9141 12.9063 11.0452 12.8452 11.1841 12.8253L18.757 11.7337Z"
-                fill="white" />
-            <path
-                d="M50.982 24.768H46.266L45.51 27H42.288L46.86 14.364H50.424L54.996 27H51.738L50.982 24.768ZM50.19 22.392L48.624 17.766L47.076 22.392H50.19ZM60.9055 24.12L63.0835 16.956H66.3595L62.7955 27H58.9975L55.4335 16.956H58.7275L60.9055 24.12ZM67.0431 21.96C67.0431 20.928 67.2351 20.022 67.6191 19.242C68.0151 18.462 68.5491 17.862 69.2211 17.442C69.8931 17.022 70.6431 16.812 71.4711 16.812C72.1791 16.812 72.7971 16.956 73.3251 17.244C73.8651 17.532 74.2791 17.91 74.5671 18.378V16.956H77.6451V27H74.5671V25.578C74.2671 26.046 73.8471 26.424 73.3071 26.712C72.7791 27 72.1611 27.144 71.4531 27.144C70.6371 27.144 69.8931 26.934 69.2211 26.514C68.5491 26.082 68.0151 25.476 67.6191 24.696C67.2351 23.904 67.0431 22.992 67.0431 21.96ZM74.5671 21.978C74.5671 21.21 74.3511 20.604 73.9191 20.16C73.4991 19.716 72.9831 19.494 72.3711 19.494C71.7591 19.494 71.2371 19.716 70.8051 20.16C70.3851 20.592 70.1751 21.192 70.1751 21.96C70.1751 22.728 70.3851 23.34 70.8051 23.796C71.2371 24.24 71.7591 24.462 72.3711 24.462C72.9831 24.462 73.4991 24.24 73.9191 23.796C74.3511 23.352 74.5671 22.746 74.5671 21.978ZM81.3119 27.144C80.7719 27.144 80.3279 26.988 79.9799 26.676C79.6439 26.352 79.4759 25.956 79.4759 25.488C79.4759 25.008 79.6439 24.606 79.9799 24.282C80.3279 23.958 80.7719 23.796 81.3119 23.796C81.8399 23.796 82.2719 23.958 82.6079 24.282C82.9559 24.606 83.1299 25.008 83.1299 25.488C83.1299 25.956 82.9559 26.352 82.6079 26.676C82.2719 26.988 81.8399 27.144 81.3119 27.144ZM88.0299 24.624H92.0619V27H84.9519V14.364H88.0299V24.624ZM95.0781 15.912C94.5381 15.912 94.0941 15.756 93.7461 15.444C93.4101 15.12 93.2421 14.724 93.2421 14.256C93.2421 13.776 93.4101 13.38 93.7461 13.068C94.0941 12.744 94.5381 12.582 95.0781 12.582C95.6061 12.582 96.0381 12.744 96.3741 13.068C96.7221 13.38 96.8961 13.776 96.8961 14.256C96.8961 14.724 96.7221 15.12 96.3741 15.444C96.0381 15.756 95.6061 15.912 95.0781 15.912ZM96.6081 16.956V27H93.5301V16.956H96.6081ZM98.2267 21.96C98.2267 20.928 98.4187 20.022 98.8027 19.242C99.1987 18.462 99.7327 17.862 100.405 17.442C101.077 17.022 101.827 16.812 102.655 16.812C103.363 16.812 103.981 16.956 104.509 17.244C105.049 17.532 105.463 17.91 105.751 18.378V16.956H108.829V27H105.751V25.578C105.451 26.046 105.031 26.424 104.491 26.712C103.963 27 103.345 27.144 102.637 27.144C101.821 27.144 101.077 26.934 100.405 26.514C99.7327 26.082 99.1987 25.476 98.8027 24.696C98.4187 23.904 98.2267 22.992 98.2267 21.96ZM105.751 21.978C105.751 21.21 105.535 20.604 105.103 20.16C104.683 19.716 104.167 19.494 103.555 19.494C102.943 19.494 102.421 19.716 101.989 20.16C101.569 20.592 101.359 21.192 101.359 21.96C101.359 22.728 101.569 23.34 101.989 23.796C102.421 24.24 102.943 24.462 103.555 24.462C104.167 24.462 104.683 24.24 105.103 23.796C105.535 23.352 105.751 22.746 105.751 21.978Z"
-                fill="white" />
-        </svg>
-        <div class="register-card">
 
-            <a href="login-usuario.html" class="btn-back">
-                <svg viewBox="0 0 24 24">
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                </svg>
-                Voltar
-            </a>
+    <div class="register-card">
+        <a href="../HTML/login-usuario.html" class="btn-back">
+            <img src="../IMG/seta-voltar.svg" alt="Voltar">
+            Voltar
+        </a>
 
-            <h1 class="title">Criar conta</h1>
+        <h1 class="title">Criar conta</h1>
 
-            <form onsubmit="event.preventDefault();">
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" placeholder="Insira seu nome">
+        <form id="formCadastro">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Insira seu nome">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="Insira seu e-mail">
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <div class="input-wrapper">
+                    <input type="password" id="senha" placeholder="Digite sua senha">
+                    <img src="../IMG/ocultar-senha.svg" id="icone-senha" alt="Ocultar senha" class="toggle-icon"
+                        onclick="toggleSenha()">
                 </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" placeholder="seuemail@gmail.com">
+            <!-- IDS ALINHADOS COM O JS -->
+            <ul id="regras-senha">
+                <li id="regra-caracteres">Mínimo de 8 caracteres</li>
+                <li id="regra-maiuscula">Pelo menos uma letra maiúscula</li>
+                <li id="regra-minuscula">Pelo menos uma letra minúscula</li>
+                <li id="regra-numero">Pelo menos um número</li>
+                <li id="regra-especial">Pelo menos um caractere especial</li>
+            </ul>
+
+            <div class="form-group">
+                <label for="confirmar-senha">Confirmar senha:</label>
+                <div class="input-wrapper">
+                    <input type="password" id="confirmar-senha" placeholder="Confirme sua senha">
+                    <img src="../IMG/ocultar-senha.svg" id="icone-confirmarSenha" alt="Ocultar senha"
+                        class="toggle-icon" onclick="toggleConfirmar()">
                 </div>
-
-                <div class="form-group">
-                    <label for="senha">Senha:</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="senha" placeholder="**********">
-                        
-                        <!-- olho fechado -->
-                    <img class="olho-fechado" width="24" height="24" src="../IMG/ocultar-senha.svg" alt="Ícone de olho fechado">
-
-                    
-
-                    
-                    
-                    <!-- olho aberto -->
-                    <img class="olho-aberto" width="24" height="24" src="../IMG/ver-senha.svg" alt="Ícone de olho aberto">
-
-
-
-
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="confirmar-senha">Confirmar senha:</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="confirmar-senha" placeholder="**********">
-
-                    
-                        <!-- olho fechado -->
-                    <img class="olho-fechado" width="24" height="24" src="../IMG/ocultar-senha.svg" alt="Ícone de olho fechado">
-
-                    
-
-                    
-                    
-                    <!-- olho aberto -->
-                    <img class="olho-aberto" width="24" height="24" src="../IMG/ver-senha.svg" alt="Ícone de olho aberto">
-
-
-                    </div>
-                </div>
-                <button href="home.html"type="submit" class="btn-submit">Criar conta</button>
-        </div>
+                <button type="submit" class="btn-submit">Criar conta</button>
+            </div>
 
         </form>
     </div>
-    </div>
 
 </body>
-<script src="../JS/temas.js"></script>
-<script src="../JS/olho.js"></script>
+
+<script src="../JS/cadastro.js" defer></script>
+<script src="../JS/ipback.js"></script>
 
 </html>

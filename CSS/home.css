@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #02082e;
+    color: white;
+}
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ================= CONTEÚDO ================= */
+
+.main-content {
+    flex: 1;
+    display: flex;
+    padding: 35px 105px 50px ;
+    margin-left: 284px;
+    
+    
+}
+
+.topo{
+    margin-right: 200px;
+}
+
+.primeira-escrita h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    color: #66708e;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 28px;
+}
+
+
+/* ================= PROGRESSO ================= */
+
+.bloquinho {
+    width: 850px;
+    height: 205px;
+    padding: 16px;
+    background: #00093c;
+    border: 1px solid #94a3b8;
+    border-radius: 8px;
+}
+
+.seu-progresso {
+    font-size: 18px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.progresso {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* NÚMEROS DO PROGRESSO */
+.numero {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.numero strong {
+    font-size: 40px;
+}
+
+.numero span {
+    font-size: 15px;
+    color: #7d88a4;
+}
+
+
+/* BOTÕES */
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 12px;
+}
+
+.numero button {
+    border: none;
+    margin-top: 20px;
+    border-radius: 6px;
+    background: #6685c5;
+    color: white;
+    padding: 8px 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nova-entrevista .botao-outline .novo-curriculo {
+    font-size: 15px;
+}
+
+.botoes .botao-outline {
+    background: transparent;
+    border: 1px solid #6685c5;
+}
+
+
+/* ================= COMO FUNCIONA ================= */
+
+.bloquinho-2 {
+    width: 850px;
+    height: 230px;
+    padding: 16px;
+    margin-top: 8px;
+    background: #00093c;
+    border: 1px solid #94a3b8;
+    border-radius: 8px;
+}
+
+.bloquinho-2 > h2 {
+    font-size: 18px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.etapas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.etapa {
+    min-height: 120px;
+    padding: 8px;
+    background: #00052d;
+    border-radius: 5px;
+}
+
+.numero-etapa {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #25386c;
+    font-size: 22px;
+    margin-bottom: 7px;
+}
+
+.etapa h3 {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.etapa p {
+    color: #66708e;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+
+/* ================= DICAS ================= */
+
+.bloquinho-5 {
+    width: 850px;
+    height: 230px;
+    padding: 14px;
+    margin-top: 12px;
+    background: #00093c;
+    border: 1px solid #94a3b8;
+    border-radius: 8px;
+}
+
+.bloquinho-5 h2 {
+    color: #94a3b8;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.bloquinho-5 p {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
