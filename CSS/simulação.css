@@ -195,46 +195,60 @@ h1 {
    BOTÃO INICIAR
 ========================= */
 
-.start-button {
-    width: calc(100% - 4px);
-    max-width: 910px;
-    height: 52px;
-    margin-top: 62px;
-    border: none;
-    border-radius: 8px;
-    background: #6984c5;
-    color: white;
-    font-family: inherit;
-    font-size: 17px;
-    cursor: pointer;
-    display: flex;
+.botao-iniciar {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    transition: 0.2s;
-}
-
-.start-button:hover {
-    background: #7895d6;
-}
-
-.play-icon {
+    gap: 12px;
+    width: 100%;
+    max-width: 680px;
+    height: 52px;
+    background-color: #6685c5;
+    color: #ffffff;
+    font-family: inherit;
     font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    transform: translateY(49px);
+}
+
+.botao-iniciar:hover {
+    background-color: #678ad1;
+}
+
+.botao-iniciar span {
+    font-size: 14px;
 }
 
 /* =========================
    BOTÃO FLUTUANTE
-========================= */
+   ========================= */
 
-.floating-support {
+.lia {
     position: fixed;
-    right: 22px;
-    bottom: 20px;
-    width: 42px;
-    height: 42px;
+    right: 2%;
+    bottom: 5%;
+    width: clamp(2.8rem, 3.2vw, 3.3rem);
+    aspect-ratio: 1;
     border: none;
-    border-radius: 6px;
-    background: #6685c5;
-    color: white;
+    border-radius: 0.5rem;
+    background: var(--active);
     cursor: pointer;
+
+    display: flex;
+    /* centraliza o conteúdo */
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* remove espaçamento extra */
+}
+
+.lia svg {
+    width: 70%;
+    /* SVG se adapta ao botão */
+    height: auto;
 }

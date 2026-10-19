@@ -7,7 +7,7 @@
     --muted: #98aaca;
     --muted-2: #94a3b8;
     --primary: #5f7fbf;
-    --primary-button: #495e97;
+    --primary-button: #6685c5;
     --active: #627dbc;
     --avatar: #0d0b6c;
     --card: #1b2550;
@@ -204,15 +204,15 @@ input {
     border: 0;
     border-radius: 0.5rem;
     background: var(--primary-button);
-    color: #d8deea;
-    font-size: clamp(0.85rem, 1vw, 1rem);
-    font-weight: 700;
+    color: #ffffff;
+    font-family: inherit;
+    font-weight: 500;
     cursor: pointer;
-    transition: filter 0.2s, transform 0.1s;
+    transition: background-color 0.2s ease;
 }
 
 .profile-form button:hover {
-    filter: brightness(1.12);
+    background-color: #678ad1;
 }
 
 .profile-form button:active {

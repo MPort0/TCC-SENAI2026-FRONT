@@ -197,19 +197,27 @@ PARTE INFERIOR
     font-size: clamp(0.7rem, 0.8vw, 0.9rem)
 }
 
-/* =========================
-   BOTÃO FLUTUANTE
-========================= */
-
-.floating-support {
+.lia {
     position: fixed;
-    right: 22px;
-    bottom: 20px;
-    width: 42px;
-    height: 42px;
+    right: 2%;
+    bottom: 5%;
+    width: clamp(2.8rem, 3.2vw, 3.3rem);
+    aspect-ratio: 1;
     border: none;
-    border-radius: 6px;
-    background: #6685c5;
-    color: white;
+    border-radius: 0.5rem;
+    background: var(--active);
     cursor: pointer;
+
+    display: flex;
+    /* centraliza o conteúdo */
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* remove espaçamento extra */
+}
+
+.lia svg {
+    width: 70%;
+    /* SVG se adapta ao botão */
+    height: auto;
 }
