@@ -194,54 +194,6 @@ body {
     background-color: var(--color-primary-hover);
 }
 
-.divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 24px 0;
-    color: var(--text-placeholder);
-    font-size: 12px;
-}
-
-.divider::before,
-.divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid var(--border-input);
-}
-
-.divider span {
-    padding: 0 12px;
-}
-
-.social-login {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 32px;
-}
-
-.btn-social {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background-color: var(--bg-input);
-    border: 1px solid var(--border-input);
-    border-radius: 8px;
-    padding: 10px;
-    color: var(--text-primary);
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: border-color 0.2s, background-color 0.2s, color 0.3s;
-}
-
-.btn-social:hover {
-    background-color: var(--bg-social-hover);
-    border-color: var(--border-social-hover);
-}
-
 .signup-prompt {
     text-align: center;
     font-size: 13px;
