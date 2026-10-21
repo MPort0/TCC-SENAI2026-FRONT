@@ -1,4 +1,4 @@
-// // Função para aplicar o tema no HTML
+// Função para aplicar o tema no HTML
 // function aplicarTema(tema) {
 //     document.documentElement.setAttribute('data-theme', tema);
 // }
@@ -8,7 +8,7 @@
     
 //     // Se a hora do computador for 9 ou mais (ex: 09:00, 13:00, 20:00), entra no escuro
 //     // Se colocar um horario como 9:30, nn vai dar certo, tem q dar uma pesquisada pra ver como funciona
-//     if (horaAtual >= 20) {
+//     if (horaAtual >= 6) {
 //         return 'dark';
 //     } else {
 //         return 'light';
@@ -20,6 +20,7 @@
 //     const temaDefinido = verificarTemaPorHorario();
 //     aplicarTema(temaDefinido);
 // });
+
 document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const themeToggleText = document.getElementById('theme-toggle-text');
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Função para verificar o tema por horário (caso o usuário nunca tenha clicado no botão)
   function verificarTemaPorHorario() {
     const horaAtual = new Date().getHours();
-    return horaAtual >= 20 ? 'dark' : 'light'; /* Fica escuro a partir das 20h */
+    return horaAtual >= 6 ? 'dark' : 'light'; /* Fica escuro a partir das 20h */
   }
 
   // 2. Aplica o tema na tag HTML e atualiza o texto do botão
