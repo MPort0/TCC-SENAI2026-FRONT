@@ -1,4 +1,4 @@
-/* temas.css */
+/* TEMAS 1 */
 
 /*
 CORES DO MODO ESCURO (PADRÃO ATUAL DO SITE)
@@ -92,6 +92,32 @@ CORES DO MODO ESCURO (PADRÃO ATUAL DO SITE)
   --badge-bg: #1e1b4b;
   --avatar-icon: #818cf8;
   --divider-color: #1e293b;
+
+  /* novas cores */
+  /* Fundos Globais */
+  --bg-app: #121827;
+  --bg-card-option: rgba(255, 255, 255, 0.04);
+  
+  /* Textos */
+  --text-primary: #f8fafc;
+  --text-subtitle: #94a3b8;
+  --text-option: #94a3b8;
+  --text-white: #ffffff;
+
+  /* Cores de Destaque / Marca */
+  --primary-brand: #6366f1;
+  --primary-brand-hover: #4f46e5;
+  --accent-blue-light: #818cf8;
+  
+  /* Bordas */
+  --border-option: #1e293b;
+  --border-option-hover: #6366f1;
+  
+  /* Botões e Gradientes */
+  --btn-start-bg: linear-gradient(to bottom, #6366f1, #4f46e5);
+  --btn-start-hover: #4338ca;
+  --btn-floating-bg: #4f46e5;
+
 }
 
 /* 
@@ -182,7 +208,7 @@ CORES DO MODO CLARO (ATIVADO AUTOMATICAMENTE PELO HORÁRIO)
     --hover-btn-devolutiva: #6c87c9;
 
 
-
+ /* sidebar */
   --bg-sidebar: #ffffff;
   --border-sidebar: #f0f2f6;
 
@@ -196,4 +222,36 @@ CORES DO MODO CLARO (ATIVADO AUTOMATICAMENTE PELO HORÁRIO)
   --badge-bg: #f0f4ff;          /* Fundo da logo e do avatar */
   --avatar-icon: #4f46e5;
   --divider-color: #f1f5f9;
+
+
+  /* simulacao */
+
+  --bg-simulacao: #ffff;
+  --subtitle-simulacao: #707a9c;
+
+  /* novas cores */
+  /* Fundos Globais */
+  --bg-app: #ffffff;
+  --bg-card-option: rgba(122, 130, 153, 0.04);
+  
+  /* Textos */
+  --text-primary: #1e293b;
+  --text-subtitle: #64748b;
+  --text-option: #727d9d;
+  --text-white: #ffffff;
+
+  /* Cores de Destaque / Marca */
+  --primary-brand: #4A75FF;
+  --primary-brand-hover: #3b62e0;
+  --accent-blue-light: #588FFF;
+  
+  /* Bordas */
+  --border-option: #E3EDFC;
+  --border-option-hover: #588FFF;
+  
+  /* Botões e Gradientes */
+  --btn-start-bg: linear-gradient(to bottom, #588FFF, #4266F4);
+  --btn-start-hover: #7895d6;
+  --btn-floating-bg: #6685c5;
+
 }
