@@ -183,6 +183,34 @@
         </div>
     </section>
     </main>
+
+    <!-- Janela com os detalhes da entrevista -->
+    <div id="modal" class="modal" onclick="closeInterview(event)">
+        <div class="modal-content">
+    
+            <button class="close-modal" onclick="closeInterview(event, true)" aria-label="Fechar">×</button>
+    
+            <h2 id="interviewTitle">Detalhes da entrevista</h2>
+                <p id="interviewDate"></p>
+    
+            <div class="modal-score">
+                Nota: <strong id="interviewScore"></strong>
+            </div>
+    
+            <hr>
+    
+            <h3>Configuração da entrevista</h3>
+                <p id="interviewTechnology"></p>
+            <p id="interviewDifficulty"></p>
+    
+            <h3>Resumo da avaliação</h3>
+                <p id="interviewFeedback"></p>
+    
+            <h3>Perguntas e respostas</h3>
+                <div id="interviewQuestions"></div>
+    
+        </div>
+            </div>
                                 
         <a class="lia" href="../HTML/entrevista-lia.html">
             <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
