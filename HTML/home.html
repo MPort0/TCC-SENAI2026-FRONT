@@ -6,148 +6,416 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../CSS/home.css">
-    <link rel="stylesheet" href="../CSS/sidebar.css">
+</head>
+
+<!-- Ícones -->
+<script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-
     <div class="app">
-
-        <!-- SIDEBAR -->
+        <!-- ================= SIDEBAR ================= -->
         <aside class="sidebar">
-            <div class="menu">
-                <a href="#" class="menu-item">
-                    <span class="icon">⌂</span>
-                    <span>Home</span>
+            <div class="logo">
+                <div class="logo-icon">
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>Ava.<span class="logo-azul">Lia</span></span>
+            </div>
+
+
+            <nav class="menu">
+                <a href="#" class="menu-item active">
+                    <!-- 👇 a lucide é uma biblioteca de ícones -->
+                    <!-- 👇 o "i" é para texto em italico -->
+                    <i data-lucide="house"></i>
+                    <!-- 👆 para o icone do inicio -->
+                    <span>Início</span>
                 </a>
                 <a href="#" class="menu-item">
-                    <span class="icon">▱</span>
+                    <!--  👇 a lucide é uma biblioteca de ícones-->
+                      <!-- 👇 para o icone de folhinha de criar curriculo -->
+                    <i data-lucide="file-text"></i>
                     <span>Criar currículo</span>
                 </a>
                 <a href="#" class="menu-item">
-                    <span class="icon">◉</span>
+                    <!-- 👇 a lucide é uma biblioteca de ícones -->
+                     <!-- 👇 para o icone de microfone -->
+                    <i data-lucide="mic"></i>
                     <span>Simulação</span>
                 </a>
-                <a href="#" class="menu-item active">
-                    <span class="icon">◷</span>
+                
+                <a href="#" class="menu-item">
+                    <!-- 👇 a lucide é uma biblioteca de ícones -->
+                     <!-- 👇 para o icone de relógio -->
+                    <i data-lucide="clock-3"></i>
                     <span>Histórico</span>
                 </a>
                 <a href="#" class="menu-item">
-                    <span class="icon">◉</span>
+                    <!-- 👇 a lucide é uma biblioteca de ícones -->
+                     <!-- 👇 para o icone de perfil -->
+                    <i data-lucide="user-round"></i>
                     <span>Perfil</span>
                 </a>
                 <a href="#" class="menu-item">
-                    <span class="icon">○</span>
+                    <!-- 👇 a lucide é uma biblioteca de ícones -->
+                     <!-- 👇 para o icone de escudo -->
+                    <i data-lucide="shield"></i>
                     <span>Painel Admin</span>
                 </a>
+            </nav>
 
-            </div>
 
-            <!-- PARTE INFERIOR -->
+            <!-- USUÁRIO/ PARTE DE BAIXO -->
             <div class="sidebar-bottom">
-                <button class="bottom-button">
-                    <span>↪</span>
-                    <span>Sair</span>
-                </button>
-                <button class="bottom-button">
-                    <span>◉</span>
-                    <span>Suporte</span>
-                </button>
+               <div class="user-box">  <!--ESS É DA CAIXINHA QUE TEM NA PARTE DE BAIXO, E TODO O LADO DIREITO  -->
+                    <div class="avatar">
+                          <!-- 👇 a lucide é uma biblioteca de ícones -->
+                           <!--👇 ICONE DE PERFIL  -->
+                        <i data-lucide="user"></i>
+                    </div>
+                    <div>
+                        <strong>Olá, usuário!</strong>
+                        <!-- "small serve para texto menores" -->
+                        <small>Seja bem-vindo(a)!</small>
+                    </div>
+                </div>
+
+                <a href="#" class="bottom-item">
+                    <!-- 👇 a lucide é uma biblioteca de ícones -->
+                     <!-- 👇 para o icone de configurações -->
+                    <i data-lucide="settings"></i>
+                    Configurações
+                </a>
+                <a href="#" class="bottom-item">
+                    <!-- 👇 a lucide é uma biblioteca de ícones -->
+                     <!-- 👇 para o icone de fones de ouvido -->
+                    <i data-lucide="headphones"></i>
+                    Suporte
+                </a>
+                <a href="#" class="bottom-item">
+                    <i data-lucide="log-out"></i>
+                    Sair
+                </a>
             </div>
         </aside>
 
-        <!-- CONTEÚDO PRINCIPAL -->
-        <main class="main-content"> <!-- a parte do lado direito todinho  -->
-                <div class="primeira-escrita">
-                    <h1>Olá, usuário! 👋</h1>
-                    <p class="subtitulo">
-                        Pronto para treinar sua próxima entrevista técnica
+
+        <!-- ================= CONTEÚDO ================= -->
+
+        <main class="main">
+            <!-- HEADER -->
+
+            <header class="header">
+                <div>
+                    <h1>
+                        Olá, usuário! 
+                    </h1>
+                    <p>
+                        Pronto para sua próxima entrevista?
                     </p>
+                    <small>
+                        Continue seu desenvolvimento e acompanhe seu progresso.
+                    </small>
+                </div>
 
-                    <br><br>
-                    <!-- SEU PROGRESSO -->
-                    <div class="bloquinho">
-                        <h2 class="seu-progresso">
-                            Seu progresso:
+                <button class="primary-button">
+                    <i data-lucide="mic"></i>
+                    Iniciar entrevista
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </header>
+
+
+            <!-- ================= PROGRESSO + GRÁFICO ================= -->
+
+            <section class="top-grid">
+                <!-- PROGRESSO -->
+                <div class="card progress-card">
+                    <div class="card-title">
+                        <h2>
+                            <i data-lucide="bar-chart-3"></i>
+                            Seu progresso
                         </h2>
-                        <div class="progresso">
-                            <div class="numero">
-                                <strong>4</strong>
-                                <span>Entrevistas feitas</span>
-                                <button>⊕ Nova entrevista</button>
+                        <a href="#">
+                            Ver histórico
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-icon blue">
+                                <i data-lucide="mic"></i>
                             </div>
-                            <div class="numero">
-                                <strong>9</strong>
-                                <span>Currículos feitos</span>
-                                <button class="novo-curriculo">⊕ Novo currículo</button>
-                            </div>
-                            <div class="numero">
-                                <strong>Tecnologia</strong>
-                                <span>Área mais buscada</span>
-                                <button class="botao-outline">
-                                    ↶ Meus currículos
-                                </button>
+                            <div>
+                                <strong>04</strong>
+                                <span>Entrevistas<br>realizadas</span>
                             </div>
                         </div>
 
 
-                    </div>
-
-                    <br><br>
-                    <!-- COMO FUNCIONA -->
-                    <div class="bloquinho-2">
-                        <h2>COMO FUNCIONA:</h2>
-                        <div class="etapas"> <!-- O três blocos juntos  -->
-                            <div class="etapa"><!-- um bloco de cada vez  -->
-                                <span class="numero-etapa">1</span>
-                                <h3>Conte sua história</h3>
-                                <p>
-                                    Escolha uma área de interesse e comece a conversa com a IA.
-                                </p>
+                        <div class="stat">
+                            <div class="stat-icon purple">
+                                <i data-lucide="file-text"></i>
                             </div>
-                            <div class="etapa">
-                                <span class="numero-etapa">2</span>
-                                <h3>Responda uma a uma</h3>
-                                <p>
-                                    A IA faz perguntas sobre suas experiências e vivências.
-                                </p>
+                            <div>
+                                <strong>09</strong>
+                                <span>Currículos<br>criados</span>
                             </div>
+                        </div>
 
-                            <div class="etapa">
-                                <span class="numero-etapa">3</span>
-                                <h3>Veja o que foi identificado</h3>
-                                <p>
-                                    A cada resposta, a IA mostra as competências que encontrou.
-                                </p>
+                        <div class="stat">
+                            <div class="stat-icon green">
+                                <i data-lucide="target"></i>
                             </div>
-
-                            <div class="etapa">
-                                <span class="numero-etapa">4</span>
-                                <h3>Baixe seu currículo</h3>
-                                <p>
-                                    A IA mostra as competências encontradas no seu histórico.
-                                </p>
+                            <div>
+                                <strong class="technology">
+                                    Tecnologia
+                                </strong>
+                                <span>
+                                    Área mais buscada
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                    <br><br>
-                    <!-- DICAS -->
-                    <div class="bloquinho-5">
-                        <h2>DICAS DE APOIO:</h2>
-                        <p>💡 Não existe experiência pequena demais: bicos, trabalhos informais e ajudas em casa também
-                            contam.</p>
-                        <p>💡 Responda com suas palavras, do seu jeito — a IA cuida em deixar o texto mais profissional.
-                        </p>
-                        <p>💡 Quanto mais detalhes você contar, mais fácil fica identificar competências ocultas do seu
-                            histórico.</p>
-                        <p>💡 Pense em situações reais que você viveu, não em respostas "certas" ou decoradas.</p>
+                
+                    <div class="objective">
+                        <div class="objective-header">
+                            <span>Seu objetivo</span>
+                            <strong>72%</strong>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-fill"></div>
+                        </div>
                     </div>
                 </div>
+
+
+                <!-- GRÁFICO -->
+                <div class="card chart-card">
+                    <div class="card-title">
+                        <h2>
+                            <i data-lucide="chart-line"></i>
+                            Seu desempenho nas entrevistas
+                        </h2>
+                    </div>
+                    <div class="chart">
+                        <div class="y-axis">
+                            <span>100%</span>
+                            <span>80%</span>
+                            <span>60%</span>
+                            <span>40%</span>
+                            <span>20%</span>
+                        </div>
+
+
+                        <div class="chart-area">
+                            <div class="grid-line line1"></div>
+                            <div class="grid-line line2"></div>
+                            <div class="grid-line line3"></div>
+                            <div class="grid-line line4"></div>
+                            <svg viewBox="0 0 500 180" preserveAspectRatio="none" class="chart-svg">
+                                <defs>
+                                    <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#2596ff" stop-opacity=".30" />
+                                        <stop offset="100%" stop-color="#2596ff" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0 145
+                                   C70 130 80 110 150 95
+                                   C220 80 230 105 300 90
+                                   C370 75 400 80 500 40
+                                   L500 180
+                                   L0 180 Z" fill="url(#areaGradient)" />
+
+
+                                <path d="M0 145
+                                   C70 130 80 110 150 95
+                                   C220 80 230 105 300 90
+                                   C370 75 400 80 500 40" fill="none" stroke="#29a5ff" stroke-width="4" />
+
+                            </svg>
+
+
+                            <div class="chart-point p1"></div>
+                            <div class="chart-point p2"></div>
+                            <div class="chart-point p3"></div>
+                            <div class="chart-point p4"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="x-axis">
+                        <span>01</span>
+                        <span>02</span>
+                        <span>03</span>
+                        <span>04</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= PRÓXIMO PASSO ================= -->
+
+            <section class="continue-card"> <!-- bloco geral do continue card -->
+                <div class="continue-icon">
+                    <i data-lucide="target"></i> <!-- icone de alvo -->
+                </div>
+                <div class="continue-text">
+                    <h2>Continue de onde parou</h2>
+                    <p>
+                        Você ainda não realizou sua próxima simulação.
+                    </p>
+                </div>
+                <button class="continue-button">
+                    Começar entrevista
+                    <i data-lucide="arrow-right"></i> 
+                </button>
+            </section>
+
+
+            <!-- ================= COMO FUNCIONA ================= -->
+
+            <section class="card workflow">
+                <div class="section-title">
+                    <h2>
+                        <i data-lucide="workflow"></i>
+                        Como funciona
+                    </h2>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">
+                            01
+                        </div>
+                        <div class="step-icon">
+                            <i data-lucide="user-round"></i>
+                        </div>
+                        <h3>Conte sua história</h3>
+                        <p>
+                            Escolha uma área de interesse
+                            e comece a conversa com a IA.
+                        </p>
+                    </div>
+                    <div class="step-arrow">
+                        →
+                    </div>
+                    <div class="step">
+                        <div class="step-number">
+                            02
+                        </div>
+                        <div class="step-icon">
+                            <i data-lucide="message-square"></i>
+                        </div>
+                        <h3>Responda uma a uma</h3>
+                        <p>
+                            A IA faz perguntas sobre
+                            suas experiências e vivências.
+                        </p>
+                    </div>
+                    <div class="step-arrow">
+                        →
+                    </div>
+                    <div class="step">
+                        <div class="step-number">
+                            03
+                        </div>
+                        <div class="step-icon">
+                            <i data-lucide="eye"></i>
+                        </div>
+                        <h3>Veja o que foi identificado</h3>
+                        <p>
+                            A cada resposta, a IA mostra
+                            as competências encontradas.
+                        </p>
+                    </div>
+                    <div class="step-arrow">
+                        →
+                    </div>
+                    <div class="step">
+                        <div class="step-number">
+                            04
+                        </div>
+                        <div class="step-icon">
+                            <i data-lucide="download"></i>
+                        </div>
+                        <h3>Baixe seu currículo</h3>
+                        <p>
+                            A IA mostra as competências
+                            encontradas no seu histórico.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- ================= DICAS ================= -->
+
+            <section class="card tips">
+                <div class="section-title">
+                    <h2>
+                        <i data-lucide="lightbulb"></i>
+                        Dicas de apoio
+                    </h2>
+                </div>
+
+
+                <div class="tips-grid">
+                    <div class="tip">
+                        <div class="tip-icon">
+                            <i data-lucide="briefcase-business"></i>
+                        </div>
+                        <div>
+                            <h3>Experiências contam</h3>
+                            <p>
+                                Bicos, trabalhos informais e experiências
+                                pessoais também podem revelar competências.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="tip">
+                        <div class="tip-icon">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+                        <div>
+                            <h3>Fale naturalmente</h3>
+                            <p>
+                                Responda com suas próprias palavras
+                                e deixe a IA ajudar a aprimorar.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="tip">
+                        <div class="tip-icon">
+                            <i data-lucide="target"></i>
+                        </div>
+                        <div>
+                            <h3>Seja específico</h3>
+                            <p>
+                                Quanto mais detalhes você fornecer,
+                                melhor a IA identifica suas competências.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
-    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
 
 </body>
-
 </html>
