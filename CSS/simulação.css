@@ -78,6 +78,14 @@ h1 {
    BOTÕES DE OPÇÃO
 ========================= */
 
+.opcoes {
+    border: 1px solid #5c79bd;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 8px;
+    max-width: 910px;
+}
+
 .options {
     display: flex;
     flex-wrap: wrap;
@@ -99,6 +107,7 @@ h1 {
 }
 
 .option:hover {
+    background: linear-gradient(90deg, #5c79bd, #727d9d) ;
     border-color: #7895d6;
     color: #8aa2d8;
 }
