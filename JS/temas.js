@@ -25,35 +25,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const themeToggleText = document.getElementById('theme-toggle-text');
 
-  // 1. Função para verificar o tema por horário (caso o usuário nunca tenha clicado no botão)
-  function verificarTemaPorHorario() {
-    const horaAtual = new Date().getHours();
-    return horaAtual >= 6 ? 'dark' : 'light'; /* Fica escuro a partir das 20h */
-  }
-
-  // 2. Aplica o tema na tag HTML e atualiza o texto do botão
+  // 1. Aplica o tema na tag <html>, salva no localStorage e atualiza o botão
   function aplicarTema(tema) {
     document.documentElement.setAttribute('data-theme', tema);
     localStorage.setItem('app-theme', tema);
-    
-    // Atualiza o texto do botão se ele existir na tela atual
+
     if (themeToggleText) {
       themeToggleText.textContent = tema === 'dark' ? 'Modo Claro' : 'Modo Escuro';
     }
   }
 
-  // 3. Recupera o tema salvo ou decide pelo horário do relógio
+  // 2. Verifica tema salvo ou usa horário como fallback (escuro das 20h às 06h)
   const savedTheme = localStorage.getItem('app-theme');
-  const temaFinal = savedTheme ? savedTheme : verificarTemaPorHorario();
-  
-  aplicarTema(temaFinal);
 
-  // 4. Listener do clique no botão (funciona apenas nas telas que tiverem o botão criado)
+  if (savedTheme) {
+    aplicarTema(savedTheme);
+  } else {
+    const horaAtual = new Date().getHours();
+    const temaPorHorario = (horaAtual >= 20 || horaAtual < 6) ? 'dark' : 'light';
+    aplicarTema(temaPorHorario);
+  }
+
+  // 3. Listener de clique para alternar o tema
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
       const temaAtual = document.documentElement.getAttribute('data-theme');
       const novoTema = temaAtual === 'dark' ? 'light' : 'dark';
-      
       aplicarTema(novoTema);
     });
   }
