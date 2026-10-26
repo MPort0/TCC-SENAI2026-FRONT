@@ -144,7 +144,6 @@ input {
     margin-bottom: 15px;
     font-size: 14px;
     word-wrap: break-word;
-    transform: translate(-331px, 228px);
 }
 
 .input-area {
@@ -206,12 +205,25 @@ input {
     cursor: pointer;
 }
 
+.image-message {
+    width: fit-content;
+    margin-left: auto;
+    margin-bottom: 15px;
+}
+
 .chat-image {
     max-width: 300px;
     max-height: 300px;
     border-radius: 12px;
     display: block;
-    transform: translate(897px, 456px);
+}
+
+.chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    overflow-y: auto;
 }
 
 /* =========================
@@ -232,11 +244,7 @@ input {
     font-size: 24px;
 }
 
-.language-button {
-    font-size: 9px;
-    margin-right: 4px;
-}
-
 .send-button {
     transform: translateY(2px);
+    font-size: 17px;
 }
