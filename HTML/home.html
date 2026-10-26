@@ -13,49 +13,87 @@
 
     <div class="app">
 
-        <!-- SIDEBAR -->
+                <!-- SIDEBAR CONTAINER -->
         <aside class="sidebar">
-            <div class="menu">
-                <a href="#" class="menu-item">
-                    <span class="icon">⌂</span>
-                    <span>Home</span>
+
+            <!-- Topo / Header -->
+            <div class="sidebar-header">
+                <div class="logo-badge">
+                    <img src="../IMG/logo-roxa.svg">
+                </div>
+                <div class="brand-title">
+                    <span class="brand-dark">AVA.</span>
+                    <span class="brand-blue">Lia</span>
+                </div>
+            </div>
+
+            <!-- Navegação Principal -->
+            <nav class="nav-section">
+                <a href="home.html" class="nav-item active">
+                    <i data-lucide="home"></i>
+                    <img src="../IMG/home.svg">
+                    <span>Início</span>
                 </a>
-                <a href="#" class="menu-item">
-                    <span class="icon">▱</span>
+                <a href="#" class="nav-item">
+                    <i data-lucide="file-text"></i>
+                    <img src="../IMG/file-text.svg">
                     <span>Criar currículo</span>
                 </a>
-                <a href="#" class="menu-item">
-                    <span class="icon">◉</span>
+                <a href="simulação.html" class="nav-item">
+                    <i data-lucide="play-circle"></i>
+                    <img src="../IMG/circle-play.svg">
                     <span>Simulação</span>
                 </a>
-                <a href="#" class="menu-item active">
-                    <span class="icon">◷</span>
+                <a href="historico.html" class="nav-item">
+                    <i data-lucide="history"></i>
+                    <img src="../IMG/clock-3.svg">
                     <span>Histórico</span>
                 </a>
-                <a href="#" class="menu-item">
-                    <span class="icon">◉</span>
+                <a href="perfil.html" class="nav-item">
+                    <i data-lucide="user"></i>
+                    <img src="../IMG/user-circle.svg">
                     <span>Perfil</span>
                 </a>
-                <a href="#" class="menu-item">
-                    <span class="icon">○</span>
-                    <span>Painel Admin</span>
-                </a>
+            </nav>
+
+            <!-- Rodapé / Usuário + Links -->
+            <div class="sidebar-footer">
+
+                <!-- Card do Usuário -->
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <i data-lucide="user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-nome">Olá, usuário!</span>
+                        <span class="user-email">hello_lia@useia.com.br</span>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Links Inferiores -->
+                <nav class="bottom-nav">
+                    <a href="#" class="nav-item">
+                        <i data-lucide="settings"></i>
+                        <img src="../IMG/configuracoes.svg">
+                        <span>Configurações</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i data-lucide="headphones"></i>
+                        <img src="../IMG/suporte.svg">
+                        <span>Suporte</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i data-lucide="log-out"></i>
+                        <img src="../IMG/sair.svg">
+                        <span>Sair</span>
+                    </a>
+                </nav>
 
             </div>
 
-            <!-- PARTE INFERIOR -->
-            <div class="sidebar-bottom">
-                <button class="bottom-button">
-                    <span>↪</span>
-                    <span>Sair</span>
-                </button>
-                <button class="bottom-button">
-                    <span>◉</span>
-                    <span>Suporte</span>
-                </button>
-            </div>
         </aside>
-
         <!-- CONTEÚDO PRINCIPAL -->
         <main class="main-content"> <!-- a parte do lado direito todinho  -->
                 <div class="primeira-escrita">
