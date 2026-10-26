@@ -23,14 +23,11 @@
 html,
 body {
     width: 100%;
-    min-height: 100%;
+    height: 100vh; /* Alterado de min-height para height fixo */
     font-family: 'Inter', Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
-}
-
-body {
-    min-height: 100vh;
+    overflow: hidden; /* Garante que a janela principal nunca crie barra de rolagem */
 }
 
 button,
@@ -38,25 +35,29 @@ input {
     font: inherit;
 }
 
+/* =========================
+   CONTAINER PAI (TRAVA O SITE)
+   ========================= */
 .app {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh; /* Força o app a ter exatamente o tamanho da janela */
     display: flex;
     background: var(--bg);
+    overflow: hidden; /* Bloqueia a rolagem externa por completo */
 }
 
 /* =========================
-   MENU LATERAL
+   MENU LATERAL (ESTÁTICO NO LUGAR)
    ========================= */
-
 .sidebar {
     width: 16.3%;
-    min-height: 100vh;
+    height: 100vh; 
     border-right: 0.06rem solid var(--sidebar-border);
     display: flex;
     flex-direction: column;
     padding: 5vh 1.4%;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Impede o chat de esmagar a largura da barra */
+    overflow: hidden; 
 }
 
 .nav {
@@ -106,20 +107,20 @@ input {
 }
 
 /* =========================
-   ENTREVISTA
-========================= */
-
+   ÁREA DO CHAT (LADO DIREITO)
+   ========================= */
 .interview {
     flex: 1;
-    min-height: 100vh;
+    height: 100vh; /* Limita o tamanho à tela do usuário */
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Isola qualquer transbordo */
 }
 
 .interview-header {
     padding: 32px 39px;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Cabeçalho não diminui */
 }
 
 .interview-header svg {
@@ -127,13 +128,14 @@ input {
     height: auto;
 }
 
+/* CONTAINER DAS CONVERSAS */
 .chat {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 16px;
     padding: 20px 40px;
-    overflow-y: auto;
+    overflow-y: auto; /* Permite a rolagem exclusivamente aqui dentro */
     scroll-behavior: smooth;
 }
 
@@ -147,20 +149,25 @@ input {
     margin-bottom: 15px;
     font-size: 14px;
     word-wrap: break-word;
-    transform: translate(-331px, 228px);
+    /* Nota: Remova ou comente o transform abaixo caso os balões fiquem desalinhados */
+    transform: translate(-331px, 228px); 
 }
 
+/* CONTAINER DA BARRA DE INPUT */
 .input-area {
     position: relative;
     width: 53%;
-    height: 47px;
+    min-height: 47px;
+    height: auto;
     margin: 0 auto 14px;
     background: #394e82;
     border-radius: 20px;
     display: flex;
     align-items: center;
-    padding: 3px 5px;
+    padding: 3px 10px;
+    flex-shrink: 0; /* Impede a barra de digitação de sumir ou achatar */
     transform: translateY(-23px);
+    margin-top: 50px;
 }
 
 .input-area input {
@@ -217,25 +224,6 @@ input {
     transform: translate(897px, 456px);
 }
 
-/* CONTAINER DA BARRA (Ajustado para centralizar e expandir de forma fluida) */
-.input-area {
-    position: relative;
-    width: 53%;
-    min-height: 47px;
-    height: auto;
-    margin: 0 auto 14px;
-    background: #394e82;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    /* Voltou para o centro: os botões e o texto sobem juntos e alinhados */
-    padding: 3px 10px;
-    flex-shrink: 0;
-    transform: translateY(-23px);
-    /* Mantém o posicionamento original do seu projeto */
-}
-
-/* CAMPO DE TEXTO (Com correção de alinhamento vertical interno) */
 #messageInput {
     flex: 1;
     border: none;
@@ -245,16 +233,10 @@ input {
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     line-height: 20px;
-    /* Controla a altura exata da linha de texto */
-
-    /* O SEGREDO DO MEIO: Padding calculado para o texto começar centralizado na primeira linha */
     padding: 10px 0;
-
     resize: none;
     height: 40px;
-    /* Altura inicial ajustada para casar com o contêiner */
     max-height: 120px;
-    /* Limite máximo estável para 5 linhas */
     overflow-y: hidden;
     display: block;
 }
@@ -265,8 +247,7 @@ input {
 
 /* =========================
    BOTÕES FUNCIONAIS
-========================= */
-
+   ========================= */
 .add-button,
 .language-button,
 .send-button {
@@ -290,18 +271,16 @@ input {
     transform: translateY(2px);
 }
 
-/* Espaço central da foto: vira um visor vertical flexível */
+/* ÁREA INTERNA ONDE FLUTUAM OS BALÕES */
 .chat-messages {
     flex: 1;
-    overflow-y: auto;
+    overflow-y: auto; /* Habilita rolagem limpa e interna para a lista de mensagens */
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 30px 10%;
-    /* Margem lateral para os balões flutuarem centralizados */
 }
 
-/* Base de design dos balões */
 .message-bubble {
     max-width: 65%;
     padding: 14px 18px;
@@ -311,7 +290,6 @@ input {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Balão da Lia (Esquerda) */
 .bubble-ia {
     align-self: flex-start;
     background-color: rgba(255, 255, 255, 0.07);
@@ -320,10 +298,23 @@ input {
     border-radius: 16px 16px 16px 4px;
 }
 
-/* Balão do Usuário (Direita) */
 .bubble-user {
     align-self: flex-end;
     background-color: #243464;
     color: #ffffff;
     border-radius: 16px 16px 4px 16px;
+}
+
+/* ocultar a barra de rolagem
+/* Para navegadores baseados em Webkit (Chrome, Safari, Edge, Opera) */
+.chat::-webkit-scrollbar,
+.chat-messages::-webkit-scrollbar {
+    display: none; /* Esconde a barra por completo */
+}
+
+/* Para o navegador Firefox */
+.chat,
+.chat-messages {
+    scrollbar-width: none; /* Esconde a barra no Firefox */
+    -ms-overflow-style: none; /* Esconde a barra em versões antigas do IE/Edge */
 }

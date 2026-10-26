@@ -75,7 +75,7 @@ async function enviarParaIA(mensagemTexto) {
 
     } catch (error) {
         console.error("Erro na API da IA:", error);
-        renderizarRespostaLia('A Lia está temporariamente instável, mas nossos servidores de contingência já foram acionados. Tente enviar novamente!');
+        renderizarRespostaLia('A Lia está temporariamente offline!');
     } finally {
         // DESBLOQUEIO: Libera o chat assim que a requisição terminar (com sucesso ou erro)
         alternarBloqueioChat(false);
