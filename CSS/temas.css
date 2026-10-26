@@ -79,23 +79,23 @@ CORES DO MODO ESCURO (PADRÃO ATUAL DO SITE)
     --green: #14AE5C;
 
 
---bg-sidebar: #0f172a;
+--bg-sidebar: #0b112c;
   --border-sidebar: #1e293b;
 
-  --primary-blue: #818cf8;
-  --active-bg: #1e1b4b;
+  --primary-blue: #ffff;
+  --active-bg: #6685c5;
   
   --text-primary: #f8fafc;
   --text-secondary: #a5b4fc;
   --text-muted: #64748b;
   
-  --badge-bg: #1e1b4b;
+  --badge-bg: #2f5194;
   --avatar-icon: #818cf8;
   --divider-color: #1e293b;
 
   /* novas cores */
   /* Fundos Globais */
-  --bg-app: #121827;
+  --bg-app: #0b112c;
   --bg-card-option: rgba(255, 255, 255, 0.04);
   
   /* Textos */

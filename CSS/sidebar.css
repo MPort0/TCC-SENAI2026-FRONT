@@ -78,7 +78,7 @@
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
-  color: #2b3674; /* Cor dos ícones/textos normais */
+  color: #94a3b8; /* Cor dos ícones/textos normais */
   transition: all 0.2s ease;
 }
 
@@ -86,7 +86,7 @@
   width: 20px;
   height: 20px;
   stroke-width: 2px;
-  color: #2b3674;
+  stroke: #ffffff;
 }
 
 /* Item Ativo (Início) */
