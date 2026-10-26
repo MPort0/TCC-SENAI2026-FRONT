@@ -107,7 +107,7 @@ body {
 }
 
 .input-wrapper input:focus {
-    border-color: var(--color-primary);
+    border-color: #6685c5;
 }
 
 .input-icon {
@@ -162,6 +162,18 @@ body {
     display: none;
 }
 
+/* Quando ativo */
+.lembrar-senha.active .checkbox {
+    background-color: #6685c5;
+    border-color: #6685c5;
+}
+
+.lembrar-senha.active .check-icon {
+    display: block;
+}
+
+.forgot-password {
+    color: #6685c5;
 .lembrar-senha img {
     width: 18px;
     height: 18px;
@@ -179,8 +191,8 @@ body {
 
 .btn-submit {
     width: 100%;
-    background-color: var(--color-primary);
-    color: #ffffff; /* O texto interno do botão azul continua branco nos dois temas */
+    background-color: #6685c5;
+    color: #ffffff;
     border: none;
     border-radius: 8px;
     padding: 12px;
@@ -191,7 +203,7 @@ body {
 }
 
 .btn-submit:hover {
-    background-color: var(--color-primary-hover);
+    background-color: #678ad1;
 }
 
 .divider {
