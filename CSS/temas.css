@@ -105,16 +105,16 @@ CORES DO MODO ESCURO (PADRÃO ATUAL DO SITE)
   --text-white: #ffffff;
 
   /* Cores de Destaque / Marca */
-  --primary-brand: #6366f1;
-  --primary-brand-hover: #4f46e5;
+  --primary-brand: #6685c5;
+  --primary-brand-hover: #6685c5;
   --accent-blue-light: #818cf8;
   
   /* Bordas */
   --border-option: #1e293b;
-  --border-option-hover: #6366f1;
+  --border-option-hover: #6685c5;
   
   /* Botões e Gradientes */
-  --btn-start-bg: linear-gradient(to bottom, #6366f1, #4f46e5);
+  --btn-start-bg: #6685c5;
   --btn-start-hover: #4338ca;
   --btn-floating-bg: #4f46e5;
 
@@ -241,16 +241,16 @@ CORES DO MODO CLARO (ATIVADO AUTOMATICAMENTE PELO HORÁRIO)
   --text-white: #ffffff;
 
   /* Cores de Destaque / Marca */
-  --primary-brand: #4A75FF;
-  --primary-brand-hover: #3b62e0;
+  --primary-brand: #6685c5;
+  --primary-brand-hover: #6685c5;
   --accent-blue-light: #588FFF;
   
   /* Bordas */
   --border-option: #E3EDFC;
-  --border-option-hover: #588FFF;
+  --border-option-hover: #6685c5;
   
   /* Botões e Gradientes */
-  --btn-start-bg: linear-gradient(to bottom, #588FFF, #4266F4);
+  --btn-start-bg: #6685c5;
   --btn-start-hover: #7895d6;
   --btn-floating-bg: #6685c5;
 
