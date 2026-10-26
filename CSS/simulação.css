@@ -1,31 +1,24 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root {
-    --sidebar-border: #505873;
-    --text: #ffffff;
-    --active: #627dbc;
+    font-weight: 600;
 }
 
 body {
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     font-family: 'Poppins', Arial, sans-serif;
-    background: #02082e;
-    color: white;
+    color: var(--text-primary);
+    background-color: var(--bg-app);
 }
 
 .app {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    background: #02082e;
+    background: var(--bg-app);
 }
-
 
 /* =========================
    CONTEÚDO
@@ -33,12 +26,10 @@ body {
 
 .main-content {
     flex: 1;
-    padding: 0 62px 70px;
-    max-width: 1280px;
-    margin-top: 55px;
-    margin-left: 40px;
+    max-width: 920px;
+    margin: 55px auto 70px; 
+    padding: 0 20px;
 }
-
 
 /* =========================
    TÍTULO
@@ -49,15 +40,14 @@ h1 {
     line-height: 1.1;
     margin-top: 5px;
     font-weight: 700;
+    color: var(--text-primary);
 }
 
 .subtitle {
     margin-top: 10px;
-    color: #707a9c;
+    color: var(--text-subtitle);
     font-size: 20px;
-    font-weight: 600;
 }
-
 
 /* =========================
    SEÇÕES
@@ -69,10 +59,9 @@ h1 {
 
 .selection-section h2 {
     font-size: 17px;
-    font-weight: 400;
     margin-bottom: 7px;
+    color: var(--text-primary);
 }
-
 
 /* =========================
    BOTÕES DE OPÇÃO
@@ -96,10 +85,10 @@ h1 {
 .option {
     height: 44px;
     padding: 0 20px;
-    border: 1px solid #5c79bd;
-    border-radius: 8px;
-    background: transparent;
-    color: #727d9d;
+    border: 2px solid var(--border-option);
+    border-radius: 10px;
+    background: var(--bg-card-option);
+    color: var(--text-option);
     font-family: inherit;
     font-size: 16px;
     cursor: pointer;
@@ -107,17 +96,15 @@ h1 {
 }
 
 .option:hover {
-    background: linear-gradient(90deg, #5c79bd, #727d9d) ;
-    border-color: #7895d6;
-    color: #8aa2d8;
+    border-color: var(--border-option-hover);
+    color: var(--primary-brand);
 }
 
 .option.selected {
-    background: #6984c5;
-    border-color: #6984c5;
-    color: white;
+    background: var(--primary-brand);
+    border-color: var(--primary-brand);
+    color: var(--text-white);
 }
-
 
 /* =========================
    DIFICULDADE
@@ -127,22 +114,34 @@ h1 {
     margin-top: 38px;
 }
 
-
 /* =========================
    BOTÃO INICIAR
 ========================= */
 
-.botao-iniciar {
-    display: inline-flex;
+.start-button {
+    width: calc(100% - 4px);
+    max-width: 910px;
+    height: 52px;
+    margin-top: 62px;
+    border: none;
+    border-radius: 8px;
+    background: var(--btn-start-bg);
+    color: var(--text-white);
+    font-family: inherit;
+    font-size: 17px;
+    cursor: pointer;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    width: 100%;
-    max-width: 680px;
-    height: 52px;
-    background-color: #6685c5;
-    color: #ffffff;
-    font-family: inherit;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+.start-button:hover {
+    background: var(--btn-start-hover);
+}
+
+.play-icon {
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;
@@ -172,8 +171,9 @@ h1 {
     width: clamp(2.8rem, 3.2vw, 3.3rem);
     aspect-ratio: 1;
     border: none;
-    border-radius: 0.5rem;
-    background: var(--active);
+    border-radius: 6px;
+    background: var(--btn-floating-bg);
+    color: var(--text-white);
     cursor: pointer;
 
     display: flex;
