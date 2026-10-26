@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Currículo</title>
+    <link rel="stylesheet" href="../CSS/novo-curriculo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
+</head>
+<body>
+    
+<div class="app-layout">
+
+  <!-- NAVBAR ORIGINAL -->
+  <aside class="sidebar">
+    <div class="nav">
+
+      <a class="nav-item" href="#">
+        <span class="icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M15.9017 8.35826L11.4293 3.88594L4.38297 10.9323H5.96318V18.8831H8.94472V12.92H13.914V18.8831H16.8955V10.9323H18.4757L16.8955 9.35211V5.96309H15.9017V8.35826ZM1.98779 11.9262L11.4293 2.48462L14.9078 5.96309V4.96924H17.8894V8.94463L20.8709 11.9262H17.8894V19.877H12.9201V13.9139H9.93857V19.877H4.96934V11.9262H1.98779Z" fill="white"/>
+          </svg>
+        </span>
+        <span>Home</span>
+      </a>
+
+      <a class="nav-item" href="#">
+        <span class="icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.906 4.86573C14.9176 4.78149 14.9088 4.69569 14.8804 4.61552L14.8666 4.54845C14.8274 4.38531 14.7627 4.22937 14.6749 4.08636C14.577 3.92665 14.4386 3.78824 14.1618 3.51142L11.4041 0.753806C11.1284 0.476981 10.99 0.338568 10.8292 0.239549C10.6668 0.140121 10.488 0.0705292 10.3011 0.0340597C10.2209 0.00567989 10.1351 -0.00308234 10.0509 0.00850655C9.93271 0.00424769 9.78897 0.00424769 9.59839 0.00424769H7.24537C5.45665 0.00424769 4.56229 0.0042477 3.88088 0.352409C3.28131 0.659726 2.79342 1.14762 2.4861 1.74718C2.13794 2.43073 2.13794 3.32296 2.13794 5.11168V11.9259C2.13794 13.7146 2.13794 14.6089 2.4861 15.2903C2.79342 15.8899 3.28131 16.3778 3.88088 16.6851C4.56442 17.0333 5.45665 17.0333 7.24537 17.0333H9.80069C11.5894 17.0333 12.4838 17.0333 13.1652 16.6851C13.7656 16.379 14.2538 15.8908 14.56 15.2903C14.9081 14.6068 14.9081 13.7146 14.9081 11.9259V5.31291C14.9081 5.12339 14.9081 4.97966 14.9028 4.86041L14.906 4.86573ZM9.79536 15.9388H7.24005C6.32759 15.9388 5.70686 15.9388 5.22774 15.8983C4.76139 15.861 4.52183 15.7918 4.35574 15.7066C3.95508 15.5025 3.62933 15.1767 3.42518 14.7761C3.34 14.61 3.2708 14.3715 3.23353 13.9041C3.19414 13.425 3.19307 12.8074 3.19307 11.8918V5.07761C3.19307 4.16515 3.19414 3.54442 3.23353 3.0653C3.27186 2.59896 3.34107 2.3594 3.42518 2.1933C3.6296 1.79297 3.95541 1.46716 4.35574 1.26274C4.52183 1.17756 4.76139 1.10836 5.22774 1.07109C5.70686 1.03276 6.3244 1.03276 7.24005 1.03276H9.58242V4.75926C9.58242 4.90045 9.63851 5.03586 9.73834 5.13569C9.83818 5.23553 9.97359 5.29162 10.1148 5.29162H13.8413V11.8928C13.8413 12.8053 13.8413 13.426 13.8008 13.9052C13.7636 14.3715 13.6943 14.6111 13.6092 14.7772C13.405 15.1778 13.0793 15.5036 12.6786 15.7077C12.5125 15.7929 12.274 15.8621 11.8066 15.8994C11.3275 15.9388 10.711 15.9388 9.79536 15.9388ZM10.6471 1.45865L13.4047 4.21626H10.6471V1.45865Z" fill="white"/>
+          </svg>
+        </span>
+        <span>Criar currículo</span>
+      </a>
+
+      <a class="nav-item" href="#">
+        <span class="icon">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.22188 13.0094C6.07187 13.0094 5.928 12.9499 5.82192 12.8438C5.71584 12.7377 5.65625 12.5938 5.65625 12.4438V5.65627C5.6563 5.55989 5.68098 5.46512 5.72794 5.38096C5.7749 5.2968 5.84259 5.22603 5.92458 5.17537C6.00657 5.12472 6.10015 5.09585 6.19643 5.09152C6.29271 5.08718 6.3885 5.10752 6.47472 5.1506L13.2623 8.54437C13.3561 8.5914 13.435 8.6636 13.4901 8.75291C13.5453 8.84221 13.5745 8.94509 13.5745 9.05005C13.5745 9.155 13.5453 9.25788 13.4901 9.34718C13.435 9.43649 13.3561 9.50869 13.2623 9.55572L6.47472 12.9495C6.39623 12.9888 6.30967 13.0094 6.22188 13.0094ZM6.78751 6.57146V11.5286L11.7447 9.05005L6.78751 6.57146Z" fill="white"/>
+            <path d="M9.05016 2.26248C10.3926 2.26248 11.7049 2.66057 12.8211 3.40639C13.9373 4.15222 14.8073 5.21229 15.321 6.45255C15.8348 7.69281 15.9692 9.05756 15.7073 10.3742C15.4454 11.6909 14.7989 12.9003 13.8497 13.8496C12.9004 14.7988 11.691 15.4453 10.3743 15.7072C9.05769 15.9691 7.69294 15.8346 6.45268 15.3209C5.21241 14.8072 4.15234 13.9372 3.40652 12.821C2.66069 11.7048 2.26261 10.3925 2.26261 9.05003C2.26261 7.24986 2.97772 5.52342 4.25064 4.25051C5.52355 2.9776 7.24999 2.26248 9.05016 2.26248ZM9.05016 1.13123C7.48397 1.13123 5.95295 1.59566 4.65071 2.46579C3.34846 3.33592 2.33349 4.57266 1.73413 6.01964C1.13478 7.46661 0.97796 9.05882 1.28351 10.5949C1.58906 12.131 2.34325 13.542 3.45072 14.6495C4.55818 15.7569 5.96918 16.5111 7.50528 16.8167C9.04138 17.1222 10.6336 16.9654 12.0806 16.3661C13.5275 15.7667 14.7643 14.7517 15.6344 13.4495C16.5045 12.1472 16.969 10.6162 16.969 9.05003C16.969 6.94984 16.1347 4.93566 14.6496 3.45059C13.1645 1.96553 11.1504 1.13123 9.05016 1.13123Z" fill="white"/>
+          </svg>
+        </span>
+        <span>Simulação</span>
+      </a>
+
+      <a class="nav-item" href="#">
+        <span class="icon">
+          <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.83009 3.82284C6.69243 0.964546 11.3454 0.994939 14.2252 3.87478C17.1063 6.75587 17.1355 11.4116 14.2735 14.2736C11.4114 17.1356 6.75571 17.1065 3.87463 14.2254C2.1673 12.5181 1.46226 10.1888 1.76501 7.98006C1.80743 7.67055 2.09272 7.45408 2.40221 7.4965C2.7117 7.53892 2.9282 7.82417 2.88579 8.13368C2.62939 10.0043 3.2261 11.977 4.67455 13.4255C7.12145 15.8724 11.0609 15.8863 13.4736 13.4737C15.8862 11.061 15.8722 7.1216 13.4253 4.6747C10.9797 2.22905 7.04302 2.2138 4.63002 4.62276L5.19391 4.6256C5.5063 4.62717 5.75826 4.88168 5.75669 5.19406C5.75512 5.50645 5.50061 5.75841 5.18823 5.75684L3.26844 5.7472C2.95827 5.74564 2.70722 5.49458 2.70566 5.18442L2.69602 3.26463C2.69444 2.95225 2.94641 2.69774 3.2588 2.69616C3.57118 2.69459 3.82569 2.94656 3.82726 3.25895L3.83009 3.82284ZM9.04988 5.4677C9.36226 5.4677 9.61551 5.72094 9.61551 6.03333V8.81576L11.3352 10.5355C11.5561 10.7564 11.5561 11.1146 11.3352 11.3354C11.1144 11.5563 10.7562 11.5563 10.5354 11.3354L8.48425 9.28433V6.03333C8.48425 5.72094 8.7375 5.4677 9.04988 5.4677Z" fill="white"/>
+          </svg>
+        </span>
+        <span>Histórico</span>
+      </a>
+
+      <a class="nav-item active" href="#">
+        <span class="icon">
+          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.415 9.05243C8.47146 9.0456 8.52854 9.0456 8.585 9.05243C9.1934 9.03119 9.76908 8.77171 10.1879 8.32994C10.6068 7.88818 10.8353 7.2995 10.8241 6.69084C10.813 6.08217 10.5631 5.50226 10.1283 5.07613C9.69357 4.65 9.10877 4.41179 8.5 4.41285C7.21083 4.41285 6.17666 5.4541 6.17666 6.73618C6.17632 7.33722 6.40963 7.91486 6.8273 8.34707C7.24497 8.77928 7.81429 9.03221 8.415 9.05243Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.5 15.5833C10.2681 15.5867 11.9726 14.9241 13.2742 13.7274C13.2033 13.0616 12.7783 12.4099 12.0204 11.8999C10.0937 10.6108 6.92041 10.6108 4.97958 11.8999C4.22166 12.4099 3.79666 13.0616 3.72583 13.7274C4.98666 14.882 6.65833 15.5833 8.5 15.5833Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.50008 15.5833C12.4122 15.5833 15.5834 12.4121 15.5834 8.49996C15.5834 4.58783 12.4122 1.41663 8.50008 1.41663C4.58796 1.41663 1.41675 4.58783 1.41675 8.49996C1.41675 12.4121 4.58796 15.5833 8.50008 15.5833Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>Perfil</span>
+      </a>
+
+    </div>
+
+    <div class="sidebar-bottom">
+      <a href="#">Sair</a>
+      <a href="#">Suporte</a>
+    </div>
+  </aside>
+
+  <!-- CONTEÚDO DA PÁGINA -->
+  <main class="resume-page">
+
+    <section class="chat-panel">
+
+      <div class="chat-top">
+        <span class="ai-icon">
+          <img src="../IMG/favicon.ico" alt="Logo do Assistente IA" width="20" height="20">
+        </span>
+        <span>Assistente IA <small>10:30</small></span>
+      </div>
+
+      <div class="message">
+        Olá! Vou te ajudar a criar um currículo profissional.<br>
+        Qual cargo você está procurando?
+      </div>
+
+      <span class="time">Você&nbsp; 10:31</span>
+
+      <div class="message user">
+        Desenvolvedor Front-end
+      </div>
+
+      <div class="chat-top">
+        <span class="ai-icon">
+          <img src="../IMG/favicon.ico" alt="Logo do Assistente IA" width="20" height="20">
+        </span>
+        <span>Assistente IA <small>10:31</small></span>
+      </div>
+
+      <div class="message">
+        Ótimo! 💻<br>
+        Agora me conte um pouco sobre sua experiência profissional.
+        Você pode escrever de forma livre, que eu organizo para você.
+      </div>
+
+      <span class="time">Você&nbsp; 10:32</span>
+
+      <div class="message user">
+        Trabalhei 2 anos numa agência fazendo sites, landing pages e
+        também cuidava do Instagram da empresa.
+      </div>
+
+      <div class="suggestion">
+        <div class="suggestion-title">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_269_349)">
+            <path d="M11.6671 1.1674V2.33402M11.6671 2.33402V3.50064M11.6671 2.33402H12.8338M11.6671 2.33402H10.5003M6.42653 1.64247C6.45153 1.50866 6.52254 1.38781 6.62727 1.30084C6.732 1.21387 6.86386 1.16626 7 1.16626C7.13614 1.16626 7.26799 1.21387 7.37272 1.30084C7.47745 1.38781 7.54846 1.50866 7.57346 1.64247L8.18659 4.88451C8.23014 5.115 8.34216 5.32702 8.50805 5.49289C8.67394 5.65875 8.88598 5.77077 9.1165 5.81431L12.3589 6.42737C12.4928 6.45236 12.6136 6.52336 12.7006 6.62808C12.7876 6.7328 12.8352 6.86464 12.8352 7.00076C12.8352 7.13688 12.7876 7.26872 12.7006 7.37344C12.6136 7.47816 12.4928 7.54916 12.3589 7.57415L9.1165 8.18721C8.88598 8.23075 8.67394 8.34277 8.50805 8.50864C8.34216 8.6745 8.23014 8.88652 8.18659 9.11701L7.57346 12.359C7.54846 12.4929 7.47745 12.6137 7.37272 12.7007C7.26799 12.7877 7.13614 12.8353 7 12.8353C6.86386 12.8353 6.732 12.7877 6.62727 12.7007C6.52254 12.6137 6.45153 12.4929 6.42653 12.359L5.8134 9.11701C5.76985 8.88652 5.65783 8.6745 5.49194 8.50864C5.32605 8.34277 5.11401 8.23075 4.88349 8.18721L1.64106 7.57415C1.50724 7.54916 1.38637 7.47816 1.29939 7.37344C1.21241 7.26872 1.16479 7.13688 1.16479 7.00076C1.16479 6.86464 1.21241 6.7328 1.29939 6.62808C1.38637 6.52336 1.50724 6.45236 1.64106 6.42737L4.88349 5.81431C5.11401 5.77077 5.32605 5.65875 5.49194 5.49289C5.65783 5.32702 5.76985 5.115 5.8134 4.88451L6.42653 1.64247ZM3.49974 11.667C3.49974 12.3113 2.97736 12.8336 2.33298 12.8336C1.6886 12.8336 1.16622 12.3113 1.16622 11.667C1.16622 11.0227 1.6886 10.5004 2.33298 10.5004C2.97736 10.5004 3.49974 11.0227 3.49974 11.667Z" stroke-width="2" stroke-linecap="round" stroke="#627EC1"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_269_349">
+            <rect width="14" height="14" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+          </svg> Sugestão da IA</div>
+
+        <p id="suggestionText">
+          Trabalhei por 2 anos em uma agência desenvolvendo sites e landing pages, além de gerenciar o Instagram da empresa, criando conteúdo e aumentando o engajamento.
+        </p>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="useBtn">Usar sugestão</button>
+        </div>
+
+        <div class="reply">
+          <input id="replyInput" placeholder="Digite sua resposta..." aria-label="Digite sua resposta">
+          <button class="continue" id="continueBtn">Continuar&nbsp;</button>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="resume-preview">
+
+      <div class="resume-header">
+        <span>Prévia do currículo</span>
+      </div>
+
+      <article class="resume-document">
+
+        <div class="resume-person">
+          <div class="resume-avatar">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M15 11.25C17.4162 11.25 19.375 9.29125 19.375 6.875C19.375 4.45875 17.4162 2.5 15 2.5C12.5838 2.5 10.625 4.45875 10.625 6.875C10.625 9.29125 12.5838 11.25 15 11.25Z"
+                stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"/>
+            <path
+                d="M2.5 25.625C2.5 20.1019 7.53688 15.625 13.75 15.625M19.375 26.25L25.625 20L23.125 17.5L16.875 23.75V26.25H19.375Z"
+                stroke="white" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"/>
+        </svg>
+          </div>
+          <div>
+            <h2>João da Silva</h2>
+            <div class="role">Desenvolvedor Front-end</div>
+            <div class="contact">joao@email.com • (11) 99999-9999 • São Paulo, SP</div>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3>Resumo profissional</h3>
+          <p>
+          Atuação de dois anos em agência com foco no desenvolvimento de sites institucionais e landing pages de alta conversão,
+          aplicando práticas de design responsivo e experiência do usuário (UX). Responsável pela gestão estratégica do Instagram
+          corporativo, englobando o planejamento de cronogramas, criação de conteúdo e monitoramento de métricas de desempenho.
+          Essa abordagem integrada alinhou a comunicação das redes sociais às páginas de captura, otimizando a jornada do usuário
+          e gerando um aumento consistente no engajamento orgânico e no crescimento da base de seguidores.
+          </p>
+        </div>
+
+        <div class="resume-section">
+          <h3>Experiência</h3>
+          <div class="job-title">
+            Agência XYZ <span class="dates">2022 - 2024</span>
+          </div>
+          <div class="sub">Desenvolvedor Front-end</div>
+          <ul>
+            <li>Desenvolvimento de sites e landing pages responsivas</li>
+            <li>Otimização de performance e SEO on-page</li>
+            <li>Gerenciamento do Instagram da empresa, ampliando o engajamento</li>
+          </ul>
+        </div>
+
+        <div class="resume-section">
+          <h3>Formação</h3>
+          <div class="job-title">
+            Análise e Desenvolvimento de Sistemas
+            <span class="dates">2020 - 2023</span>
+          </div>
+          <p>Universidade Unicv</p>
+        </div>
+
+        <div class="resume-bottom">
+          <div class="resume-section">
+            <h3>Habilidades</h3>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Git</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <h3>Idiomas</h3>
+            <p>Inglês - Intermediário</p>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+  </main>
+</div>
+
+<script>
+const suggestion = document.getElementById("suggestionText");
+const input = document.getElementById("replyInput");
+
+document.getElementById("useBtn").addEventListener("click", () => {
+  input.value = suggestion.textContent.trim();
+  input.focus();
+});
+
+document.getElementById("editBtn").addEventListener("click", () => {
+  input.value = suggestion.textContent.trim();
+  input.focus();
+  input.select();
+});
+
+document.getElementById("continueBtn").addEventListener("click", () => {
+  const value = input.value.trim();
+
+  if (!value) {
+    input.focus();
+    return;
+  }
+
+  const bubble = document.createElement("div");
+  bubble.className = "message user";
+  bubble.textContent = value;
+
+  document.querySelector(".suggestion").before(bubble);
+  input.value = "";
+});
+
+input.addEventListener("keydown", event => {
+  if (event.key === "Enter") {
+    document.getElementById("continueBtn").click();
+  }
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const chat = document.querySelector(".chat-panel");
+    const input = document.querySelector(".reply input");
+    const botao = document.querySelector(".continue");
+
+    if (!chat || !input || !botao) {
+        console.warn("Os elementos do chat não foram encontrados.");
+        return;
+    }
+// ...
+    function enviarMensagem() {
+        const texto = input.value.trim();
+
+        if (!texto) return;
+
+        const mensagem = document.createElement("div");
+        mensagem.classList.add("message", "user");
+        mensagem.textContent = texto;
+
+        const horario = document.createElement("span");
+        horario.classList.add("time");
+        horario.textContent = new Date().toLocaleTimeString(
+            "pt-BR",
+            { hour: "2-digit", minute: "2-digit" }
+        );
+
+        const sugestao = chat.querySelector(".suggestion");
+
+        if (sugestao) {
+            chat.insertBefore(mensagem, sugestao);
+            chat.insertBefore(horario, sugestao);
+        } else {
+            chat.append(mensagem, horario);
+        }
+
+        input.value = "";
+        chat.scrollTop = chat.scrollHeight;
+        input.focus();
+    }
+
+    botao.addEventListener("click", enviarMensagem);
+
+    input.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" && !event.shiftKey) {
+            event.preventDefault();
+            enviarMensagem();
+        }
+    });
+});
+</script>
+</body>
+</html>

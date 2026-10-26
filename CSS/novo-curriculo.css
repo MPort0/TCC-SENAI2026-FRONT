@@ -1,0 +1,424 @@
+:root {
+  --sidebar-border: #303a5b;
+  --text: #f4f6ff;
+  --muted: #8592b4;
+  --active: #627ec1;
+  --bg: #030927;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, sans-serif;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR ORIGINAL */
+.sidebar {
+  width: 264px;
+  min-height: 100vh;
+  border-right: 1px solid var(--sidebar-border);
+  display: flex;
+  flex-direction: column;
+  padding: 62px 22px 38px;
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  height: 51px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 27px;
+  border-radius: 7px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.nav-item .icon {
+  width: 17px;
+  display: inline-flex;
+  justify-content: center;
+  font-size: 17px;
+  opacity: .95;
+}
+
+.nav-item.active {
+  background: var(--active);
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 62px;
+  gap: 30px;
+}
+
+.sidebar-bottom a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.sidebar-bottom a:hover {
+  color: var(--muted);
+}
+
+/* RESPONSIVIDADE ORIGINAL DA SIDEBAR */
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 220px;
+  }
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--sidebar-border);
+    padding: 12px;
+  }
+
+  .nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    min-width: max-content;
+    padding: 0 14px;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+}
+
+/* PÁGINA DE CRIAÇÃO DE CURRÍCULO */
+.resume-page {
+  flex: 1;
+  min-width: 0;
+  padding: 125px 40px;
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+  gap: 13px;
+  align-items: start;
+}
+
+.chat-panel {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  border: 1px solid #222d50;
+  border-radius: 12px;
+  background: #060b20;
+  padding: 12px;
+  height: 800px;
+  /* Tamanho da caixinha de entrevista */
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat-panel::-webkit-scrollbar {
+    width: 7px;
+}
+
+.chat-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-panel::-webkit-scrollbar-thumb {
+    background: #627ec1;
+    border-radius: 10px;
+}
+
+.chat-panel::-webkit-scrollbar-thumb:hover {
+    background: #859fe0;
+}
+
+/* Firefox */
+.chat-panel {
+    scrollbar-width: thin;
+    scrollbar-color: #627ec1 transparent;
+}
+.chat-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f5f6ff;
+  font-weight: 600;
+}
+
+.chat-top small {
+  font-size: 10px;
+  color: #7885a6;
+  font-weight: 400;
+}
+
+.chat-panel .message {
+  margin-left: 29px;
+  background: #141c36;
+  padding: 12px 14px;
+  border-radius: 0 9px 9px 9px;
+  max-width: 88%;
+  font-size: 14px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.chat-panel .message.user {
+  align-self: flex-end;
+  margin: 0 0 0 auto;
+  background: #30477f;
+  border-radius: 9px 0 9px 9px;
+  max-width: 77%;
+}
+
+.chat-panel .time {
+  display: block;
+  text-align: right;
+  color: #7481a5;
+  font-size: 10px;
+  margin-top: -8px;
+}
+
+.suggestion {
+  margin-top: auto;
+  border: 1px solid #2a3761;
+  border-radius: 9px;
+  background: #151d39;
+  padding: 10px 9px 8px;
+  color: #8998bd;
+  font-size: 14px;
+}
+.suggestion-title {
+  color: #627ec1;
+  font-size: 15px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.suggestion p {
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 25px;
+}
+
+.resume-page button {
+  font: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 9px;
+}
+
+.btn-primary {
+  background: #627ec1;
+  color: white;
+}
+
+.reply {
+  display: flex;
+  gap: 5px;
+}
+
+.reply input {
+  min-width: 0;
+  flex: 1;
+  background: #202a50;
+  border: 0;
+  border-radius: 20px;
+  padding: 8px 12px;
+  color: white;
+  font-size: 12px;
+  outline: none;
+}
+
+.reply input::placeholder {
+  color: #647296;
+}
+
+.continue {
+  background: #627ec1;
+  color: white;
+  border-radius: 4px;
+  padding: 0 13px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+/* PRÉVIA DO CURRÍCULO */
+.resume-preview {
+  border: 1px solid #263252;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  color: #1b2435;
+  height: 800px;
+/* Tamanho da prévia do currículo */
+}
+
+  .resume-header {
+  height: 35px;
+  background: #080d23;
+  color: #aebfe3;
+  border-bottom: 1px solid #263252;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.resume-document {
+  padding: 50px 30px 30px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.resume-person {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid #e8eaf0;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.resume-avatar {
+  width: 80px;
+  height:80px;
+  border-radius: 50%;
+  background: #627ec1;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.resume-person h2 {
+  font-size: 28px;
+  margin: 0 0 1px;
+  font-weight: 700;
+}
+
+.resume-person .role {
+  font-size: 15px;
+  color: #1B2435;
+  font-weight: 600;
+}
+
+.contact {
+  font-size: 10px;
+  color: #8a94a6;
+  overflow-wrap: anywhere;
+}
+
+.resume-section {
+  margin: 10px 0;
+}
+
+.resume-section h3 {
+  font-size: 20px;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.resume-section p {
+  font-size: 12px;
+  margin: 0;
+  color: #596477;
+}
+
+.job-title {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.sub {
+  font-size: 12px;
+  color: #7b8495;
+  font-style: italic;
+}
+
+.dates {
+  float: right;
+  color: #7b8495;
+}
+
+.resume-document ul {
+  margin: 3px 0 0;
+  padding-left: 10px;
+  color: #596477;
+}
+
+.resume-bottom {
+  display: grid;
+  gap: 12px;
+}
+
+.tags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #eef0f4;
+  border-radius: 2px;
+  padding: 2px 5px;
+  font-size: 12px;
+  color: #4d5666;
+}
+
+/* RESPONSIVIDADE DO CONTEÚDO */
+@media (max-width: 1100px) {
+  .resume-page {
+    padding: 30px 18px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .resume-page {
+    padding: 16px 12px;
+  }
+}
+/* AJUSTAR PROPORÇÃO */
