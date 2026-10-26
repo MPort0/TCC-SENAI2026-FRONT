@@ -1,7 +1,7 @@
 function sendMessage() {
 
     const input = document.getElementById("messageInput");
-    const chat = document.getElementById("chat");
+    const chat = document.getElementById("chat-messages");
 
     const message = input.value.trim();
 
@@ -20,6 +20,15 @@ function sendMessage() {
     input.value = "";
 
     chat.scrollTop = chat.scrollHeight;
+
+    // Executa o envio ao pressionar Enter no campo de texto
+    document.getElementById("messageInput").addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Evita quebra de linha indesejada
+            sendMessage();
+        }
+    });
+
 }
 
 function toggleMenu() {
