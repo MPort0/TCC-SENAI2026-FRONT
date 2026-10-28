@@ -1,257 +1,154 @@
-/* TEMAS 1 */
+/* ==========================================================================
+   BANCO DE CORES (TEMAS.CSS)
+   ========================================================================== */
 
-/*
-CORES DO MODO ESCURO (PADRÃO ATUAL DO SITE)
-*/
+/* --------------------------------------------------------------------------
+   MODO ESCURO (PADRÃO)
+   -------------------------------------------------------------------------- */
 :root {
-    --bg-page: #00092D;
-    /* Login, Cadastro: Cor de fundo principal da página */
-    --bg-card: #080d24;
-    /* Login, Cadastro: Cor de fundo do card central */
-    --border-card: #1a2342;
-    /* Login, Cadastro: Cor da borda do card central */
-    --bg-input: #050817;
-    /* Login, Cadastro: Cor de fundo dos inputs e botões sociais */
-    --border-input: #1e2a4a;
-    /* Login, Cadastro: Cor da borda dos inputs e botões sociais */
-    --text-primary: #ffffff;
-    /* Login, Cadastro, Perfil: Cor dos textos e títulos principais */
-    --text-secondary: #8c9bba;
-    /* Login, Cadastro: Cor dos textos secundários e subtítulos */
-    --text-labels: #e2e8f0;
-    /* Login, Cadastro: Cor das etiquetas (labels) acima dos inputs */
-    --text-placeholder: #4a5568;
-    /* Login, Cadastro: Cor do texto de dica (placeholder) nos inputs */
-    --icon-stroke: #718096;
-    /* Login, Cadastro: Cor dos contornos dos ícones de login */
-    --color-primary: #5372e7;
-    /* Login, Cadastro: Cor principal do botão de enviar (submit) */
-    --color-primary-hover: #4260d6;
-    /* Login, Cadastro: Cor do botão de enviar no hover */
-    --color-link: #6382f7;
-    /* Login, Cadastro: Cor dos links e do "Esqueci minha senha" */
-    --bg-social-hover: #0b112c;
-    /* Login, Cadastro: Cor de fundo dos botões sociais no hover */
-    --border-social-hover: #2d3f6e;
-    /* Login, Cadastro: Cor da borda dos botões sociais no hover */
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    /* Login, Cadastro: Sombra projetada do card */
-    --cor-path-2: #ffffff;
-    /* Login, Perfil: Cor do segundo path (desenho interno) da logo */
-
-    --bg: #02082c;
-    /* Perfil: Cor de fundo principal da página e do app */
-    --sidebar-border: #505873;
-    /* Perfil: Cor da divisória do menu lateral e bordas dos inputs */
-    --text: #ffffff;
-    /* Perfil: Cor dos títulos internos e textos principais */
-    --muted: #98aaca;
-    /* Perfil: Cor do subtítulo do usuário abaixo do nome */
-    --muted-2: #94a3b8;
-    /* Perfil: Cor do texto digitado dentro dos inputs */
-    --primary: #5f7fbf;
-    /* Perfil: Cor da borda do input selecionado (focus) */
-    --primary-button: #495e97;
-    /* Perfil: Cor de fundo do botão "Salvar alterações" */
-    --active: #627dbc;
-    /* Perfil: Cor do item ativo no menu e botão flutuante */
-    --avatar: #0d0b6c;
-    /* Perfil: Cor de fundo do círculo do avatar */
-    --card: #1b2550;
-    /* Perfil: Cor de fundo dos blocos de currículos salvos */
-    --card-border: #2d3a68;
-    /* Perfil: Cor da borda dos blocos de currículos vazios */
-    --avatar: #0d0b6c;
-    /* Perfil: Cor de fundo do círculo do avatar */
-    --avatar-text: #ffffff;
-    /* Perfil: Cor da letra dentro do avatar no escuro */
-    --input-form: #050817;
-    /* Perfil: fundo do input */
-    --input-editar-curriculo: #5F7FBF9C;
-    --border-editar-curriculo: #5F7FBF;
-    --color-text-input-editar-curriculo: #fff;
-
-
-    /* devolutiva */
-
-    --grafic: #5b76b8;
-    --red: #ff3b30;
-    --green: #14AE5C;
-
-
---bg-sidebar: #0b112c;
-  --border-sidebar: #1e293b;
-
-  --primary-blue: #ffff;
-  --active-bg: #6685c5;
-  
-  --text-primary: #f8fafc;
-  --text-secondary: #a5b4fc;
-  --text-muted: #64748b;
-  
-  --badge-bg: #2f5194;
-  --avatar-icon: #818cf8;
-  --divider-color: #1e293b;
-
-  /* novas cores */
-  /* Fundos Globais */
+  /* Fundos Globais e Cards */
+  --bg-page: #00092D;
+  --bg-card: #080d24;
   --bg-app: #0b112c;
+  --bg-sidebar: #0b112c;
+  --bg-input: #050817;
   --bg-card-option: rgba(255, 255, 255, 0.04);
-  
+  --bg-social-hover: #0b112c;
+
+  /* Bordas */
+  --border-card: #1a2342;
+  --border-input: #1e2a4a;
+  --border-sidebar: #1e293b;
+  --border-social-hover: #2d3f6e;
+  --border-option: #1e293b;
+  --border-option-hover: #6685c5;
+  --border-editar-curriculo: #5F7FBF;
+  --sidebar-border: #505873;
+
   /* Textos */
   --text-primary: #f8fafc;
+  --text-secondary: #a5b4fc;
   --text-subtitle: #94a3b8;
   --text-option: #94a3b8;
+  --text-muted: #64748b;
+  --text-labels: #e2e8f0;
+  --text-placeholder: #4a5568;
   --text-white: #ffffff;
+  --text: #ffffff;
+  --muted: #98aaca;
+  --muted-2: #94a3b8;
 
-  /* Cores de Destaque / Marca */
+  /* Cores de Destaque / Marca (Atualizadas para #6685c5) */
   --primary-brand: #6685c5;
   --primary-brand-hover: #6685c5;
   --accent-blue-light: #818cf8;
-  
-  /* Bordas */
-  --border-option: #1e293b;
-  --border-option-hover: #6685c5;
-  
+  --color-primary: #6685c5;
+  --color-primary-hover: #526da6;
+  --color-link: #6685c5;
+  --primary: #6685c5;
+  --primary-button: #6685c5;
+  --active: #627dbc;
+  --active-bg: #6685c5;
+
   /* Botões e Gradientes */
   --btn-start-bg: #6685c5;
-  --btn-start-hover: #4338ca;
-  --btn-floating-bg: #4f46e5;
+  --btn-start-hover: #526da6;
+  --btn-floating-bg: #6685c5;
 
+  /* Elementos Específicos (Avatar, Ícones, Currículos) */
+  --avatar: #0d0b6c;
+  --avatar-text: #ffffff;
+  --avatar-icon: #818cf8;
+  --card: #1b2550;
+  --card-border: #2d3a68;
+  --icon-stroke: #718096;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --cor-path-2: #ffffff;
+  --input-form: #050817;
+  --input-editar-curriculo: #5F7FBF9C;
+  --color-text-input-editar-curriculo: #fff;
+  --badge-bg: #2f5194;
+  --divider-color: #1e293b;
+
+  /* Devolutiva */
+  --grafic: #5b76b8;
+  --red: #ff3b30;
+  --green: #14AE5C;
 }
 
-/* 
-CORES DO MODO CLARO (ATIVADO AUTOMATICAMENTE PELO HORÁRIO)
-*/
+/* --------------------------------------------------------------------------
+   MODO CLARO
+   -------------------------------------------------------------------------- */
 [data-theme="light"] {
-    --bg-page: #EEF4FF;
-    /* Login, Cadastro: Cor de fundo principal da página no claro */
-    --bg-card: #ffffff;
-    /* Login, Cadastro: Cor de fundo do card central no claro */
-    --border-card: transparent;
-    /* Login, Cadastro: Cor da borda do card central no claro */
-    --bg-input: #E2E8F0;
-    /* Login, Cadastro: Cor de fundo dos inputs e botões sociais */
-    --border-input: #94A3B8;
-    /* Login, Cadastro: Cor da borda dos inputs e botões sociais */
-    --text-primary: #000000;
-    /* Login, Cadastro, Perfil: Cor dos textos e títulos no claro */
-    --text-secondary: #64748B;
-    /* Login, Cadastro: Cor dos textos secundários no claro */
-    --text-labels: #334155;
-    /* Login, Cadastro: Cor das etiquetas (labels) no claro */
-    --text-placeholder: #94A3B8;
-    /* Login, Cadastro: Cor do placeholder no claro */
-    --icon-stroke: #5F7FBF;
-    /* Login, Cadastro: Cor das linhas dos ícones no claro */
-    --color-primary: #5F7FBF;
-    /* Login, Cadastro: Cor principal do botão de enviar no claro */
-    --color-primary-hover: #4b6aa3;
-    /* Login, Cadastro: Cor do botão de enviar no hover claro */
-    --color-link: #5F7FBF;
-    /* Login, Cadastro: Cor dos links no claro */
-    --bg-social-hover: #f1f5f9;
-    /* Login, Cadastro: Cor de fundo dos botões sociais no hover claro */
-    --border-social-hover: #5F7FBF;
-    /* Login, Cadastro: Cor da borda dos botões sociais no hover claro */
-    --card-shadow: 0 10px 30px rgba(100, 116, 139, 0.2);
-    /* Login, Cadastro: Sombra suave do card no claro */
-    --cor-path-2: #5F7FBF;
-    /* Login, Perfil: Cor do segundo path da logo no claro */
-
-    --bg: #F8FAFF;
-    /* Perfil: Cor de fundo principal da página no claro */
-    --sidebar-border: #94A3B8;
-    /* Perfil: Cor da linha divisória do menu lateral no claro */
-    --text: #5F7FBF;
-    /* Perfil: Cor dos títulos secundários ("Meus dados", "Currículos") */
-    --muted: #64748B;
-    /* Perfil: Cor do subtítulo do usuário no claro */
-
-
-
-    --muted-2: #64748B;
-    /* Perfil: Cor do texto interno e placeholders dos inputs */
-
-
-    --primary: #5F7FBF;
-    /* Perfil: Cor da borda do input com foco no claro */
-
-    --primary-button: #6089DB;
-    /* Perfil: Cor de fundo do botão "Salvar alterações" no claro */
-    --active: #D0E1FF;
-    /* Perfil: Cor de fundo do item selecionado no menu no claro */
-    --avatar: #D0E1FF;
-    /* Perfil: Cor de fundo do círculo do avatar no claro */
-    --card: #ffffffe7;
-    /* Perfil: Cor de fundo dos blocos de currículos no claro */
-    --card-border: #94A3B8;
-    /* Perfil: Cor da borda dos blocos de currículos no claro */
-    --avatar: #5F7FBF;
-    /* Perfil: Cor de fundo do círculo do avatar no claro */
-    --avatar-text: #ffffff;
-    /* Perfil: Cor da letra dentro do avatar no claro */
-    --input-form: #E2E8F0;
-    /*Perfil: Cor do fundo dos inputs*/
-    --border-form-input: #5F7FBF;
-    /* Perfil: Cor dos da borda dos inputs */
-    --input-editar-curriculo: #5F7FBF9C;
-    --border-editar-curriculo: #5F7FBF;
-    --color-text-input-editar-curriculo: #fff;
-
-
-
-    /* devolutiva */
-    --text-devolutiva: #ffff;
-    --card-devolutiva: #5F7FBF;
-    --active: #5b76b8;
-    --hover-btn-devolutiva: #6c87c9;
-
-
- /* sidebar */
-  --bg-sidebar: #ffffff;
-  --border-sidebar: #f0f2f6;
-
-  --primary-blue: #4f46e5;      /* Azul de destaque principal */
-  --active-bg: #eff4ff;         /* Fundo do item selecionado */
-  
-  --text-primary: #1e293b;      /* Texto principal */
-  --text-secondary: #2563eb;    /* Cor dos ícones e textos azuis */
-  --text-muted: #94a3b8;        /* Subtítulo/E-mail */
-  
-  --badge-bg: #f0f4ff;          /* Fundo da logo e do avatar */
-  --avatar-icon: #4f46e5;
-  --divider-color: #f1f5f9;
-
-
-  /* simulacao */
-
-  --bg-simulacao: #ffff;
-  --subtitle-simulacao: #707a9c;
-
-  /* novas cores */
-  /* Fundos Globais */
+  /* Fundos Globais e Cards */
+  --bg-page: #EEF4FF;
+  --bg-card: #ffffff;
   --bg-app: #ffffff;
+  --bg-sidebar: #ffffff;
+  --bg-input: #E2E8F0;
   --bg-card-option: rgba(122, 130, 153, 0.04);
-  
+  --bg-simulacao: #ffffff;
+  --bg-social-hover: #f1f5f9;
+
+  /* Bordas */
+  --border-card: transparent;
+  --border-input: #94A3B8;
+  --border-sidebar: #f0f2f6;
+  --border-social-hover: #5F7FBF;
+  --border-option: #E3EDFC;
+  --border-option-hover: #6685c5;
+  --sidebar-border: #94A3B8;
+  --card-border: #94A3B8;
+  --border-form-input: #5F7FBF;
+  --border-editar-curriculo: #5F7FBF;
+
   /* Textos */
-  --text-primary: #1e293b;
+  --text-primary: #6685c5;/* Cor dos textos principais no claro */
+  --text-secondary: #2563eb;
   --text-subtitle: #64748b;
   --text-option: #727d9d;
+  --text-muted: #94a3b8;
+  --text-labels: #334155;
+  --text-placeholder: #94A3B8;
   --text-white: #ffffff;
+  --text: #6685c5; /* Cor usada em títulos no claro */
+  --muted: #64748B;
+  --muted-2: #64748B;
+  --subtitle-simulacao: #707a9c;
 
-  /* Cores de Destaque / Marca */
+  /* Cores de Destaque / Marca (Atualizadas para #6685c5) */
   --primary-brand: #6685c5;
   --primary-brand-hover: #6685c5;
   --accent-blue-light: #588FFF;
-  
-  /* Bordas */
-  --border-option: #E3EDFC;
-  --border-option-hover: #6685c5;
-  
+  --color-primary: #6685c5;
+  --color-primary-hover: #4b6aa3;
+  --color-link: #6685c5;
+  --primary: #6685c5;
+  --primary-button: #6685c5;
+  --active: #5b76b8;
+  --active-bg: #eff4ff;
+
   /* Botões e Gradientes */
   --btn-start-bg: #6685c5;
   --btn-start-hover: #7895d6;
   --btn-floating-bg: #6685c5;
 
+  /* Elementos Específicos (Avatar, Ícones, Currículos) */
+  --avatar: #5F7FBF;
+  --avatar-text: #ffffff;
+  --avatar-icon: #4f46e5;
+  --card: #ffffffe7;
+  --icon-stroke: #5F7FBF;
+  --card-shadow: 0 10px 30px rgba(100, 116, 139, 0.2);
+  --cor-path-2: #5F7FBF;
+  --input-form: #E2E8F0;
+  --input-editar-curriculo: #5F7FBF9C;
+  --color-text-input-editar-curriculo: #fff;
+  --badge-bg: #f0f4ff;
+  --divider-color: #f1f5f9;
+
+  /* Devolutiva */
+  --text-devolutiva: #ffff;
+  --card-devolutiva: #5F7FBF;
+  --hover-btn-devolutiva: #6c87c9;
 }

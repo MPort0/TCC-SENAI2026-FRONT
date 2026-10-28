@@ -9,8 +9,8 @@ body {
     width: 100%;
     min-height: 100%;
     font-family: 'Poppins', Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
+    background: var(--bg-app);
+    color: var(--text-primary);
 }
 
 body {
@@ -26,7 +26,7 @@ input {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    background: var(--bg);
+    background: var(--bg-app);
 }
 
 
@@ -45,42 +45,50 @@ input {
     font-size: clamp(1.7rem, 2.1vw, 2.4rem);
     line-height: 1.2;
     font-weight: 700;
+    color: var(--text-primary);
 }
 
+
 .profile-header {
+    width: 100%;
     display: flex;
     align-items: center;
-    /* alinha verticalmente */
     justify-content: space-between;
-    /* título à esquerda, botão à direita */
     margin-bottom: 2rem;
-    /* espaço abaixo do header */
 }
 
 .profile-header h1 {
+    margin: 0;
     font-size: clamp(1.7rem, 2.1vw, 2.4rem);
     font-weight: 700;
     line-height: 1.2;
+    color: var(--text-primary);
 }
+
 
 /* =========================
    USUÁRIO
    ========================= */
 
 .user-heading {
-    width: 100%;
+    width: 60%;
+    max-width: 31rem;
     display: flex;
     align-items: center;
-    gap: 3%;
-    margin-top: 3%;
+    gap: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
 }
 
 .avatar {
+    position: absolute;
+    right: calc(100% + 1rem);
     width: clamp(5rem, 8vw, 6.2rem);
     aspect-ratio: 1;
     border-radius: 50%;
-    background: var(--avatar);
-    color: var(--avatar-text);
+    background: var(--primary-brand);
+    color: var(--text-white);
     display: grid;
     place-items: center;
     font-size: clamp(2.2rem, 3.2vw, 3.2rem);
@@ -95,16 +103,17 @@ input {
     font-size: clamp(1.5rem, 2.1vw, 2.4rem);
     line-height: 1;
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 .user-name svg {
-    color: var(--primary)
+    color: var(--primary-brand);
 }
 
 
 .user-subtitle {
     margin-top: 0.45rem;
-    color: var(--muted);
+    color: var(--text-subtitle);
     font-size: clamp(0.9rem, 1.2vw, 1.2rem);
 }
 
@@ -115,8 +124,8 @@ input {
 .profile-form {
     width: 60%;
     max-width: 31rem;
-    margin-left: 15%;
-    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
 }
@@ -125,23 +134,24 @@ input {
     margin: 0 0 0.5rem;
     font-size: clamp(0.85rem, 1vw, 1rem);
     font-weight: 600;
+    color: var(--text-primary);
 }
 
 .profile-form input {
     width: 100%;
     height: 3.4rem;
-    border: 0.06rem solid var(--border-form-input);
+    border: 0.06rem solid var(--border-option);
     border-radius: 0.55rem;
     outline: none;
-    background: var(--input-form);
-    color: var(--muted-2);
+    background: var(--bg-card-option);
+    color: var(--text-primary);
     padding: 0 1.05rem;
     font-size: clamp(0.8rem, 0.95vw, 1rem);
     margin-bottom: 1.25rem;
 }
 
 .profile-form input:focus {
-    border-color: var(--primary);
+    border-color: var(--primary-brand);
 }
 
 .salvar-alteracoes {
@@ -149,57 +159,64 @@ input {
     min-height: 3.3rem;
     border: 0;
     border-radius: 0.5rem;
-    background: var(--primary-button);
-    color: #ffff;
+    background: var(--btn-start-bg);
+    color: var(--text-white);
     font-size: clamp(0.85rem, 1vw, 1rem);
     font-weight: 700;
     cursor: pointer;
     transition: filter 0.2s, transform 0.1s;
 }
 
+.salvar-alteracoes:hover {
+    background: var(--btn-start-hover);
+}
+
 .salvar-alteracoes:active {
     transform: translateY(0.06rem);
 }
 
-/* Estilização do Botão */
+/* Estilização do Botão de Tema */
 .theme-toggle-btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     padding: 8px 16px;
-    background-color: var(--button-bg);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
+    background-color: var(--bg-card-option);
+    color: var(--text-primary);
+    border: 1px solid var(--border-option);
     border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
+    flex-shrink: 0;
 }
 
 .theme-toggle-btn:hover {
-    background-color: var(--button-hover);
+    border-color: var(--primary-brand);
 }
 
-/* Controle dos Ícones */
-/* Por padrão (Modo Claro), esconde o Sol e mostra a Lua */
-.theme-toggle-btn .sun-icon {
+/* Controle dos Ícones (Sol / Lua) */
+:root .sun-icon,
+[data-theme="light"] .sun-icon {
     display: none;
 }
 
-.theme-toggle-btn .moon-icon {
+:root .moon-icon,
+[data-theme="light"] .moon-icon {
     display: block;
 }
 
-/* No Modo Escuro, esconde a Lua e mostra o Sol */
-body.dark-theme .theme-toggle-btn .sun-icon {
+[data-theme="dark"] .sun-icon,
+.dark .sun-icon {
     display: block;
 }
 
-body.dark-theme .theme-toggle-btn .moon-icon {
+[data-theme="dark"] .moon-icon,
+.dark .moon-icon {
     display: none;
 }
-
 
 
 /* =========================
@@ -208,7 +225,7 @@ body.dark-theme .theme-toggle-btn .moon-icon {
 
 .content hr {
     border: 0;
-    border-top: 0.06rem solid #3b4564;
+    border-top: 0.06rem solid var(--border-option);
     margin: 6% 0 4%;
     width: 100%;
 }
@@ -227,12 +244,12 @@ body.dark-theme .theme-toggle-btn .moon-icon {
     aspect-ratio: 1.5 / 1;
     border-radius: 0.55rem;
     overflow: visible;
-    background: var(--card);
+    background: var(--bg-card-option);
     min-width: 0;
 }
 
 .resume-card.empty {
-    border: 0.06rem solid var(--card-border);
+    border: 0.06rem solid var(--border-option);
 }
 
 .card-edit {
@@ -243,32 +260,35 @@ body.dark-theme .theme-toggle-btn .moon-icon {
     aspect-ratio: 1;
     border: 0;
     border-radius: 50%;
-    background: var(--bg);
-    color: #9eafd3;
+    background: var(--bg-app);
+    color: var(--accent-blue-light);
     font-size: clamp(1.2rem, 1.7vw, 1.6rem);
     cursor: pointer;
     z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .resume-preview {
     width: 100%;
     height: 100%;
-    background: #fafafa;
-    color: #222;
+    background: var(--bg-app);
+    color: var(--text-primary);
     overflow: hidden;
     border-radius: 0.45rem;
     position: relative;
+    border: 1px solid var(--border-option);
 }
 
 .file-icon {
     width: 12%;
     aspect-ratio: 1;
     margin: 4%;
-    border: 0.06rem solid #b8b8b8;
+    border: 0.06rem solid var(--border-option);
     display: grid;
     place-items: center;
-    color: #4a8bd8;
+    color: var(--primary-brand);
     font-size: clamp(1rem, 1.8vw, 1.5rem);
+    border-radius: 4px;
 }
 
 .fake-lines {
@@ -285,8 +305,8 @@ body.dark-theme .theme-toggle-btn .moon-icon {
     display: block;
     width: 100%;
     height: 0.18rem;
-    background: #c6c6c6;
-    opacity: 0.9;
+    background: var(--text-subtitle);
+    opacity: 0.5;
 }
 
 .fake-lines i.long {
@@ -295,7 +315,7 @@ body.dark-theme .theme-toggle-btn .moon-icon {
 }
 
 /* =========================
-   BOTÃO FLUTUANTE
+   BOTÃO FLUTUANTE (LIA)
    ========================= */
 
 .lia {
@@ -306,21 +326,19 @@ body.dark-theme .theme-toggle-btn .moon-icon {
     aspect-ratio: 1;
     border: none;
     border-radius: 0.5rem;
-    background: var(--active);
+    background: var(--btn-floating-bg);
     cursor: pointer;
-
     display: flex;
-    /* centraliza o conteúdo */
     align-items: center;
     justify-content: center;
     padding: 0;
-    /* remove espaçamento extra */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .lia svg {
     width: 70%;
-    /* SVG se adapta ao botão */
     height: auto;
+    color: var(--text-white);
 }
 
 
@@ -338,10 +356,6 @@ body.dark-theme .theme-toggle-btn .moon-icon {
     .content {
         width: 78%;
         padding: 6vh 7% 7vh;
-    }
-
-    .nav-item {
-        padding: 0 1rem;
     }
 
     .profile-form {
@@ -368,31 +382,8 @@ body.dark-theme .theme-toggle-btn .moon-icon {
         min-height: auto;
         height: auto;
         border-right: 0;
-        border-bottom: 0.06rem solid var(--sidebar-border);
+        border-bottom: 0.06rem solid var(--border-option);
         padding: 0.7rem 2%;
-    }
-
-    .nav {
-        width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
-        gap: 0.3rem;
-        scrollbar-width: none;
-    }
-
-    .nav::-webkit-scrollbar {
-        display: none;
-    }
-
-    .nav-item {
-        width: auto;
-        min-width: max-content;
-        min-height: 2.8rem;
-        padding: 0 0.8rem;
-    }
-
-    .sidebar-bottom {
-        display: none;
     }
 
     .content {
@@ -427,10 +418,6 @@ body.dark-theme .theme-toggle-btn .moon-icon {
         margin-top: 7%;
     }
 
-    .resume-card {
-        aspect-ratio: 1.5 / 1;
-    }
-
     .lia {
         right: 5%;
         bottom: 4%;
@@ -445,10 +432,6 @@ body.dark-theme .theme-toggle-btn .moon-icon {
     .content {
         padding-left: 5%;
         padding-right: 5%;
-    }
-
-    .nav-item {
-        font-size: 0.75rem;
     }
 
     .user-name {
