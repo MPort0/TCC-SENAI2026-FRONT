@@ -22,7 +22,3 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Entrevista iniciada!");
     });
 });
-
-    function openSupport() {
-    alert("Área de suporte do Avalia.");
-}

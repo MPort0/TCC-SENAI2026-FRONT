@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-weight: 600;
 }
-
+ 
 body {
     width: 100%;
     min-height: 100vh;
@@ -12,29 +12,29 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-app);
 }
-
+ 
 .app {
     width: 100%;
     min-height: 100vh;
     display: flex;
     background: var(--bg-app);
 }
-
+ 
 /* =========================
    CONTEÚDO
 ========================= */
-
+ 
 .main-content {
     flex: 1;
     max-width: 920px;
-    margin: 55px auto 70px; 
+    margin: 55px auto 70px;
     padding: 0 20px;
 }
-
+ 
 /* =========================
    TÍTULO
 ========================= */
-
+ 
 h1 {
     font-size: 36px;
     line-height: 1.1;
@@ -42,38 +42,38 @@ h1 {
     font-weight: 700;
     color: var(--text-primary);
 }
-
+ 
 .subtitle {
     margin-top: 10px;
     color: var(--text-subtitle);
     font-size: 20px;
 }
-
+ 
 /* =========================
    SEÇÕES
 ========================= */
-
+ 
 .selection-section {
     margin-top: 43px;
 }
-
+ 
 .selection-section h2 {
     font-size: 17px;
     margin-bottom: 7px;
     color: var(--text-primary);
 }
-
+ 
 /* =========================
    BOTÕES DE OPÇÃO
 ========================= */
-
+ 
 .options {
     display: flex;
     flex-wrap: wrap;
     gap: 16px 22px;
     max-width: 920px;
 }
-
+ 
 .option {
     height: 44px;
     padding: 0 20px;
@@ -86,30 +86,30 @@ h1 {
     cursor: pointer;
     transition: 0.2s;
 }
-
+ 
 .option:hover {
     border-color: var(--border-option-hover);
     color: var(--primary-brand);
 }
-
+ 
 .option.selected {
     background: var(--primary-brand);
     border-color: var(--primary-brand);
     color: var(--text-white);
 }
-
+ 
 /* =========================
    DIFICULDADE
 ========================= */
-
+ 
 .difficulty {
     margin-top: 38px;
 }
-
+ 
 /* =========================
    BOTÃO INICIAR
 ========================= */
-
+ 
 .start-button {
     width: calc(100% - 4px);
     max-width: 910px;
@@ -128,19 +128,19 @@ h1 {
     gap: 8px;
     transition: 0.2s;
 }
-
+ 
 .start-button:hover {
     background: var(--btn-start-hover);
 }
-
+ 
 .play-icon {
     font-size: 16px;
 }
-
+ 
 /* =========================
    BOTÃO FLUTUANTE
 ========================= */
-
+ 
 .floating-support {
     position: fixed;
     right: 22px;
