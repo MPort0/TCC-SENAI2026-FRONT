@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../CSS/sidebar.css">
     <link rel="stylesheet" href="../CSS/perfil.css">
     <script src="../JS/temas.js" defer></script>
+    <script src="../JS/sidebar.js" defer></script>
     <title>Perfil</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +20,10 @@
 <body>
     <div class="app">
         <!-- SIDEBAR CONTAINER -->
+        <!-- Botão flutuante para alternar a sidebar -->
+        <button id="btn-sidebar" class="btn-sidebar" aria-label="Alternar Menu">
+            <i data-lucide="menu"></i>
+        </button>
         <aside class="sidebar">
 
             <!-- Topo / Header -->
@@ -98,6 +103,11 @@
 
             </div>
 
+
+            <div class="sidebar-bottom">
+                <a href="../HTML/login-usuario.html">Sair</a>
+                <a href="#">Suporte</a>
+            </div>
         </aside>
 
         <main class="content">
@@ -212,7 +222,7 @@
             </section>
         </main>
 
-        <button class="lia">
+        <a class="lia" href="../HTML/entrevista-lia.html">
             <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="58" height="58" rx="8" fill="#5F7FBF" />
                 <path

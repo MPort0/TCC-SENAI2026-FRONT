@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrevista</title>
+    <link rel="stylesheet" href="../CSS/simulacao-corrida.css">
+</head>
+
+<body>
+
+
+    <div class="app-container">
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-robot"></i> AVA.Lia
+            </div>
+
+            <nav class="menu">
+                <a href="#" class="menu-item"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-file-invoice"></i> Criar currículo</a>
+                <a href="#" class="menu-item active"><i class="fa-solid fa-comments"></i> Entrevista com a Lia</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-clock-rotate-left"></i> Histórico</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-user"></i> Perfil</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="menu-item"><i class="fa-solid fa-gear"></i> Configuração</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-headset"></i> Suporte</a>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+            <header class="content-header">
+                <h2>Entrevista com a Lia <span class="status-badge">Entrevista ativa</span></h2>
+            </header>
+
+            <div class="content-body">
+                <!-- ÁREA DO CHAT -->
+                <section class="chat-section">
+                    <div class="chat-container">
+
+                        <!-- Mensagem da IA -->
+                        <div class="message bot-message">
+                            <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                            <div class="message-box">
+                                <span class="sender-name">Ava.Lia</span>
+                                <p>Olá! Tudo bem? Vamos começar sua entrevista.</p>
+                                <span class="time">10:32</span>
+                            </div>
+                        </div>
+
+                        <!-- Mensagem do Usuário -->
+                        <div class="message user-message">
+                            <div class="message-box">
+                                <p>Tudo bem! Vamos começar.</p>
+                                <span class="time">10:32</span>
+                            </div>
+                        </div>
+
+                        <!-- Mensagem da IA -->
+                        <div class="message bot-message">
+                            <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                            <div class="message-box">
+                                <span class="sender-name">Ava.Lia</span>
+                                <p>Ótimo! Para começar, fale um pouco sobre sua experiência com HTML e CSS.</p>
+                                <span class="time">10:33</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- CAMPO DE ENTRADA DE TEXTO -->
+                    <div class="input-container">
+                        <input type="text" placeholder="Digite sua resposta...">
+                        <div class="input-actions">
+                            <button class="icon-btn"><i class="fa-solid fa-microphone"></i></button>
+                            <button class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CARD DE PROGRESSO -->
+                <aside class="progress-section">
+                    <div class="progress-card">
+                        <h3><i class="fa-solid fa-chart-simple"></i> Seu progresso</h3>
+                        <div class="progress-info">
+                            <span class="step-count"><strong>1</strong> de 10</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 10%;"></div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+
+</body>
+
+</html>

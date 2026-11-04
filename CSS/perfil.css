@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg: #02082c;
+    --sidebar-border: #505873;
+    --text: #ffffff;
+    --muted: #98aaca;
+    --muted-2: #94a3b8;
+    --primary: #5f7fbf;
+    --primary-button: #6685c5;
+    --active: #627dbc;
+    --avatar: #0d0b6c;
+    --card: #1b2550;
+    --card-border: #2d3a68;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
