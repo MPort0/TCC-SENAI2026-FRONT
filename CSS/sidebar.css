@@ -85,10 +85,11 @@
 
   transition: all 0.2s ease;
 }
+
 .nav-item img {
-  filter: brightness(0) saturate(100%) invert(42%) sepia(75%)
-    saturate(1200%) hue-rotate(220deg) brightness(95%) contrast(95%);
+  filter: brightness(0) saturate(100%) invert(42%) sepia(75%) saturate(1200%) hue-rotate(220deg) brightness(95%) contrast(95%);
 }
+
 /* Ícones SVG dentro do HTML */
 .nav-item svg {
   width: 20px;
