@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-weight: 600;
 }
-
+ 
 body {
     width: 100%;
     min-height: 100vh;
@@ -12,29 +12,29 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-app);
 }
-
+ 
 .app {
     width: 100%;
     min-height: 100vh;
     display: flex;
     background: var(--bg-app);
 }
-
+ 
 /* =========================
    CONTEÚDO
 ========================= */
-
+ 
 .main-content {
     flex: 1;
     max-width: 920px;
-    margin: 55px auto 70px; 
+    margin: 55px auto 70px;
     padding: 0 20px;
 }
-
+ 
 /* =========================
    TÍTULO
 ========================= */
-
+ 
 h1 {
     font-size: 36px;
     line-height: 1.1;
@@ -42,46 +42,38 @@ h1 {
     font-weight: 700;
     color: var(--text-primary);
 }
-
+ 
 .subtitle {
     margin-top: 10px;
     color: var(--text-subtitle);
     font-size: 20px;
 }
-
+ 
 /* =========================
    SEÇÕES
 ========================= */
-
+ 
 .selection-section {
     margin-top: 43px;
 }
-
+ 
 .selection-section h2 {
     font-size: 17px;
     margin-bottom: 7px;
     color: var(--text-primary);
 }
-
+ 
 /* =========================
    BOTÕES DE OPÇÃO
 ========================= */
-
-.opcoes {
-    border: 1px solid #5c79bd;
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-top: 8px;
-    max-width: 910px;
-}
-
+ 
 .options {
     display: flex;
     flex-wrap: wrap;
     gap: 16px 22px;
     max-width: 920px;
 }
-
+ 
 .option {
     height: 44px;
     padding: 0 20px;
@@ -94,30 +86,30 @@ h1 {
     cursor: pointer;
     transition: 0.2s;
 }
-
+ 
 .option:hover {
     border-color: var(--border-option-hover);
     color: var(--primary-brand);
 }
-
+ 
 .option.selected {
     background: var(--primary-brand);
     border-color: var(--primary-brand);
     color: var(--text-white);
 }
-
+ 
 /* =========================
    DIFICULDADE
 ========================= */
-
+ 
 .difficulty {
     margin-top: 38px;
 }
-
+ 
 /* =========================
    BOTÃO INICIAR
 ========================= */
-
+ 
 .start-button {
     width: calc(100% - 4px);
     max-width: 910px;
@@ -136,56 +128,29 @@ h1 {
     gap: 8px;
     transition: 0.2s;
 }
-
+ 
 .start-button:hover {
     background: var(--btn-start-hover);
 }
-
+ 
 .play-icon {
     font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    transform: translateY(49px);
 }
-
-.botao-iniciar:hover {
-    background-color: #678ad1;
-}
-
-.botao-iniciar span {
-    font-size: 14px;
-}
-
+ 
 /* =========================
    BOTÃO FLUTUANTE
-   ========================= */
-
-.lia {
+========================= */
+ 
+.floating-support {
     position: fixed;
-    right: 2%;
-    bottom: 5%;
-    width: clamp(2.8rem, 3.2vw, 3.3rem);
-    aspect-ratio: 1;
+    right: 22px;
+    bottom: 20px;
+    width: 42px;
+    height: 42px;
     border: none;
     border-radius: 6px;
     background: var(--btn-floating-bg);
     color: var(--text-white);
     cursor: pointer;
-
-    display: flex;
-    /* centraliza o conteúdo */
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    /* remove espaçamento extra */
 }
-
-.lia svg {
-    width: 70%;
-    /* SVG se adapta ao botão */
-    height: auto;
-}
+ 

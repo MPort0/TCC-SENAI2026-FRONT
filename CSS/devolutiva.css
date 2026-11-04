@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', Arial, sans-serif;
 }
+
 /*VARIÁVEIS */
 
 
@@ -18,96 +19,6 @@ body {
     color: var(--text);
 
     display: flex;
-}
-
-
-/*
-   SIDEBAR
-   MANTIDA CONFORME A ESTRUTURA ORIGINAL */
-
-.sidebar {
-    width: 300px;
-    min-height: 100vh;
-
-    border-right: 1px solid var(--sidebar-border);
-
-    display: flex;
-    flex-direction: column;
-
-    padding: 62px 22px 38px;
-
-    flex-shrink: 0;
-}
-
-
-.nav {
-    display: flex;
-    flex-direction: column;
-
-    gap: 8px;
-}
-
-
-.nav-item {
-    height: 51px;
-
-    display: flex;
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 0 27px;
-
-    border-radius: 7px;
-
-    color: var(--text);
-
-    text-decoration: none;
-
-    font-weight: 400;
-}
-
-
-.nav-item .icon {
-    width: 17px;
-
-    display: inline-flex;
-    justify-content: center;
-
-    font-size: 17px;
-
-    opacity: .95;
-}
-
-
-.nav-item.active {
-    background: var(--active);
-}
-
-
-.sidebar-bottom {
-    margin-top: auto;
-
-    display: flex;
-    justify-content: space-between;
-
-    padding: 0 20px;
-
-    gap: 20px;
-}
-
-
-.sidebar-bottom span {
-    color: var(--text);
-
-    font-size: 13px;
-
-    white-space: nowrap;
-}
-
-
-.sidebar-bottom svg {
-    flex-shrink: 0;
 }
 
 
@@ -154,7 +65,8 @@ h1 {
 
     padding: 22px 25px 20px;
 
-    margin-bottom: 22px;/* espaço os cards */
+    margin-bottom: 22px;
+    /* espaço os cards */
 }
 
 
@@ -181,11 +93,13 @@ h1 {
 CARDS
 */
 
-.card, .summary, .card-performance {
-    background:var(--card-devolutiva) ;
-    
+.card,
+.summary,
+.card-performance {
+    background: var(--card-devolutiva);
+
     border: 1px solid rgba(197, 201, 215, .7);
-    
+
     border-radius: 10px;
 }
 
@@ -207,7 +121,8 @@ CARDS
     color: var(--text-devolutiva);
     min-height: 200px;
 
-    padding: 20px 30px;/* espaço das bordas das cards */
+    padding: 20px 30px;
+    /* espaço das bordas das cards */
 
     margin-bottom: 22px;
 }
@@ -582,7 +497,8 @@ CARDS
 
         gap: 12px;
     }
-        .lia {
+
+    .lia {
         right: 5%;
         bottom: 4%;
     }
