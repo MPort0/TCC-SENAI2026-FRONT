@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../CSS/home.css">
-</head>
-
-<!-- Ícones -->
-<script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../CSS/sidebar.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
 </head>
 
 <body>
@@ -24,38 +22,30 @@
                 <span>Ava.<span class="logo-azul">Lia</span></span>
             </div>
 
-
-            <nav class="menu">
-                <a href="#" class="menu-item active">
-                    <!-- 👇 a lucide é uma biblioteca de ícones -->
-                    <!-- 👇 o "i" é para texto em italico -->
-                    <i data-lucide="house"></i>
-                    <!-- 👆 para o icone do inicio -->
+            <!-- Navegação Principal -->
+            <nav class="nav-section">
+                <a href="../HTML/home.html" class="nav-item active">
+                    <i data-lucide="home"></i>
+                    <img src="../IMG/home.svg">
                     <span>Início</span>
                 </a>
-                <a href="#" class="menu-item">
-                    <!--  👇 a lucide é uma biblioteca de ícones-->
-                      <!-- 👇 para o icone de folhinha de criar curriculo -->
+                <a href="../HTML/criar-curriculo.html" class="nav-item">
                     <i data-lucide="file-text"></i>
                     <span>Criar currículo</span>
                 </a>
-                <a href="#" class="menu-item">
-                    <!-- 👇 a lucide é uma biblioteca de ícones -->
-                     <!-- 👇 para o icone de microfone -->
-                    <i data-lucide="mic"></i>
+                <a href="../HTML/simulação.html" class="nav-item">
+                    <i data-lucide="play-circle"></i>
+                    <img src="../IMG/circle-play.svg">
                     <span>Simulação</span>
                 </a>
-                
-                <a href="#" class="menu-item">
-                    <!-- 👇 a lucide é uma biblioteca de ícones -->
-                     <!-- 👇 para o icone de relógio -->
-                    <i data-lucide="clock-3"></i>
+                <a href="../HTML/historico.html" class="nav-item">
+                    <i data-lucide="history"></i>
+                    <img src="../IMG/clock-3.svg">
                     <span>Histórico</span>
                 </a>
-                <a href="#" class="menu-item">
-                    <!-- 👇 a lucide é uma biblioteca de ícones -->
-                     <!-- 👇 para o icone de perfil -->
-                    <i data-lucide="user-round"></i>
+                <a href="../HTML/perfil.html" class="nav-item">
+                    <i data-lucide="user"></i>
+                    <img src="../IMG/user-circle.svg">
                     <span>Perfil</span>
                 </a>
                 <a href="#" class="menu-item">
@@ -67,37 +57,27 @@
             </nav>
 
 
-            <!-- USUÁRIO/ PARTE DE BAIXO -->
-            <div class="sidebar-bottom">
-               <div class="user-box">  <!--ESS É DA CAIXINHA QUE TEM NA PARTE DE BAIXO, E TODO O LADO DIREITO  -->
-                    <div class="avatar">
-                          <!-- 👇 a lucide é uma biblioteca de ícones -->
-                           <!--👇 ICONE DE PERFIL  -->
-                        <i data-lucide="user"></i>
-                    </div>
-                    <div>
-                        <strong>Olá, usuário!</strong>
-                        <!-- "small serve para texto menores" -->
-                        <small>Seja bem-vindo(a)!</small>
-                    </div>
-                </div>
+                <div class="divider"></div>
+                
+                <!-- Links Inferiores -->
+                <nav class="bottom-nav">
+                    <a href="#" class="nav-item">
+                        <i data-lucide="settings"></i>
+                        <img src="../IMG/configuracoes.svg">
+                        <span>Configurações</span>
+                    </a>
+                    <a href="#" class="nav-item">
+                        <i data-lucide="headphones"></i>
+                        <img src="../IMG/suporte.svg">
+                        <span>Suporte</span>
+                    </a>
+                    <a href="../HTML/login-usuario.html" class="nav-item">
+                        <i data-lucide="log-out"></i>
+                        <img src="../IMG/sair.svg">
+                        <span>Sair</span>
+                    </a>
+                </nav>
 
-                <a href="#" class="bottom-item">
-                    <!-- 👇 a lucide é uma biblioteca de ícones -->
-                     <!-- 👇 para o icone de configurações -->
-                    <i data-lucide="settings"></i>
-                    Configurações
-                </a>
-                <a href="#" class="bottom-item">
-                    <!-- 👇 a lucide é uma biblioteca de ícones -->
-                     <!-- 👇 para o icone de fones de ouvido -->
-                    <i data-lucide="headphones"></i>
-                    Suporte
-                </a>
-                <a href="#" class="bottom-item">
-                    <i data-lucide="log-out"></i>
-                    Sair
-                </a>
             </div>
         </aside>
 
