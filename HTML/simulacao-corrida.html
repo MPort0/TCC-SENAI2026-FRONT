@@ -13,24 +13,74 @@
 
     <div class="app-container">
         <!-- BARRA LATERAL -->
-        <aside class="sidebar">
-            <div class="logo">
-                <i class="fa-solid fa-robot"></i> AVA.Lia
-            </div>
+            <aside class="sidebar">
 
-            <nav class="menu">
-                <a href="#" class="menu-item"><i class="fa-solid fa-house"></i> Dashboard</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-file-invoice"></i> Criar currículo</a>
-                <a href="#" class="menu-item active"><i class="fa-solid fa-comments"></i> Entrevista com a Lia</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-clock-rotate-left"></i> Histórico</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-user"></i> Perfil</a>
-            </nav>
+                <!-- Topo / Header -->
+                <div class="sidebar-header">
+                    <div class="logo-badge">
+                        <img src="../IMG/logo-branca.svg">
+                    </div>
+                    <div class="brand-title">
+                        <span class="brand-dark">AVA.</span>
+                        <span class="brand-blue">Lia</span>
+                    </div>
+                </div>
 
-            <div class="sidebar-footer">
-                <a href="#" class="menu-item"><i class="fa-solid fa-gear"></i> Configuração</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-headset"></i> Suporte</a>
-            </div>
-        </aside>
+                <!-- Navegação Principal -->
+                <nav class="nav-section">
+                    <a href="home.html" class="nav-item active">
+                        <i data-lucide="home"></i>
+                        <img src="../IMG/home.svg">
+                        <span>Início</span>
+                    </a>
+                    <a href="novo-curriculo.html" class="nav-item">
+                        <i data-lucide="file-text"></i>
+                        <img src="../IMG/file-text.svg">
+                        <span>Criar currículo</span>
+                    </a>
+                    <a href="simulação.html" class="nav-item">  
+                        <i data-lucide="play-circle"></i>
+                        <img src="../IMG/circle-play.svg">
+                        <span>Simulação</span>
+                    </a>
+                    <a href="historico.html" class="nav-item">
+                        <i data-lucide="history"></i>
+                        <img src="../IMG/clock-3.svg">
+                        <span>Histórico</span>
+                    </a>
+                    <a href="perfil.html" class="nav-item">
+                        <i data-lucide="user"></i>
+                        <img src="../IMG/user-circle.svg">
+                        <span>Perfil</span>
+                    </a>
+                </nav>
+
+                <!-- Rodapé / Usuário + Links -->
+                <div class="sidebar-footer">
+
+                    <!-- Card do Usuário -->
+                    <div class="user-card">
+                        <div class="user-avatar">
+                            <i data-lucide="user"></i>
+                        </div>
+                        <div class="user-info">
+                            <span class="user-nome">Olá, usuário!</span>
+                            <span class="user-email">hello_lia@useia.com.br</span>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <!-- Links Inferiores -->
+                        <a href="#" class="nav-item">
+                            <i data-lucide="log-out"></i>
+                            <img src="../IMG/sair.svg">
+                            <span>Sair</span>
+                        </a>
+                    </nav>
+
+                </div>
+            </aside>
 
         <!-- CONTEÚDO PRINCIPAL -->
         <main class="main-content">
