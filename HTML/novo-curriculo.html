@@ -235,59 +235,28 @@
 </div>
 
 <script>
-const suggestion = document.getElementById("suggestionText");
-const input = document.getElementById("replyInput");
-
-document.getElementById("useBtn").addEventListener("click", () => {
-  input.value = suggestion.textContent.trim();
-  input.focus();
-});
-
-document.getElementById("editBtn").addEventListener("click", () => {
-  input.value = suggestion.textContent.trim();
-  input.focus();
-  input.select();
-});
-
-document.getElementById("continueBtn").addEventListener("click", () => {
-  const value = input.value.trim();
-
-  if (!value) {
-    input.focus();
-    return;
-  }
-
-  const bubble = document.createElement("div");
-  bubble.className = "message user";
-  bubble.textContent = value;
-
-  document.querySelector(".suggestion").before(bubble);
-  input.value = "";
-});
-
-input.addEventListener("keydown", event => {
-  if (event.key === "Enter") {
-    document.getElementById("continueBtn").click();
-  }
-});
-</script>
-
-
-<script>
 document.addEventListener("DOMContentLoaded", function () {
     const chat = document.querySelector(".chat-panel");
-    const input = document.querySelector(".reply input");
-    const botao = document.querySelector(".continue");
+    const input = document.getElementById("replyInput");
+    const continueBtn = document.getElementById("continueBtn");
+    const useBtn = document.getElementById("useBtn");
+    const suggestionText = document.getElementById("suggestionText");
 
-    if (!chat || !input || !botao) {
-        console.warn("Os elementos do chat não foram encontrados.");
-        return;
+    // Copia a sugestão para o campo de texto
+    if (useBtn && suggestionText && input) {
+        useBtn.addEventListener("click", () => {
+            input.value = suggestionText.textContent.trim();
+            input.focus();
+        });
     }
-// ...
+
+    // Função para adicionar mensagem do usuário no chat
     function enviarMensagem() {
         const texto = input.value.trim();
-
-        if (!texto) return;
+        if (!texto) {
+            input.focus();
+            return;
+        }
 
         const mensagem = document.createElement("div");
         mensagem.classList.add("message", "user");
@@ -295,18 +264,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const horario = document.createElement("span");
         horario.classList.add("time");
-        horario.textContent = new Date().toLocaleTimeString(
-            "pt-BR",
-            { hour: "2-digit", minute: "2-digit" }
-        );
+        horario.textContent = "Você  " + new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
 
         const sugestao = chat.querySelector(".suggestion");
 
         if (sugestao) {
-            chat.insertBefore(mensagem, sugestao);
             chat.insertBefore(horario, sugestao);
+            chat.insertBefore(mensagem, horario);
         } else {
-            chat.append(mensagem, horario);
+            chat.appendChild(horario);
+            chat.appendChild(mensagem);
         }
 
         input.value = "";
@@ -314,14 +281,18 @@ document.addEventListener("DOMContentLoaded", function () {
         input.focus();
     }
 
-    botao.addEventListener("click", enviarMensagem);
+    if (continueBtn) {
+        continueBtn.addEventListener("click", enviarMensagem);
+    }
 
-    input.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" && !event.shiftKey) {
-            event.preventDefault();
-            enviarMensagem();
-        }
-    });
+    if (input) {
+        input.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                enviarMensagem();
+            }
+        });
+    }
 });
 </script>
 </body>

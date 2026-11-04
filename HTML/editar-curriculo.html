@@ -199,8 +199,8 @@
         <!-- BOTÕES -->
         <div class="buttons">
 
-            <button onclick="abrirJanelaArquivos()" type="button" class="export">
-                Exportar PDF
+           <button onclick="gerarPDF()" type="button" class="export">
+            Exportar PDF
             </button>
             <input type="file" id="meu-pdf-input" accept=".pdf" style="display: none;"
                 onchange="arquivoAdicionado(this)">
@@ -224,5 +224,8 @@
 </main>
 
 </body>
+
+<script src="../JS/editar-curriculo.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </html>
