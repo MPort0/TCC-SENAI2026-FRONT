@@ -1,4 +1,4 @@
-/* temas.css */
+/* TEMAS 1 */
 
 /*
 CORES DO MODO ESCURO (PADRÃO ATUAL DO SITE)
@@ -67,6 +67,56 @@ CORES DO MODO ESCURO (PADRÃO ATUAL DO SITE)
     /* Perfil: Cor da letra dentro do avatar no escuro */
     --input-form: #050817;
     /* Perfil: fundo do input */
+    --input-editar-curriculo: #5F7FBF9C;
+    --border-editar-curriculo: #5F7FBF;
+    --color-text-input-editar-curriculo: #fff;
+
+
+    /* devolutiva */
+
+    --grafic: #5b76b8;
+    --red: #ff3b30;
+    --green: #14AE5C;
+
+
+--bg-sidebar: #0b112c;
+  --border-sidebar: #1e293b;
+
+  --primary-blue: #ffff;
+  --active-bg: #6685c5;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #a5b4fc;
+  --text-muted: #64748b;
+  
+  --badge-bg: #2f5194;
+  --avatar-icon: #818cf8;
+  --divider-color: #1e293b;
+
+  /* novas cores */
+  /* Fundos Globais */
+  --bg-app: #0b112c;
+  --bg-card-option: rgba(255, 255, 255, 0.04);
+  
+  /* Textos */
+  --text-primary: #f8fafc;
+  --text-subtitle: #94a3b8;
+  --text-option: #94a3b8;
+  --text-white: #ffffff;
+
+  /* Cores de Destaque / Marca */
+  --primary-brand: #6685c5;
+  --primary-brand-hover: #6685c5;
+  --accent-blue-light: #818cf8;
+  
+  /* Bordas */
+  --border-option: #1e293b;
+  --border-option-hover: #6685c5;
+  
+  /* Botões e Gradientes */
+  --btn-start-bg: #6685c5;
+  --btn-start-hover: #4338ca;
+  --btn-floating-bg: #4f46e5;
 
 }
 
@@ -109,7 +159,7 @@ CORES DO MODO CLARO (ATIVADO AUTOMATICAMENTE PELO HORÁRIO)
     --cor-path-2: #5F7FBF;
     /* Login, Perfil: Cor do segundo path da logo no claro */
 
-    --bg: #EEF4FF;
+    --bg: #F8FAFF;
     /* Perfil: Cor de fundo principal da página no claro */
     --sidebar-border: #94A3B8;
     /* Perfil: Cor da linha divisória do menu lateral no claro */
@@ -127,13 +177,13 @@ CORES DO MODO CLARO (ATIVADO AUTOMATICAMENTE PELO HORÁRIO)
     --primary: #5F7FBF;
     /* Perfil: Cor da borda do input com foco no claro */
 
-    --primary-button: #5F7FBF;
+    --primary-button: #6089DB;
     /* Perfil: Cor de fundo do botão "Salvar alterações" no claro */
     --active: #D0E1FF;
     /* Perfil: Cor de fundo do item selecionado no menu no claro */
     --avatar: #D0E1FF;
     /* Perfil: Cor de fundo do círculo do avatar no claro */
-    --card: #ffffff;
+    --card: #ffffffe7;
     /* Perfil: Cor de fundo dos blocos de currículos no claro */
     --card-border: #94A3B8;
     /* Perfil: Cor da borda dos blocos de currículos no claro */
@@ -148,4 +198,60 @@ CORES DO MODO CLARO (ATIVADO AUTOMATICAMENTE PELO HORÁRIO)
     --input-editar-curriculo: #5F7FBF9C;
     --border-editar-curriculo: #5F7FBF;
     --color-text-input-editar-curriculo: #fff;
+
+
+
+    /* devolutiva */
+    --text-devolutiva: #ffff;
+    --card-devolutiva: #5F7FBF;
+    --active: #5b76b8;
+    --hover-btn-devolutiva: #6c87c9;
+
+
+ /* sidebar */
+  --bg-sidebar: #ffffff;
+  --border-sidebar: #f0f2f6;
+
+  --primary-blue: #4f46e5;      /* Azul de destaque principal */
+  --active-bg: #eff4ff;         /* Fundo do item selecionado */
+  
+  --text-primary: #1e293b;      /* Texto principal */
+  --text-secondary: #2563eb;    /* Cor dos ícones e textos azuis */
+  --text-muted: #94a3b8;        /* Subtítulo/E-mail */
+  
+  --badge-bg: #f0f4ff;          /* Fundo da logo e do avatar */
+  --avatar-icon: #4f46e5;
+  --divider-color: #f1f5f9;
+
+
+  /* simulacao */
+
+  --bg-simulacao: #ffff;
+  --subtitle-simulacao: #707a9c;
+
+  /* novas cores */
+  /* Fundos Globais */
+  --bg-app: #ffffff;
+  --bg-card-option: rgba(122, 130, 153, 0.04);
+  
+  /* Textos */
+  --text-primary: #1e293b;
+  --text-subtitle: #64748b;
+  --text-option: #727d9d;
+  --text-white: #ffffff;
+
+  /* Cores de Destaque / Marca */
+  --primary-brand: #6685c5;
+  --primary-brand-hover: #6685c5;
+  --accent-blue-light: #588FFF;
+  
+  /* Bordas */
+  --border-option: #E3EDFC;
+  --border-option-hover: #6685c5;
+  
+  /* Botões e Gradientes */
+  --btn-start-bg: #6685c5;
+  --btn-start-hover: #7895d6;
+  --btn-floating-bg: #6685c5;
+
 }
