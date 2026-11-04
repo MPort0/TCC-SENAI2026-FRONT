@@ -69,6 +69,7 @@
   flex: 1;
 }
 
+
 .nav-item {
   display: flex;
   align-items: center;
@@ -78,31 +79,37 @@
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
-  color: #94a3b8; /* Cor dos ícones/textos normais */
+
+  /* Texto e ícone usam a mesma cor */
+  color: var(--text-muted);
+
   transition: all 0.2s ease;
 }
-
+.nav-item img {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(75%)
+    saturate(1200%) hue-rotate(220deg) brightness(95%) contrast(95%);
+}
+/* Ícones SVG dentro do HTML */
 .nav-item svg {
   width: 20px;
   height: 20px;
-  stroke-width: 2px;
-  stroke: #ffffff;
+  flex-shrink: 0;
+  stroke: currentColor;
 }
 
-/* Item Ativo (Início) */
+/* Item ativo */
 .nav-item.active {
   background-color: var(--active-bg);
   color: var(--primary-blue);
   font-weight: 600;
 }
 
-.nav-item.active svg {
+/* Hover nos itens que não estão ativos */
+.nav-item:hover:not(.active) {
+  background-color: var(--badge-bg);
   color: var(--primary-blue);
 }
 
-.nav-item:hover:not(.active) {
-  background-color: var(--badge-bg);
-}
 
 /* ==========================================================================
    RODAPÉ / USUÁRIO
