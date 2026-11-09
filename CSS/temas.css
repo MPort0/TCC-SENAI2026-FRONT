@@ -70,10 +70,16 @@
   --badge-bg: #2f5194;
   --divider-color: #1e293b;
 
-  /* Devolutiva */
-  --grafic: #5b76b8;
-  --red: #ff3b30;
-  --green: #14AE5C;
+/* DEVOLUTIVA - TEMA ESCURO */
+--text-devolutiva: #ffffff;
+--card-devolutiva: #1b2550;
+--grafic: #5b76b8;
+--red: #ff6b6b;
+--green: #14AE5C;
+--hover-btn-devolutiva: #2d3a68;
+--border-devolutiva: #2d3a68;
+--text-muted-devolutiva: #a5b4d4;
+
 }
 
 /* --------------------------------------------------------------------------
@@ -147,8 +153,13 @@
   --badge-bg: #f0f4ff;
   --divider-color: #f1f5f9;
 
-  /* Devolutiva */
-  --text-devolutiva: #ffff;
-  --card-devolutiva: #5F7FBF;
-  --hover-btn-devolutiva: #6c87c9;
+/* DEVOLUTIVA - TEMA CLARO */
+--text-devolutiva: #1e293b;
+--card-devolutiva: #ffffff;
+--grafic: #5F7FBF;
+--red: #dc4545;
+--green: #16864c;
+--hover-btn-devolutiva: #4b6aa3;
+--border-devolutiva: #dbe5f3;
+--text-muted-devolutiva: #64748b;
 }

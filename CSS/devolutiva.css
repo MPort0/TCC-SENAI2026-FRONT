@@ -14,7 +14,7 @@
 body {
     min-height: 100vh;
  
-    background: var(--bg);
+    background: var(--bg-page);
     color: var(--text);
  
     display: flex;
@@ -607,3 +607,4 @@ CARDS
         column-gap: 7px;
     }
 }
+ 
