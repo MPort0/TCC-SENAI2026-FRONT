@@ -185,7 +185,7 @@ NOTA
     padding: 32px;
     border: 1px solid var(--border-option);
     border-radius: 14px;
-    background: var(--bg-card-option);
+    background: #0b112c;
     color: var(--text-primary);
 }
 
