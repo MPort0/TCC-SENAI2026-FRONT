@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+ <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../CSS/sidebar.css">
+    <link rel="stylesheet" href="../CSS/temas.css">
+    <link rel="stylesheet" href="../CSS/sidebar.css">
     <link rel="stylesheet" href="../CSS/historico.css">
+    <script src="../JS/temas.js" defer></script>
+    <script src="../JS/sidebar.js" defer></script>
     <title>Historico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
-
 </head>
 <body>
     <div class="app">
         <!-- SIDEBAR CONTAINER -->
-        <aside class="sidebar">
+ <aside class="sidebar">
 
             <!-- Topo / Header -->
             <div class="sidebar-header">
                 <div class="logo-badge">
-                    <img src="../IMG/logo-roxa.svg">
+                    <img src="../IMG/logo-branca.svg" alt="Logo">
                 </div>
+
                 <div class="brand-title">
                     <span class="brand-dark">AVA.</span>
                     <span class="brand-blue">Lia</span>
@@ -32,19 +38,16 @@
                     <img src="../IMG/home.svg">
                     <span>Início</span>
                 </a>
-                <a href="../HTML/criar-curriculo.html" class="nav-item">
+                <a href="../HTML/novo-curriculo.html" class="nav-item">
                     <i data-lucide="file-text"></i>
-                    <img src="../IMG/file-text.svg">
                     <span>Criar currículo</span>
                 </a>
                 <a href="../HTML/simulação.html" class="nav-item">
                     <i data-lucide="play-circle"></i>
-                    <img src="../IMG/circle-play.svg">
                     <span>Simulação</span>
                 </a>
                 <a href="../HTML/historico.html" class="nav-item active">
                     <i data-lucide="history"></i>
-                    <img src="../IMG/clock-3.svg">
                     <span>Histórico</span>
                 </a>
                 <a href="../HTML/perfil.html" class="nav-item">
@@ -52,6 +55,7 @@
                     <img src="../IMG/user-circle.svg">
                     <span>Perfil</span>
                 </a>
+
             </nav>
 
             <!-- Rodapé / Usuário + Links -->
@@ -60,8 +64,9 @@
                 <!-- Card do Usuário -->
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i data-lucide="user"></i>
+                        <i data-lucide="user-round"></i>
                     </div>
+
                     <div class="user-info">
                         <span class="user-nome">Olá, usuário!</span>
                         <span class="user-email">hello_lia@useia.com.br</span>
@@ -71,26 +76,13 @@
                 <div class="divider"></div>
 
                 <!-- Links Inferiores -->
-                <nav class="bottom-nav">
-                    <a href="#" class="nav-item">
-                        <i data-lucide="settings"></i>
-                        <img src="../IMG/configuracoes.svg">
-                        <span>Configurações</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i data-lucide="headphones"></i>
-                        <img src="../IMG/suporte.svg">
-                        <span>Suporte</span>
-                    </a>
-                    <a href="../HTML/login-usuario.html" class="nav-item">
-                        <i data-lucide="log-out"></i>
-                        <img src="../IMG/sair.svg">
-                        <span>Sair</span>
-                    </a>
-                </nav>
+                <a href="#" class="nav-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Sair</span>
+                </a>
 
             </div>
-        
+
         </aside>
         
             <!-- CONTEÚDO PRINCIPAL -->
@@ -212,8 +204,9 @@
     
         </div>
             </div>
-                                
-        <a class="lia" href="../HTML/chat-lia.html">
+
+            <div>                   
+        <a class="lia" href="../HTML/entrevista-lia.html">
             <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="58" height="58" rx="8" fill="#5F7FBF" />
                 <path
@@ -223,6 +216,15 @@
                 
                 </a>
             </div>
+<<<<<<< HEAD
+    <script src="../js/historico.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+        <script>
+            lucide.createIcons();
+        </script>
+=======
     <script src="../JS/historico.js"></script>
+>>>>>>> dea639ade3e1e256553193cc091f40552a014a95
 </body>
 </html>

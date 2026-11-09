@@ -22,8 +22,9 @@
             <!-- Topo / Header -->
             <div class="sidebar-header">
                 <div class="logo-badge">
-                    <img src="../IMG/logo-roxa.svg" alt="Logo">
+                    <img src="../IMG/logo-branca.svg" alt="Logo">
                 </div>
+
                 <div class="brand-title">
                     <span class="brand-dark">AVA.</span>
                     <span class="brand-blue">Lia</span>
@@ -32,26 +33,32 @@
 
             <!-- Navegação Principal -->
             <nav class="nav-section">
-                <a href="home.html" class="nav-item">
-                    <img src="../IMG/home.svg" alt="Início">
+
+                <a href="../HTML/home.html" class="nav-item active">
+                    <i data-lucide="house"></i>
                     <span>Início</span>
                 </a>
-                <a href="#" class="nav-item">
-                    <img src="../IMG/file-text.svg" alt="Criar currículo">
+
+                <a href="../HTML/novo-curriculo.html" class="nav-item">
+                    <i data-lucide="file-text"></i>
                     <span>Criar currículo</span>
                 </a>
-                <a href="simulação.html" class="nav-item active">
-                    <img src="../IMG/circle-play.svg" alt="Simulação">
+
+                <a href="../HTML/simulação.html" class="nav-item">
+                    <i data-lucide="play-circle"></i>
                     <span>Simulação</span>
                 </a>
-                <a href="historico.html" class="nav-item">
-                    <img src="../IMG/clock-3.svg" alt="Histórico">
+
+                <a href="../HTML/historico.html" class="nav-item">
+                    <i data-lucide="history"></i>
                     <span>Histórico</span>
                 </a>
-                <a href="perfil.html" class="nav-item">
-                    <img src="../IMG/user-circle.svg" alt="Perfil">
+
+                <a href="../HTML/perfil.html" class="nav-item">
+                    <i data-lucide="user-round"></i>
                     <span>Perfil</span>
                 </a>
+
             </nav>
 
             <!-- Rodapé / Usuário + Links -->
@@ -71,22 +78,13 @@
                 <div class="divider"></div>
 
                 <!-- Links Inferiores -->
-                <nav class="bottom-nav">
-                    <a href="#" class="nav-item">
-                        <img src="../IMG/configuracoes.svg" alt="Configurações">
-                        <span>Configurações</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <img src="../IMG/suporte.svg" alt="Suporte">
-                        <span>Suporte</span>
-                    </a>
-                    <a href="../HTML/login-usuario.html" class="nav-item">
-                        <img src="../IMG/sair.svg" alt="Sair">
-                        <span>Sair</span>
-                    </a>
-                </nav>
+                <a href="#" class="nav-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Sair</span>
+                </a>
 
             </div>
+
         </aside>
 
         <!-- CONTEÚDO DA ENTREVISTA -->
@@ -139,8 +137,12 @@
             </div>
         </main>
     </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <script src="../JS/simulacaoCorrida.js" defer></script>
+        <script>
+            lucide.createIcons();
+        </script>
 </body>
 
 </html>

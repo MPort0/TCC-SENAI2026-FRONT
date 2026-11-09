@@ -2,24 +2,40 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="../CSS/home.css">
-    <link rel="stylesheet" href="../CSS/sidebar.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
-</head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../CSS/temas.css">
+        <link rel="stylesheet" href="../CSS/sidebar.css">
+        <link rel="stylesheet" href="../CSS/home.css">
+        <script src="../JS/temas.js" defer></script>
+        <script src="../JS/sidebar.js" defer></script>
+        <title>Home</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
+
+        <!-- Ícones -->
+            <script src="https://unpkg.com/lucide@latest"></script>
+    </head>
 
 <body>
     <div class="app">
         <!-- ================= SIDEBAR ================= -->
         <aside class="sidebar">
-            <div class="logo">
-                <div class="logo-icon">
-                    <span></span>
-                    <span></span>
+
+            <!-- Topo / Header -->
+            <div class="sidebar-header">
+                <div class="logo-badge">
+                    <img src="../IMG/logo-branca.svg">
                 </div>
-                <span>Ava.<span class="logo-azul">Lia</span></span>
+                <div class="brand-title">
+                    <span class="brand-dark">AVA.</span>
+                    <span class="brand-blue">Lia</span>
+                </div>
             </div>
 
             <!-- Navegação Principal -->
@@ -29,8 +45,9 @@
                     <img src="../IMG/home.svg">
                     <span>Início</span>
                 </a>
-                <a href="../HTML/criar-curriculo.html" class="nav-item">
+                <a href="../HTML/novo-curriculo.html" class="nav-item">
                     <i data-lucide="file-text"></i>
+
                     <span>Criar currículo</span>
                 </a>
                 <a href="../HTML/simulação.html" class="nav-item">
@@ -48,34 +65,29 @@
                     <img src="../IMG/user-circle.svg">
                     <span>Perfil</span>
                 </a>
-                <a href="#" class="menu-item">
-                    <!-- 👇 a lucide é uma biblioteca de ícones -->
-                     <!-- 👇 para o icone de escudo -->
-                    <i data-lucide="shield"></i>
-                    <span>Painel Admin</span>
-                </a>
             </nav>
 
+            <!-- Rodapé / Usuário + Links -->
+            <div class="sidebar-footer">
+
+                <!-- Card do Usuário -->
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <i data-lucide="user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-nome">Olá, usuário!</span>
+                        <span class="user-email">hello_lia@useia.com.br</span>
+                    </div>
+                </div>
 
                 <div class="divider"></div>
-                
+
                 <!-- Links Inferiores -->
-                <nav class="bottom-nav">
-                    <a href="#" class="nav-item">
-                        <i data-lucide="settings"></i>
-                        <img src="../IMG/configuracoes.svg">
-                        <span>Configurações</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i data-lucide="headphones"></i>
-                        <img src="../IMG/suporte.svg">
-                        <span>Suporte</span>
-                    </a>
-                    <a href="../HTML/login-usuario.html" class="nav-item">
-                        <i data-lucide="log-out"></i>
-                        <img src="../IMG/sair.svg">
-                        <span>Sair</span>
-                    </a>
+                <a href="#" class="nav-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Sair</span>
+                </a>
                 </nav>
 
             </div>
@@ -90,7 +102,7 @@
             <header class="header">
                 <div>
                     <h1>
-                        Olá, usuário! 
+                        Olá, usuário!
                     </h1>
                     <p>
                         Pronto para sua próxima entrevista?
@@ -162,7 +174,7 @@
                         </div>
                     </div>
 
-                
+
                     <div class="objective">
                         <div class="objective-header">
                             <span>Seu objetivo</span>
@@ -256,7 +268,7 @@
                 </div>
                 <button class="continue-button">
                     Começar entrevista
-                    <i data-lucide="arrow-right"></i> 
+                    <i data-lucide="arrow-right"></i>
                 </button>
             </section>
 
@@ -398,4 +410,5 @@
     </script>
 
 </body>
+
 </html>
