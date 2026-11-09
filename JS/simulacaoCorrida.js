@@ -17,13 +17,26 @@ document.addEventListener("DOMContentLoaded", async function () {
     const config = JSON.parse(configSalva);
 
     // 3. Pega o total de perguntas da config (ou 10 por padrão)
-    const totalPassos = config.totalPerguntas || 1;
+    const totalPassos = config.totalPerguntas || 10;
 
     let historico = [];
 
-    // ADICIONE ESTA LINHA AQUI:
     // Atualiza a barra imediatamente ao carregar a página
     atualizarProgresso();
+
+    // Vincula os eventos de clique no botão e tecla Enter no input
+    if (sendBtn) {
+        sendBtn.addEventListener('click', processarEnvio);
+    }
+
+    if (inputMsg) {
+        inputMsg.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                processarEnvio();
+            }
+        });
+    }
 
     // Atualiza a barra de progresso visualmente no canto superior direito
     function atualizarProgresso() {
@@ -37,8 +50,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-    // ... resto do código continua igual ...
-
     // Comunicação com o servidor backend Node.js
     async function enviarParaIA(mensagemTexto) {
         try {
@@ -49,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     mensagem: mensagemTexto,
                     historico: historico,
                     config: config,
-                    passoAtual: passoAtual // <--- Enviando o passo atual para o backend
+                    passoAtual: passoAtual
                 })
             });
 
@@ -58,7 +69,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             const data = await response.json();
             historico = data.historicoAtualizado;
 
-            return data; // Retorna { texto, respostaValida, concluida, relatorio, historicoAtualizado }
+            return data;
         } catch (error) {
             console.error(error);
             return {
@@ -84,40 +95,48 @@ document.addEventListener("DOMContentLoaded", async function () {
         const texto = inputMsg.value.trim();
         if (!texto) return;
 
+        // Desabilita os campos temporariamente
+        inputMsg.disabled = true;
+        if (sendBtn) sendBtn.disabled = true;
+
         // 1. Exibe a mensagem do usuário no chat
         adicionarMensagemNoChat('user', texto);
         inputMsg.value = '';
 
-        // 2. Envia para o backend e aguarda avaliação da IA
-        const resultado = await enviarParaIA(texto);
+        try {
+            // 2. Envia para o backend
+            const resultado = await enviarParaIA(texto);
 
-        // 3. Avança a barra de progresso apenas se a resposta for válida
-        if (resultado.respostaValida && passoAtual < totalPassos) {
-            passoAtual++;
-            atualizarProgresso();
-        }
-
-        // 4. Exibe a mensagem de resposta da Lia
-        adicionarMensagemNoChat('bot', resultado.texto);
-
-        // 5. SE A ENTREVISTA FOI CONCLUÍDA: Salva o relatório e redireciona
-        if (resultado.concluida && resultado.relatorio) {
-            localStorage.setItem("devolutiva_resultado", JSON.stringify(resultado.relatorio));
-            setTimeout(() => {
-                window.location.href = "../HTML/devolutiva.html";
-            }, 2500);
-        }
-    }
-
-    // Listeners dos botões e tecla Enter
-    if (sendBtn) sendBtn.addEventListener('click', processarEnvio);
-    if (inputMsg) {
-        inputMsg.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                processarEnvio();
+            // 3. Se a resposta foi válida, avança o contador
+            if (resultado.respostaValida) {
+                if (passoAtual < totalPassos) {
+                    passoAtual++;
+                    atualizarProgresso();
+                }
             }
-        });
+
+            // 4. Exibe a mensagem de resposta da IA
+            adicionarMensagemNoChat('bot', resultado.texto);
+
+            // 5. REDIRECIONAMENTO: Se a IA marcou concluída OU se o backend mandou o relatório
+            if (resultado.concluida || resultado.relatorio) {
+                if (resultado.relatorio) {
+                    localStorage.setItem("devolutiva_resultado", JSON.stringify(resultado.relatorio));
+                }
+
+                // Aguarda 2.5s para o usuário ler a mensagem de encerramento da Lia e redireciona
+                setTimeout(() => {
+                    window.location.href = "../HTML/devolutiva.html";
+                }, 2500);
+            }
+        } catch (error) {
+            console.error("Erro no processamento:", error);
+        } finally {
+            // Reativa a barra de texto
+            inputMsg.disabled = false;
+            if (sendBtn) sendBtn.disabled = false;
+            inputMsg.focus();
+        }
     }
 
     // Inicia a entrevista automaticamente ao abrir a página
