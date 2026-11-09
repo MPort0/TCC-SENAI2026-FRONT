@@ -26,11 +26,12 @@ body {
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
-    background:
+ background: var(--background);
+        /* background:
         radial-gradient(circle at 80% 0%,
             rgba(95, 127, 191, .16),
             transparent 30%),
-        var(--background);
+        var(--background); */
     color: var(--text);
     min-height: 100vh;
 }
