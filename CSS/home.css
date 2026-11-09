@@ -7,9 +7,12 @@
 }
 
 :root {
+    --background: #02082e;
     --sidebar-border: #505873;
     --text: #ffffff;
+    --text-secondary: #91A6C9;
     --active: #627dbc;
+    --border: rgba(95, 127, 191, 0.26);
 }
 
 body {
@@ -20,12 +23,7 @@ body {
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
- background: var(--background);
-        /* background:
-        radial-gradient(circle at 80% 0%,
-            rgba(95, 127, 191, .16),
-            transparent 30%),
-        var(--background); */
+    background: var(--background);
     color: var(--text);
     min-height: 100vh;
 }
@@ -33,8 +31,9 @@ body {
 .app {
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    background: #02082e;
+    display: grid;
+    grid-template-columns: 270px 1fr; /* Coluna 1 fixa para o menu, Coluna 2 ocupa o resto */
+    background: var(--background);
 }
 
 
@@ -89,13 +88,19 @@ body {
 
 
 /* SIDEBAR BOTTOM */
+.sidebar {
+    position: sticky; /* Fixa a barra lateral na tela durante o scroll */
+    top: 0;           /* Cola no topo da tela quando começar a rolar */
+    height: 100vh;    /* Faz ela ocupar a altura exata da tela */
+    overflow-y: auto; /* Permite rolar apenas os itens de dentro caso o menu seja muito longo */
+}
 
 .sidebar-bottom {
     margin-top: auto;
     background:
         rgba(10, 29, 65, .75);
     border:
-        1px solid rgba(95, 127, 191, .26);
+        1px solid var(--border);
     border-radius: 15px;
     padding: 14px;
 }
@@ -137,7 +142,6 @@ body {
     color: var(--text-secondary);
     margin-top: 3px;
     font-size: 11px;
-
 }
 
 .bottom-item {
@@ -164,13 +168,18 @@ body {
 ========================= */
 
 .main {
-    margin-left: 270px;
-    width: calc(100% - 270px);
+    width: 100%;
+    max-width: 1300px;      /* Define um limite para o conteúdo não esticar demais */
+    margin: 0 auto;         /* Centraliza perfeitamente no espaço restante da tela */
     padding: 38px 55px 50px;
-    max-width: 1700px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
-
+.top-grid, .continue-card, .workflow, .tips, .header {
+    width: 100%;
+}
 /* HEADER */
 
 .header {
@@ -198,12 +207,14 @@ body {
 
 .header small {
     display: block;
-    color: #91A6C9;
+    color: var(--text-secondary);
     margin-top: 5px;
     font-size: 14px;
-
 }
 
+.header, .top-grid, .continue-card, .workflow, .tips {
+    width: 100%;
+}
 
 /* PRIMARY BUTTON */
 
@@ -226,6 +237,7 @@ body {
     box-shadow:
         0 8px 25px rgba(95, 127, 191, .24);
     transition: .25s;
+    text-decoration: none;
 }
 
 .primary-button:hover,
@@ -287,14 +299,12 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-
 }
 
 .card-title h2 svg,
 .section-title h2 svg {
     width: 20px;
     color: #8BC5FF;
-
 }
 
 .card-title a {
@@ -329,11 +339,10 @@ body {
     border:
         1px solid rgba(95, 127, 191, .20);
     background:
-        rgba(7, 17, 38, 72);
+        rgba(7, 17, 38, .72);
     display: flex;
     align-items: center;
     gap: 13px;
-
 }
 
 .stat-icon {
@@ -382,7 +391,6 @@ body {
 .stat .technology {
     font-size: 17px;
     margin-top: 5px;
-
 }
 
 /* OBJECTIVE */
@@ -409,7 +417,6 @@ body {
     background: #13284E;
     border-radius: 20px;
     overflow: hidden;
-
 }
 
 .progress-fill {
@@ -422,7 +429,6 @@ body {
             #8BC5FF);
     box-shadow:
         0 0 15px rgba(38, 145, 255, .45);
-
 }
 
 
@@ -444,7 +450,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: #91A6C9;
+    color: var(--text-secondary);
     font-size: 10px;
     padding-bottom: 3px;
 }
@@ -462,21 +468,10 @@ body {
         1px solid rgba(139, 197, 255, .12);
 }
 
-.line1 {
-    top: 0;
-}
-
-.line2 {
-    top: 25%;
-}
-
-.line3 {
-    top: 50%;
-}
-
-.line4 {
-    top: 75%;
-}
+.line1 { top: 0; }
+.line2 { top: 25%; }
+.line3 { top: 50%; }
+.line4 { top: 75%; }
 
 .chart-svg {
     position: absolute;
@@ -495,33 +490,17 @@ body {
         0 0 10px #8BC5FF;
 }
 
-.p1 {
-    left: 0;
-    top: 77%;
-}
-
-.p2 {
-    left: 32%;
-    top: 52%;
-}
-
-.p3 {
-    left: 62%;
-    top: 57%;
-}
-
-.p4 {
-    right: 0;
-    top: 21%;
-}
+.p1 { left: 0; top: 77%; }
+.p2 { left: 32%; top: 52%; }
+.p3 { left: 62%; top: 57%; }
+.p4 { right: 0; top: 21%; }
 
 .x-axis {
     margin-left: 42px;
     display: flex;
     justify-content: space-between;
-    color: #91A6C9;
+    color: var(--text-secondary);
     font-size: 10px;
-
 }
 
 
@@ -539,14 +518,13 @@ body {
     gap: 18px;
     background:
         linear-gradient(100deg,
-            rgba(13, 27, 54, 88),
-            rgba(13, 27, 54, 88) 50%,
-            rgba(13, 27, 54, 88));
+            rgba(13, 27, 54, .88),
+            rgba(13, 27, 54, .88) 50%,
+            rgba(13, 27, 54, .88));
     border:
-         1px solid rgba(95, 127, 191, 55);
+         1px solid rgba(95, 127, 191, .55);
     box-shadow:
-        0 12px 35px rgba(25, 49, 91, 28);
-
+        0 12px 35px rgba(25, 49, 91, .28);
 }
 
 .continue-icon {
@@ -558,7 +536,6 @@ body {
     justify-content: center;
     background:
         rgba(139, 197, 255, .14);
-
 }
 
 .continue-icon svg {
@@ -572,13 +549,11 @@ body {
 .continue-text h2 {
     font-size: 18px;
     margin-bottom: 5px;
-
 }
 
 .continue-text p {
     color: #C0CEE7;
     font-size: 12px;
-
 }
 
 
@@ -616,7 +591,6 @@ body {
     font-size: 12px;
     font-weight: 800;
     margin-bottom: 8px;
-
 }
 
 .step-icon {
@@ -642,7 +616,7 @@ body {
 }
 
 .step p {
-    color: #91A6C9;
+    color: var(--text-secondary);
     font-size: 11px;
     line-height: 1.5;
 }
@@ -704,10 +678,9 @@ body {
 }
 
 .tip p {
-    color: #91A6C9;
+    color: var(--text-secondary);
     font-size: 11px;
     line-height: 1.5;
-
 }
 
 
@@ -721,18 +694,14 @@ body {
     }
     .top-grid {
         grid-template-columns: 1fr;
-
     }
     .steps {
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 25px;
     }
-
     .step-arrow {
         display: none;
     }
-
 }
 
 @media (max-width: 800px) {
@@ -746,7 +715,6 @@ body {
     .user-box div,
     .bottom-item:not(:has(svg)) {
         display: none;
-
     }
 
     .logo {
@@ -757,7 +725,6 @@ body {
     .menu-item {
         justify-content: center;
         padding: 0;
-
     }
 
     .sidebar-bottom {
@@ -791,12 +758,9 @@ body {
     .continue-card {
         flex-wrap: wrap;
     }
-
 }
 
-
 @media (max-width: 550px) {
-
     .main {
         padding: 18px 12px;
     }
