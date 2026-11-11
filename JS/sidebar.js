@@ -10,10 +10,10 @@
 // });
 
 
-document.addEventListener("DOMContentLoaded", () => {
+function atualizarSidebarAtiva() {
     const paginaAtual = decodeURIComponent(
         window.location.pathname.split("/").pop()
-    );
+    ).toLowerCase();
 
     const itensSidebar = document.querySelectorAll(
         ".sidebar .nav-section .nav-item"
@@ -22,8 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     itensSidebar.forEach(item => {
         const paginaLink = decodeURIComponent(
             new URL(item.href, window.location.href).pathname.split("/").pop()
-        );
+        ).toLowerCase();
 
         item.classList.toggle("active", paginaAtual === paginaLink);
     });
-});
+}
+
+document.addEventListener("DOMContentLoaded", atualizarSidebarAtiva);

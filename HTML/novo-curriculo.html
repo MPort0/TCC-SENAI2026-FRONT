@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
+ 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +14,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
   <script src="../JS/ipback.js"></script>
 </head>
-
+ 
 <body>
-
+ 
   <div class="app-layout">
-    <aside class="sidebar">
+          <aside class="sidebar">
+
+            <!-- Topo / Header -->
+            <div class="sidebar-header">
+                <div class="logo-badge">
+                    <img src="../IMG/logo-branca.svg" alt="Logo">
+                </div>
 
                 <div class="brand-title">
                     <span class="brand-dark">AVA.</span>
@@ -78,172 +84,54 @@
             </div>
 
         </aside>
-
-  <!-- CONTEÚDO DA PÁGINA -->
-  <main class="resume-page">
-
-    <section class="chat-panel">
-
-      <div class="chat-top">
-        <span class="ai-icon">
-          <img src="../IMG/favicon.ico" alt="Logo do Assistente IA" width="20" height="20">
-        </span>
-        <span>Assistente IA <small>10:30</small></span>
-      </div>
-
-      <div class="message">
-        Olá! Vou te ajudar a criar um currículo profissional.<br>
-        Qual cargo você está procurando?
-      </div>
-
-      <span class="time">Você&nbsp; 10:31</span>
-
-      <div class="message user">
-        Desenvolvedor Front-end
-      </div>
-
-      <div class="chat-top">
-        <span class="ai-icon">
-          <img src="../IMG/favicon.ico" alt="Logo do Assistente IA" width="20" height="20">
-        </span>
-        <span>Assistente IA <small>10:31</small></span>
-      </div>
-
-      <div class="message">
-        Ótimo! 💻<br>
-        Agora me conte um pouco sobre sua experiência profissional.
-        Você pode escrever de forma livre, que eu organizo para você.
-      </div>
-
-      <span class="time">Você&nbsp; 10:32</span>
-
-      <div class="message user">
-        Trabalhei 2 anos numa agência fazendo sites, landing pages e
-        também cuidava do Instagram da empresa.
-      </div>
-
-      <div class="suggestion">
-        <div class="suggestion-title">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_269_349)">
-            <path d="M11.6671 1.1674V2.33402M11.6671 2.33402V3.50064M11.6671 2.33402H12.8338M11.6671 2.33402H10.5003M6.42653 1.64247C6.45153 1.50866 6.52254 1.38781 6.62727 1.30084C6.732 1.21387 6.86386 1.16626 7 1.16626C7.13614 1.16626 7.26799 1.21387 7.37272 1.30084C7.47745 1.38781 7.54846 1.50866 7.57346 1.64247L8.18659 4.88451C8.23014 5.115 8.34216 5.32702 8.50805 5.49289C8.67394 5.65875 8.88598 5.77077 9.1165 5.81431L12.3589 6.42737C12.4928 6.45236 12.6136 6.52336 12.7006 6.62808C12.7876 6.7328 12.8352 6.86464 12.8352 7.00076C12.8352 7.13688 12.7876 7.26872 12.7006 7.37344C12.6136 7.47816 12.4928 7.54916 12.3589 7.57415L9.1165 8.18721C8.88598 8.23075 8.67394 8.34277 8.50805 8.50864C8.34216 8.6745 8.23014 8.88652 8.18659 9.11701L7.57346 12.359C7.54846 12.4929 7.47745 12.6137 7.37272 12.7007C7.26799 12.7877 7.13614 12.8353 7 12.8353C6.86386 12.8353 6.732 12.7877 6.62727 12.7007C6.52254 12.6137 6.45153 12.4929 6.42653 12.359L5.8134 9.11701C5.76985 8.88652 5.65783 8.6745 5.49194 8.50864C5.32605 8.34277 5.11401 8.23075 4.88349 8.18721L1.64106 7.57415C1.50724 7.54916 1.38637 7.47816 1.29939 7.37344C1.21241 7.26872 1.16479 7.13688 1.16479 7.00076C1.16479 6.86464 1.21241 6.7328 1.29939 6.62808C1.38637 6.52336 1.50724 6.45236 1.64106 6.42737L4.88349 5.81431C5.11401 5.77077 5.32605 5.65875 5.49194 5.49289C5.65783 5.32702 5.76985 5.115 5.8134 4.88451L6.42653 1.64247ZM3.49974 11.667C3.49974 12.3113 2.97736 12.8336 2.33298 12.8336C1.6886 12.8336 1.16622 12.3113 1.16622 11.667C1.16622 11.0227 1.6886 10.5004 2.33298 10.5004C2.97736 10.5004 3.49974 11.0227 3.49974 11.667Z" stroke-width="2" stroke-linecap="round" stroke="#627EC1"/>
-            </g>
-            <defs>
-            <clipPath id="clip0_269_349">
-            <rect width="14" height="14" fill="white"/>
-            </clipPath>
-            </defs>
-            </svg>
-          </svg> Sugestão da IA</div>
-
-        <p id="suggestionText">
-          Trabalhei por 2 anos em uma agência desenvolvendo sites e landing pages, além de gerenciar o Instagram da empresa, criando conteúdo e aumentando o engajamento.
-        </p>
-
-        <div class="actions">
-          <button class="btn btn-primary" id="useBtn">Usar sugestão</button>
-        </div>
-
-        <div class="brand-title">
-          <span class="brand-dark">AVA.</span>
-          <span class="brand-blue">Lia</span>
-        </div>
-      </div>
-
-      <!-- Navegação Principal -->
-      <nav class="nav-section">
-        <a href="../HTML/home.html" class="nav-item">
-          <i data-lucide="home"></i>
-          <span>Início</span>
-        </a>
-        <a href="../HTML/novo-curriculo.html" class="nav-item active">
-          <i data-lucide="file-text"></i>
-          <span>Criar currículo</span>
-        </a>
-        <a href="../HTML/simulação.html" class="nav-item">
-          <i data-lucide="play-circle"></i>
-          <span>Simulação</span>
-        </a>
-        <a href="../HTML/historico.html" class="nav-item">
-          <i data-lucide="history"></i>
-          <span>Histórico</span>
-        </a>
-        <a href="../HTML/perfil.html" class="nav-item">
-          <i data-lucide="user"></i>
-          <span>Perfil</span>
-        </a>
-      </nav>
-
-      <!-- Rodapé / Usuário + Links -->
-      <div class="sidebar-footer">
-        <div class="user-card">
-          <div class="user-avatar">
-            <i data-lucide="user-round"></i>
-          </div>
-          <div class="user-info">
-            <span class="user-nome">Olá, usuário!</span>
-            <span class="user-email">hello_lia@useia.com.br</span>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <a href="../HTML/login-usuario.html" class="nav-item">
-          <i data-lucide="log-out"></i>
-          <span>Sair</span>
-        </a>
-      </div>
-
-    </aside>
-
     <!-- CONTEÚDO DA PÁGINA -->
     <main class="resume-page">
-
+ 
       <!-- CHAT DA IA (PAINEL ESQUERDO) -->
       <section class="chat-panel">
-
+ 
         <div class="chat-top">
           <span class="ai-icon">
             <img src="../IMG/favicon.ico" alt="Logo do Assistente IA" width="20" height="20">
           </span>
           <span>Ava.Lia <small>Agora</small></span>
         </div>
-
+ 
         <div class="message">
           Olá! Vou te ajudar a criar um currículo profissional.<br>
           Qual é o seu <strong>nome completo</strong>?
         </div>
-
+ 
         <!-- Caixa de Sugestão da IA (Inicia oculta via CSS/JS) -->
         <div class="suggestion" style="display: none;">
           <div class="suggestion-title">
             <i data-lucide="sparkles"></i> Sugestão da IA
           </div>
-
+ 
           <p id="suggestionText"></p>
-
+ 
           <div class="actions">
             <button class="btn btn-primary" id="useBtn">Usar sugestão</button>
           </div>
         </div>
-
+ 
         <!-- Área de Input -->
         <div class="reply">
           <input id="replyInput" placeholder="Digite sua resposta..." aria-label="Digite sua resposta">
           <button class="continue" id="continueBtn">Enviar</button>
         </div>
-
+ 
       </section>
-
+ 
       <!-- PRÉVIA DO CURRÍCULO (PAINEL DIREITO) -->
       <section class="resume-preview">
-
+ 
         <div class="resume-header">
           <span>Prévia do currículo</span>
         </div>
-
+ 
         <article class="resume-document">
-
+ 
           <div class="resume-person">
             <div class="resume-avatar">
               <i data-lucide="user" style="color: white;"></i>
@@ -254,22 +142,22 @@
               <div class="contact" id="preview-contato">seu@email.com • (00) 00000-0000</div>
             </div>
           </div>
-
+ 
           <div class="resume-section">
             <h3>Resumo profissional</h3>
             <p id="preview-resumo">Responda às perguntas ao lado para a Lia gerar seu resumo profissional...</p>
           </div>
-
+ 
           <div class="resume-section">
             <h3>Experiência</h3>
             <p id="preview-exp-desc" style="white-space: pre-line;">Aguardando informações da experiência...</p>
           </div>
-
+ 
           <div class="resume-section">
             <h3>Formação</h3>
             <p id="preview-curso">Seu curso / instituição</p>
           </div>
-
+ 
           <div class="resume-bottom">
             <div class="resume-section">
               <h3>Habilidades</h3>
@@ -278,13 +166,13 @@
               </div>
             </div>
           </div>
-
+ 
         </article>
       </section>
-
+ 
     </main>
   </div>
-
+ 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="../JS/temas.js" defer></script>
   <script src="../JS/sidebar.js" defer></script>
@@ -293,5 +181,5 @@
     lucide.createIcons();
   </script>
 </body>
-
+ 
 </html>
