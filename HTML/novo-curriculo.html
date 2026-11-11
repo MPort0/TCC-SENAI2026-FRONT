@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/temas.css">
-    <link rel="stylesheet" href="../CSS/sidebar.css">
-    <link rel="stylesheet" href="../CSS/novo-curriculo.css">
-    <script src="../JS/temas.js" defer></script>
-    <script src="../JS/sidebar.js" defer></script>
-    <title>Novo curriculo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
-</head>
-<body>
-    
-<div class="app-layout">
-        <aside class="sidebar">
 
-            <!-- Topo / Header -->
-            <div class="sidebar-header">
-                <div class="logo-badge">
-                    <img src="../IMG/logo-branca.svg" alt="Logo">
-                </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/temas.css">
+  <link rel="stylesheet" href="../CSS/sidebar.css">
+  <link rel="stylesheet" href="../CSS/novo-curriculo.css">
+  <title>Novo Currículo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
+  <script src="../JS/ipback.js"></script>
+</head>
+
+<body>
+
+  <div class="app-layout">
+    <aside class="sidebar">
 
                 <div class="brand-title">
                     <span class="brand-dark">AVA.</span>
@@ -149,166 +144,154 @@
           <button class="btn btn-primary" id="useBtn">Usar sugestão</button>
         </div>
 
+        <div class="brand-title">
+          <span class="brand-dark">AVA.</span>
+          <span class="brand-blue">Lia</span>
+        </div>
+      </div>
+
+      <!-- Navegação Principal -->
+      <nav class="nav-section">
+        <a href="../HTML/home.html" class="nav-item">
+          <i data-lucide="home"></i>
+          <span>Início</span>
+        </a>
+        <a href="../HTML/novo-curriculo.html" class="nav-item active">
+          <i data-lucide="file-text"></i>
+          <span>Criar currículo</span>
+        </a>
+        <a href="../HTML/simulação.html" class="nav-item">
+          <i data-lucide="play-circle"></i>
+          <span>Simulação</span>
+        </a>
+        <a href="../HTML/historico.html" class="nav-item">
+          <i data-lucide="history"></i>
+          <span>Histórico</span>
+        </a>
+        <a href="../HTML/perfil.html" class="nav-item">
+          <i data-lucide="user"></i>
+          <span>Perfil</span>
+        </a>
+      </nav>
+
+      <!-- Rodapé / Usuário + Links -->
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="user-avatar">
+            <i data-lucide="user-round"></i>
+          </div>
+          <div class="user-info">
+            <span class="user-nome">Olá, usuário!</span>
+            <span class="user-email">hello_lia@useia.com.br</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <a href="../HTML/login-usuario.html" class="nav-item">
+          <i data-lucide="log-out"></i>
+          <span>Sair</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- CONTEÚDO DA PÁGINA -->
+    <main class="resume-page">
+
+      <!-- CHAT DA IA (PAINEL ESQUERDO) -->
+      <section class="chat-panel">
+
+        <div class="chat-top">
+          <span class="ai-icon">
+            <img src="../IMG/favicon.ico" alt="Logo do Assistente IA" width="20" height="20">
+          </span>
+          <span>Ava.Lia <small>Agora</small></span>
+        </div>
+
+        <div class="message">
+          Olá! Vou te ajudar a criar um currículo profissional.<br>
+          Qual é o seu <strong>nome completo</strong>?
+        </div>
+
+        <!-- Caixa de Sugestão da IA (Inicia oculta via CSS/JS) -->
+        <div class="suggestion" style="display: none;">
+          <div class="suggestion-title">
+            <i data-lucide="sparkles"></i> Sugestão da IA
+          </div>
+
+          <p id="suggestionText"></p>
+
+          <div class="actions">
+            <button class="btn btn-primary" id="useBtn">Usar sugestão</button>
+          </div>
+        </div>
+
+        <!-- Área de Input -->
         <div class="reply">
           <input id="replyInput" placeholder="Digite sua resposta..." aria-label="Digite sua resposta">
-          <button class="continue" id="continueBtn">Continuar&nbsp;</button>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="resume-preview">
-
-      <div class="resume-header">
-        <span>Prévia do currículo</span>
-      </div>
-
-      <article class="resume-document">
-
-        <div class="resume-person">
-          <div class="resume-avatar">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M15 11.25C17.4162 11.25 19.375 9.29125 19.375 6.875C19.375 4.45875 17.4162 2.5 15 2.5C12.5838 2.5 10.625 4.45875 10.625 6.875C10.625 9.29125 12.5838 11.25 15 11.25Z"
-                stroke="white" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round"/>
-            <path
-                d="M2.5 25.625C2.5 20.1019 7.53688 15.625 13.75 15.625M19.375 26.25L25.625 20L23.125 17.5L16.875 23.75V26.25H19.375Z"
-                stroke="white" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round"/>
-        </svg>
-          </div>
-          <div>
-            <h2>João da Silva</h2>
-            <div class="role">Desenvolvedor Front-end</div>
-            <div class="contact">joao@email.com • (11) 99999-9999 • São Paulo, SP</div>
-          </div>
+          <button class="continue" id="continueBtn">Enviar</button>
         </div>
 
-        <div class="resume-section">
-          <h3>Resumo profissional</h3>
-          <p>
-          Atuação de dois anos em agência com foco no desenvolvimento de sites institucionais e landing pages de alta conversão,
-          aplicando práticas de design responsivo e experiência do usuário (UX). Responsável pela gestão estratégica do Instagram
-          corporativo, englobando o planejamento de cronogramas, criação de conteúdo e monitoramento de métricas de desempenho.
-          Essa abordagem integrada alinhou a comunicação das redes sociais às páginas de captura, otimizando a jornada do usuário
-          e gerando um aumento consistente no engajamento orgânico e no crescimento da base de seguidores.
-          </p>
+      </section>
+
+      <!-- PRÉVIA DO CURRÍCULO (PAINEL DIREITO) -->
+      <section class="resume-preview">
+
+        <div class="resume-header">
+          <span>Prévia do currículo</span>
         </div>
 
-        <div class="resume-section">
-          <h3>Experiência</h3>
-          <div class="job-title">
-            Agência XYZ <span class="dates">2022 - 2024</span>
-          </div>
-          <div class="sub">Desenvolvedor Front-end</div>
-          <ul>
-            <li>Desenvolvimento de sites e landing pages responsivas</li>
-            <li>Otimização de performance e SEO on-page</li>
-            <li>Gerenciamento do Instagram da empresa, ampliando o engajamento</li>
-          </ul>
-        </div>
+        <article class="resume-document">
 
-        <div class="resume-section">
-          <h3>Formação</h3>
-          <div class="job-title">
-            Análise e Desenvolvimento de Sistemas
-            <span class="dates">2020 - 2023</span>
-          </div>
-          <p>Universidade Unicv</p>
-        </div>
-
-        <div class="resume-bottom">
-          <div class="resume-section">
-            <h3>Habilidades</h3>
-            <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">React</span>
-              <span class="tag">Git</span>
-              <span class="tag">Figma</span>
+          <div class="resume-person">
+            <div class="resume-avatar">
+              <i data-lucide="user" style="color: white;"></i>
+            </div>
+            <div>
+              <h2 id="preview-nome">Seu Nome</h2>
+              <div class="role" id="preview-cargo">Seu Cargo Alvo</div>
+              <div class="contact" id="preview-contato">seu@email.com • (00) 00000-0000</div>
             </div>
           </div>
 
           <div class="resume-section">
-            <h3>Idiomas</h3>
-            <p>Inglês - Intermediário</p>
+            <h3>Resumo profissional</h3>
+            <p id="preview-resumo">Responda às perguntas ao lado para a Lia gerar seu resumo profissional...</p>
           </div>
-        </div>
 
-      </article>
-    </section>
+          <div class="resume-section">
+            <h3>Experiência</h3>
+            <p id="preview-exp-desc" style="white-space: pre-line;">Aguardando informações da experiência...</p>
+          </div>
 
-  </main>
-</div>
+          <div class="resume-section">
+            <h3>Formação</h3>
+            <p id="preview-curso">Seu curso / instituição</p>
+          </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const chat = document.querySelector(".chat-panel");
-    const input = document.getElementById("replyInput");
-    const continueBtn = document.getElementById("continueBtn");
-    const useBtn = document.getElementById("useBtn");
-    const suggestionText = document.getElementById("suggestionText");
+          <div class="resume-bottom">
+            <div class="resume-section">
+              <h3>Habilidades</h3>
+              <div class="tags" id="preview-habilidades">
+                <span class="tag">Suas habilidades</span>
+              </div>
+            </div>
+          </div>
 
-    // Copia a sugestão para o campo de texto
-    if (useBtn && suggestionText && input) {
-        useBtn.addEventListener("click", () => {
-            input.value = suggestionText.textContent.trim();
-            input.focus();
-        });
-    }
+        </article>
+      </section>
 
-    // Função para adicionar mensagem do usuário no chat
-    function enviarMensagem() {
-        const texto = input.value.trim();
-        if (!texto) {
-            input.focus();
-            return;
-        }
+    </main>
+  </div>
 
-        const mensagem = document.createElement("div");
-        mensagem.classList.add("message", "user");
-        mensagem.textContent = texto;
-
-        const horario = document.createElement("span");
-        horario.classList.add("time");
-        horario.textContent = "Você  " + new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-
-        const sugestao = chat.querySelector(".suggestion");
-
-        if (sugestao) {
-            chat.insertBefore(horario, sugestao);
-            chat.insertBefore(mensagem, horario);
-        } else {
-            chat.appendChild(horario);
-            chat.appendChild(mensagem);
-        }
-
-        input.value = "";
-        chat.scrollTop = chat.scrollHeight;
-        input.focus();
-    }
-
-    if (continueBtn) {
-        continueBtn.addEventListener("click", enviarMensagem);
-    }
-
-    if (input) {
-        input.addEventListener("keydown", function (event) {
-            if (event.key === "Enter" && !event.shiftKey) {
-                event.preventDefault();
-                enviarMensagem();
-            }
-        });
-    }
-});
-</script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-        <script>
-            lucide.createIcons();
-        </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../JS/temas.js" defer></script>
+  <script src="../JS/sidebar.js" defer></script>
+  <script src="../JS/novoCurriculo.js" defer></script>
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
+
 </html>
