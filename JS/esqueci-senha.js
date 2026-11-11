@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let senhaValida = false;
 
-    // 2. VISUALIZAÇÃO DA SENHA / OLHINHO (Funções globais para funcionarem no onclick do HTML)
-    window.toggleSenha = function() {
+    // 2. VISUALIZAÇÃO DA SENHA / OLHINHO
+    window.toggleSenha = function () {
         if (inputSenha.type === 'password') {
             inputSenha.type = 'text';
             iconeOlho.src = "../IMG/ver-senha.svg";
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    window.toggleConfirmar = function() {
+    window.toggleConfirmar = function () {
         if (inputConfirmar.type === 'password') {
             inputConfirmar.type = 'text';
             iconeVer.src = "../IMG/ver-senha.svg";
@@ -31,38 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // 3. VERIFICAR SE A NOVA SENHA É IGUAL À SALVA NO LOCALSTORAGE
-    function verificarSenhaAntiga() {
-        const emailDigitado = inputEmail ? inputEmail.value.trim() : '';
-        const senhaNova = inputSenha.value;
-
-        // Busca no localStorage a senha cadastrada para o e-mail digitado
-        const senhaAntigaSalva = localStorage.getItem(emailDigitado);
-
-        if (senhaAntigaSalva && senhaNova === senhaAntigaSalva && senhaNova !== "") {
-            exibirAvisoSenhaAntiga(true);
-            return true;
-        }
-
-        exibirAvisoSenhaAntiga(false);
-        return false;
-    }
-
-    function exibirAvisoSenhaAntiga(mostrar) {
-        if (avisoSenhaAntiga) {
-            if (mostrar) {
-                avisoSenhaAntiga.style.display = 'block';
-                btnContinuar.style.opacity = "0.5";
-                btnContinuar.style.pointerEvents = "none";
-            } else {
-                avisoSenhaAntiga.style.display = 'none';
-                btnContinuar.style.opacity = "1";
-                btnContinuar.style.pointerEvents = "auto";
-            }
-        }
-    }
-
-    // 4. VALIDANDO EM TEMPO REAL A CRIAÇÃO DA SENHA
+    // 3. VALIDANDO EM TEMPO REAL A CRIAÇÃO DA SENHA
     inputSenha.addEventListener('input', () => {
         const valor = inputSenha.value;
 
@@ -81,19 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         atualizarVisualRegra('regra-numero', regras.numero);
         atualizarVisualRegra('regra-especial', regras.especial);
 
-        // VÊ SE TODAS AS REGRAS FORAM ATINGIDAS & SE NÃO É A SENHA ANTIGA
-        const todasRegrasAtendidas = Object.values(regras).every(v => v === true);
-        const eSenhaAntiga = verificarSenhaAntiga();
-
-        senhaValida = todasRegrasAtendidas && !eSenhaAntiga;
+        // CHECA SE TODAS AS REGRAS FORAM ATENDIDAS
+        senhaValida = Object.values(regras).every(v => v === true);
 
         validarCoincidencia();
     });
-
-    // Também recalcula se mudar o e-mail no meio do processo
-    if (inputEmail) {
-        inputEmail.addEventListener('input', verificarSenhaAntiga);
-    }
 
     function atualizarVisualRegra(id, ehValido) {
         const elemento = document.getElementById(id);
@@ -106,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 5. COR NA BORDA DO CAMPO DE CONFIRMAÇÃO
+    // 4. COR NA BORDA DO CAMPO DE CONFIRMAÇÃO
     function validarCoincidencia() {
         if (inputConfirmar.value.length > 0) {
             if (inputSenha.value === inputConfirmar.value) {
@@ -121,41 +82,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
     inputConfirmar.addEventListener('input', validarCoincidencia);
 
-    // 6. FINALIZAÇÃO E SALVAMENTO
-    btnContinuar.addEventListener('click', (event) => {
+    // 5. ENVIO DOS DADOS PARA O BACKEND
+    btnContinuar.addEventListener('click', async (event) => {
         event.preventDefault();
 
         const emailDigitado = inputEmail ? inputEmail.value.trim() : '';
+        const senhaDigitada = inputSenha.value;
+        const confirmarSenhaDigitada = inputConfirmar.value;
 
         // a. Verifica campos vazios
-        if (!emailDigitado || !inputSenha.value || !inputConfirmar.value) {
+        if (!emailDigitado || !senhaDigitada || !confirmarSenhaDigitada) {
             alert("Por favor, preencha todos os campos.");
             return;
         }
 
-        // b. Verifica se o e-mail existe no sistema
-        if (!localStorage.getItem(emailDigitado)) {
-            alert("Este e-mail não está cadastrado em nosso sistema.");
-            return;
-        }
-
-        // c. Verifica se a senha atende aos requisitos
+        // b. Verifica se a senha atende aos requisitos de complexidade
         if (!senhaValida) {
             alert("A senha não atende a todos os requisitos de segurança.");
             return;
         }
 
-        // d. Verifica se as duas senhas coincidem
-        if (inputSenha.value !== inputConfirmar.value) {
+        // c. Verifica se as duas senhas coincidem no front
+        if (senhaDigitada !== confirmarSenhaDigitada) {
             alert("As senhas não coincidem. Verifique os campos.");
             return;
         }
 
-        // e. Salva a nova senha atualizada usando o e-mail como chave
-        localStorage.setItem(emailDigitado, inputSenha.value);
-        alert("Senha alterada com sucesso!");
+        // d. Envia a requisição via API HTTP para a sua rota no Express
+        try {
+            btnContinuar.disabled = true;
+            btnContinuar.innerText = "Carregando...";
 
-        // f. Redireciona para a tela de login
-        window.location.href = "../HTML/login-usuario.html";
+            const response = await fetch(`${window.API_BASE}/redefinir`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: emailDigitado,
+                    password: senhaDigitada,
+                    confirmPassword: confirmarSenhaDigitada
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                // Exibe mensagens enviadas do backend (ex: "Email não encontrado no sistema")
+                alert(data.error || "Erro ao redefinir a senha.");
+                return;
+            }
+
+            alert(data.message || "Senha redefinida com sucesso!");
+            window.location.href = "../HTML/login.html";
+
+        } catch (error) {
+            console.error("Erro na comunicação com a API:", error);
+            alert("Servidor indisponível. Tente novamente mais tarde.");
+        } finally {
+            btnContinuar.disabled = false;
+            btnContinuar.innerText = "Redefinir senha";
+        }
     });
 });
