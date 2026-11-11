@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Comunicação com o servidor backend Node.js
     async function enviarParaIA(mensagemTexto) {
         try {
-            const response = await fetch(`${window.API_BASE}/simulacao`, {
+            const response = await fetch(`${window.API_BASE}/ia/simulacao`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
