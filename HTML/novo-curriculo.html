@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo Currículo</title>
+    <link rel="stylesheet" href="../CSS/temas.css">
+    <link rel="stylesheet" href="../CSS/sidebar.css">
     <link rel="stylesheet" href="../CSS/novo-curriculo.css">
+    <script src="../JS/temas.js" defer></script>
+    <script src="../JS/sidebar.js" defer></script>
+    <title>Novo curriculo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,10 +17,13 @@
 <body>
     
 <div class="app-layout">
+ <aside class="sidebar">
 
-  <!-- NAVBAR ORIGINAL -->
-  <aside class="sidebar">
-    <div class="nav">
+            <!-- Topo / Header -->
+            <div class="sidebar-header">
+                <div class="logo-badge">
+                    <img src="../IMG/logo-branca.svg" alt="Logo">
+                </div>
 
       <a class="nav-item" href="../HTML/home.html">
         <span class="icon">
@@ -27,7 +34,7 @@
         <span>Home</span>
       </a>
 
-      <a class="nav-item" href="../HTML/criar-curriculo.html">
+      <a class="nav-item" href="../HTML/novo-curriculo.html">
         <span class="icon">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M14.906 4.86573C14.9176 4.78149 14.9088 4.69569 14.8804 4.61552L14.8666 4.54845C14.8274 4.38531 14.7627 4.22937 14.6749 4.08636C14.577 3.92665 14.4386 3.78824 14.1618 3.51142L11.4041 0.753806C11.1284 0.476981 10.99 0.338568 10.8292 0.239549C10.6668 0.140121 10.488 0.0705292 10.3011 0.0340597C10.2209 0.00567989 10.1351 -0.00308234 10.0509 0.00850655C9.93271 0.00424769 9.78897 0.00424769 9.59839 0.00424769H7.24537C5.45665 0.00424769 4.56229 0.0042477 3.88088 0.352409C3.28131 0.659726 2.79342 1.14762 2.4861 1.74718C2.13794 2.43073 2.13794 3.32296 2.13794 5.11168V11.9259C2.13794 13.7146 2.13794 14.6089 2.4861 15.2903C2.79342 15.8899 3.28131 16.3778 3.88088 16.6851C4.56442 17.0333 5.45665 17.0333 7.24537 17.0333H9.80069C11.5894 17.0333 12.4838 17.0333 13.1652 16.6851C13.7656 16.379 14.2538 15.8908 14.56 15.2903C14.9081 14.6068 14.9081 13.7146 14.9081 11.9259V5.31291C14.9081 5.12339 14.9081 4.97966 14.9028 4.86041L14.906 4.86573ZM9.79536 15.9388H7.24005C6.32759 15.9388 5.70686 15.9388 5.22774 15.8983C4.76139 15.861 4.52183 15.7918 4.35574 15.7066C3.95508 15.5025 3.62933 15.1767 3.42518 14.7761C3.34 14.61 3.2708 14.3715 3.23353 13.9041C3.19414 13.425 3.19307 12.8074 3.19307 11.8918V5.07761C3.19307 4.16515 3.19414 3.54442 3.23353 3.0653C3.27186 2.59896 3.34107 2.3594 3.42518 2.1933C3.6296 1.79297 3.95541 1.46716 4.35574 1.26274C4.52183 1.17756 4.76139 1.10836 5.22774 1.07109C5.70686 1.03276 6.3244 1.03276 7.24005 1.03276H9.58242V4.75926C9.58242 4.90045 9.63851 5.03586 9.73834 5.13569C9.83818 5.23553 9.97359 5.29162 10.1148 5.29162H13.8413V11.8928C13.8413 12.8053 13.8413 13.426 13.8008 13.9052C13.7636 14.3715 13.6943 14.6111 13.6092 14.7772C13.405 15.1778 13.0793 15.5036 12.6786 15.7077C12.5125 15.7929 12.274 15.8621 11.8066 15.8994C11.3275 15.9388 10.711 15.9388 9.79536 15.9388ZM10.6471 1.45865L13.4047 4.21626H10.6471V1.45865Z" fill="white"/>
@@ -66,7 +73,10 @@
         <span>Perfil</span>
       </a>
 
-    </div>
+                <a href="historico.html" class="nav-item">
+                    <i data-lucide="history"></i>
+                    <span>Histórico</span>
+                </a>
 
     <div class="sidebar-bottom">
       <a href="../HTML/login-usuario.html">Sair</a>
@@ -74,6 +84,34 @@
     </div>
   </aside>
 
+            </nav>
+
+            <!-- Rodapé / Usuário + Links -->
+            <div class="sidebar-footer">
+
+                <!-- Card do Usuário -->
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <i data-lucide="user-round"></i>
+                    </div>
+
+                    <div class="user-info">
+                        <span class="user-nome">Olá, usuário!</span>
+                        <span class="user-email">hello_lia@useia.com.br</span>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Links Inferiores -->
+                <a href="#" class="nav-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Sair</span>
+                </a>
+
+            </div>
+
+        </aside>
   <!-- CONTEÚDO DA PÁGINA -->
   <main class="resume-page">
 
@@ -235,59 +273,28 @@
 </div>
 
 <script>
-const suggestion = document.getElementById("suggestionText");
-const input = document.getElementById("replyInput");
-
-document.getElementById("useBtn").addEventListener("click", () => {
-  input.value = suggestion.textContent.trim();
-  input.focus();
-});
-
-document.getElementById("editBtn").addEventListener("click", () => {
-  input.value = suggestion.textContent.trim();
-  input.focus();
-  input.select();
-});
-
-document.getElementById("continueBtn").addEventListener("click", () => {
-  const value = input.value.trim();
-
-  if (!value) {
-    input.focus();
-    return;
-  }
-
-  const bubble = document.createElement("div");
-  bubble.className = "message user";
-  bubble.textContent = value;
-
-  document.querySelector(".suggestion").before(bubble);
-  input.value = "";
-});
-
-input.addEventListener("keydown", event => {
-  if (event.key === "Enter") {
-    document.getElementById("continueBtn").click();
-  }
-});
-</script>
-
-
-<script>
 document.addEventListener("DOMContentLoaded", function () {
     const chat = document.querySelector(".chat-panel");
-    const input = document.querySelector(".reply input");
-    const botao = document.querySelector(".continue");
+    const input = document.getElementById("replyInput");
+    const continueBtn = document.getElementById("continueBtn");
+    const useBtn = document.getElementById("useBtn");
+    const suggestionText = document.getElementById("suggestionText");
 
-    if (!chat || !input || !botao) {
-        console.warn("Os elementos do chat não foram encontrados.");
-        return;
+    // Copia a sugestão para o campo de texto
+    if (useBtn && suggestionText && input) {
+        useBtn.addEventListener("click", () => {
+            input.value = suggestionText.textContent.trim();
+            input.focus();
+        });
     }
-// ...
+
+    // Função para adicionar mensagem do usuário no chat
     function enviarMensagem() {
         const texto = input.value.trim();
-
-        if (!texto) return;
+        if (!texto) {
+            input.focus();
+            return;
+        }
 
         const mensagem = document.createElement("div");
         mensagem.classList.add("message", "user");
@@ -295,18 +302,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const horario = document.createElement("span");
         horario.classList.add("time");
-        horario.textContent = new Date().toLocaleTimeString(
-            "pt-BR",
-            { hour: "2-digit", minute: "2-digit" }
-        );
+        horario.textContent = "Você  " + new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
 
         const sugestao = chat.querySelector(".suggestion");
 
         if (sugestao) {
-            chat.insertBefore(mensagem, sugestao);
             chat.insertBefore(horario, sugestao);
+            chat.insertBefore(mensagem, horario);
         } else {
-            chat.append(mensagem, horario);
+            chat.appendChild(horario);
+            chat.appendChild(mensagem);
         }
 
         input.value = "";
@@ -314,15 +319,24 @@ document.addEventListener("DOMContentLoaded", function () {
         input.focus();
     }
 
-    botao.addEventListener("click", enviarMensagem);
+    if (continueBtn) {
+        continueBtn.addEventListener("click", enviarMensagem);
+    }
 
-    input.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" && !event.shiftKey) {
-            event.preventDefault();
-            enviarMensagem();
-        }
-    });
+    if (input) {
+        input.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                enviarMensagem();
+            }
+        });
+    }
 });
 </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+        <script>
+            lucide.createIcons();
+        </script>
 </body>
 </html>
