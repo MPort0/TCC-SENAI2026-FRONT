@@ -1,5 +1,4 @@
-// chat-back.js
-const API_URL = 'http://localhost:3000/ia';
+const API_URL = `${window.API_BASE}/ia`;
 let historicoIA = [];
 
 /**
@@ -131,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Código de expansão automática da barra de mensagens (Movido para fora do bloco do botão e ajustado para 40px)
+    // 3. Código de expansão automática da barra de mensagens
     if (input) {
         input.addEventListener('input', function () {
             // Reseta a altura para a base de 40px centralizada do CSS antes de recalcular
