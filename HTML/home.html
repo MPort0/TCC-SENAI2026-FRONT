@@ -2,8 +2,6 @@
 <html lang="pt-br">
 
 <head>
-
-    <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../CSS/temas.css">
@@ -30,8 +28,9 @@
             <!-- Topo / Header -->
             <div class="sidebar-header">
                 <div class="logo-badge">
-                    <img src="../IMG/logo-branca.svg">
+                    <img src="../IMG/logo-branca.svg" alt="Logo">
                 </div>
+
                 <div class="brand-title">
                     <span class="brand-dark">AVA.</span>
                     <span class="brand-blue">Lia</span>
@@ -40,31 +39,28 @@
 
             <!-- Navegação Principal -->
             <nav class="nav-section">
-                <a href="../HTML/home.html" class="nav-item active">
+                <a href="../HTML/home.html" class="nav-item">
                     <i data-lucide="home"></i>
-                    <img src="../IMG/home.svg">
                     <span>Início</span>
                 </a>
                 <a href="../HTML/novo-curriculo.html" class="nav-item">
                     <i data-lucide="file-text"></i>
-
                     <span>Criar currículo</span>
                 </a>
-                <a href="../HTML/simulação.html" class="nav-item">
+                <a href="../HTML/simulacao.html" class="nav-item">
                     <i data-lucide="play-circle"></i>
-                    <img src="../IMG/circle-play.svg">
                     <span>Simulação</span>
                 </a>
                 <a href="../HTML/historico.html" class="nav-item">
                     <i data-lucide="history"></i>
-                    <img src="../IMG/clock-3.svg">
                     <span>Histórico</span>
                 </a>
                 <a href="../HTML/perfil.html" class="nav-item">
                     <i data-lucide="user"></i>
-                    <img src="../IMG/user-circle.svg">
+
                     <span>Perfil</span>
                 </a>
+
             </nav>
 
             <!-- Rodapé / Usuário + Links -->
@@ -73,8 +69,9 @@
                 <!-- Card do Usuário -->
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i data-lucide="user"></i>
+                        <i data-lucide="user-round"></i>
                     </div>
+
                     <div class="user-info">
                         <span class="user-nome">Olá, usuário!</span>
                         <span class="user-email">hello_lia@useia.com.br</span>
@@ -84,16 +81,14 @@
                 <div class="divider"></div>
 
                 <!-- Links Inferiores -->
-                <a href="#" class="nav-item">
+                <a href="../HTML/login.html" class="nav-item">
                     <i data-lucide="log-out"></i>
                     <span>Sair</span>
                 </a>
-                </nav>
 
             </div>
+
         </aside>
-
-
         <!-- ================= CONTEÚDO ================= -->
 
         <main class="main">
@@ -112,11 +107,10 @@
                     </small>
                 </div>
 
-                <button class="primary-button">
-                    <i data-lucide="mic"></i>
-                    Iniciar entrevista
+                <a href="../HTML/chat-lia.html" class="continue-button" style="text-decoration: none;">
+                    Começar entrevista
                     <i data-lucide="arrow-right"></i>
-                </button>
+                </a>
             </header>
 
 
@@ -130,7 +124,7 @@
                             <i data-lucide="bar-chart-3"></i>
                             Seu progresso
                         </h2>
-                        <a href="#">
+                        <a href="../HTML/historico.html">
                             Ver histórico
                             <i data-lucide="arrow-right"></i>
                         </a>
@@ -266,10 +260,11 @@
                         Você ainda não realizou sua próxima simulação.
                     </p>
                 </div>
-                <button class="continue-button">
-                    Começar entrevista
+                <a href="../HTML/simulação.html" class="primary-button" style="text-decoration: none;">
+                    <i data-lucide="mic"></i>
+                    Iniciar entrevista
                     <i data-lucide="arrow-right"></i>
-                </button>
+                </a>
             </section>
 
 
