@@ -143,12 +143,15 @@ h1 {
 
 .lia-floating {
     position: fixed;
-    right: 24px;
-    bottom: 24px;
-    width: 48px;
-    height: 48px;
-    background-color: #5F7FBF;
-    border-radius: 12px;
+    right: 2%;
+    bottom: 5%;
+    width: clamp(2.8rem, 3.2vw, 3.3rem);
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--active);
+    cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: center;
