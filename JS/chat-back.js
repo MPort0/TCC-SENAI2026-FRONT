@@ -18,7 +18,7 @@ function alternarBloqueioChat(bloquear) {
             input.focus(); // Devolve o foco para o usuário digitar
         }
     }
-    
+
     if (botaoEnviar) botaoEnviar.disabled = bloquear;
     if (botaoAdd) botaoAdd.disabled = bloquear;
 }
@@ -31,7 +31,7 @@ function renderizarMensagemUsuario(texto) {
     if (!chat) return;
 
     const messageElement = document.createElement("div");
-    messageElement.classList.add("message-bubble", "bubble-user"); 
+    messageElement.classList.add("message-bubble", "bubble-user");
     messageElement.textContent = texto;
 
     chat.appendChild(messageElement);
@@ -46,7 +46,7 @@ function renderizarRespostaLia(texto) {
     if (!chat) return;
 
     const messageElement = document.createElement("div");
-    messageElement.classList.add("message-bubble", "bubble-ia"); 
+    messageElement.classList.add("message-bubble", "bubble-ia");
     messageElement.textContent = texto;
 
     chat.appendChild(messageElement);
@@ -67,7 +67,7 @@ async function enviarParaIA(mensagemTexto) {
         if (!response.ok) throw new Error(`Erro: ${response.status}`);
 
         const dados = await response.json();
-        
+
         // Renderiza o balão correto da Lia e atualiza o histórico compartilhado
         renderizarRespostaLia(dados.resposta);
         historicoIA = dados.historico;
@@ -92,8 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (input) {
         input.addEventListener('keydown', (event) => {
             if (event.key === 'Enter') {
-                event.preventDefault(); 
-                
+                event.preventDefault();
+
                 if (input.disabled) return;
 
                 const mensagem = input.value.trim();
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 alternarBloqueioChat(true);
                 renderizarMensagemUsuario(mensagem);
-                
+
                 // Reseta a altura da barra para 40px após enviar a mensagem
                 input.value = "";
                 input.style.height = '40px';
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!mensagem) return;
 
             alternarBloqueioChat(true);
-            
+
             // Reseta a altura da barra para 40px após o clique do botão
             setTimeout(() => {
                 input.style.height = '40px';
@@ -134,11 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (input) {
         input.addEventListener('input', function () {
             // Reseta a altura para a base de 40px centralizada do CSS antes de recalcular
-            this.style.height = '40px'; 
-            
+            this.style.height = '40px';
+
             // Define a nova altura baseada no conteúdo interno
             this.style.height = this.scrollHeight + 'px';
-            
+
             // Se o texto passar da altura máxima (5 linhas / 120px), ativa a rolagem interna
             if (this.scrollHeight > 120) {
                 this.style.overflowY = 'auto';
