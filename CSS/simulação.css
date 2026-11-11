@@ -171,9 +171,8 @@ h1 {
     width: clamp(2.8rem, 3.2vw, 3.3rem);
     aspect-ratio: 1;
     border: none;
-    border-radius: 6px;
-    background: var(--btn-floating-bg);
-    color: var(--text-white);
+    border-radius: 0.5rem;
+    background: var(--active);
     cursor: pointer;
 
     display: flex;
