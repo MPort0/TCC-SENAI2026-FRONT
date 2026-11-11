@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
@@ -8,8 +9,8 @@
 }
 
 body {
-    background-color: #00061a;
-    color: #ffffff;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -30,7 +31,7 @@ body {
     padding-left: 4px;
     margin: 12px 0 20px 0;
     font-size: 12px;
-    color: #94a3b8;
+    color: var(--text-secondary);
     text-align: left;
     width: 100%;
     box-sizing: border-box;
@@ -43,19 +44,19 @@ body {
 }
 
 .register-card {
-    background-color: #00092d;
-    border: 1px solid #121e3f;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
     border-radius: 16px;
     padding: 40px 36px;
     width: 100%;
     max-width: 440px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    box-sizing: border-box; /* não deixa o padding estourar a largura de pequenas telas*/
+    box-shadow: var(--card-shadow);
+    box-sizing: border-box;
 }
 
 /* Estilo para quando a regra for atendida via JS */
 #regras-senha li.valido {
-    color: #28a745; /* Verde para regras atendidas */
+    color: #28a745;
 }
 
 @media (max-width: 480px) {
@@ -68,7 +69,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: inherit;
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
@@ -88,13 +89,13 @@ body {
 }
 
 .btn-back:hover {
-    color: #ffffff;
+    color: var(--color-link);
 }
 
 .title {
     font-size: 26px;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 28px;
 }
 
@@ -108,7 +109,7 @@ body {
 .form-group label {
     font-size: 13px;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--text-labels);
 }
 
 .input-wrapper {
@@ -120,22 +121,22 @@ body {
 
 input {
     width: 100%;
-    background-color: #00061a;
-    border: 1px solid #1a274c;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-input);
     border-radius: 8px;
     padding: 12px 16px;
-    color: #ffffff;
+    color: var(--text-primary);
     font-size: 14px;
     outline: none;
     transition: border-color 0.2s;
 }
 
 input::placeholder {
-    color: #475569;
+    color: var(--text-placeholder);
 }
 
 input:focus {
-    border-color: #5f7fbf;
+    border-color: var(--color-primary);
 }
 
 .input-wrapper input {
@@ -148,7 +149,7 @@ input:focus {
     right: 14px;
     width: 18px;
     height: 18px;
-    stroke: #64748b;
+    stroke: var(--icon-stroke);
     fill: none;
     stroke-width: 2;
     stroke-linecap: round;
@@ -158,12 +159,12 @@ input:focus {
 }
 
 .toggle-icon:hover {
-    stroke: #94a3b8;
+    stroke: var(--text-secondary);
 }
 
 .btn-submit {
     width: 100%;
-    background-color: #5f7fbf;
+    background-color: var(--color-primary);
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -176,5 +177,5 @@ input:focus {
 }
 
 .btn-submit:hover {
-    background-color: #4d6cae;
+    background-color: var(--color-primary-hover);
 }

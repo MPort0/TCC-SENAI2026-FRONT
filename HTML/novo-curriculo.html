@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/temas.css">
+  <link rel="stylesheet" href="../CSS/sidebar.css">
+  <link rel="stylesheet" href="../CSS/novo-curriculo.css">
+  <title>Novo Currículo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
+  <script src="../JS/ipback.js"></script>
+</head>
+
+<body>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+
+      <!-- Topo / Header -->
+      <div class="sidebar-header">
+        <div class="logo-badge">
+          <img src="../IMG/logo-branca.svg" alt="Logo">
+        </div>
+
+        <div class="brand-title">
+          <span class="brand-dark">AVA.</span>
+          <span class="brand-blue">Lia</span>
+        </div>
+      </div>
+
+      <!-- Navegação Principal -->
+      <nav class="nav-section">
+        <a href="../HTML/home.html" class="nav-item">
+          <i data-lucide="home"></i>
+          <span>Início</span>
+        </a>
+        <a href="../HTML/novo-curriculo.html" class="nav-item active">
+          <i data-lucide="file-text"></i>
+          <span>Criar currículo</span>
+        </a>
+        <a href="../HTML/simulação.html" class="nav-item">
+          <i data-lucide="play-circle"></i>
+          <span>Simulação</span>
+        </a>
+        <a href="../HTML/historico.html" class="nav-item">
+          <i data-lucide="history"></i>
+          <span>Histórico</span>
+        </a>
+        <a href="../HTML/perfil.html" class="nav-item">
+          <i data-lucide="user"></i>
+          <span>Perfil</span>
+        </a>
+      </nav>
+
+      <!-- Rodapé / Usuário + Links -->
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="user-avatar">
+            <i data-lucide="user-round"></i>
+          </div>
+          <div class="user-info">
+            <span class="user-nome">Olá, usuário!</span>
+            <span class="user-email">hello_lia@useia.com.br</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <a href="../HTML/login-usuario.html" class="nav-item">
+          <i data-lucide="log-out"></i>
+          <span>Sair</span>
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- CONTEÚDO DA PÁGINA -->
+    <main class="resume-page">
+
+      <!-- CHAT DA IA (PAINEL ESQUERDO) -->
+      <section class="chat-panel">
+
+        <div class="chat-top">
+          <span class="ai-icon">
+            <img src="../IMG/favicon.ico" alt="Logo do Assistente IA" width="20" height="20">
+          </span>
+          <span>Ava.Lia <small>Agora</small></span>
+        </div>
+
+        <div class="message">
+          Olá! Vou te ajudar a criar um currículo profissional.<br>
+          Qual é o seu <strong>nome completo</strong>?
+        </div>
+
+        <!-- Caixa de Sugestão da IA (Inicia oculta via CSS/JS) -->
+        <div class="suggestion" style="display: none;">
+          <div class="suggestion-title">
+            <i data-lucide="sparkles"></i> Sugestão da IA
+          </div>
+
+          <p id="suggestionText"></p>
+
+          <div class="actions">
+            <button class="btn btn-primary" id="useBtn">Usar sugestão</button>
+          </div>
+        </div>
+
+        <!-- Área de Input -->
+        <div class="reply">
+          <input id="replyInput" placeholder="Digite sua resposta..." aria-label="Digite sua resposta">
+          <button class="continue" id="continueBtn">Enviar</button>
+        </div>
+
+      </section>
+
+      <!-- PRÉVIA DO CURRÍCULO (PAINEL DIREITO) -->
+      <section class="resume-preview">
+
+        <div class="resume-header">
+          <span>Prévia do currículo</span>
+        </div>
+
+        <article class="resume-document">
+
+          <div class="resume-person">
+            <div class="resume-avatar">
+              <i data-lucide="user" style="color: white;"></i>
+            </div>
+            <div>
+              <h2 id="preview-nome">Seu Nome</h2>
+              <div class="role" id="preview-cargo">Seu Cargo Alvo</div>
+              <div class="contact" id="preview-contato">seu@email.com • (00) 00000-0000</div>
+            </div>
+          </div>
+
+          <div class="resume-section">
+            <h3>Resumo profissional</h3>
+            <p id="preview-resumo">Responda às perguntas ao lado para a Lia gerar seu resumo profissional...</p>
+          </div>
+
+          <div class="resume-section">
+            <h3>Experiência</h3>
+            <p id="preview-exp-desc" style="white-space: pre-line;">Aguardando informações da experiência...</p>
+          </div>
+
+          <div class="resume-section">
+            <h3>Formação</h3>
+            <p id="preview-curso">Seu curso / instituição</p>
+          </div>
+
+          <div class="resume-bottom">
+            <div class="resume-section">
+              <h3>Habilidades</h3>
+              <div class="tags" id="preview-habilidades">
+                <span class="tag">Suas habilidades</span>
+              </div>
+            </div>
+          </div>
+
+        </article>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="../JS/temas.js" defer></script>
+  <script src="../JS/sidebar.js" defer></script>
+  <script src="../JS/novoCurriculo.js" defer></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>

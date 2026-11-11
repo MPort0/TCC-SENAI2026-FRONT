@@ -4,8 +4,80 @@
     box-sizing: border-box;
     font-family: 'Poppins', Arial, sans-serif;
 }
+
 /*VARIÁVEIS */
 
+
+/* =========================
+   MENU LATERAL (PRESO NO LUGAR)
+   ========================= */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    border-right: 0.06rem solid var(--sidebar-border);
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 1.4%;
+    flex-shrink: 0;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* Compensação para o conteúdo principal não ficar debaixo da sidebar fixa */
+main.main-content,
+main.interview {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    width: 100%;
+    min-height: 3.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0 1.7rem;
+    border-radius: 0.45rem;
+    color: var(--text);
+    text-decoration: none;
+    font-size: clamp(0.8rem, 0.9vw, 1rem);
+}
+
+.nav-item .icon {
+    width: 1.1rem;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.nav-item.active {
+    background: var(--active);
+}
+
+.sidebar-bottom {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.sidebar-bottom a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: clamp(0.7rem, 0.8vw, 0.9rem);
+    white-space: nowrap;
+}
 
 
 /*
@@ -14,7 +86,7 @@
 body {
     min-height: 100vh;
 
-    background: var(--bg);
+    background: var(--bg-page);
     color: var(--text);
 
     display: flex;
@@ -55,7 +127,7 @@ h1 {
 }
 
 
-/* 
+/*
    RESUMO
  */
 
@@ -64,7 +136,8 @@ h1 {
 
     padding: 22px 25px 20px;
 
-    margin-bottom: 22px;/* espaço os cards */
+    margin-bottom: 22px;
+    /* espaço os cards */
 }
 
 
@@ -87,15 +160,17 @@ h1 {
 }
 
 
-/* 
+/*
 CARDS
 */
 
-.card, .summary, .card-performance {
-    background:var(--card-devolutiva) ;
-    
+.card,
+.summary,
+.card-performance {
+    background: var(--card-devolutiva);
+
     border: 1px solid rgba(197, 201, 215, .7);
-    
+
     border-radius: 10px;
 }
 
@@ -109,7 +184,7 @@ CARDS
 }
 
 
-/* 
+/*
    DESEMPENHO
  */
 
@@ -117,7 +192,8 @@ CARDS
     color: var(--text-devolutiva);
     min-height: 200px;
 
-    padding: 20px 30px;/* espaço das bordas das cards */
+    padding: 20px 30px;
+    /* espaço das bordas das cards */
 
     margin-bottom: 22px;
 }
@@ -219,7 +295,7 @@ CARDS
 }
 
 
-/* 
+/*
    PONTOS FORTES / ERROS
  */
 
@@ -299,7 +375,7 @@ CARDS
 }
 
 
-/* 
+/*
    SUGESTÕES
  */
 
@@ -319,7 +395,7 @@ CARDS
 }
 
 
-/* 
+/*
    BOTÕES
  */
 
@@ -385,7 +461,7 @@ CARDS
 }
 
 
-/* 
+/*
    BOTÃO FLUTUANTE
  */
 
@@ -492,7 +568,8 @@ CARDS
 
         gap: 12px;
     }
-        .lia {
+
+    .lia {
         right: 5%;
         bottom: 4%;
     }

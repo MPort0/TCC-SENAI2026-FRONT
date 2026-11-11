@@ -1,40 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-:root {
-    --sidebar-border: #505873;
-    --text: #ffffff;
-    --active: #627dbc;
+    font-weight: 600;
 }
 
 body {
     width: 100%;
-    min-height: 100%;
-    font-family: 'Inter', Arial, sans-serif;
-    background: #02082e;
-    color: white;
+    min-height: 100vh;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-app);
 }
 
 .app {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    background: #02082e;
-}
-
-/* =========================
-PARTE INFERIOR
-========================= */
-
-.sidebar-bottom a {
-    color: white;
-    text-decoration: none;
-    font-size: clamp(0.7rem, 0.8vw, 0.9rem)
+    background: var(--bg-app);
 }
 
 /* =========================
@@ -43,12 +26,10 @@ PARTE INFERIOR
 
 .main-content {
     flex: 1;
-    padding: 0 62px 70px;
-    max-width: 1280px;
-    margin-top: 55px;
-    margin-left: 40px;
+    max-width: 920px;
+    margin: 55px auto 70px;
+    padding: 0 20px;
 }
-
 
 /* =========================
    TÍTULO
@@ -59,15 +40,14 @@ h1 {
     line-height: 1.1;
     margin-top: 5px;
     font-weight: 700;
+    color: var(--text-primary);
 }
 
 .subtitle {
     margin-top: 10px;
-    color: #707a9c;
+    color: var(--text-subtitle);
     font-size: 20px;
-    font-weight: 600;
 }
-
 
 /* =========================
    SEÇÕES
@@ -79,10 +59,9 @@ h1 {
 
 .selection-section h2 {
     font-size: 17px;
-    font-weight: 400;
     margin-bottom: 7px;
+    color: var(--text-primary);
 }
-
 
 /* =========================
    BOTÕES DE OPÇÃO
@@ -98,10 +77,10 @@ h1 {
 .option {
     height: 44px;
     padding: 0 20px;
-    border: 1px solid #5c79bd;
-    border-radius: 8px;
-    background: transparent;
-    color: #727d9d;
+    border: 2px solid var(--border-option);
+    border-radius: 10px;
+    background: var(--bg-card-option);
+    color: var(--text-option);
     font-family: inherit;
     font-size: 16px;
     cursor: pointer;
@@ -109,16 +88,15 @@ h1 {
 }
 
 .option:hover {
-    border-color: #7895d6;
-    color: #8aa2d8;
+    border-color: var(--border-option-hover);
+    color: var(--primary-brand);
 }
 
 .option.selected {
-    background: #6984c5;
-    border-color: #6984c5;
-    color: white;
+    background: var(--primary-brand);
+    border-color: var(--primary-brand);
+    color: var(--text-white);
 }
-
 
 /* =========================
    DIFICULDADE
@@ -127,7 +105,6 @@ h1 {
 .difficulty {
     margin-top: 38px;
 }
-
 
 /* =========================
    BOTÃO INICIAR
@@ -140,8 +117,8 @@ h1 {
     margin-top: 62px;
     border: none;
     border-radius: 8px;
-    background: #6984c5;
-    color: white;
+    background: var(--btn-start-bg);
+    color: var(--text-white);
     font-family: inherit;
     font-size: 17px;
     cursor: pointer;
@@ -153,7 +130,7 @@ h1 {
 }
 
 .start-button:hover {
-    background: #7895d6;
+    background: var(--btn-start-hover);
 }
 
 .play-icon {
@@ -161,18 +138,32 @@ h1 {
 }
 
 /* =========================
-   BOTÃO FLUTUANTE
+   BOTÃO FLUTUANTE (LIA)
 ========================= */
 
-.floating-support {
+.lia-floating {
     position: fixed;
-    right: 22px;
-    bottom: 20px;
-    width: 42px;
-    height: 42px;
-    border: none;
-    border-radius: 6px;
-    background: #6685c5;
-    color: white;
-    cursor: pointer;
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    background-color: #5F7FBF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lia-floating:hover {
+    background-color: #4D6CAE;
+    transform: translateY(-2px);
+}
+
+.lia-floating svg {
+    width: 28px;
+    height: 28px;
 }

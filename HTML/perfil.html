@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="../CSS/temas.css">
     <link rel="stylesheet" href="../CSS/sidebar.css">
     <link rel="stylesheet" href="../CSS/perfil.css">
+    <script src="../JS/ipback.js"></script>
     <script src="../JS/temas.js" defer></script>
+    <script src="../JS/sidebar.js" defer></script>
     <title>Perfil</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,13 +21,18 @@
 <body>
     <div class="app">
         <!-- SIDEBAR CONTAINER -->
+        <!-- Botão flutuante para alternar a sidebar -->
+        <!-- <button id="btn-sidebar" class="btn-sidebar" aria-label="Alternar Menu">
+            <i data-lucide="menu"></i>
+        </button> -->
         <aside class="sidebar">
 
             <!-- Topo / Header -->
             <div class="sidebar-header">
                 <div class="logo-badge">
-                    <img src="../IMG/logo-roxa.svg">
+                    <img src="../IMG/logo-branca.svg" alt="Logo">
                 </div>
+
                 <div class="brand-title">
                     <span class="brand-dark">AVA.</span>
                     <span class="brand-blue">Lia</span>
@@ -34,31 +41,28 @@
 
             <!-- Navegação Principal -->
             <nav class="nav-section">
-                <a href="home.html" class="nav-item active">
+                <a href="../HTML/home.html" class="nav-item active">
                     <i data-lucide="home"></i>
-                    <img src="../IMG/home.svg">
                     <span>Início</span>
                 </a>
-                <a href="#" class="nav-item">
+                <a href="../HTML/novo-curriculo.html" class="nav-item">
                     <i data-lucide="file-text"></i>
-                    <img src="../IMG/file-text.svg">
                     <span>Criar currículo</span>
                 </a>
-                <a href="simulação.html" class="nav-item">
+                <a href="../HTML/simulação.html" class="nav-item">
                     <i data-lucide="play-circle"></i>
-                    <img src="../IMG/circle-play.svg">
                     <span>Simulação</span>
                 </a>
-                <a href="historico.html" class="nav-item">
+                <a href="../HTML/historico.html" class="nav-item">
                     <i data-lucide="history"></i>
-                    <img src="../IMG/clock-3.svg">
                     <span>Histórico</span>
                 </a>
-                <a href="perfil.html" class="nav-item">
+                <a href="../HTML/perfil.html" class="nav-item">
                     <i data-lucide="user"></i>
-                    <img src="../IMG/user-circle.svg">
+
                     <span>Perfil</span>
                 </a>
+
             </nav>
 
             <!-- Rodapé / Usuário + Links -->
@@ -67,8 +71,9 @@
                 <!-- Card do Usuário -->
                 <div class="user-card">
                     <div class="user-avatar">
-                        <i data-lucide="user"></i>
+                        <i data-lucide="user-round"></i>
                     </div>
+
                     <div class="user-info">
                         <span class="user-nome">Olá, usuário!</span>
                         <span class="user-email">hello_lia@useia.com.br</span>
@@ -78,23 +83,10 @@
                 <div class="divider"></div>
 
                 <!-- Links Inferiores -->
-                <nav class="bottom-nav">
-                    <a href="#" class="nav-item">
-                        <i data-lucide="settings"></i>
-                        <img src="../IMG/configuracoes.svg">
-                        <span>Configurações</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i data-lucide="headphones"></i>
-                        <img src="../IMG/suporte.svg">
-                        <span>Suporte</span>
-                    </a>
-                    <a href="#" class="nav-item">
-                        <i data-lucide="log-out"></i>
-                        <img src="../IMG/sair.svg">
-                        <span>Sair</span>
-                    </a>
-                </nav>
+                <a href="../HTML/login-usuario.html" class="nav-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Sair</span>
+                </a>
 
             </div>
 
@@ -102,7 +94,32 @@
 
         <main class="content">
             <section class="profile-section">
-                <h1>Meus dados</h1>
+                <div class="profile-header">
+                    <h1>Meus dados</h1>
+
+                    <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">
+                        <!-- Mantenha aqui os SVGs e o span que já existem no seu botão -->
+                        <!-- Ícone de Sol (visível no modo escuro) -->
+                        <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
+                            stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <!-- Ícone de Lua (visível no modo claro) -->
+                        <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
+                            stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <span id="theme-toggle-text">Modo Escuro</span>
+                    </button>
+                </div>
 
                 <div class="user-heading">
                     <div class="avatar">U</div>
@@ -127,40 +144,6 @@
                     </div>
                 </div>
 
-
-
-                <!-- Botão de alternância de tema -->
-                <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">
-                    <!-- Ícone de Sol (visível no modo escuro) -->
-                    <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
-                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <!-- Ícone de Lua (visível no modo claro) -->
-                    <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
-                        stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <span id="theme-toggle-text">Modo Escuro</span>
-                </button>
-
-
-
-
-
-
-
-
-
-
                 <form class="profile-form">
                     <label for="name">Nome:</label>
                     <input id="name" type="text" placeholder="Arthur">
@@ -179,16 +162,20 @@
 
                 <div class="resume-grid">
                     <article class="resume-card">
-                        <button class="card-edit" aria-label="Editar currículo">
-                            <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M25.3989 8.33731L28.6626 11.601M27.4971 5.4621L18.668 14.2912C18.2104 14.7458 17.899 15.3266 17.7738 15.9593L16.9583 20.0416L21.0406 19.2246C21.6727 19.0981 22.2523 18.7883 22.7087 18.3319L31.5378 9.50281C31.8031 9.23749 32.0136 8.92252 32.1572 8.57586C32.3007 8.22921 32.3747 7.85767 32.3747 7.48246C32.3747 7.10724 32.3007 6.7357 32.1572 6.38905C32.0136 6.0424 31.8031 5.72742 31.5378 5.4621C31.2725 5.19679 30.9575 4.98632 30.6108 4.84274C30.2642 4.69915 29.8927 4.62524 29.5174 4.62524C29.1422 4.62524 28.7707 4.69915 28.424 4.84274C28.0774 4.98632 27.7624 5.19679 27.4971 5.4621Z"
-                                    stroke="#98AACA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                <path
-                                    d="M29.2916 23.1249V27.7499C29.2916 28.5677 28.9668 29.3519 28.3885 29.9302C27.8103 30.5084 27.026 30.8333 26.2083 30.8333H9.24996C8.43221 30.8333 7.64795 30.5084 7.06971 29.9302C6.49148 29.3519 6.16663 28.5677 6.16663 27.7499V10.7916C6.16663 9.97383 6.49148 9.18958 7.06971 8.61134C7.64795 8.0331 8.43221 7.70825 9.24996 7.70825H13.875"
-                                    stroke="#98AACA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
+                        <button class="card-edit" aria-label="Editar currículo"><a href="../HTML/editar-curriculo.html">
+
+                                <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M25.3989 8.33731L28.6626 11.601M27.4971 5.4621L18.668 14.2912C18.2104 14.7458 17.899 15.3266 17.7738 15.9593L16.9583 20.0416L21.0406 19.2246C21.6727 19.0981 22.2523 18.7883 22.7087 18.3319L31.5378 9.50281C31.8031 9.23749 32.0136 8.92252 32.1572 8.57586C32.3007 8.22921 32.3747 7.85767 32.3747 7.48246C32.3747 7.10724 32.3007 6.7357 32.1572 6.38905C32.0136 6.0424 31.8031 5.72742 31.5378 5.4621C31.2725 5.19679 30.9575 4.98632 30.6108 4.84274C30.2642 4.69915 29.8927 4.62524 29.5174 4.62524C29.1422 4.62524 28.7707 4.69915 28.424 4.84274C28.0774 4.98632 27.7624 5.19679 27.4971 5.4621Z"
+                                        stroke="#98AACA" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M29.2916 23.1249V27.7499C29.2916 28.5677 28.9668 29.3519 28.3885 29.9302C27.8103 30.5084 27.026 30.8333 26.2083 30.8333H9.24996C8.43221 30.8333 7.64795 30.5084 7.06971 29.9302C6.49148 29.3519 6.16663 28.5677 6.16663 27.7499V10.7916C6.16663 9.97383 6.49148 9.18958 7.06971 8.61134C7.64795 8.0331 8.43221 7.70825 9.24996 7.70825H13.875"
+                                        stroke="#98AACA" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </a>
 
                         </button>
 
@@ -212,7 +199,7 @@
             </section>
         </main>
 
-        <button class="lia">
+        <a class="lia" href="../HTML/chat-lia.html">
             <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="58" height="58" rx="8" fill="#5F7FBF" />
                 <path
@@ -220,8 +207,12 @@
                     fill="white" />
             </svg>
 
-        </button>
+            </button>
     </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
