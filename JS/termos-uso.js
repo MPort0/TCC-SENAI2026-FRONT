@@ -107,6 +107,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnConfirm.addEventListener('click', () => {
+        // Pega o e-mail que tentou logar e estava bloqueado
+        const emailAlvo = sessionStorage.getItem('emailPendenteTermos') || localStorage.getItem('emailSalvo');
+
+        if (emailAlvo) {
+            localStorage.setItem(`termosAceitos_${emailAlvo}`, 'true');
+            sessionStorage.removeItem('emailPendenteTermos');
+        } else {
+            // Caso o usuário tenha ido direto nos termos antes mesmo de digitar o e-mail
+            localStorage.setItem('termosAceitos_geral', 'true');
+        }
+
         const logData = {
             userId: 'usr_' + Math.random().toString(36).substring(2, 11),
             timestamp: new Date().toISOString(),
@@ -122,14 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
     btnCloseModal.addEventListener('click', () => {
         logModal.classList.remove('active');
         // Redireciona para a tela de login assim que fechar o modal
-        window.location.href = '../HTML/login-usuario.html';
+        window.location.href = '../HTML/login.html';
     });
 
     // Fechar modal ao clicar fora e também redirecionar para o login
     logModal.addEventListener('click', (e) => {
         if (e.target === logModal) {
             logModal.classList.remove('active');
-            window.location.href = '../HTML/login-usuario.html';
+            window.location.href = '../HTML/login.html';
         }
     });
 
