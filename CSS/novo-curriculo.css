@@ -1,25 +1,16 @@
-:root {
-  --sidebar-border: #303a5b;
-  --text: #f4f6ff;
-  --muted: #8592b4;
-  --active: #627ec1;
-  --bg: #030927;
-}
+/* AVA.Lia — Criação de currículo | cores centralizadas em temas.css */
+* { box-sizing: border-box; }
 
-* {
-  box-sizing: border-box;
-}
-
-/* Trava a tela inteira na altura da viewport */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   max-height: 100vh;
-  overflow: hidden; /* Elimina o scroll da página */
-  background: var(--bg);
-  color: var(--text);
+  overflow: hidden;
+  background: var(--bg-app);
+  color: var(--text-primary);
   font-family: 'Poppins', Inter, Arial, sans-serif;
+  transition: background-color .3s, color .3s;
 }
 
 .app-layout {
@@ -27,6 +18,7 @@ html, body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  background: var(--bg-app);
 }
 
 /* PÁGINA DE CRIAÇÃO DE CURRÍCULO */
@@ -38,21 +30,21 @@ html, body {
   display: grid;
   grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
   gap: 20px;
-  align-items: center; /* Centraliza o conteúdo verticalmente */
+  align-items: center;
   justify-content: center;
   box-sizing: border-box;
 }
 
-/* CHAT PANEL (Scroll interno garantido) */
+/* CHAT: rolagem interna */
 .chat-panel {
   overflow-y: auto;
   scroll-behavior: smooth;
-  border: 1px solid #222d50;
+    border: 2px solid var(--primary-brand);
   border-radius: 12px;
-  background: #060b20;
+  background: var(--bg-card);
   padding: 16px;
   height: 100%;
-  max-height: calc(100vh - 60px); /* Ocupa a altura útil sem estourar */
+  max-height: calc(100vh - 60px);
   min-height: 0;
   display: flex;
   flex-direction: column;
@@ -60,49 +52,37 @@ html, body {
 }
 
 .chat-panel::-webkit-scrollbar,
-.resume-preview::-webkit-scrollbar {
-  width: 7px;
-}
-
+.resume-preview::-webkit-scrollbar { width: 7px; }
 .chat-panel::-webkit-scrollbar-track,
-.resume-preview::-webkit-scrollbar-track {
-  background: transparent;
-}
-
+.resume-preview::-webkit-scrollbar-track { background: transparent; }
 .chat-panel::-webkit-scrollbar-thumb,
 .resume-preview::-webkit-scrollbar-thumb {
-  background: #627ec1;
+  background: var(--primary-brand);
   border-radius: 10px;
 }
-
 .chat-panel::-webkit-scrollbar-thumb:hover,
-.resume-preview::-webkit-scrollbar-thumb:hover {
-  background: #859fe0;
-}
-
-.chat-panel,
-.resume-preview {
+.resume-preview::-webkit-scrollbar-thumb:hover { background: var(--color-primary-hover); }
+.chat-panel, .resume-preview {
   scrollbar-width: thin;
-  scrollbar-color: #627ec1 transparent;
+  scrollbar-color: var(--primary-brand) transparent;
 }
 
 .chat-top {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #f5f6ff;
+  color: var(--text-primary);
   font-weight: 600;
 }
-
 .chat-top small {
   font-size: 10px;
-  color: #7885a6;
+  color: var(--text-subtitle);
   font-weight: 400;
 }
-
 .chat-panel .message {
   margin-left: 29px;
-  background: #141c36;
+  background: var(--bg-card-option);
+  color: var(--text-labels);
   padding: 12px 14px;
   border-radius: 0 9px 9px 9px;
   max-width: 88%;
@@ -110,118 +90,85 @@ html, body {
   line-height: 1.45;
   overflow-wrap: anywhere;
 }
-
 .chat-panel .message.user {
   align-self: flex-end;
   margin: 0 0 0 auto;
-  background: #30477f;
+  background: var(--primary-brand);
+  color: var(--text-white);
   border-radius: 9px 0 9px 9px;
   max-width: 77%;
 }
-
 .chat-panel .time {
   display: block;
   text-align: right;
-  color: #7481a5;
+  color: var(--text-subtitle);
   font-size: 10px;
   margin-top: -8px;
 }
 
 .suggestion {
   margin-top: auto;
-  border: 1px solid #2a3761;
+  border: 1px solid var(--border-option);
   border-radius: 9px;
-  background: #151d39;
+  background: var(--bg-card-option);
   padding: 10px 9px 8px;
-  color: #8998bd;
+  color: var(--text-subtitle);
   font-size: 14px;
 }
-
 .suggestion-title {
-  color: #627ec1;
+  color: var(--primary-brand);
   font-size: 15px;
   margin-bottom: 8px;
   font-weight: 600;
 }
-
-.suggestion p {
-  margin: 0 0 8px;
-  line-height: 1.5;
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 25px;
-}
-
-.resume-page button {
-  font: inherit;
-  border: 0;
-  cursor: pointer;
-}
-
-.btn {
-  padding: 5px 8px;
-  border-radius: 4px;
-  font-size: 9px;
-}
-
-.btn-primary {
-  background: #627ec1;
-  color: white;
-}
-
-.reply {
-  display: flex;
-  gap: 5px;
-}
-
+.suggestion p { margin: 0 0 8px; line-height: 1.5; }
+.actions { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 25px; }
+.resume-page button { font: inherit; border: 0; cursor: pointer; }
+.btn { padding: 5px 8px; border-radius: 4px; font-size: 9px; }
+.btn-primary { background: var(--btn-start-bg); color: var(--text-white); }
+.btn-primary:hover { background: var(--btn-start-hover); }
+.reply { display: flex; gap: 5px; }
 .reply input {
-  min-width: 0;
-  flex: 1;
-  background: #202a50;
-  border: 0;
-  border-radius: 20px;
-  padding: 8px 12px;
-  color: white;
-  font-size: 12px;
-  outline: none;
+    min-width: 0;
+    flex: 1;
+    background: var(--bg-card-option);
+    border: 0.06rem solid var(--border-option);
+    border-radius: 20px;
+    padding: 8px 12px;
+    color: var(--text-primary);
+    font-size: 12px;
+    outline: none;
 }
-
-.reply input::placeholder {
-  color: #647296;
-}
-
+.reply input:focus { border-color: var(--primary-brand); }
+.reply input::placeholder { color: var(--text-placeholder); }
 .continue {
-  background: #627ec1;
-  color: white;
+  background: var(--btn-start-bg);
+  color: var(--text-white);
   border-radius: 4px;
   padding: 0 13px;
   font-size: 10px;
   white-space: nowrap;
 }
+.continue:hover { background: var(--btn-start-hover); }
 
-/* PRÉVIA DO CURRÍCULO (Scroll no documento quando necessário) */
+/* PRÉVIA: documento branco independentemente do tema */
 .resume-preview {
-  border: 1px solid #263252;
+    border: 2px solid var(--primary-brand);
   border-radius: 12px;
   overflow-y: auto;
-  background: #fff;
+  background: #ffffff;
   color: #1b2435;
   height: 100%;
   max-height: calc(100vh - 60px);
 }
-
 .resume-header {
   position: sticky;
   top: 0;
   z-index: 10;
   height: 40px;
-  background: #080d23;
-  color: #aebfe3;
-  border-bottom: 1px solid #263252;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-option);
   padding: 6px 16px;
   display: flex;
   align-items: center;
@@ -229,13 +176,13 @@ html, body {
   font-size: 15px;
   font-weight: 600;
 }
-
 .resume-document {
   padding: 30px;
   font-size: 12px;
   line-height: 1.45;
+  background: #ffffff;
+  color: #1b2435;
 }
-
 .resume-person {
   display: flex;
   align-items: center;
@@ -244,144 +191,50 @@ html, body {
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
-
 .resume-avatar {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: #627ec1;
+  background: var(--primary-brand);
+  color: var(--text-white);
   display: grid;
   place-items: center;
   font-size: 19px;
   overflow: hidden;
   flex-shrink: 0;
 }
-
-.resume-person h2 {
-  font-size: 24px;
-  margin: 0 0 1px;
-  font-weight: 700;
-}
-
-.resume-person .role {
-  font-size: 14px;
-  color: #1B2435;
-  font-weight: 600;
-}
-
-.contact {
-  font-size: 10px;
-  color: #8a94a6;
-  overflow-wrap: anywhere;
-}
-
-.resume-section {
-  margin: 10px 0;
-}
-
-.resume-section h3 {
-  font-size: 16px;
-  margin: 0 0 4px;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.resume-section p {
-  font-size: 12px;
-  margin: 0;
-  color: #596477;
-}
-
-.job-title {
-  font-weight: 700;
-  font-size: 12px;
-}
-
-.sub {
-  font-size: 12px;
-  color: #7b8495;
-  font-style: italic;
-}
-
-.dates {
-  float: right;
-  color: #7b8495;
-}
-
-.resume-document ul {
-  margin: 3px 0 0;
-  padding-left: 14px;
-  color: #596477;
-}
-
-.resume-bottom {
-  display: grid;
-  gap: 12px;
-}
-
-.tags {
-  display: flex;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-
-.tag {
-  background: #eef0f4;
-  border-radius: 2px;
-  padding: 2px 5px;
-  font-size: 12px;
-  color: #4d5666;
-}
+.resume-person h2 { font-size: 24px; margin: 0 0 1px; font-weight: 700; color: #1b2435; }
+.resume-person .role { font-size: 14px; color: #1b2435; font-weight: 600; }
+.contact { font-size: 10px; color: #8a94a6; overflow-wrap: anywhere; }
+.resume-section { margin: 10px 0; }
+.resume-section h3 { font-size: 16px; margin: 0 0 4px; text-transform: uppercase; font-weight: 700; color: #1b2435; }
+.resume-section p { font-size: 12px; margin: 0; color: #596477; }
+.job-title { font-weight: 700; font-size: 12px; }
+.sub { font-size: 12px; color: #7b8495; font-style: italic; }
+.dates { float: right; color: #7b8495; }
+.resume-document ul { margin: 3px 0 0; padding-left: 14px; color: #596477; }
+.resume-bottom { display: grid; gap: 12px; }
+.tags { display: flex; gap: 4px; flex-wrap: wrap; }
+.tag { background: #eef0f4; border-radius: 2px; padding: 2px 5px; font-size: 12px; color: #4d5666; }
 
 /* RESPONSIVIDADE */
 @media (max-width: 1000px) {
-  .sidebar {
-    width: 220px;
-  }
+  .sidebar { width: 220px; }
 }
-
 @media (max-width: 900px) {
-  html, body, .app-layout {
-    overflow: auto; /* Restaura scroll da tela em dispositivos móveis/telas pequenas se faltar espaço */
-    height: auto;
-    max-height: none;
-  }
-
-  .app-layout {
-    flex-direction: column;
-  }
-
+  html, body, .app-layout { overflow: auto; height: auto; max-height: none; }
+  .app-layout { flex-direction: column; }
   .sidebar {
     width: 100%;
     min-height: auto;
     height: auto;
     border-right: 0;
-    border-bottom: 1px solid var(--sidebar-border);
+    border-bottom: 1px solid var(--border-sidebar);
     padding: 12px;
   }
-
-  .nav {
-    flex-direction: row;
-    overflow-x: auto;
-  }
-
-  .nav-item {
-    min-width: max-content;
-    padding: 0 14px;
-  }
-
-  .sidebar-bottom {
-    display: none;
-  }
-
-  .resume-page {
-    height: auto;
-    padding: 16px 12px;
-    grid-template-columns: 1fr;
-  }
-
-  .chat-panel, .resume-preview {
-    height: 600px;
-    max-height: none;
-  }
+  .nav { flex-direction: row; overflow-x: auto; }
+  .nav-item { min-width: max-content; padding: 0 14px; }
+  .sidebar-bottom { display: none; }
+  .resume-page { height: auto; padding: 16px 12px; grid-template-columns: 1fr; }
+  .chat-panel, .resume-preview { height: 600px; max-height: none; }
 }
