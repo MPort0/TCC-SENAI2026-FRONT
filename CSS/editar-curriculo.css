@@ -1,11 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-    font-family: 'Poppins', Arial, sans-serif;
 }
 
 body {
@@ -217,35 +215,7 @@ button {
 }
 
 .simulation:hover {
-    background: #3057a7;
-}
-.lia {
-    position: fixed !important;
-    /* sempre fixo na tela */
-    right: 2% !important;
-    /* mesma distância da borda direita */
-    bottom: 5% !important;
-    /* mesma distância da borda inferior */
-    width: 3.3rem !important;
-    /* tamanho fixo */
-    aspect-ratio: 1 !important;
-    /* quadrado */
-    border: none !important;
-    border-radius: 0.5rem !important;
-    background: #627dbc !important;
-    /* cor fixa (igual ao perfil) */
-    cursor: pointer !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 !important;
-}
-
-.lia svg {
-    width: 90% !important;
-    /* ícone proporcional */
-    height: auto !important;
+    background: var(--btn-start-hover);
 }
 
 /* Ajuste para telas menores */
@@ -296,5 +266,35 @@ button {
         display: none;
 
     }
+}
 
+/* =========================
+   BOTÃO FLUTUANTE (LIA)
+========================= */
+
+.lia-floating {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    background-color: #5F7FBF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lia-floating:hover {
+    background-color: #4D6CAE;
+    transform: translateY(-2px);
+}
+
+.lia-floating svg {
+    width: 28px;
+    height: 28px;
 }
