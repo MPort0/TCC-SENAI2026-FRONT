@@ -1,13 +1,53 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // 1. Busca os dados da avaliação salvos no localStorage
-    const dadosSalvos = localStorage.getItem("devolutiva_resultado");
+document.addEventListener("DOMContentLoaded", async function () {
+    const params = new URLSearchParams(window.location.search);
+    const devolutivaId = params.get("id");
 
-    if (!dadosSalvos) {
-        console.warn("Nenhum resultado de devolutiva encontrado no localStorage.");
-        return;
+    let relatorio = null;
+
+    // 1A. Se veio clicando na seta lá do Histórico (?id=...)
+    if (devolutivaId) {
+        try {
+            const resp = await fetch(`${window.API_BASE}/ia/devolutivas/${devolutivaId}`);
+            if (!resp.ok) throw new Error("Falha ao buscar devolutiva.");
+            relatorio = await resp.json();
+        } catch (err) {
+            console.error("Erro ao carregar devolutiva do histórico:", err);
+            alert("Não foi possível carregar esta devolutiva.");
+            return;
+        }
     }
+    // 1B. Se acabou de terminar uma simulação
+    else {
+        const dadosSalvos = localStorage.getItem("devolutiva_resultado");
 
-    const relatorio = JSON.parse(dadosSalvos);
+        if (!dadosSalvos) {
+            console.warn("Nenhum resultado de devolutiva encontrado no localStorage.");
+            return;
+        }
+
+        relatorio = JSON.parse(dadosSalvos);
+
+        // Salva no banco apenas uma vez (evita duplicar se apertar F5)
+        const jaSalva = localStorage.getItem("devolutiva_salva_banco");
+        const userId = localStorage.getItem("userId");
+        const config = JSON.parse(localStorage.getItem("entrevista_config") || "{}");
+
+        if (userId && !jaSalva) {
+            try {
+                const respSave = await fetch(`${window.API_BASE}/ia/devolutivas`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ userId, config, relatorio })
+                });
+
+                if (respSave.ok) {
+                    localStorage.setItem("devolutiva_salva_banco", "true");
+                }
+            } catch (err) {
+                console.error("Erro ao salvar devolutiva no banco:", err);
+            }
+        }
+    }
 
     // 2. Preenche o Resumo da IA
     const summaryText = document.getElementById('resumo-ia');
@@ -53,7 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnNova = document.getElementById('btn-nova-entrevista');
     if (btnNova) {
         btnNova.addEventListener('click', () => {
-            window.location.href = "../HTML/simulação.html";
+            localStorage.removeItem("devolutiva_salva_banco");
+            window.location.href = "../HTML/simulacao.html";
         });
     }
 

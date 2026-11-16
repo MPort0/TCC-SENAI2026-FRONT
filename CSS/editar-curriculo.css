@@ -182,10 +182,6 @@ button {
     }
 }
 
-/* =========================
-   BOTÃO FLUTUANTE (LIA)
-========================= */
-
 .lia-floating {
     position: fixed;
     right: 24px;
