@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (data.user) {
+                localStorage.setItem('userId', data.user.id);
                 localStorage.setItem('userEmail', data.user.email);
                 localStorage.setItem('userName', data.user.name);
             }
