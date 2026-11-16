@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+     font-family: 'Poppins', Arial, sans-serif;
 }
 
 
@@ -35,7 +35,7 @@
 .logo-badge {
   width: 44px;
   height: 44px;
-  background-color: var(--badge-bg);
+background-color: var(--btn-start-bg);
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -54,13 +54,8 @@
   letter-spacing: -0.3px;
 }
 
-.brand-dark {
+.brand-dark, .brand-blue {
   color: var(--text-primary);
-}
-
-.brand-blue {
-  color: var(--primary-blue);
-  margin-left: 2px;
 }
 
 /* ==========================================================================

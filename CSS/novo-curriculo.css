@@ -19,7 +19,7 @@ html, body {
   overflow: hidden; /* Elimina o scroll da página */
   background: var(--bg);
   color: var(--text);
-  font-family: 'Poppins', Inter, Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 .app-layout {

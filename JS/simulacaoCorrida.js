@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const config = JSON.parse(configSalva);
 
     // 3. Pega o total de perguntas da config (ou 10 por padrão)
-    const totalPassos = config.totalPerguntas || 10;
+    const totalPassos = config.totalPerguntas || 5;
 
     let historico = [];
 
