@@ -1,16 +1,14 @@
+
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
     font-family: 'Poppins', Arial, sans-serif;
 }
 
 body {
-    background: var(--bg-page);
-    color: var(--text);
+    background: var(--bg-app);
+    color: var(--text-primary);
     min-height: 100vh;
 
     display: flex;
@@ -18,222 +16,148 @@ body {
 }
 
 .content {
-
     width: calc(100% - 225px);
-
     padding: 45px 8%;
-
 }
 
 .content h1 {
-
     font-size: 30px;
-
     text-align: center;
-
     margin-bottom: 40px;
-
     font-weight: bold;
-
+    color: var(--text-primary);
 }
 
 form {
-
     width: 50%;
-
     margin-left: 25%;
-
 }
 
 .form-group {
-
     width: 100%;
-
     margin-bottom: 25px;
-
 }
 
 .form-group label {
-
     display: block;
-    color: var(--text);
+    color: var(--text-primary);
     font-size: 20px;
-
     font-weight: bold;
-
     margin-bottom: 8px;
-
 }
 
 .input-wrapper {
-
     width: 100%;
-    background: var(--input-editar-curriculo);
-    border: 2px solid var(--border-editar-curriculo);
+    background: var(--bg-card-option);
+    border: 2px solid var(--border-option);
     border-radius: 7px;
-
     padding: 15px;
-
     transition: 0.2s;
-
 }
 
 .input-wrapper:focus-within {
-    border-color: var(--border-editar-curriculo);
+    border-color: var(--primary-brand);
 }
 
 .input-wrapper input,
-
 .input-wrapper textarea {
-
     width: 100%;
-
     background: transparent;
-
     border: none;
-
     outline: none;
-
-    color: white;
-
+    color: var(--text-primary);
     font-size: 18px;
-
     resize: none;
-
 }
 
 .input-wrapper input::placeholder,
-
 .input-wrapper textarea::placeholder {
-    color: var(--color-text-input-editar-curriculo);
+    color: var(--text-placeholder);
 }
 
 .form-group:first-of-type .input-wrapper {
-
     height: 105px;
-
 }
 
 .form-group:first-of-type textarea {
-
     height: 70px;
-
 }
 
 .form-group:nth-of-type(2) .input-wrapper {
-
     height: 195px;
-
 }
 
 .form-group:nth-of-type(2) textarea {
-
     height: 155px;
-
 }
 
 .two-columns {
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 35px;
-
 }
 
 .two-columns .input-wrapper {
-
     height: 127px;
-
 }
 
 .two-columns textarea {
-
     height: 90px;
-
 }
 
 .form-group:last-of-type .input-wrapper {
-
     height: 105px;
-
 }
 
 .form-group:last-of-type input {
-
     height: 127px;
-
 }
 
 .buttons {
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 35px;
-
     margin-top: 22px;
-
 }
 
 button {
-
     height: 52px;
-
     border-radius: 7px;
-
     font-size: 18px;
-
     font-weight: bold;
-
     cursor: pointer;
-
 }
 
 .export {
-
     background: transparent;
-    color: var(--border-editar-curriculo);
-    border: 1px solid #7181aa;
-
+    color: var(--primary-brand);
+    border: 1px solid var(--border-option);
 }
 
 .export:hover {
-
-    background: #111b45;
-
+    background: var(--bg-card-option);
+    border-color: var(--primary-brand);
 }
 
 .simulation {
-
-    background: #6784c2;
-
-    color: white;
-
+    background: var(--btn-start-bg);
+    color: var(--text-white);
     border: none;
-
 }
 
 .simulation:hover {
-    background: #3057a7;
+    background: var(--btn-start-hover);
 }
+
 .lia {
     position: fixed !important;
-    /* sempre fixo na tela */
     right: 2% !important;
-    /* mesma distância da borda direita */
     bottom: 5% !important;
-    /* mesma distância da borda inferior */
     width: 3.3rem !important;
-    /* tamanho fixo */
     aspect-ratio: 1 !important;
-    /* quadrado */
     border: none !important;
     border-radius: 0.5rem !important;
-    background: #627dbc !important;
-    /* cor fixa (igual ao perfil) */
+    background: var(--btn-floating-bg) !important;
     cursor: pointer !important;
 
     display: flex !important;
@@ -244,8 +168,8 @@ button {
 
 .lia svg {
     width: 90% !important;
-    /* ícone proporcional */
     height: auto !important;
+    color: var(--text-white);
 }
 
 /* Ajuste para telas menores */
@@ -256,45 +180,27 @@ button {
     }
 }
 
-
 @media (max-width: 760px) {
-
     .sidebar {
-
         width: 100%;
-
         min-height: auto;
-
         height: auto;
-
         border-right: 0;
-
-        border-bottom: 1px solid #fff;
-
+        border-bottom: 1px solid var(--border-sidebar);
         padding: 12px;
-
     }
-    
+
     .nav {
-
         flex-direction: row;
-
         overflow-x: auto;
-
     }
-    
+
     .nav-item {
-
         min-width: max-content;
-
         padding: 0 14px;
-
     }
 
     .sidebar-bottom {
-
         display: none;
-
     }
-
 }
