@@ -185,7 +185,7 @@ NOTA
     padding: 32px;
     border: 1px solid var(--border-option);
     border-radius: 14px;
-    background: #0b112c;
+    background: var(--bg-card-option);
     color: var(--text-primary);
 }
 
@@ -270,36 +270,32 @@ NOTA
 }
 
 /* =========================
-PARTE INFERIOR
+   BOTÃO FLUTUANTE (LIA)
 ========================= */
 
-.sidebar-bottom a {
-    color: white;
-    text-decoration: none;
-    font-size: clamp(0.7rem, 0.8vw, 0.9rem)
-}
-
-.lia {
+.lia-floating {
     position: fixed;
-    right: 2%;
-    bottom: 5%;
-    width: clamp(2.8rem, 3.2vw, 3.3rem);
-    aspect-ratio: 1;
-    border: none;
-    border-radius: 0.5rem;
-background: var(--primary-brand);   
-    cursor: pointer;
-
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    background-color: #5F7FBF;
+    border-radius: 12px;
     display: flex;
-    /* centraliza o conteúdo */
     align-items: center;
     justify-content: center;
-    padding: 0;
-    /* remove espaçamento extra */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.lia svg {
-    width: 70%;
-    /* SVG se adapta ao botão */
-    height: auto;
+.lia-floating:hover {
+    background-color: #4D6CAE;
+    transform: translateY(-2px);
+}
+
+.lia-floating svg {
+    width: 28px;
+    height: 28px;
 }
