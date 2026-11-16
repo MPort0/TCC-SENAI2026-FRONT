@@ -1,7 +1,10 @@
 /* AVA.Lia — Criação de currículo | cores centralizadas em temas.css */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -39,7 +42,7 @@ html, body {
 .chat-panel {
   overflow-y: auto;
   scroll-behavior: smooth;
-    border: 2px solid var(--primary-brand);
+  border: 2px solid var(--primary-brand);
   border-radius: 12px;
   background: var(--bg-card);
   padding: 16px;
@@ -52,17 +55,28 @@ html, body {
 }
 
 .chat-panel::-webkit-scrollbar,
-.resume-preview::-webkit-scrollbar { width: 7px; }
+.resume-preview::-webkit-scrollbar {
+  width: 7px;
+}
+
 .chat-panel::-webkit-scrollbar-track,
-.resume-preview::-webkit-scrollbar-track { background: transparent; }
+.resume-preview::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .chat-panel::-webkit-scrollbar-thumb,
 .resume-preview::-webkit-scrollbar-thumb {
   background: var(--primary-brand);
   border-radius: 10px;
 }
+
 .chat-panel::-webkit-scrollbar-thumb:hover,
-.resume-preview::-webkit-scrollbar-thumb:hover { background: var(--color-primary-hover); }
-.chat-panel, .resume-preview {
+.resume-preview::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-hover);
+}
+
+.chat-panel,
+.resume-preview {
   scrollbar-width: thin;
   scrollbar-color: var(--primary-brand) transparent;
 }
@@ -74,11 +88,13 @@ html, body {
   color: var(--text-primary);
   font-weight: 600;
 }
+
 .chat-top small {
   font-size: 10px;
   color: var(--text-subtitle);
   font-weight: 400;
 }
+
 .chat-panel .message {
   margin-left: 29px;
   background: var(--bg-card-option);
@@ -90,6 +106,7 @@ html, body {
   line-height: 1.45;
   overflow-wrap: anywhere;
 }
+
 .chat-panel .message.user {
   align-self: flex-end;
   margin: 0 0 0 auto;
@@ -98,6 +115,7 @@ html, body {
   border-radius: 9px 0 9px 9px;
   max-width: 77%;
 }
+
 .chat-panel .time {
   display: block;
   text-align: right;
@@ -115,32 +133,72 @@ html, body {
   color: var(--text-subtitle);
   font-size: 14px;
 }
+
 .suggestion-title {
   color: var(--primary-brand);
   font-size: 15px;
   margin-bottom: 8px;
   font-weight: 600;
 }
-.suggestion p { margin: 0 0 8px; line-height: 1.5; }
-.actions { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 25px; }
-.resume-page button { font: inherit; border: 0; cursor: pointer; }
-.btn { padding: 5px 8px; border-radius: 4px; font-size: 9px; }
-.btn-primary { background: var(--btn-start-bg); color: var(--text-white); }
-.btn-primary:hover { background: var(--btn-start-hover); }
-.reply { display: flex; gap: 5px; }
-.reply input {
-    min-width: 0;
-    flex: 1;
-    background: var(--bg-card-option);
-    border: 0.06rem solid var(--border-option);
-    border-radius: 20px;
-    padding: 8px 12px;
-    color: var(--text-primary);
-    font-size: 12px;
-    outline: none;
+
+.suggestion p {
+  margin: 0 0 8px;
+  line-height: 1.5;
 }
-.reply input:focus { border-color: var(--primary-brand); }
-.reply input::placeholder { color: var(--text-placeholder); }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 25px;
+}
+
+.resume-page button {
+  font: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 9px;
+}
+
+.btn-primary {
+  background: var(--btn-start-bg);
+  color: var(--text-white);
+}
+
+.btn-primary:hover {
+  background: var(--btn-start-hover);
+}
+
+.reply {
+  display: flex;
+  gap: 5px;
+}
+
+.reply input {
+  min-width: 0;
+  flex: 1;
+  background: var(--bg-card-option);
+  border: 0.06rem solid var(--border-option);
+  border-radius: 20px;
+  padding: 8px 12px;
+  color: var(--text-primary);
+  font-size: 12px;
+  outline: none;
+}
+
+.reply input:focus {
+  border-color: var(--primary-brand);
+}
+
+.reply input::placeholder {
+  color: var(--text-placeholder);
+}
+
 .continue {
   background: var(--btn-start-bg);
   color: var(--text-white);
@@ -149,11 +207,14 @@ html, body {
   font-size: 10px;
   white-space: nowrap;
 }
-.continue:hover { background: var(--btn-start-hover); }
+
+.continue:hover {
+  background: var(--btn-start-hover);
+}
 
 /* PRÉVIA: documento branco independentemente do tema */
 .resume-preview {
-    border: 2px solid var(--primary-brand);
+  border: 2px solid var(--primary-brand);
   border-radius: 12px;
   overflow-y: auto;
   background: #ffffff;
@@ -161,6 +222,7 @@ html, body {
   height: 100%;
   max-height: calc(100vh - 60px);
 }
+
 .resume-header {
   position: sticky;
   top: 0;
@@ -176,6 +238,7 @@ html, body {
   font-size: 15px;
   font-weight: 600;
 }
+
 .resume-document {
   padding: 30px;
   font-size: 12px;
@@ -183,6 +246,7 @@ html, body {
   background: #ffffff;
   color: #1b2435;
 }
+
 .resume-person {
   display: flex;
   align-items: center;
@@ -191,6 +255,7 @@ html, body {
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
+
 .resume-avatar {
   width: 70px;
   height: 70px;
@@ -203,27 +268,106 @@ html, body {
   overflow: hidden;
   flex-shrink: 0;
 }
-.resume-person h2 { font-size: 24px; margin: 0 0 1px; font-weight: 700; color: #1b2435; }
-.resume-person .role { font-size: 14px; color: #1b2435; font-weight: 600; }
-.contact { font-size: 10px; color: #8a94a6; overflow-wrap: anywhere; }
-.resume-section { margin: 10px 0; }
-.resume-section h3 { font-size: 16px; margin: 0 0 4px; text-transform: uppercase; font-weight: 700; color: #1b2435; }
-.resume-section p { font-size: 12px; margin: 0; color: #596477; }
-.job-title { font-weight: 700; font-size: 12px; }
-.sub { font-size: 12px; color: #7b8495; font-style: italic; }
-.dates { float: right; color: #7b8495; }
-.resume-document ul { margin: 3px 0 0; padding-left: 14px; color: #596477; }
-.resume-bottom { display: grid; gap: 12px; }
-.tags { display: flex; gap: 4px; flex-wrap: wrap; }
-.tag { background: #eef0f4; border-radius: 2px; padding: 2px 5px; font-size: 12px; color: #4d5666; }
+
+.resume-person h2 {
+  font-size: 24px;
+  margin: 0 0 1px;
+  font-weight: 700;
+  color: #1b2435;
+}
+
+.resume-person .role {
+  font-size: 14px;
+  color: #1b2435;
+  font-weight: 600;
+}
+
+.contact {
+  font-size: 10px;
+  color: #8a94a6;
+  overflow-wrap: anywhere;
+}
+
+.resume-section {
+  margin: 10px 0;
+}
+
+.resume-section h3 {
+  font-size: 16px;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #1b2435;
+}
+
+.resume-section p {
+  font-size: 12px;
+  margin: 0;
+  color: #596477;
+}
+
+.job-title {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.sub {
+  font-size: 12px;
+  color: #7b8495;
+  font-style: italic;
+}
+
+.dates {
+  float: right;
+  color: #7b8495;
+}
+
+.resume-document ul {
+  margin: 3px 0 0;
+  padding-left: 14px;
+  color: #596477;
+}
+
+.resume-bottom {
+  display: grid;
+  gap: 12px;
+}
+
+.tags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #eef0f4;
+  border-radius: 2px;
+  padding: 2px 5px;
+  font-size: 12px;
+  color: #4d5666;
+}
 
 /* RESPONSIVIDADE */
 @media (max-width: 1000px) {
-  .sidebar { width: 220px; }
+  .sidebar {
+    width: 220px;
+  }
 }
+
 @media (max-width: 900px) {
-  html, body, .app-layout { overflow: auto; height: auto; max-height: none; }
-  .app-layout { flex-direction: column; }
+
+  html,
+  body,
+  .app-layout {
+    overflow: auto;
+    height: auto;
+    max-height: none;
+  }
+
+  .app-layout {
+    flex-direction: column;
+  }
+
   .sidebar {
     width: 100%;
     min-height: auto;
@@ -232,9 +376,50 @@ html, body {
     border-bottom: 1px solid var(--border-sidebar);
     padding: 12px;
   }
-  .nav { flex-direction: row; overflow-x: auto; }
-  .nav-item { min-width: max-content; padding: 0 14px; }
-  .sidebar-bottom { display: none; }
-  .resume-page { height: auto; padding: 16px 12px; grid-template-columns: 1fr; }
-  .chat-panel, .resume-preview { height: 600px; max-height: none; }
+
+  .nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .nav-item {
+    min-width: max-content;
+    padding: 0 14px;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .resume-page {
+    height: auto;
+    padding: 16px 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .chat-panel,
+  .resume-preview {
+    height: 600px;
+    max-height: none;
+  }
+}
+
+/* Garante que o painel do chat ocupe a altura toda e organize os itens em coluna */
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px);
+  /* ou 100vh, dependendo do padding da sua .resume-page */
+  overflow-y: auto;
+}
+
+/* Trava a barra de input sempre no rodapé do chat-panel */
+.reply {
+  margin-top: auto;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  background-color: inherit;
+  /* mantém a mesma cor de fundo do painel para não ficar transparente ao rolar */
+  padding-top: 12px;
 }
