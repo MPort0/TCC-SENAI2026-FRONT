@@ -16,14 +16,8 @@
 }
 
 body {
-    font-family:
-        Inter,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-    background: var(--background);
+    font-family: 'Poppins', Arial, sans-serif;
+    background: var(--bg-app);
     color: var(--text);
     min-height: 100vh;
 }
@@ -275,12 +269,13 @@ body {
    TOP GRID
 ========================= */
 
+
 .top-grid {
     display: grid;
-    grid-template-columns:
-        minmax(0, 1.55fr) minmax(350px, .95fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 22px;
 }
+
 
 
 /* CARD TITLE */
@@ -430,79 +425,6 @@ body {
     box-shadow:
         0 0 15px rgba(38, 145, 255, .45);
 }
-
-
-/* =========================
-   CHART
-========================= */
-
-.chart-card {
-    padding: 24px;
-}
-
-.chart {
-    height: 180px;
-    display: flex;
-}
-
-.y-axis {
-    width: 42px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: var(--text-secondary);
-    font-size: 10px;
-    padding-bottom: 3px;
-}
-
-.chart-area {
-    position: relative;
-    flex: 1;
-}
-
-.grid-line {
-    position: absolute;
-    left: 0;
-    right: 0;
-    border-top:
-        1px solid rgba(139, 197, 255, .12);
-}
-
-.line1 { top: 0; }
-.line2 { top: 25%; }
-.line3 { top: 50%; }
-.line4 { top: 75%; }
-
-.chart-svg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.chart-point {
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #6F9FF5;
-    border: 2px solid #19345C;
-    box-shadow:
-        0 0 10px #8BC5FF;
-}
-
-.p1 { left: 0; top: 77%; }
-.p2 { left: 32%; top: 52%; }
-.p3 { left: 62%; top: 57%; }
-.p4 { right: 0; top: 21%; }
-
-.x-axis {
-    margin-left: 42px;
-    display: flex;
-    justify-content: space-between;
-    color: var(--text-secondary);
-    font-size: 10px;
-}
-
 
 /* =========================
    CONTINUE
