@@ -1,19 +1,9 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
-:root {
-    --bg-main: #02082c;
-    /* --sidebar-border: #505873; */
-    --text-white: #ffffff;
-    --text-muted: #98aaca;
-    --text-muted-2: #94a3b8;
-    --primary-blue: #5f7fbf;
-    --active-blue: #627dbc;
-    --card-bg: #1b2550;
-    --card-border: #2d3a68;
-    --user-bubble: #243464;
-    --ia-bubble-bg: rgba(255, 255, 255, 0.07);
-    --ia-bubble-border: rgba(255, 255, 255, 0.12);
-}
+/* =========================
+   CONFIGURAÇÕES GERAIS
+   ========================= */
 
 * {
     margin: 0;
@@ -25,25 +15,27 @@ html, body {
     width: 100%;
     height: 100vh;
     font-family: 'Poppins', Arial, sans-serif;
-    background: var(--bg-main);
-    color: var(--text-white);
+    background: var(--bg-app);
+    color: var(--text-primary);
     overflow: hidden;
 }
 
 /* =========================
    ESTRUTURA GERAL (APP)
    ========================= */
+
 .app {
     width: 100%;
     height: 100vh;
     display: flex;
-    background: var(--bg-main);
+    background: var(--bg-app);
     overflow: hidden;
 }
 
 /* =========================
    ÁREA DA ENTREVISTA (DIREITA)
    ========================= */
+
 .interview {
     flex: 1;
     height: 100vh;
@@ -54,12 +46,14 @@ html, body {
 }
 
 /* CABEÇALHO DA ENTREVISTA + CARD DE PROGRESSO */
+
 .interview-header-simulacao {
     padding: 24px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
+    color: var(--text-primary);
 }
 
 .interview-header-simulacao svg {
@@ -67,10 +61,13 @@ html, body {
     height: auto;
 }
 
-/* CARD DE PROGRESSO NO TOPO DIREITO */
+/* =========================
+   CARD DE PROGRESSO
+   ========================= */
+
 .progress-card {
-    background: #111b40;
-    border: 1px solid var(--card-border);
+    background: var(--bg-card-option);
+    border: 1px solid var(--border-option);
     border-radius: 12px;
     padding: 10px 18px;
     display: flex;
@@ -81,7 +78,7 @@ html, body {
 
 .progress-title {
     font-size: 12px;
-    color: var(--text-muted);
+    color: var(--text-subtitle);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -90,20 +87,20 @@ html, body {
 
 .step-count {
     font-size: 15px;
-    color: var(--text-white);
+    color: var(--text-primary);
 }
 
 .progress-bar-bg {
     width: 100%;
     height: 6px;
-    background: var(--user-bubble);
+    background: var(--bg-input);
     border-radius: 3px;
     overflow: hidden;
 }
 
 .progress-bar-fill {
     height: 100%;
-    background: var(--primary-blue);
+    background: var(--primary-brand);
     width: 10%;
     border-radius: 3px;
     transition: width 0.4s ease-in-out;
@@ -112,6 +109,7 @@ html, body {
 /* =========================
    ÁREA DE MENSAGENS (CHAT)
    ========================= */
+
 .chat {
     flex: 1;
     display: flex;
@@ -122,36 +120,47 @@ html, body {
     scroll-behavior: smooth;
 }
 
-/* BALÕES DE MENSAGEM (ESTILO CHAT-LIA) */
+/* =========================
+   BALÕES DE MENSAGEM
+   ========================= */
+
 .message-bubble {
     max-width: 65%;
     padding: 14px 18px;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     line-height: 1.5;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--card-shadow);
     word-wrap: break-word;
 }
 
+/* MENSAGEM DA LIA */
+
 .bubble-ia {
     align-self: flex-start;
-    background-color: var(--ia-bubble-bg);
-    color: var(--text-white);
-    border: 1px solid var(--ia-bubble-border);
+    background-color: var(--bg-card-option);
+    color: var(--text-primary);
+    border: 1px solid var(--border-option);
     border-radius: 16px 16px 16px 4px;
 }
 
+/* MENSAGEM DO USUÁRIO */
+
 .bubble-user {
     align-self: flex-end;
-    background-color: var(--user-bubble);
+    background-color: var(--primary-brand);
     color: var(--text-white);
     border-radius: 16px 16px 4px 16px;
 }
 
-/* Ocultar barra de rolagem mantendo a funcionalidade de scroll */
+/* =========================
+   BARRA DE ROLAGEM
+   ========================= */
+
 .chat::-webkit-scrollbar {
     display: none;
 }
+
 .chat {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -160,12 +169,13 @@ html, body {
 /* =========================
    BARRA DE INPUT (DIGITAÇÃO)
    ========================= */
+
 .input-area {
     position: relative;
     width: 60%;
     min-height: 50px;
     margin: 10px auto 20px;
-    background: #394e82;
+    background: var(--bg-card-option);
     border-radius: 25px;
     display: flex;
     align-items: center;
@@ -173,12 +183,14 @@ html, body {
     flex-shrink: 0;
 }
 
+/* CAMPO DE TEXTO */
+
 #messageInput {
     flex: 1;
     border: none;
     outline: none;
     background: transparent;
-    color: var(--text-white);
+    color: var(--text-primary);
     font-family: 'Inter', sans-serif;
     font-size: 14px;
     line-height: 20px;
@@ -190,36 +202,300 @@ html, body {
 }
 
 #messageInput::placeholder {
-    color: #aeb8d0;
+    color: var(--text-placeholder);
 }
 
-/* BOTÕES DENTRO DA BARRA DE INPUT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: var(--bg-app);
+    color: var(--text-primary);
+    overflow: hidden;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+   ========================= */
+
+.app {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: var(--bg-app);
+    overflow: hidden;
+}
+
+/* =========================
+   ÁREA DA ENTREVISTA
+   ========================= */
+
+.interview {
+    flex: 1;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* =========================
+   CONVERSAS
+   ========================= */
+
+.chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 110px 380px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.user-message {
+    background: var(--primary-brand);
+    color: var(--text-white);
+    padding: 12px 14px;
+    border-radius: 14px;
+    max-width: 60%;
+    margin-left: auto;
+    margin-bottom: 15px;
+    font-size: 14px;
+    word-wrap: break-word;
+    transform: translate(-331px, 228px);
+}
+
+/* =========================
+   BARRA DE DIGITAÇÃO
+   ========================= */
+
+.input-area {
+    position: relative;
+    width: 53%;
+    min-height: 47px;
+    height: auto;
+    margin: 0 auto 14px;
+    background: var(--bg-card-option);
+    border: 0.06rem solid var(--border-option);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 3px 10px;
+    flex-shrink: 0;
+    transform: translateY(-23px);
+    margin-top: 50px;
+}
+
+.input-area input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transform: translateX(6px);
+}
+
+.input-area input::placeholder {
+    color: var(--text-placeholder);
+}
+
+/* =========================
+   MENU DE ANEXOS
+   ========================= */
+
+.add-menu {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-option);
+    border-radius: 12px;
+    padding: 8px;
+}
+
+.add-menu.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-menu svg {
+    width: 18px;
+    height: 19px;
+    margin-right: 1px;
+    transform: translate(-2px, 2px);
+}
+
+.add-menu button {
+    background: transparent;
+    border: none;
+    color: var(--text-subtitle);
+    padding: 8px 1px;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* =========================
+   IMAGENS DO CHAT
+   ========================= */
+
+.chat-image {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 12px;
+    display: block;
+    transform: translate(897px, 456px);
+}
+
+/* =========================
+   CAMPO DE MENSAGEM
+   ========================= */
+
+#messageInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 0;
+    resize: none;
+    height: 40px;
+    max-height: 120px;
+    overflow-y: hidden;
+    display: block;
+}
+
+#messageInput::placeholder {
+    color: var(--text-placeholder);
+}
+
+/* =========================
+   BOTÕES FUNCIONAIS
+   ========================= */
+
 .add-button,
 .language-button,
 .send-button {
     border: none;
     background: transparent;
-    color: var(--text-white);
+    color: var(--text-labels);
     cursor: pointer;
+}
+
+/* BOTÃO DE ENVIAR */
+
+.send-button {
+    width: 36px;
+    height: 36px;
+    background: var(--text-white);
+    color: var(--primary-brand);
+    border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s, opacity 0.2s;
+    flex-shrink: 0;
+    padding: 0;
+
+    transform: translateY(2px);
 }
+
+.send-button svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--primary-brand);
+}
+
+/* BOTÃO ADICIONAR */
 
 .add-button {
     width: 36px;
     font-size: 24px;
-    color: #aeb8d0;
 }
+
+/* BOTÃO DE IDIOMA */
 
 .language-button {
-    margin-right: 6px;
+    font-size: 9px;
+    margin-right: 4px;
 }
 
-.send-button:hover,
-.add-button:hover,
-.language-button:hover {
-    opacity: 0.85;
-    transform: scale(1.05);
+/* =========================
+   ÁREA INTERNA DAS MENSAGENS
+   ========================= */
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 10%;
+}
+
+.message-bubble {
+    max-width: 65%;
+    padding: 14px 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: var(--card-shadow);
+}
+
+/* MENSAGENS DA IA */
+
+.bubble-ia {
+    align-self: flex-start;
+    background-color: var(--bg-card-option);
+    color: var(--text-primary);
+    border: 1px solid var(--border-option);
+    border-radius: 16px 16px 16px 4px;
+}
+
+/* MENSAGENS DO USUÁRIO */
+
+.bubble-user {
+    align-self: flex-end;
+    background-color: var(--primary-brand);
+    color: var(--text-white);
+    border-radius: 16px 16px 4px 16px;
+}
+
+/* =========================
+   BARRA DE ROLAGEM
+   ========================= */
+
+.chat::-webkit-scrollbar,
+.chat-messages::-webkit-scrollbar {
+    display: none;
+}
+
+.chat,
+.chat-messages {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
