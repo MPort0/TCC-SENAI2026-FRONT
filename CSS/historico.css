@@ -166,7 +166,7 @@ NOTA
     inset: 0;
     z-index: 9999;
     padding: 24px;
-    background: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.75);
     align-items: center;
     justify-content: center;
     overflow-y: auto;
@@ -185,7 +185,7 @@ NOTA
     padding: 32px;
     border: 1px solid var(--border-option);
     border-radius: 14px;
-    background: var(--bg-card-option);
+    background-color: var(--info-historico);
     color: var(--text-primary);
 }
 
