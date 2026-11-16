@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password')?.value.trim();
 
         if (!email || !password) {
-            return showAlert('Email e senha são obrigatórios.'); 
+            return showAlert('Email e senha são obrigatórios.');
         }
 
         try {
@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Salva dados do usuário no localStorage (WEB) para uso em toda a aplicação
             if (data.user) {
+                localStorage.setItem('userId', data.user.id);
                 localStorage.setItem('userEmail', data.user.email);
                 localStorage.setItem('userName', data.user.name);
             }
