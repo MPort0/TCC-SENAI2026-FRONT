@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 alert("Cadastro realizado com sucesso!");
 
-                window.location.href = "../HTML/home.html";
+                window.location.href = "../HTML/login.html";
 
             } catch (error) {
                 console.error(error);
