@@ -1,3 +1,6 @@
+const temaSalvo = localStorage.getItem('app-theme') || 'dark';
+
+document.documentElement.setAttribute('data-theme', temaSalvo);
 
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
