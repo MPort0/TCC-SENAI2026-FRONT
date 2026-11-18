@@ -178,7 +178,7 @@ input {
     background: var(--btn-start-bg);
     color: var(--text-white);
     font-size: clamp(0.85rem, 1vw, 1rem);
-    font-weight: 700;
+    font-family: inherit;
     cursor: pointer;
     transition: filter 0.2s, transform 0.1s;
 }
