@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -17,32 +18,33 @@ body {
     padding: 20px;
 }
 
+/* =========================
+   REGRAS DA SENHA
+   ========================= */
+
 .regras {
     width: 100%;
-    margin: 12px 0 20px 0; /* Espaçamento entre o campo de senha e o próximo campo */
+    margin: 12px 0 20px 0;
 }
 
-/* Lista */
 #regras-senha {
     list-style-type: disc;
-    list-style-position: outside; /* Garante que se o texto quebrar de linha, fique alinhado abaixo do texto */
-    padding-left: 18px;            /* Recuo exato para a bolinha alinhar com o início da caixa do input */
+    list-style-position: outside;
+    padding-left: 18px;
     margin: 0;
     font-size: 12px;
     color: var(--text-subtitle);
     text-align: left;
 }
 
-/* Cada item da regra */
 #regras-senha li {
     margin-bottom: 6px;
     line-height: 1.4;
     transition: color 0.3s ease;
 }
 
-/* Estilo para quando a regra for atendida via JS */
 #regras-senha li.valido {
-    color: #28a745; /* Verde para regras atendidas */
+    color: #28a745;
 }
 
 .register-card {
@@ -55,6 +57,10 @@ body {
     box-shadow: var(--card-shadow);
     box-sizing: border-box; /* não deixa o padding estourar a largura de pequenas telas */
 }
+
+/* =========================
+   BOTÃO VOLTAR
+   ========================= */
 
 .btn-back {
     display: inline-flex;
@@ -83,12 +89,20 @@ body {
     color: var(--text-primary);
 }
 
+/* =========================
+   TÍTULO
+   ========================= */
+
 .title {
     font-size: 26px;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 28px;
 }
+
+/* =========================
+   CAMPOS DO FORMULÁRIO
+   ========================= */
 
 .form-group {
     display: flex;
@@ -109,6 +123,10 @@ body {
     display: flex;
     align-items: center;
 }
+
+/* =========================
+   INPUTS
+   ========================= */
 
 input {
     width: 100%;
@@ -135,6 +153,10 @@ input:focus {
     padding-right: 44px;
 }
 
+/* =========================
+   ÍCONE MOSTRAR/OCULTAR SENHA
+   ========================= */
+
 .toggle-icon {
     position: absolute;
     right: 14px;
@@ -152,6 +174,10 @@ input:focus {
 .toggle-icon:hover {
     stroke: var(--primary-brand);
 }
+
+/* =========================
+   BOTÃO REDEFINIR SENHA
+   ========================= */
 
 .btn-submit {
     width: 100%;
