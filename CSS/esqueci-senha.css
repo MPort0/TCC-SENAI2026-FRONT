@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -8,8 +9,8 @@
 }
 
 body {
-    background-color: #00061a;
-    color: #ffffff;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -17,49 +18,59 @@ body {
     padding: 20px;
 }
 
+/* =========================
+   REGRAS DA SENHA
+   ========================= */
+
 .regras {
     width: 100%;
-    margin: 12px 0 20px 0; /* Espaçamento entre o campo de senha e o próximo campo */
+    margin: 12px 0 20px 0;
 }
 
-/* Lista */
 #regras-senha {
     list-style-type: disc;
-    list-style-position: outside; /* Garante que se o texto quebrar de linha, fique alinhado abaixo do texto */
-    padding-left: 18px;            /* Recuo exato para a bolinha alinhar com o início da caixa do input */
+    list-style-position: outside;
+    padding-left: 18px;
     margin: 0;
     font-size: 12px;
-    color: #94a3b8;
+    color: var(--text-subtitle);
     text-align: left;
 }
 
-/* Cada item da regra */
 #regras-senha li {
     margin-bottom: 6px;
     line-height: 1.4;
     transition: color 0.3s ease;
 }
 
-/* Estilo para quando a regra for atendida via JS */
 #regras-senha li.valido {
-    color: #28a745; /* Verde para regras atendidas */
+    color: #28a745;
 }
+
+/* =========================
+   CARD DE REDEFINIÇÃO
+   ========================= */
+
 .register-card {
-    background-color: #00092d;
-    border: 1px solid #121e3f;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
     border-radius: 16px;
     padding: 40px 36px;
     width: 100%;
     max-width: 440px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    box-sizing: border-box; /* não deixa o padding estourar a largura de pequenas telas*/
+    box-shadow: var(--card-shadow);
+    box-sizing: border-box;
 }
+
+/* =========================
+   BOTÃO VOLTAR
+   ========================= */
 
 .btn-back {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: inherit;
+    color: var(--text-subtitle);
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
@@ -79,15 +90,23 @@ body {
 }
 
 .btn-back:hover {
-    color: #ffffff;
+    color: var(--text-primary);
 }
+
+/* =========================
+   TÍTULO
+   ========================= */
 
 .title {
     font-size: 26px;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-primary);
     margin-bottom: 28px;
 }
+
+/* =========================
+   CAMPOS DO FORMULÁRIO
+   ========================= */
 
 .form-group {
     display: flex;
@@ -99,7 +118,7 @@ body {
 .form-group label {
     font-size: 13px;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 .input-wrapper {
@@ -109,24 +128,28 @@ body {
     align-items: center;
 }
 
+/* =========================
+   INPUTS
+   ========================= */
+
 input {
     width: 100%;
-    background-color: #00061a;
-    border: 1px solid #1a274c;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-input);
     border-radius: 8px;
     padding: 12px 16px;
-    color: #ffffff;
+    color: var(--text-primary);
     font-size: 14px;
     outline: none;
     transition: border-color 0.2s;
 }
 
 input::placeholder {
-    color: #475569;
+    color: var(--text-placeholder);
 }
 
 input:focus {
-    border-color: #5f7fbf;
+    border-color: var(--primary-brand);
 }
 
 .input-wrapper input {
@@ -134,12 +157,16 @@ input:focus {
     padding-right: 44px;
 }
 
+/* =========================
+   ÍCONE MOSTRAR/OCULTAR SENHA
+   ========================= */
+
 .toggle-icon {
     position: absolute;
     right: 14px;
     width: 18px;
     height: 18px;
-    stroke: #64748b;
+    stroke: var(--icon-stroke);
     fill: none;
     stroke-width: 2;
     stroke-linecap: round;
@@ -149,13 +176,17 @@ input:focus {
 }
 
 .toggle-icon:hover {
-    stroke: #94a3b8;
+    stroke: var(--primary-brand);
 }
+
+/* =========================
+   BOTÃO REDEFINIR SENHA
+   ========================= */
 
 .btn-submit {
     width: 100%;
-    background-color: #5f7fbf;
-    color: #ffffff;
+    background-color: var(--btn-start-bg);
+    color: var(--text-white);
     border: none;
     border-radius: 8px;
     padding: 14px;
@@ -167,5 +198,5 @@ input:focus {
 }
 
 .btn-submit:hover {
-    background-color: #4d6cae;
+    background-color: var(--btn-start-hover);
 }
