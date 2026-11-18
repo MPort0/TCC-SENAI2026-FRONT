@@ -166,21 +166,80 @@ html, body {
     -ms-overflow-style: none;
 }
 
-/* =========================
-   BARRA DE INPUT (DIGITAÇÃO)
-   ========================= */
-
+/* CONTAINER DA BARRA DE INPUT */
 .input-area {
     position: relative;
-    width: 60%;
-    min-height: 50px;
-    margin: 10px auto 20px;
+    width: 53%;
+    min-height: 47px;
+    height: auto;
+    margin: 50px auto 14px;
     background: var(--bg-card-option);
-    border-radius: 25px;
+    border: 0.06rem solid var(--border-option);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 6px 12px;
+    flex-shrink: 0;
+    transform: translateY(-23px);
+}
+
+.input-controls {
+    width: 100%;
     display: flex;
     align-items: center;
-    padding: 4px 12px;
-    flex-shrink: 0;
+}
+
+/* Área da miniatura na barra de mensagem */
+.preview-container {
+    display: none;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 6px 4px 8px;
+}
+
+.preview-container.has-files {
+    display: flex;
+}
+
+.preview-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-option);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.preview-item img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.preview-file-tag {
+    padding: 6px 10px;
+    font-size: 12px;
+    color: var(--text-primary);
+}
+
+.remove-preview-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: none;
+    background: var(--border-option-hover);
+    color: #fff;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* CAMPO DE TEXTO */
@@ -434,14 +493,8 @@ input {
 
 .add-button {
     width: 36px;
-    font-size: 24px;
-}
-
-/* BOTÃO DE IDIOMA */
-
-.language-button {
-    font-size: 9px;
-    margin-right: 4px;
+    font-size: 0px;
+    transform: translateX(-3px);
 }
 
 /* =========================
