@@ -13,133 +13,172 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
     <script src="../JS/ipback.js"></script>
-    <script src="../JS/temas.js" defer></script>
 </head>
 
 <body>
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <div class="logo-badge">
-                <img src="../IMG/logo-branca.svg" alt="Logo">
-            </div>
-            <div class="brand-title">
-                <span class="brand-dark">AVA.</span>
-                <span class="brand-blue">Lia</span>
-            </div>
-        </div>
 
-        <nav class="nav-section">
-            <a href="../HTML/home.html" class="nav-item">
-                <i data-lucide="home"></i>
-                <span>Início</span>
-            </a>
-            <a href="../HTML/criar-curriculo.html" class="nav-item">
-                <i data-lucide="file-text"></i>
-                <span>Criar currículo</span>
-            </a>
-            <a href="../HTML/simulacao.html" class="nav-item">
-                <i data-lucide="play-circle"></i>
-                <span>Simulação</span>
-            </a>
-            <a href="../HTML/historico.html" class="nav-item">
-                <i data-lucide="history"></i>
-                <span>Histórico</span>
-            </a>
-            <a href="../HTML/perfil.html" class="nav-item active">
-                <i data-lucide="user"></i>
-                <span>Perfil</span>
-            </a>
-        </nav>
+    <div class="app-layout">
+        <aside class="sidebar">
 
-        <div class="sidebar-footer">
-            <div class="user-card">
-                <div class="user-avatar">
-                    <i data-lucide="user-round"></i>
+            <!-- Topo / Header -->
+            <div class="sidebar-header">
+                <div class="logo-badge">
+                    <img src="../IMG/logo-branca.svg" alt="Logo">
                 </div>
-                <div class="user-info">
-                    <span class="user-nome">Olá, usuário!</span>
-                    <span class="user-email">hello_lia@useia.com.br</span>
+
+                <div class="brand-title">
+                    <span class="brand-dark">AVA.</span>
+                    <span class="brand-blue">Lia</span>
                 </div>
             </div>
 
-            <div class="divider"></div>
+            <!-- Navegação Principal -->
+            <nav class="nav-section">
+                <a href="../HTML/home.html" class="nav-item">
+                    <i data-lucide="home"></i>
+                    <span>Início</span>
+                </a>
+                <a href="../HTML/novo-curriculo.html" class="nav-item">
+                    <i data-lucide="file-text"></i>
+                    <span>Criar currículo</span>
+                </a>
+                <a href="../HTML/simulacao.html" class="nav-item">
+                    <i data-lucide="play-circle"></i>
+                    <span>Simulação</span>
+                </a>
+                <a href="../HTML/historico.html" class="nav-item">
+                    <i data-lucide="history"></i>
+                    <span>Histórico</span>
+                </a>
+                <a href="../HTML/perfil.html" class="nav-item active">
+                    <i data-lucide="user"></i>
+                    <span>Perfil</span>
+                </a>
+            </nav>
 
-            <a href="../HTML/login.html" class="nav-item">
-                <i data-lucide="log-out"></i>
-                <span>Sair</span>
-            </a>
-        </div>
-    </aside>
+            <!-- Rodapé / Usuário + Links -->
+            <div class="sidebar-footer">
 
-    <main class="main">
-        <!-- COLUNA DO CHAT -->
-        <section class="chat-panel">
-            <div class="chat-top">
-                <span class="ai-icon">
-                    <img src="../IMG/favicon.ico" width="20" height="20">
-                </span>
-                <span>Ava.Lia</span>
+                <!-- Card do Usuário -->
+                <div class="user-card">
+                    <div class="user-avatar">
+                        <i data-lucide="user-round"></i>
+                    </div>
+
+                    <div class="user-info">
+                        <span class="user-nome">Olá, usuário!</span>
+                        <span class="user-email">hello_lia@useia.com.br</span>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- Links Inferiores -->
+                <a href="../HTML/login.html" class="nav-item">
+                    <i data-lucide="log-out"></i>
+                    <span>Sair</span>
+                </a>
+
             </div>
 
-            <div class="message">
-                Carregando seu currículo...
-            </div>
+        </aside>
 
-            <div class="reply">
-                <div class="reply-header">
-                    <span class="reply-label">↪ Sua resposta</span>
-                    <span class="quote">Digite o que deseja alterar no currículo...</span>
+        <!-- CONTEÚDO DA PÁGINA -->
+        <main class="resume-page">
+
+            <!-- CHAT DA IA (PAINEL ESQUERDO) -->
+            <section class="chat-panel">
+
+                <div class="chat-top">
+                    <span class="ai-icon">
+                        <img src="../IMG/favicon.ico" alt="Logo do Assistente IA" width="20" height="20">
+                    </span>
+                    <span>Ava.Lia <small>Agora</small></span>
                 </div>
 
-                <textarea id="replyInput"
-                    placeholder="Ex: Quero mudar meu cargo para Desenvolvedor Full-Stack..."></textarea>
-
-                <div class="reply-actions">
-                    <div class="left-actions"></div>
-                    <button class="btn-continue" id="continueBtn">
-                        Enviar <i data-lucide="arrow-up"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- COLUNA DA FOLHA DO CURRÍCULO AO VIVO -->
-        <section class="preview-panel">
-            <div class="resume-sheet">
-                <header class="resume-header">
-                    <h2 id="preview-nome">Seu Nome</h2>
-                    <p id="preview-cargo" class="resume-role">Seu Cargo</p>
-                    <p id="preview-contato" class="resume-contact">E-mail · Telefone · Cidade</p>
-                </header>
-
-                <div class="resume-section">
-                    <h3>Resumo Profissional</h3>
-                    <p id="preview-resumo">Seu resumo profissional aparecerá aqui...</p>
+                <div class="message">
+                    Carregando seu currículo...
                 </div>
 
-                <div class="resume-section">
-                    <h3>Experiência Profissional</h3>
-                    <p id="preview-exp-desc">Suas experiências aparecerão aqui...</p>
+                <!-- Caixa de Sugestão da IA (Inicia oculta via CSS/JS) -->
+                <div class="suggestion" style="display: none;">
+                    <div class="suggestion-title">
+                        <i data-lucide="sparkles"></i> Sugestão da IA
+                    </div>
+
+                    <p id="suggestionText"></p>
+
+                    <div class="actions">
+                        <button class="btn btn-primary" id="useBtn">Usar sugestão</button>
+                    </div>
                 </div>
 
-                <div class="resume-section">
-                    <h3>Formação Acadêmica</h3>
-                    <p id="preview-curso">Sua formação aparecerá aqui...</p>
+                <!-- Área de Input -->
+                <div class="reply">
+                    <input id="replyInput" placeholder="Digite o que deseja alterar no currículo..."
+                        aria-label="Digite o que deseja alterar no currículo">
+                    <button class="continue" id="continueBtn">Enviar</button>
                 </div>
 
-                <div class="resume-section">
-                    <h3>Habilidades</h3>
-                    <div id="preview-habilidades" class="tags-container"></div>
+            </section>
+
+            <!-- PRÉVIA DO CURRÍCULO (PAINEL DIREITO) -->
+            <section class="resume-preview">
+
+                <div class="resume-header">
+                    <span>Editando currículo</span>
                 </div>
-            </div>
-        </section>
-    </main>
+
+                <article class="resume-document">
+
+                    <div class="resume-person">
+                        <div class="resume-avatar">
+                            <i data-lucide="user" style="color: white;"></i>
+                        </div>
+                        <div>
+                            <h2 id="preview-nome">Seu Nome</h2>
+                            <div class="role" id="preview-cargo">Seu Cargo Alvo</div>
+                            <div class="contact" id="preview-contato">seu@email.com • (00) 00000-0000</div>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3>Resumo profissional</h3>
+                        <p id="preview-resumo">Carregando resumo profissional...</p>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3>Experiência</h3>
+                        <p id="preview-exp-desc" style="white-space: pre-line;">Carregando experiências...</p>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3>Formação</h3>
+                        <p id="preview-curso">Carregando formação...</p>
+                    </div>
+
+                    <div class="resume-bottom">
+                        <div class="resume-section">
+                            <h3>Habilidades</h3>
+                            <div class="tags" id="preview-habilidades">
+                                <span class="tag">Carregando habilidades...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+            </section>
+
+        </main>
+    </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../JS/temas.js" defer></script>
+    <script src="../JS/sidebar.js" defer></script>
+    <script src="../JS/novoCurriculo.js" defer></script>
     <script>
         lucide.createIcons();
     </script>
-    <script src="../JS/novoCurriculo.js"></script>
 </body>
 
 </html>
