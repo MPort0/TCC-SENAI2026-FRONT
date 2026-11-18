@@ -144,23 +144,26 @@ input:focus {
     padding-right: 44px;
 }
 
+
 .toggle-icon {
     position: absolute;
     right: 14px;
     width: 18px;
     height: 18px;
-    stroke: var(--icon-stroke);
+    color: var(--icon-stroke);
+    stroke: currentColor;
     fill: none;
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
     cursor: pointer;
-    transition: stroke 0.2s;
+    transition: color 0.2s;
 }
 
 .toggle-icon:hover {
-    stroke: var(--text-secondary);
+    color: var(--text-secondary);
 }
+
 
 .btn-submit {
     width: 100%;
