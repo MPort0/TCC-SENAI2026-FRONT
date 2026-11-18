@@ -4,23 +4,44 @@
     box-sizing: border-box;
     font-family: 'Poppins', Arial, sans-serif;
 }
+
 /*
-   BODY */
+   BODY
+*/
 
 body {
     min-height: 100vh;
 
-    background: var(--bg-page);
-    color: var(--text);
+    background: var(--bg-app);
+    color: var(--text-primary);
 
     display: flex;
 }
 
-/*VARIÁVEIS */
-
 /*
    MAIN
- */
+*/
+
+.app {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.main-content {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.main-content::-webkit-scrollbar {
+    display: none;
+}
+
+
 
 .main-content {
     flex: 1;
@@ -29,11 +50,10 @@ body {
 
     position: relative;
 
-    padding: 100px 60px;
+    padding: 50px 60px;
 
     overflow-x: hidden;
 }
-
 
 .content {
     width: 100%;
@@ -49,12 +69,13 @@ h1 {
     font-weight: 600;
 
     margin-bottom: 22px;
-}
 
+    color: var(--text-primary);
+}
 
 /*
    RESUMO
- */
+*/
 
 .summary {
     width: 100%;
@@ -65,9 +86,8 @@ h1 {
     /* espaço os cards */
 }
 
-
 .summary strong {
-    color: var(--text-devolutiva);
+    color: var(--text-primary);
     display: block;
 
     line-height: 1.3;
@@ -75,30 +95,27 @@ h1 {
     margin-bottom: 6px;
 }
 
-
 .summary p {
     font-size: 18px;
 
     line-height: 1.48;
 
-    color: var(--text-devolutiva);
+    color: var(--text-primary);
 }
 
-
 /*
-CARDS
+   CARDS
 */
 
 .card,
 .summary,
 .card-performance {
-    background: var(--card-devolutiva);
+    background: var(--bg-card-option);
 
-    border: 1px solid rgba(197, 201, 215, .7);
+    border: 1px solid var(--border-option);
 
     border-radius: 10px;
 }
-
 
 .card h2 {
     font-size: 10px;
@@ -108,13 +125,12 @@ CARDS
     letter-spacing: .1px;
 }
 
-
 /*
    DESEMPENHO
- */
+*/
 
 .card-performance {
-    color: var(--text-devolutiva);
+    color: var(--text-primary);
     min-height: 200px;
 
     padding: 20px 30px;
@@ -123,12 +139,10 @@ CARDS
     margin-bottom: 22px;
 }
 
-
 .card-performance h2 {
     font-size: 16px;
     margin-bottom: 12px;
 }
-
 
 .metric {
     display: grid;
@@ -139,14 +153,11 @@ CARDS
     column-gap: 10px;
 
     margin-top: 20px;
-
 }
-
 
 .metric:last-child {
     margin-bottom: 0;
 }
-
 
 .metric-name {
     font-size: 14px;
@@ -156,7 +167,6 @@ CARDS
     line-height: 1.2;
 }
 
-
 .metric-track {
     position: relative;
 
@@ -164,30 +174,26 @@ CARDS
 
     border-radius: 6px;
 
-    background: rgba(82, 101, 158, .35);
+    background: var(--bg-input);
 
     overflow: visible;
 }
-
 
 .metric-fill {
     height: 6px;
 
     border-radius: 6px;
 
-    background: var(--grafic);
+    background: var(--primary-brand);
 }
-
 
 .metric-fill.one {
     width: 100%;
 }
 
-
 .metric-fill.two {
     width: 78%;
 }
-
 
 .metric-value {
     font-size: 14px;
@@ -207,22 +213,19 @@ CARDS
     margin-top: -4px;
 }
 
-
 .metric-scale span {
     font-size: 13px;
 
-    color: #9da5bd;
+    color: var(--text-subtitle);
 }
-
 
 .metric-scale span:nth-child(3) {
-    color: #fff;
+    color: var(--text-subtitle);
 }
-
 
 /*
    PONTOS FORTES / ERROS
- */
+*/
 
 .cards-row {
     display: grid;
@@ -234,7 +237,6 @@ CARDS
     margin-bottom: 22px;
 }
 
-
 .strengths,
 .errors {
     min-height: 150px;
@@ -242,22 +244,18 @@ CARDS
     padding: 20px 25px;
 }
 
-
 .strengths h2,
 .errors h2 {
     margin-bottom: 9px;
 }
 
-
 .strengths h2 {
-    color: var(--green);
+    color: var(--green, #14ae5c);
 }
-
 
 .errors h2 {
-    color: var(--red);
+    color: var(--red, #ff3b30);
 }
-
 
 .card-titulo {
     display: flex;
@@ -273,16 +271,13 @@ CARDS
     line-height: 1.2;
 }
 
-
 .strengths ul,
 .errors ul,
 .suggestions ul {
-
     padding-left: 8px;
 
     list-style-position: inside;
 }
-
 
 .strengths li,
 .errors li,
@@ -291,18 +286,16 @@ CARDS
 
     line-height: 1.55;
 
-    color: #f1f2f6;
+    color: var(--text-primary);
 }
-
 
 .errors li {
-    color: #d4d6df;
+    color: var(--text-primary);
 }
-
 
 /*
    SUGESTÕES
- */
+*/
 
 .suggestions {
     min-height: 80px;
@@ -312,28 +305,29 @@ CARDS
     margin-bottom: 22px;
 }
 
-
 .suggestions h2 {
-    color: #aec4fd;
+    color: var(--primary-brand);
 
     margin-bottom: 6px;
 }
 
-
 /*
    BOTÕES
- */
+*/
 
 .actions {
     display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
-
     padding: 0;
+    width: 100%;
 }
 
+.actions .btn {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
 
 .btn {
     height: 42px;
@@ -357,66 +351,63 @@ CARDS
     transition: .2s ease;
 }
 
-
 .btn-outline {
     background: transparent;
 
-    border: 1px solid #69799f;
+    border: 1px solid var(--primary-brand);
 
-    color: var(--text-devolutiva);
+    color: var(--text-primary);
 }
 
-
-/* .btn-outline:hover {
-    background: rgba(255, 255, 255, .05);
-} */
-
+/*
+.btn-outline:hover {
+    background: var(--bg-card-option);
+}
+*/
 
 .btn-primary {
-    background: var(--card-devolutiva);
+    background: var(--btn-start-hover);
 
-    border: 1px solid var(--card-devolutiva);
+    border: 1px solid var(--border-option);
 
-    color: var(--text-devolutiva);
-}
-
-
-.btn-primary:hover {
-    background: #6c87c9;
+    color: var(--text-white);
 }
 
 
 /*
    BOTÃO FLUTUANTE
- */
+*/
 
-.lia {
+.lia-floating {
     position: fixed;
-    right: 2%;
-    bottom: 5%;
-    width: clamp(2.8rem, 3.2vw, 3.3rem);
-    aspect-ratio: 1;
-    border: none;
-    border-radius: 0.5rem;
-    background: var(--active);
-    cursor: pointer;
-
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    background-color: #5F7FBF;
+    border-radius: 12px;
     display: flex;
-    /* centraliza o conteúdo */
     align-items: center;
     justify-content: center;
-    padding: 0;
-    /* remove espaçamento extra */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.lia svg {
-    width: 70%;
-    /* SVG se adapta ao botão */
-    height: auto;
+.lia-floating:hover {
+    background-color: #4D6CAE;
+    transform: translateY(-2px);
+}
+
+.lia-floating svg {
+    width: 28px;
+    height: 28px;
 }
 
 /*
-   RESPONSIVIDADE */
+   RESPONSIVIDADE
+*/
 
 @media (max-width: 1000px) {
 
@@ -424,24 +415,20 @@ CARDS
         width: 220px;
     }
 
-
     .content {
         max-width: 100%;
     }
-
 
     .main-content {
         padding: 35px 30px;
     }
 }
 
-
 @media (max-width: 760px) {
 
     body {
         flex-direction: column;
     }
-
 
     .sidebar {
         width: 100%;
@@ -457,13 +444,11 @@ CARDS
         padding: 12px;
     }
 
-
     .nav {
         flex-direction: row;
 
         overflow-x: auto;
     }
-
 
     .nav-item {
         min-width: max-content;
@@ -471,21 +456,17 @@ CARDS
         padding: 0 14px;
     }
 
-
     .sidebar-bottom {
         display: none;
     }
-
 
     .main-content {
         padding: 20px 15px 30px;
     }
 
-
     .content {
         max-width: 100%;
     }
-
 
     .cards-row,
     .actions {
@@ -500,22 +481,90 @@ CARDS
     }
 }
 
-
 @media (max-width: 480px) {
 
     h1 {
         font-size: 19px;
     }
 
-
     .summary p {
         font-size: 10px;
     }
-
 
     .metric {
         grid-template-columns: 105px 1fr 40px;
 
         column-gap: 7px;
     }
+}
+
+/* PDF - DEVOLUTIVA */
+
+.content.modo-pdf {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 15px 20px !important;
+    background: #ffffff !important;
+    color: #1e293b !important;
+}
+
+.content.modo-pdf h1 {
+    font-size: 22px !important;
+    margin-bottom: 12px !important;
+    color: #0f172a !important;
+}
+
+.content.modo-pdf .card,
+.content.modo-pdf .summary,
+.content.modo-pdf .card-performance {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #1e293b !important;
+    padding: 12px 18px !important;
+    margin-bottom: 12px !important;
+    min-height: auto !important;
+}
+
+.content.modo-pdf .cards-row {
+    gap: 12px !important;
+    margin-bottom: 12px !important;
+}
+
+.content.modo-pdf .card-performance h2,
+.content.modo-pdf .card-titulo {
+    font-size: 14px !important;
+    margin-bottom: 6px !important;
+}
+
+.content.modo-pdf .metric {
+    margin-top: 12px !important;
+    grid-template-columns: 128px 1fr 85px !important; /* Dá espaço para "Insuficiente" */
+}
+
+.content.modo-pdf .summary strong,
+.content.modo-pdf .summary p,
+.content.modo-pdf .strengths li,
+.content.modo-pdf .errors li,
+.content.modo-pdf .suggestions li {
+    color: #334155 !important;
+    font-size: 13.5px !important;
+    line-height: 1.4 !important;
+}
+
+.content.modo-pdf .suggestions {
+    margin-bottom: 0 !important;
+}
+
+.content.modo-pdf .suggestions h2 {
+    color: #3b5998 !important;
+}
+
+.content.modo-pdf .metric-scale span:nth-child(3) {
+    color: #0f172a !important;
+    font-weight: 600;
+}
+
+.content.modo-pdf .actions {
+    display: none !important;
 }

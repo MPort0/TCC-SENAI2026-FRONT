@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', Arial, sans-serif;
 }
 
 body {
@@ -149,29 +149,6 @@ button {
     background: var(--btn-start-hover);
 }
 
-.lia {
-    position: fixed !important;
-    right: 2% !important;
-    bottom: 5% !important;
-    width: 3.3rem !important;
-    aspect-ratio: 1 !important;
-    border: none !important;
-    border-radius: 0.5rem !important;
-    background: var(--btn-floating-bg) !important;
-    cursor: pointer !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 !important;
-}
-
-.lia svg {
-    width: 90% !important;
-    height: auto !important;
-    color: var(--text-white);
-}
-
 /* Ajuste para telas menores */
 @media (max-width: 650px) {
     .lia {
@@ -203,4 +180,31 @@ button {
     .sidebar-bottom {
         display: none;
     }
+}
+
+.lia-floating {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    background-color: #5F7FBF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.lia-floating:hover {
+    background-color: #4D6CAE;
+    transform: translateY(-2px);
+}
+
+.lia-floating svg {
+    width: 28px;
+    height: 28px;
 }

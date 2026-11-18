@@ -1,64 +1,65 @@
+const temaSalvo = localStorage.getItem('app-theme') || 'dark';
+
+document.documentElement.setAttribute('data-theme', temaSalvo);
 
 document.addEventListener('DOMContentLoaded', () => {
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeToggleText = document.getElementById('theme-toggle-text');
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleText = document.getElementById('theme-toggle-text');
 
-  // Identifica as páginas de autenticação
-  const path = window.location.pathname;
-  const ehPaginaAutenticacao =
-    path.includes('login') ||
-    path.includes('cadastro') ||
-    path.includes('esqueci-senha');
+    const path = window.location.pathname.toLowerCase();
 
-  // 1. Aplica o tema na tag <html>
-  function aplicarTema(tema, salvar = true) {
-    document.documentElement.setAttribute('data-theme', tema);
+    // Páginas que seguem automaticamente o horário
+    const ehPaginaAutenticacao =
+        path.includes('login') ||
+        path.includes('cadastro') ||
+        path.includes('esqueci-senha');
 
-    // Só salva a preferência fora das páginas de autenticação
-    if (salvar && !ehPaginaAutenticacao) {
-      localStorage.setItem('app-theme', tema);
+    function aplicarTema(tema, salvar = true) {
+        document.documentElement.setAttribute('data-theme', tema);
+
+        if (salvar && !ehPaginaAutenticacao) {
+            localStorage.setItem('app-theme', tema);
+        }
+
+        if (themeToggleText) {
+            themeToggleText.textContent =
+                tema === 'dark' ? 'Modo Claro' : 'Modo Escuro';
+        }
     }
 
-    if (themeToggleText) {
-      themeToggleText.textContent =
-        tema === 'dark' ? 'Modo Claro' : 'Modo Escuro';
+    // Define o tema conforme o horário
+    function obterTemaPorHorario() {
+        const horaAtual = new Date().getHours();
+
+        // Das 18h às 5h59: escuro
+        // Das 6h às 17h59: claro
+        return (horaAtual >= 18 || horaAtual < 6)
+            ? 'dark'
+            : 'light';
     }
-  }
 
-  // 2. Define o tema inicial
-  if (ehPaginaAutenticacao) {
-    // Login, Cadastro e Esqueci minha senha seguem o horário
-    const horaAtual = new Date().getHours();
-    const temaPorHorario =
-      (horaAtual >= 18 || horaAtual < 6) ? 'dark' : 'light';
-
-    aplicarTema(temaPorHorario, false);
-
-  } else {
-    // Outras páginas usam o tema salvo
-    const savedTheme = localStorage.getItem('app-theme');
-
-    if (savedTheme) {
-      aplicarTema(savedTheme);
+    if (ehPaginaAutenticacao) {
+        aplicarTema(obterTemaPorHorario(), false);
     } else {
-      const horaAtual = new Date().getHours();
-      const temaPorHorario =
-        (horaAtual >= 18 || horaAtual < 6) ? 'dark' : 'light';
+        const savedTheme = localStorage.getItem('app-theme');
 
-      aplicarTema(temaPorHorario);
+        if (savedTheme) {
+            aplicarTema(savedTheme);
+        } else {
+            aplicarTema(obterTemaPorHorario());
+        }
     }
-  }
 
-  // 3. Botão para alternar o tema manualmente
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const temaAtual =
-        document.documentElement.getAttribute('data-theme');
+    // Alternância manual nas demais páginas
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const temaAtual =
+                document.documentElement.getAttribute('data-theme');
 
-      const novoTema =
-        temaAtual === 'dark' ? 'light' : 'dark';
-
-      aplicarTema(novoTema, true);
-    });
-  }
+            aplicarTema(
+                temaAtual === 'dark' ? 'light' : 'dark',
+                true
+            );
+        });
+    }
 });
