@@ -112,14 +112,20 @@ document.addEventListener("DOMContentLoaded", async function () {
         btnPdf.addEventListener('click', async function () {
             const elemento = document.querySelector('.content');
 
-            // Ativa o layout limpo de impressão
+            // Joga a tela para o topo e ativa o layout compacto do PDF
+            window.scrollTo(0, 0);
             elemento.classList.add('modo-pdf');
 
             const opcoes = {
-                margin: [10, 10, 10, 10],
+                margin: [8, 8, 8, 8],
                 filename: 'Devolutiva_AvaLia.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, logging: false },
+                html2canvas: { 
+                    scale: 2, 
+                    useCORS: true, 
+                    scrollY: 0, // <-- Elimina o espaço branco no início da página
+                    backgroundColor: '#ffffff'
+                },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
 
@@ -128,7 +134,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             } catch (erro) {
                 console.error("Erro ao gerar PDF:", erro);
             } finally {
-                if (acoes) acoes.style.display = '';
+                elemento.classList.remove('modo-pdf');
             }
         });
     }
