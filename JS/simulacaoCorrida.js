@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const chatContainer = document.getElementById('chat-messages');
     const inputMsg = document.getElementById('messageInput');
-    const sendBtn = document.getElementById('btnEnviarMsg');
+const sendBtn = document.querySelector('.send-button');
 
     let passoAtual = 1;
 
