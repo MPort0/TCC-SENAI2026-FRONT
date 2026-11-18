@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Currículo</title>
-
     <link rel="stylesheet" href="../CSS/temas.css">
-        <link rel="stylesheet" href="../CSS/sidebar.css">
-    <link rel="stylesheet" href="../CSS/editar-curriculo.css">
-    <script src="../JS/temas.js"  defer></script>
-
+    <link rel="stylesheet" href="../CSS/sidebar.css">
+    <link rel="stylesheet" href="../CSS/novo-curriculo.css">
+    <title>Editar Currículo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
+    <script src="../JS/ipback.js"></script>
 </head>
 
-        <!-- SIDEBAR CONTAINER -->
+<body>
+
+    <div class="app-layout">
         <aside class="sidebar">
 
             <!-- Topo / Header -->
@@ -37,7 +38,7 @@
                     <i data-lucide="home"></i>
                     <span>Início</span>
                 </a>
-                <a href="../HTML/criar-curriculo.html" class="nav-item active">
+                <a href="../HTML/novo-curriculo.html" class="nav-item">
                     <i data-lucide="file-text"></i>
                     <span>Criar currículo</span>
                 </a>
@@ -49,12 +50,10 @@
                     <i data-lucide="history"></i>
                     <span>Histórico</span>
                 </a>
-                <a href="../HTML/perfil.html" class="nav-item">
+                <a href="../HTML/perfil.html" class="nav-item active">
                     <i data-lucide="user"></i>
-
                     <span>Perfil</span>
                 </a>
-
             </nav>
 
             <!-- Rodapé / Usuário + Links -->
@@ -84,117 +83,91 @@
 
         </aside>
 
-<!-- CONTEÚDO PRINCIPAL -->
-<main class="content">
+        <!-- CONTEÚDO DA PÁGINA -->
+        <main class="resume-page">
 
-    <h1>
-        Desenvolvedor Front-end · HTML/CSS
-    </h1>
+            <!-- CHAT DA IA (PAINEL ESQUERDO) -->
+            <section class="chat-panel">
 
-
-    <form onsubmit="event.preventDefault();">
-
-
-        <!-- INFORMAÇÕES PESSOAIS -->
-        <div class="form-group">
-
-            <label for="informacoes">
-                Informações pessoais:
-            </label>
-
-            <div class="input-wrapper">
-
-                <textarea id="informacoes" name="informacoes"
-                    placeholder="Digite suas informações pessoais..."></textarea>
-
-            </div>
-
-        </div>
-
-
-        <!-- FORMAÇÃO ACADÊMICA -->
-        <div class="form-group">
-
-            <label for="formacao">
-                Formação acadêmica:
-            </label>
-
-            <div class="input-wrapper">
-
-                <textarea id="formacao" name="formacao" placeholder="Digite sua formação acadêmica..."></textarea>
-
-            </div>
-
-        </div>
-
-
-        <!-- HABILIDADES -->
-        <div class="two-columns">
-
-
-            <div class="form-group">
-
-                <label for="habilidades1">
-                    Habilidades:
-                </label>
-
-                <div class="input-wrapper">
-
-                    <textarea id="habilidades1" name="habilidades1" placeholder="Digite suas habilidades..."></textarea>
-
+                <div class="chat-top">
+                    <span class="ai-icon">
+                        <img src="../IMG/favicon.ico" alt="Logo do Assistente IA" width="20" height="20">
+                    </span>
+                    <span>Ava.Lia <small>Agora</small></span>
                 </div>
 
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="dificuldades">
-                    Dificuldades:
-                </label>
-
-                <div class="input-wrapper">
-
-                    <textarea id="dificuldades" name="dificuldades"
-                        placeholder="Explique suas dificuldades..."></textarea>
-
+                <div class="message">
+                    Carregando seu currículo...
                 </div>
 
-            </div>
+                <!-- Caixa de Sugestão da IA (Inicia oculta via CSS/JS) -->
+                <div class="suggestion" style="display: none;">
+                    <div class="suggestion-title">
+                        <i data-lucide="sparkles"></i> Sugestão da IA
+                    </div>
 
-        </div>
+                    <p id="suggestionText"></p>
 
+                    <div class="actions">
+                        <button class="btn btn-primary" id="useBtn">Usar sugestão</button>
+                    </div>
+                </div>
 
-        <!-- DIFERENCIAIS -->
-        <div class="form-group">
+                <!-- Área de Input -->
+                <div class="reply">
+                    <input id="replyInput" placeholder="Digite o que deseja alterar no currículo..."
+                        aria-label="Digite o que deseja alterar no currículo">
+                    <button class="continue" id="continueBtn">Enviar</button>
+                </div>
 
-            <label for="diferenciais">
-                Diferenciais:
-            </label>
+            </section>
 
-            <div class="input-wrapper">
+            <!-- PRÉVIA DO CURRÍCULO (PAINEL DIREITO) -->
+            <section class="resume-preview">
 
-                <input type="text" id="diferenciais" name="diferenciais" placeholder="Digite seus diferenciais...">
+                <div class="resume-header">
+                    <span>Editando currículo</span>
+                </div>
 
-            </div>
+                <article class="resume-document">
 
-        </div>
+                    <div class="resume-person">
+                        <div class="resume-avatar">
+                            <i data-lucide="user" style="color: white;"></i>
+                        </div>
+                        <div>
+                            <h2 id="preview-nome">Seu Nome</h2>
+                            <div class="role" id="preview-cargo">Seu Cargo Alvo</div>
+                            <div class="contact" id="preview-contato">seu@email.com • (00) 00000-0000</div>
+                        </div>
+                    </div>
 
+                    <div class="resume-section">
+                        <h3>Resumo profissional</h3>
+                        <p id="preview-resumo">Carregando resumo profissional...</p>
+                    </div>
 
-        <!-- BOTÕES -->
-        <div class="buttons">
+                    <div class="resume-section">
+                        <h3>Experiência</h3>
+                        <p id="preview-exp-desc" style="white-space: pre-line;">Carregando experiências...</p>
+                    </div>
 
-           <button onclick="gerarPDF()" type="button" class="export">
-            Exportar PDF
-            </button>
-            <input type="file" id="meu-pdf-input" accept=".pdf" style="display: none;"
-                onchange="arquivoAdicionado(this)">
+                    <div class="resume-section">
+                        <h3>Formação</h3>
+                        <p id="preview-curso">Carregando formação...</p>
+                    </div>
 
-            <button type="submit" class="simulation">
-                Nova simulação
-            </button>
+                    <div class="resume-bottom">
+                        <div class="resume-section">
+                            <h3>Habilidades</h3>
+                            <div class="tags" id="preview-habilidades">
+                                <span class="tag">Carregando habilidades...</span>
+                            </div>
+                        </div>
+                    </div>
 
-        </div>
+                </article>
+            </section>
 
         <!-- BOTÃO FLUTUANTE LIA -->
         <a class="lia-floating" href="../HTML/chat-lia.html" title="Abrir chat da Lia">
@@ -207,13 +180,12 @@
     </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
-
-        <script>
-            lucide.createIcons();
-        </script>
+    <script src="../JS/temas.js" defer></script>
+    <script src="../JS/sidebar.js" defer></script>
+    <script src="../JS/novoCurriculo.js" defer></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
-
-<script src="../JS/editar-curriculo.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 </html>

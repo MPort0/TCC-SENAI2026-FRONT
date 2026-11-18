@@ -18,6 +18,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scrollbar-width: none;
 }
 
 html,
@@ -49,6 +50,24 @@ input {
 /* =========================
    CONTEÚDO
    ========================= */
+
+/* sidebar fixa */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 100;
+}
+
+/* Empurra o conteúdo do perfil para a direita pela mesma largura da sidebar */
+.main,
+.main-content,
+.content {
+    margin-left: 260px;
+    /* ajuste se a largura da sua sidebar no sidebar.css for diferente */
+}
 
 .content {
     width: 83.7%;
@@ -461,4 +480,92 @@ input {
     .user-subtitle {
         font-size: 0.8rem;
     }
+}
+
+/* Mantém o card preenchido com exatamente o mesmo tamanho do .resume-card original */
+.resume-card.preenchido {
+    position: relative;
+    overflow: hidden;
+    padding: 14px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.resume-card.preenchido .card-edit {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+/* Documento miniaturizado ajustado para caber dentro do card */
+.mini-resume-sheet {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-size: 8.5px;
+    line-height: 1.3;
+    color: #1e293b;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mini-cv-header {
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 4px;
+    padding-right: 32px;
+}
+
+.mini-cv-header h4 {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mini-cv-cargo {
+    display: block;
+    font-size: 9px;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.mini-cv-contato {
+    display: block;
+    font-size: 7.5px;
+    color: #64748b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mini-cv-section strong {
+    display: block;
+    font-size: 7.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #334155;
+    margin-bottom: 1px;
+}
+
+.mini-cv-section p {
+    margin: 0;
+    font-size: 8px;
+    color: #475569;
+    white-space: pre-line;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
