@@ -1,23 +1,14 @@
-
 document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const themeToggleText = document.getElementById('theme-toggle-text');
 
-  // Identifica as páginas de autenticação
-  const path = window.location.pathname;
-  const ehPaginaAutenticacao =
-    path.includes('login') ||
-    path.includes('cadastro') ||
-    path.includes('esqueci-senha');
+  function obterTemaPorHorario() {
+    const horaAtual = new Date().getHours();
+    return (horaAtual >= 18 || horaAtual < 6) ? 'dark' : 'light';
+  }
 
-  // 1. Aplica o tema na tag <html>
-  function aplicarTema(tema, salvar = true) {
+  function aplicarTema(tema) {
     document.documentElement.setAttribute('data-theme', tema);
-
-    // Só salva a preferência fora das páginas de autenticação
-    if (salvar && !ehPaginaAutenticacao) {
-      localStorage.setItem('app-theme', tema);
-    }
 
     if (themeToggleText) {
       themeToggleText.textContent =
@@ -25,40 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 2. Define o tema inicial
-  if (ehPaginaAutenticacao) {
-    // Login, Cadastro e Esqueci minha senha seguem o horário
-    const horaAtual = new Date().getHours();
-    const temaPorHorario =
-      (horaAtual >= 18 || horaAtual < 6) ? 'dark' : 'light';
+  // 1. Verifica se o usuário já escolheu um tema manualmente neste turno
+  const temaAutomatico = obterTemaPorHorario();
+  const temaSalvo = localStorage.getItem('app-theme');
+  const turnoQuandoSalvou = localStorage.getItem('app-theme-period');
 
-    aplicarTema(temaPorHorario, false);
-
+  if (temaSalvo && turnoQuandoSalvou === temaAutomatico) {
+    aplicarTema(temaSalvo);
   } else {
-    // Outras páginas usam o tema salvo
-    const savedTheme = localStorage.getItem('app-theme');
-
-    if (savedTheme) {
-      aplicarTema(savedTheme);
-    } else {
-      const horaAtual = new Date().getHours();
-      const temaPorHorario =
-        (horaAtual >= 18 || horaAtual < 6) ? 'dark' : 'light';
-
-      aplicarTema(temaPorHorario);
-    }
+    localStorage.removeItem('app-theme');
+    localStorage.removeItem('app-theme-period');
+    aplicarTema(temaAutomatico);
   }
 
-  // 3. Botão para alternar o tema manualmente
+  // 2. Salva a escolha ao clicar no botão
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      const temaAtual =
-        document.documentElement.getAttribute('data-theme');
+      const temaAtual = document.documentElement.getAttribute('data-theme');
+      const novoTema = temaAtual === 'dark' ? 'light' : 'dark';
 
-      const novoTema =
-        temaAtual === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('app-theme', novoTema);
+      localStorage.setItem('app-theme-period', obterTemaPorHorario());
 
-      aplicarTema(novoTema, true);
+      aplicarTema(novoTema);
     });
   }
 });
