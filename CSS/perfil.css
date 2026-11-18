@@ -512,7 +512,8 @@ input {
 }
 
 .resume-card.preenchido .card-pdf,
-.resume-card.preenchido .card-edit {
+.resume-card.preenchido .card-edit,
+.resume-card.preenchido .card-delete {
     position: static;
     width: 32px;
     height: 32px;
@@ -531,6 +532,12 @@ input {
 .resume-card.preenchido .card-pdf:hover,
 .resume-card.preenchido .card-edit:hover {
     background: #f1f5f9;
+    transform: translateY(-1px);
+}
+
+.resume-card.preenchido .card-delete:hover {
+    background: #fef2f2;
+    border-color: #fecaca;
     transform: translateY(-1px);
 }
 
@@ -559,7 +566,7 @@ input {
 .mini-cv-header {
     border-bottom: 1px solid #cbd5e1;
     padding-bottom: 4px;
-    padding-right: 76px;
+    padding-right: 114px;
 }
 
 .mini-cv-header h4 {
