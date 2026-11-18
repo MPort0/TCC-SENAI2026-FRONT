@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="../CSS/temas.css">
     <link rel="stylesheet" href="../CSS/sidebar.css">
     <link rel="stylesheet" href="../CSS/home.css">
+    <script src="../JS/config.js" defer></script>
     <script src="../JS/temas.js" defer></script>
     <script src="../JS/sidebar.js" defer></script>
+    <script src="../JS/home.js" defer></script>
     <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,10 +58,8 @@
                 </a>
                 <a href="../HTML/perfil.html" class="nav-item">
                     <i data-lucide="user"></i>
-
                     <span>Perfil</span>
                 </a>
-
             </nav>
 
             <!-- Rodapé / Usuário + Links -->
@@ -92,7 +92,6 @@
 
         <main class="main">
             <!-- HEADER -->
-
             <header class="header">
                 <div>
                     <h1>
@@ -112,11 +111,8 @@
                 </a>
             </header>
 
-
-            <!-- ================= PROGRESSO + GRÁFICO ================= -->
-
+            <!-- ================= PROGRESSO ================= -->
             <section class="top-grid">
-                <!-- PROGRESSO -->
                 <div class="card progress-card">
                     <div class="card-title">
                         <h2>
@@ -129,25 +125,23 @@
                         </a>
                     </div>
 
-
                     <div class="stats">
                         <div class="stat">
                             <div class="stat-icon blue">
                                 <i data-lucide="mic"></i>
                             </div>
                             <div>
-                                <strong>04</strong>
+                                <strong id="stat-entrevistas">00</strong>
                                 <span>Entrevistas<br>realizadas</span>
                             </div>
                         </div>
-
 
                         <div class="stat">
                             <div class="stat-icon purple">
                                 <i data-lucide="file-text"></i>
                             </div>
                             <div>
-                                <strong>09</strong>
+                                <strong id="stat-curriculos">00</strong>
                                 <span>Currículos<br>criados</span>
                             </div>
                         </div>
@@ -157,8 +151,8 @@
                                 <i data-lucide="target"></i>
                             </div>
                             <div>
-                                <strong class="technology">
-                                    Tecnologia
+                                <strong class="technology" id="stat-area">
+                                    ---
                                 </strong>
                                 <span>
                                     Área mais buscada
@@ -167,21 +161,19 @@
                         </div>
                     </div>
 
-
                     <div class="objective">
                         <div class="objective-header">
                             <span>Seu objetivo</span>
-                            <strong>72%</strong>
+                            <strong id="stat-objetivo-texto">0%</strong>
                         </div>
                         <div class="progress">
-                            <div class="progress-fill"></div>
+                            <div class="progress-fill" id="stat-objetivo-barra"></div>
                         </div>
                     </div>
                 </div>
-
+            </section>
 
             <!-- ================= COMO FUNCIONA ================= -->
-
             <section class="card workflow">
                 <div class="section-title">
                     <h2>
@@ -254,9 +246,7 @@
                 </div>
             </section>
 
-
             <!-- ================= DICAS ================= -->
-
             <section class="card tips">
                 <div class="section-title">
                     <h2>
@@ -264,7 +254,6 @@
                         Dicas de apoio
                     </h2>
                 </div>
-
 
                 <div class="tips-grid">
                     <div class="tip">
@@ -280,7 +269,6 @@
                         </div>
                     </div>
 
-
                     <div class="tip">
                         <div class="tip-icon">
                             <i data-lucide="message-circle"></i>
@@ -293,7 +281,6 @@
                             </p>
                         </div>
                     </div>
-
 
                     <div class="tip">
                         <div class="tip-icon">
