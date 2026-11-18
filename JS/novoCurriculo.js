@@ -3,6 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const input = document.getElementById("replyInput");
     const continueBtn = document.getElementById("continueBtn");
 
+    const params = new URLSearchParams(window.location.search);
+    const editId = params.get("id");
+    const isPaginaEditar = window.location.pathname.includes("editar-curriculo.html");
+
+    // Proteção: só permite acessar editar-curriculo.html com um ?id= vindo do Perfil
+    if (isPaginaEditar && !editId) {
+        window.location.href = "../HTML/perfil.html";
+        return;
+    }
+
+    const modoEdicao = Boolean(editId);
     let curriculoSalvo = false;
     let processando = false;
 
@@ -16,36 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         habilidades: []
     };
 
-    const historicoConversa = [
-        { role: "assistant", content: "Olá! Vou te ajudar a criar um currículo profissional. Qual é o seu nome completo?" }
-    ];
-
-    function adicionarMensagem(tipo, texto) {
-        const hora = new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-        const replyBox = chat.querySelector(".reply");
-
-        if (tipo === "bot") {
-            const chatTop = document.createElement("div");
-            chatTop.classList.add("chat-top");
-            chatTop.innerHTML = `<span class="ai-icon"><img src="../IMG/favicon.ico" width="20" height="20"></span><span>Ava.Lia <small>${hora}</small></span>`;
-            chat.insertBefore(chatTop, replyBox);
-        }
-
-        const msg = document.createElement("div");
-        msg.classList.add("message");
-        if (tipo === "user") msg.classList.add("user");
-        msg.innerHTML = texto;
-
-        const horario = document.createElement("span");
-        horario.classList.add("time");
-        horario.textContent = (tipo === "user" ? "Você " : "") + hora;
-
-        chat.insertBefore(msg, replyBox);
-        chat.insertBefore(horario, replyBox);
-
-        chat.scrollTop = chat.scrollHeight;
-        return msg;
-    }
+    const historicoConversa = [];
 
     function atualizarTodaPrevia(dados) {
         if (dados.nome) {
@@ -95,37 +77,97 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function salvarCurriculoNoPerfil() {
-        if (curriculoSalvo) return;
-        curriculoSalvo = true;
+    // Inicializa em Modo Edição ou Modo Criação
+    if (modoEdicao) {
+        const userId = localStorage.getItem("userId") || "default";
+        const chaveStorage = `curriculos_${userId}`;
+        const lista = JSON.parse(localStorage.getItem(chaveStorage)) || [];
+        const curriculoEncontrado = lista.find(c => String(c.id) === String(editId));
 
+        if (!curriculoEncontrado) {
+            window.location.href = "../HTML/perfil.html";
+            return;
+        }
+
+        atualizarTodaPrevia(curriculoEncontrado);
+
+        const msgInicialHTML = `Olá! Carreguei o currículo de <strong>${dadosCurriculo.nome || "candidato"}</strong> aqui ao lado.<br><strong>Quais informações você deseja editar?</strong>`;
+        const primeiraMsgDiv = chat.querySelector(".message");
+        if (primeiraMsgDiv) primeiraMsgDiv.innerHTML = msgInicialHTML;
+
+        historicoConversa.push({
+            role: "assistant",
+            content: "Olá! Carreguei o seu currículo aqui ao lado. Quais informações você deseja editar?"
+        });
+    } else {
+        historicoConversa.push({
+            role: "assistant",
+            content: "Olá! Vou te ajudar a criar um currículo profissional. Qual é o seu nome completo?"
+        });
+    }
+
+    function adicionarMensagem(tipo, texto) {
+        const hora = new Date().toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+        const replyBox = chat.querySelector(".reply");
+
+        if (tipo === "bot") {
+            const chatTop = document.createElement("div");
+            chatTop.classList.add("chat-top");
+            chatTop.innerHTML = `<span class="ai-icon"><img src="../IMG/favicon.ico" width="20" height="20"></span><span>Ava.Lia <small>${hora}</small></span>`;
+            chat.insertBefore(chatTop, replyBox);
+        }
+
+        const msg = document.createElement("div");
+        msg.classList.add("message");
+        if (tipo === "user") msg.classList.add("user");
+        msg.innerHTML = texto;
+
+        const horario = document.createElement("span");
+        horario.classList.add("time");
+        horario.textContent = (tipo === "user" ? "Você " : "") + hora;
+
+        chat.insertBefore(msg, replyBox);
+        chat.insertBefore(horario, replyBox);
+
+        chat.scrollTop = chat.scrollHeight;
+        return msg;
+    }
+
+    function salvarOuAtualizarNoPerfil() {
         const userId = localStorage.getItem("userId") || "default";
         const chaveStorage = `curriculos_${userId}`;
         const listaCurriculos = JSON.parse(localStorage.getItem(chaveStorage)) || [];
 
+        if (modoEdicao) {
+            const index = listaCurriculos.findIndex(c => String(c.id) === String(editId));
+            if (index !== -1) {
+                listaCurriculos[index] = {
+                    ...listaCurriculos[index],
+                    ...dadosCurriculo,
+                    atualizadoEm: new Date().toLocaleDateString("pt-BR")
+                };
+                localStorage.setItem(chaveStorage, JSON.stringify(listaCurriculos));
+            }
+            curriculoSalvo = true;
+            return;
+        }
+
+        if (curriculoSalvo) {
+            const ultimoIndex = listaCurriculos.length - 1;
+            if (ultimoIndex >= 0) {
+                listaCurriculos[ultimoIndex] = { ...listaCurriculos[ultimoIndex], ...dadosCurriculo };
+                localStorage.setItem(chaveStorage, JSON.stringify(listaCurriculos));
+            }
+            return;
+        }
+
+        curriculoSalvo = true;
         listaCurriculos.push({
             id: Date.now(),
             criadoEm: new Date().toLocaleDateString("pt-BR"),
             ...dadosCurriculo
         });
-
         localStorage.setItem(chaveStorage, JSON.stringify(listaCurriculos));
-    }
-
-    function atualizarCurriculoSalvoSeExistir() {
-        if (!curriculoSalvo) return;
-        const userId = localStorage.getItem("userId") || "default";
-        const chaveStorage = `curriculos_${userId}`;
-        const listaCurriculos = JSON.parse(localStorage.getItem(chaveStorage)) || [];
-
-        if (listaCurriculos.length > 0) {
-            const ultimoIndex = listaCurriculos.length - 1;
-            listaCurriculos[ultimoIndex] = {
-                ...listaCurriculos[ultimoIndex],
-                ...dadosCurriculo
-            };
-            localStorage.setItem(chaveStorage, JSON.stringify(listaCurriculos));
-        }
     }
 
     async function enviarMensagem() {
@@ -152,7 +194,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify({
                     mensagem: texto,
                     dadosAtuais: dadosCurriculo,
-                    historico: historicoConversa
+                    historico: historicoConversa,
+                    modoEdicao: modoEdicao
                 })
             });
 
@@ -169,15 +212,13 @@ document.addEventListener("DOMContentLoaded", function () {
             msgDigitando.innerHTML = data.respostaBot;
             historicoConversa.push({ role: "assistant", content: data.respostaBot });
 
-            if (data.concluido && !curriculoSalvo) {
-                salvarCurriculoNoPerfil();
-            } else if (curriculoSalvo) {
-                atualizarCurriculoSalvoSeExistir();
+            if (data.concluido || modoEdicao) {
+                salvarOuAtualizarNoPerfil();
             }
 
         } catch (error) {
             console.error("Erro ao conversar com a IA:", error);
-            msgDigitando.innerHTML = "Ops, tive uma instabilidade de conexão. Pode repetir sua resposta?";
+            msgDigitando.innerHTML = "Ops, tive uma instabilidade de conexão. Pode repetir?";
         } finally {
             processando = false;
             input.disabled = false;
