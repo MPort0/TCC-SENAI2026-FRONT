@@ -111,9 +111,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (btnPdf) {
         btnPdf.addEventListener('click', async function () {
             const elemento = document.querySelector('.content');
-            const acoes = document.querySelector('.actions');
 
-            if (acoes) acoes.style.display = 'none';
+            // Ativa o layout limpo de impressão
+            elemento.classList.add('modo-pdf');
 
             const opcoes = {
                 margin: [10, 10, 10, 10],
