@@ -34,6 +34,91 @@ document.addEventListener("DOMContentLoaded", () => {
         if (sidebarEmail) sidebarEmail.textContent = email || "";
     }
 
+    function baixarCurriculoPDF(cv) {
+        const habilidadesArray = Array.isArray(cv.habilidades)
+            ? cv.habilidades
+            : (cv.habilidades ? cv.habilidades.split(",").map(h => h.trim()) : []);
+
+        const habilidadesHTML = habilidadesArray
+            .filter(Boolean)
+            .map(h => `<span style="display:inline-block; background:#eef2ff; color:#3b5998; padding:4px 10px; border-radius:12px; font-size:12px; margin:3px 5px 3px 0;">${h}</span>`)
+            .join("");
+
+        // Posicionado em left: 0, top: 0, atrás da interface (z-index: -1), para não haver deslocamento horizontal no canvas
+        const wrapper = document.createElement("div");
+        wrapper.style.position = "fixed";
+        wrapper.style.left = "0";
+        wrapper.style.top = "0";
+        wrapper.style.width = "794px";
+        wrapper.style.background = "#ffffff";
+        wrapper.style.zIndex = "-1";
+        wrapper.style.pointerEvents = "none";
+
+        wrapper.innerHTML = `
+            <div id="pdf-curriculo-render" style="font-family: 'Poppins', Arial, sans-serif; color: #1e293b; padding: 40px 44px; line-height: 1.55; background: #ffffff; width: 794px; box-sizing: border-box;">
+                <header style="border-bottom: 2px solid #5F7FBF; padding-bottom: 14px; margin-bottom: 22px;">
+                    <h1 style="margin: 0; font-size: 26px; color: #0f172a;">${cv.nome || "Sem Nome"}</h1>
+                    <p style="margin: 4px 0; font-size: 16px; font-weight: 600; color: #5F7FBF;">${cv.cargo || ""}</p>
+                    <p style="margin: 0; font-size: 12.5px; color: #64748b;">${cv.contato || ""}</p>
+                </header>
+
+                <section style="margin-bottom: 20px;">
+                    <h2 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.6px; color: #5F7FBF; margin: 0 0 6px 0;">Resumo Profissional</h2>
+                    <p style="margin: 0; font-size: 13px; color: #334155;">${cv.resumo || ""}</p>
+                </section>
+
+                <section style="margin-bottom: 20px;">
+                    <h2 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.6px; color: #5F7FBF; margin: 0 0 6px 0;">Experiência Profissional</h2>
+                    <p style="margin: 0; font-size: 13px; color: #334155; white-space: pre-line;">${cv.experiencia || ""}</p>
+                </section>
+
+                <section style="margin-bottom: 20px;">
+                    <h2 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.6px; color: #5F7FBF; margin: 0 0 6px 0;">Formação Acadêmica</h2>
+                    <p style="margin: 0; font-size: 13px; color: #334155; white-space: pre-line;">${cv.formacao || ""}</p>
+                </section>
+
+                <section>
+                    <h2 style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.6px; color: #5F7FBF; margin: 0 0 8px 0;">Habilidades</h2>
+                    <div>${habilidadesHTML}</div>
+                </section>
+            </div>
+        `;
+
+        document.body.appendChild(wrapper);
+
+        const elemento = wrapper.querySelector("#pdf-curriculo-render");
+        const nomeArquivo = `Curriculo_${(cv.nome || "Candidato").replace(/\s+/g, "_")}.pdf`;
+
+        const opcoes = {
+            margin: 0,
+            filename: nomeArquivo,
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: {
+                scale: 2,
+                useCORS: true,
+                scrollX: 0,
+                scrollY: 0,
+                x: 0,
+                y: 0,
+                windowWidth: 794
+            },
+            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+        };
+
+        html2pdf()
+            .set(opcoes)
+            .from(elemento)
+            .save()
+            .then(() => {
+                document.body.removeChild(wrapper);
+            })
+            .catch(() => {
+                if (document.body.contains(wrapper)) {
+                    document.body.removeChild(wrapper);
+                }
+            });
+    }
+
     function carregarCurriculosNoPerfil() {
         const chaveStorage = `curriculos_${userId}`;
         const rawCurriculos = JSON.parse(localStorage.getItem(chaveStorage)) || [];
@@ -62,14 +147,24 @@ document.addEventListener("DOMContentLoaded", () => {
             const article = document.createElement("article");
             article.className = "resume-card preenchido";
             article.innerHTML = `
-                <button class="card-edit" aria-label="Editar currículo">
-                    <a href="../HTML/editar-curriculo.html?id=${cv.id}">
-                        <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M25.3989 8.33731L28.6626 11.601M27.4971 5.4621L18.668 14.2912C18.2104 14.7458 17.899 15.3266 17.7738 15.9593L16.9583 20.0416L21.0406 19.2246C21.6727 19.0981 22.2523 18.7883 22.7087 18.3319L31.5378 9.50281C31.8031 9.23749 32.0136 8.92252 32.1572 8.57586C32.3007 8.22921 32.3747 7.85767 32.3747 7.48246C32.3747 7.10724 32.3007 6.7357 32.1572 6.38905C32.0136 6.0424 31.8031 5.72742 31.5378 5.4621C31.2725 5.19679 30.9575 4.98632 30.6108 4.84274C30.2642 4.69915 29.8927 4.62524 29.5174 4.62524C29.1422 4.62524 28.7707 4.69915 28.424 4.84274C28.0774 4.98632 27.7624 5.19679 27.4971 5.4621Z" stroke="#98AACA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M29.2916 23.1249V27.7499C29.2916 28.5677 28.9668 29.3519 28.3885 29.9302C27.8103 30.5084 27.026 30.8333 26.2083 30.8333H9.24996C8.43221 30.8333 7.64795 30.5084 7.06971 29.9302C6.49148 29.3519 6.16663 28.5677 6.16663 27.7499V10.7916C6.16663 9.97383 6.49148 9.18958 7.06971 8.61134C7.64795 8.0331 8.43221 7.70825 9.24996 7.70825H13.875" stroke="#98AACA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <div class="card-actions">
+                    <button type="button" class="card-pdf" aria-label="Baixar currículo em PDF" title="Baixar PDF">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#98AACA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
                         </svg>
-                    </a>
-                </button>
+                    </button>
+
+                    <button class="card-edit" aria-label="Editar currículo" title="Editar currículo">
+                        <a href="../HTML/editar-curriculo.html?id=${cv.id}">
+                            <svg width="24" height="24" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25.3989 8.33731L28.6626 11.601M27.4971 5.4621L18.668 14.2912C18.2104 14.7458 17.899 15.3266 17.7738 15.9593L16.9583 20.0416L21.0406 19.2246C21.6727 19.0981 22.2523 18.7883 22.7087 18.3319L31.5378 9.50281C31.8031 9.23749 32.0136 8.92252 32.1572 8.57586C32.3007 8.22921 32.3747 7.85767 32.3747 7.48246C32.3747 7.10724 32.3007 6.7357 32.1572 6.38905C32.0136 6.0424 31.8031 5.72742 31.5378 5.4621C31.2725 5.19679 30.9575 4.98632 30.6108 4.84274C30.2642 4.69915 29.8927 4.62524 29.5174 4.62524C29.1422 4.62524 28.7707 4.69915 28.424 4.84274C28.0774 4.98632 27.7624 5.19679 27.4971 5.4621Z" stroke="#98AACA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M29.2916 23.1249V27.7499C29.2916 28.5677 28.9668 29.3519 28.3885 29.9302C27.8103 30.5084 27.026 30.8333 26.2083 30.8333H9.24996C8.43221 30.8333 7.64795 30.5084 7.06971 29.9302C6.49148 29.3519 6.16663 28.5677 6.16663 27.7499V10.7916C6.16663 9.97383 6.49148 9.18958 7.06971 8.61134C7.64795 8.0331 8.43221 7.70825 9.24996 7.70825H13.875" stroke="#98AACA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </button>
+                </div>
 
                 <div class="mini-resume-sheet">
                     <div class="mini-cv-header">
@@ -99,6 +194,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             `;
+
+            const btnPdf = article.querySelector(".card-pdf");
+            if (btnPdf) {
+                btnPdf.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    baixarCurriculoPDF(cv);
+                });
+            }
 
             grid.appendChild(article);
         });
@@ -157,4 +260,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-});
+}); 
