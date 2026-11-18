@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             } catch (erro) {
                 console.error("Erro ao gerar PDF:", erro);
             } finally {
-                if (acoes) acoes.style.display = 'flex';
+                if (acoes) acoes.style.display = '';
             }
         });
     }
