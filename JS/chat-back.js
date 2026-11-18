@@ -111,24 +111,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Controle do clique no botão Enviar
-    if (botaoEnviar && input) {
-        botaoEnviar.addEventListener('click', () => {
-            if (input.disabled) return;
 
-            const mensagem = input.value.trim();
-            if (!mensagem) return;
+// 2. Controle do clique no botão Enviar
+if (botaoEnviar && input) {
+    botaoEnviar.addEventListener('click', () => {
+        if (input.disabled) return;
 
-            alternarBloqueioChat(true);
+        const mensagem = input.value.trim();
+        if (!mensagem) return;
 
-            // Reseta a altura da barra para 40px após o clique do botão
-            setTimeout(() => {
-                input.style.height = '40px';
-            }, 10);
+        alternarBloqueioChat(true);
 
-            enviarParaIA(mensagem);
-        });
-    }
+        // Exibe a mensagem do usuário
+        renderizarMensagemUsuario(mensagem);
+
+        // Limpa o campo de digitação
+        input.value = "";
+        input.style.height = '40px';
+
+        // Envia a mensagem para a IA
+        enviarParaIA(mensagem);
+    });
+}
+
 
     // 3. Código de expansão automática da barra de mensagens
     if (input) {
