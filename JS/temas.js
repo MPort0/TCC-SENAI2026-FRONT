@@ -1,65 +1,46 @@
-const temaSalvo = localStorage.getItem('app-theme') || 'dark';
 
-document.documentElement.setAttribute('data-theme', temaSalvo);
+const temaSalvo = localStorage.getItem('app-theme');
+
+// Modo escuro como padrão
+const temaInicial = temaSalvo === 'light' ? 'light' : 'dark';
+
+// Aplica o tema antes de carregar a página
+document.documentElement.setAttribute('data-theme', temaInicial);
 
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeToggleText = document.getElementById('theme-toggle-text');
 
-    const path = window.location.pathname.toLowerCase();
-
-    // Páginas que seguem automaticamente o horário
-    const ehPaginaAutenticacao =
-        path.includes('login') ||
-        path.includes('cadastro') ||
-        path.includes('esqueci-senha');
-
-    function aplicarTema(tema, salvar = true) {
+    // Função responsável por alterar e salvar o tema
+    function aplicarTema(tema) {
         document.documentElement.setAttribute('data-theme', tema);
 
-        if (salvar && !ehPaginaAutenticacao) {
-            localStorage.setItem('app-theme', tema);
-        }
+        // Salva a preferência do usuário
+        localStorage.setItem('app-theme', tema);
 
+        // Atualiza o texto do botão
         if (themeToggleText) {
             themeToggleText.textContent =
                 tema === 'dark' ? 'Modo Claro' : 'Modo Escuro';
         }
     }
 
-    // Define o tema conforme o horário
-    function obterTemaPorHorario() {
-        const horaAtual = new Date().getHours();
-
-        // Das 18h às 5h59: escuro
-        // Das 6h às 17h59: claro
-        return (horaAtual >= 18 || horaAtual < 6)
-            ? 'dark'
-            : 'light';
+    // Define o texto inicial do botão
+    if (themeToggleText) {
+        themeToggleText.textContent =
+            temaInicial === 'dark' ? 'Modo Claro' : 'Modo Escuro';
     }
 
-    if (ehPaginaAutenticacao) {
-        aplicarTema(obterTemaPorHorario(), false);
-    } else {
-        const savedTheme = localStorage.getItem('app-theme');
-
-        if (savedTheme) {
-            aplicarTema(savedTheme);
-        } else {
-            aplicarTema(obterTemaPorHorario());
-        }
-    }
-
-    // Alternância manual nas demais páginas
+    // Alterna entre modo claro e escuro ao clicar
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
             const temaAtual =
                 document.documentElement.getAttribute('data-theme');
 
-            aplicarTema(
-                temaAtual === 'dark' ? 'light' : 'dark',
-                true
-            );
+            const novoTema =
+                temaAtual === 'dark' ? 'light' : 'dark';
+
+            aplicarTema(novoTema);
         });
     }
 });

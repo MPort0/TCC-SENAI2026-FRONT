@@ -1,7 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
     const chat = document.querySelector(".chat-panel");
     const input = document.getElementById("replyInput");
     const continueBtn = document.getElementById("continueBtn");
+
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+        alert("Usuário não identificado. Faça login novamente.");
+        window.location.href = "../HTML/login.html";
+        return;
+    }
 
     const params = new URLSearchParams(window.location.search);
     const editId = params.get("id");
@@ -14,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const modoEdicao = Boolean(editId);
-    let curriculoSalvo = false;
+    let curriculoIdBanco = editId ? Number(editId) : null;
     let processando = false;
 
     const dadosCurriculo = {
@@ -77,28 +84,35 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Inicializa em Modo Edição ou Modo Criação
+    // Inicializa em Modo Edição (buscando do Prisma) ou Modo Criação
     if (modoEdicao) {
-        const userId = localStorage.getItem("userId") || "default";
-        const chaveStorage = `curriculos_${userId}`;
-        const lista = JSON.parse(localStorage.getItem(chaveStorage)) || [];
-        const curriculoEncontrado = lista.find(c => String(c.id) === String(editId));
+        try {
+            const resp = await fetch(`${window.API_BASE}/curriculos/${userId}`);
+            if (!resp.ok) throw new Error("Erro ao carregar currículos do banco.");
 
-        if (!curriculoEncontrado) {
+            const lista = await resp.json();
+            const curriculoEncontrado = lista.find(c => String(c.id) === String(editId));
+
+            if (!curriculoEncontrado) {
+                window.location.href = "../HTML/perfil.html";
+                return;
+            }
+
+            atualizarTodaPrevia(curriculoEncontrado);
+
+            const msgInicialHTML = `Olá! Carreguei o currículo de <strong>${dadosCurriculo.nome || "candidato"}</strong> aqui ao lado.<br><strong>Quais informações você deseja editar?</strong>`;
+            const primeiraMsgDiv = chat.querySelector(".message");
+            if (primeiraMsgDiv) primeiraMsgDiv.innerHTML = msgInicialHTML;
+
+            historicoConversa.push({
+                role: "assistant",
+                content: "Olá! Carreguei o seu currículo aqui ao lado. Quais informações você deseja editar?"
+            });
+        } catch (err) {
+            console.error(err);
             window.location.href = "../HTML/perfil.html";
             return;
         }
-
-        atualizarTodaPrevia(curriculoEncontrado);
-
-        const msgInicialHTML = `Olá! Carreguei o currículo de <strong>${dadosCurriculo.nome || "candidato"}</strong> aqui ao lado.<br><strong>Quais informações você deseja editar?</strong>`;
-        const primeiraMsgDiv = chat.querySelector(".message");
-        if (primeiraMsgDiv) primeiraMsgDiv.innerHTML = msgInicialHTML;
-
-        historicoConversa.push({
-            role: "assistant",
-            content: "Olá! Carreguei o seu currículo aqui ao lado. Quais informações você deseja editar?"
-        });
     } else {
         historicoConversa.push({
             role: "assistant",
@@ -133,41 +147,36 @@ document.addEventListener("DOMContentLoaded", function () {
         return msg;
     }
 
-    function salvarOuAtualizarNoPerfil() {
-        const userId = localStorage.getItem("userId") || "default";
-        const chaveStorage = `curriculos_${userId}`;
-        const listaCurriculos = JSON.parse(localStorage.getItem(chaveStorage)) || [];
-
-        if (modoEdicao) {
-            const index = listaCurriculos.findIndex(c => String(c.id) === String(editId));
-            if (index !== -1) {
-                listaCurriculos[index] = {
-                    ...listaCurriculos[index],
-                    ...dadosCurriculo,
-                    atualizadoEm: new Date().toLocaleDateString("pt-BR")
-                };
-                localStorage.setItem(chaveStorage, JSON.stringify(listaCurriculos));
+    async function salvarOuAtualizarNoPerfil() {
+        try {
+            // Se já existe no banco (modo edição ou já criado nesta conversa), faz PUT
+            if (curriculoIdBanco) {
+                const resp = await fetch(`${window.API_BASE}/curriculos/${curriculoIdBanco}`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(dadosCurriculo)
+                });
+                if (!resp.ok) throw new Error("Erro ao atualizar currículo no banco.");
+                return;
             }
-            curriculoSalvo = true;
-            return;
-        }
 
-        if (curriculoSalvo) {
-            const ultimoIndex = listaCurriculos.length - 1;
-            if (ultimoIndex >= 0) {
-                listaCurriculos[ultimoIndex] = { ...listaCurriculos[ultimoIndex], ...dadosCurriculo };
-                localStorage.setItem(chaveStorage, JSON.stringify(listaCurriculos));
-            }
-            return;
-        }
+            // Primeira vez salvando: cria no banco com POST e guarda o ID gerado
+            const resp = await fetch(`${window.API_BASE}/curriculos`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    userId: Number(userId),
+                    ...dadosCurriculo
+                })
+            });
 
-        curriculoSalvo = true;
-        listaCurriculos.push({
-            id: Date.now(),
-            criadoEm: new Date().toLocaleDateString("pt-BR"),
-            ...dadosCurriculo
-        });
-        localStorage.setItem(chaveStorage, JSON.stringify(listaCurriculos));
+            if (!resp.ok) throw new Error("Erro ao salvar currículo no banco.");
+
+            const criado = await resp.json();
+            curriculoIdBanco = criado.id;
+        } catch (err) {
+            console.error("Erro ao persistir currículo no Prisma:", err);
+        }
     }
 
     async function enviarMensagem() {
@@ -213,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
             historicoConversa.push({ role: "assistant", content: data.respostaBot });
 
             if (data.concluido || modoEdicao) {
-                salvarOuAtualizarNoPerfil();
+                await salvarOuAtualizarNoPerfil();
             }
 
         } catch (error) {

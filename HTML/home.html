@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+ 
 <head>
     <script src="../JS/temas.js"></script>
     <meta charset="UTF-8">
@@ -8,34 +8,37 @@
     <link rel="stylesheet" href="../CSS/temas.css">
     <link rel="stylesheet" href="../CSS/sidebar.css">
     <link rel="stylesheet" href="../CSS/home.css">
+    <script src="../JS/config.js" defer></script>
+    <script src="../JS/temas.js" defer></script>
     <script src="../JS/sidebar.js" defer></script>
+    <script src="../JS/home.js" defer></script>
     <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
-
+ 
     <!-- Ícones -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
+ 
 <body>
     <div class="app">
         <!-- ================= SIDEBAR ================= -->
         <aside class="sidebar">
-
+ 
             <!-- Topo / Header -->
             <div class="sidebar-header">
                 <div class="logo-badge">
                     <img src="../IMG/logo-branca.svg" alt="Logo">
                 </div>
-
+ 
                 <div class="brand-title">
                     <span class="brand-dark">AVA.</span>
                     <span class="brand-blue">Lia</span>
                 </div>
             </div>
-
+ 
             <!-- Navegação Principal -->
             <nav class="nav-section">
                 <a href="../HTML/home.html" class="nav-item">
@@ -56,43 +59,40 @@
                 </a>
                 <a href="../HTML/perfil.html" class="nav-item">
                     <i data-lucide="user"></i>
-
                     <span>Perfil</span>
                 </a>
-
             </nav>
-
+ 
             <!-- Rodapé / Usuário + Links -->
             <div class="sidebar-footer">
-
+ 
                 <!-- Card do Usuário -->
                 <div class="user-card">
                     <div class="user-avatar">
                         <i data-lucide="user-round"></i>
                     </div>
-
+ 
                     <div class="user-info">
                         <span class="user-nome">Olá, usuário!</span>
                         <span class="user-email">hello_lia@useia.com.br</span>
                     </div>
                 </div>
-
+ 
                 <div class="divider"></div>
-
+ 
                 <!-- Links Inferiores -->
                 <a href="../HTML/login.html" class="nav-item">
                     <i data-lucide="log-out"></i>
                     <span>Sair</span>
                 </a>
-
+ 
             </div>
-
+ 
         </aside>
         <!-- ================= CONTEÚDO ================= -->
-
+ 
         <main class="main">
             <!-- HEADER -->
-
             <header class="header">
                 <div>
                     <h1>
@@ -105,18 +105,15 @@
                         Continue seu desenvolvimento e acompanhe seu progresso.
                     </small>
                 </div>
-
+ 
                 <a href="../HTML/chat-lia.html" class="continue-button" style="text-decoration: none;">
                     Começar entrevista
                     <i data-lucide="arrow-right"></i>
                 </a>
             </header>
-
-
-            <!-- ================= PROGRESSO + GRÁFICO ================= -->
-
+ 
+            <!-- ================= PROGRESSO ================= -->
             <section class="top-grid">
-                <!-- PROGRESSO -->
                 <div class="card progress-card">
                     <div class="card-title">
                         <h2>
@@ -128,37 +125,35 @@
                             <i data-lucide="arrow-right"></i>
                         </a>
                     </div>
-
-
+ 
                     <div class="stats">
                         <div class="stat">
                             <div class="stat-icon blue">
                                 <i data-lucide="mic"></i>
                             </div>
                             <div>
-                                <strong>04</strong>
+                                <strong id="stat-entrevistas">00</strong>
                                 <span>Entrevistas<br>realizadas</span>
                             </div>
                         </div>
-
-
+ 
                         <div class="stat">
                             <div class="stat-icon purple">
                                 <i data-lucide="file-text"></i>
                             </div>
                             <div>
-                                <strong>09</strong>
+                                <strong id="stat-curriculos">00</strong>
                                 <span>Currículos<br>criados</span>
                             </div>
                         </div>
-
+ 
                         <div class="stat">
                             <div class="stat-icon green">
                                 <i data-lucide="target"></i>
                             </div>
                             <div>
-                                <strong class="technology">
-                                    Tecnologia
+                                <strong class="technology" id="stat-area">
+                                    ---
                                 </strong>
                                 <span>
                                     Área mais buscada
@@ -166,22 +161,20 @@
                             </div>
                         </div>
                     </div>
-
-
+ 
                     <div class="objective">
                         <div class="objective-header">
                             <span>Seu objetivo</span>
-                            <strong>72%</strong>
+                            <strong id="stat-objetivo-texto">0%</strong>
                         </div>
                         <div class="progress">
-                            <div class="progress-fill"></div>
+                            <div class="progress-fill" id="stat-objetivo-barra"></div>
                         </div>
                     </div>
                 </div>
-
-
+            </section>
+ 
             <!-- ================= COMO FUNCIONA ================= -->
-
             <section class="card workflow">
                 <div class="section-title">
                     <h2>
@@ -253,10 +246,8 @@
                     </div>
                 </div>
             </section>
-
-
+ 
             <!-- ================= DICAS ================= -->
-
             <section class="card tips">
                 <div class="section-title">
                     <h2>
@@ -264,8 +255,7 @@
                         Dicas de apoio
                     </h2>
                 </div>
-
-
+ 
                 <div class="tips-grid">
                     <div class="tip">
                         <div class="tip-icon">
@@ -279,8 +269,7 @@
                             </p>
                         </div>
                     </div>
-
-
+ 
                     <div class="tip">
                         <div class="tip-icon">
                             <i data-lucide="message-circle"></i>
@@ -293,8 +282,7 @@
                             </p>
                         </div>
                     </div>
-
-
+ 
                     <div class="tip">
                         <div class="tip-icon">
                             <i data-lucide="target"></i>
@@ -311,11 +299,11 @@
             </section>
         </main>
     </div>
-
+ 
     <script>
         lucide.createIcons();
     </script>
-
+ 
 </body>
-
+ 
 </html>
