@@ -1,17 +1,13 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
-
-/* =========================
-   CONFIGURAÇÕES GERAIS
-   ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     height: 100vh;
     font-family: 'Poppins', Arial, sans-serif;
@@ -20,10 +16,14 @@ html, body {
     overflow: hidden;
 }
 
-/* =========================
-   ESTRUTURA GERAL (APP)
-   ========================= */
+button,
+input {
+    font: inherit;
+}
 
+/* =========================
+   CONTAINER PAI (TRAVA O SITE)
+   ========================= */
 .app {
     width: 100%;
     height: 100vh;
@@ -33,9 +33,8 @@ html, body {
 }
 
 /* =========================
-   ÁREA DA ENTREVISTA (DIREITA)
+   ÁREA DO CHAT (LADO DIREITO)
    ========================= */
-
 .interview {
     flex: 1;
     height: 100vh;
@@ -45,79 +44,55 @@ html, body {
     overflow: hidden;
 }
 
-/* CABEÇALHO DA ENTREVISTA + CARD DE PROGRESSO */
-
-.interview-header-simulacao {
-    padding: 24px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.interview-header {
+    padding: 32px 39px;
     flex-shrink: 0;
-    color: var(--text-primary);
 }
 
-.interview-header-simulacao svg {
-    width: 140px;
+.interview-header svg {
+    width: 150px;
     height: auto;
 }
 
-/* =========================
-   CARD DE PROGRESSO
-   ========================= */
-
-.progress-card {
-    background: var(--bg-card-option);
-    border: 1px solid var(--border-option);
-    border-radius: 12px;
-    padding: 10px 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    min-width: 180px;
-}
-
-.progress-title {
-    font-size: 12px;
-    color: var(--text-subtitle);
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.step-count {
-    font-size: 15px;
-    color: var(--text-primary);
-}
-
-.progress-bar-bg {
-    width: 100%;
-    height: 6px;
-    background: var(--bg-input);
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.progress-bar-fill {
-    height: 100%;
-    background: var(--primary-brand);
-    width: 10%;
-    border-radius: 3px;
-    transition: width 0.4s ease-in-out;
-}
-
-/* =========================
-   ÁREA DE MENSAGENS (CHAT)
-   ========================= */
-
+/* CONTAINER DAS CONVERSAS */
 .chat {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 20px 10%;
+    padding: 110px 380px;
     overflow-y: auto;
     scroll-behavior: smooth;
+}
+
+.user-message {
+    background: var(--primary-brand);
+    color: var(--text-white);
+    padding: 12px 14px;
+    border-radius: 14px;
+    max-width: 60%;
+    margin-left: auto;
+    margin-bottom: 15px;
+    font-size: 14px;
+    word-wrap: break-word;
+    transform: translate(-331px, 228px);
+}
+
+/* CONTAINER DA BARRA DE INPUT */
+.input-area {
+    position: relative;
+    width: 53%;
+    min-height: 47px;
+    height: auto;
+    margin: 50px auto 14px;
+    background: var(--bg-card-option);
+    border: 0.06rem solid var(--border-option);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 6px 12px;
+    flex-shrink: 0;
+    transform: translateY(-23px);
 }
 
 /* =========================
@@ -242,6 +217,48 @@ html, body {
     justify-content: center;
 }
 
+/* Imagem exibida dentro do balão do chat após enviar */
+.chat-image {
+    max-width: 240px;
+    max-height: 240px;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 6px;
+    transform: none !important;
+}
+
+.add-menu {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-option);
+    border-radius: 12px;
+    padding: 8px;
+}
+
+.add-menu.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-menu svg {
+    width: 18px;
+    height: 19px;
+    margin-right: 1px;
+    transform: translate(-2px, 2px);
+}
+
+.add-menu button {
+    background: transparent;
+    border: none;
+    color: var(--text-subtitle);
+    padding: 8px 1px;
+    text-align: left;
+    cursor: pointer;
+}
+
 /* CAMPO DE TEXTO */
 
 #messageInput {
@@ -266,9 +283,6 @@ html, body {
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* =========================
-   CONFIGURAÇÕES GERAIS
-   ========================= */
 
 * {
     box-sizing: border-box;
@@ -292,9 +306,8 @@ input {
 }
 
 /* =========================
-   CONTAINER PRINCIPAL
+   CONTAINER PAI (TRAVA O SITE)
    ========================= */
-
 .app {
     width: 100%;
     height: 100vh;
@@ -304,9 +317,8 @@ input {
 }
 
 /* =========================
-   ÁREA DA ENTREVISTA
+   ÁREA DO CHAT (LADO DIREITO)
    ========================= */
-
 .interview {
     flex: 1;
     height: 100vh;
@@ -316,10 +328,17 @@ input {
     overflow: hidden;
 }
 
-/* =========================
-   CONVERSAS
-   ========================= */
+.interview-header {
+    padding: 32px 39px;
+    flex-shrink: 0;
+}
 
+.interview-header svg {
+    width: 150px;
+    height: auto;
+}
+
+/* CONTAINER DAS CONVERSAS */
 .chat {
     flex: 1;
     display: flex;
@@ -343,45 +362,91 @@ input {
     transform: translate(-331px, 228px);
 }
 
-/* =========================
-   BARRA DE DIGITAÇÃO
-   ========================= */
-
+/* CONTAINER DA BARRA DE INPUT */
 .input-area {
     position: relative;
     width: 53%;
     min-height: 47px;
     height: auto;
-    margin: 0 auto 14px;
+    margin: 50px auto 14px;
     background: var(--bg-card-option);
     border: 0.06rem solid var(--border-option);
     border-radius: 20px;
     display: flex;
-    align-items: center;
-    padding: 3px 10px;
+    flex-direction: column;
+    padding: 6px 12px;
     flex-shrink: 0;
     transform: translateY(-23px);
-    margin-top: 50px;
 }
 
-.input-area input {
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
+.input-controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Área da miniatura na barra de mensagem */
+.preview-container {
+    display: none;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 6px 4px 8px;
+}
+
+.preview-container.has-files {
+    display: flex;
+}
+
+.preview-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-option);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.preview-item img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.preview-file-tag {
+    padding: 6px 10px;
+    font-size: 12px;
     color: var(--text-primary);
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    transform: translateX(6px);
 }
 
-.input-area input::placeholder {
-    color: var(--text-placeholder);
+.remove-preview-btn {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: none;
+    background: var(--border-option-hover);
+    color: #fff;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* =========================
-   MENU DE ANEXOS
-   ========================= */
+/* Imagem exibida dentro do balão do chat após enviar */
+.chat-image {
+    max-width: 240px;
+    max-height: 240px;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 6px;
+    transform: none !important;
+}
 
 .add-menu {
     display: none;
@@ -415,10 +480,6 @@ input {
     cursor: pointer;
 }
 
-/* =========================
-   IMAGENS DO CHAT
-   ========================= */
-
 .chat-image {
     max-width: 300px;
     max-height: 300px;
@@ -426,10 +487,6 @@ input {
     display: block;
     transform: translate(897px, 456px);
 }
-
-/* =========================
-   CAMPO DE MENSAGEM
-   ========================= */
 
 #messageInput {
     flex: 1;
@@ -455,7 +512,6 @@ input {
 /* =========================
    BOTÕES FUNCIONAIS
    ========================= */
-
 .add-button,
 .language-button,
 .send-button {
@@ -465,8 +521,7 @@ input {
     cursor: pointer;
 }
 
-/* BOTÃO DE ENVIAR */
-
+/* Botão de enviar circular */
 .send-button {
     width: 36px;
     height: 36px;
@@ -483,13 +538,13 @@ input {
     transform: translateY(2px);
 }
 
+/* Ícone de enviar */
 .send-button svg {
     width: 20px;
     height: 20px;
     stroke: var(--primary-brand);
 }
 
-/* BOTÃO ADICIONAR */
 
 .add-button {
     width: 36px;
@@ -497,10 +552,16 @@ input {
     transform: translateX(-3px);
 }
 
-/* =========================
-   ÁREA INTERNA DAS MENSAGENS
-   ========================= */
+.language-button {
+    font-size: 9px;
+    margin-right: 4px;
+}
 
+.send-button {
+    transform: translateY(2px);
+}
+
+/* ÁREA INTERNA ONDE FLUTUAM OS BALÕES */
 .chat-messages {
     flex: 1;
     overflow-y: auto;
@@ -519,8 +580,6 @@ input {
     box-shadow: var(--card-shadow);
 }
 
-/* MENSAGENS DA IA */
-
 .bubble-ia {
     align-self: flex-start;
     background-color: var(--bg-card-option);
@@ -529,8 +588,6 @@ input {
     border-radius: 16px 16px 16px 4px;
 }
 
-/* MENSAGENS DO USUÁRIO */
-
 .bubble-user {
     align-self: flex-end;
     background-color: var(--primary-brand);
@@ -538,15 +595,14 @@ input {
     border-radius: 16px 16px 4px 16px;
 }
 
-/* =========================
-   BARRA DE ROLAGEM
-   ========================= */
-
+/* Ocultar a barra de rolagem */
+/* Para navegadores baseados em Webkit (Chrome, Safari, Edge, Opera) */
 .chat::-webkit-scrollbar,
 .chat-messages::-webkit-scrollbar {
     display: none;
 }
 
+/* Para o navegador Firefox */
 .chat,
 .chat-messages {
     scrollbar-width: none;
