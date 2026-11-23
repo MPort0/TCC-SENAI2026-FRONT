@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 
 <head>
+    <script src="../JS/temas.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/temas.css">
     <link rel="stylesheet" href="../CSS/sidebar.css">
     <link rel="stylesheet" href="../CSS/cadastro.css">
     <script src="../JS/ipback.js"></script>
-    <script src="../JS/temas.js" defer></script>
     <script src="../JS/sidebar.js" defer></script>
     <title>Cadastro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -61,13 +61,17 @@
 
             <div class="form-group">
                 <label for="confirmar-senha">Confirmar senha:</label>
+
                 <div class="input-wrapper">
                     <input type="password" id="confirmar-senha" placeholder="Confirme sua senha">
-                    <img src="../IMG/ocultar-senha.svg" id="icone-confirmarSenha" alt="Ocultar senha"
-                        class="toggle-icon" onclick="toggleConfirmar()">
+
+                    <i data-lucide="eye-off" id="icone-confirmarSenha" class="toggle-icon"
+                        onclick="toggleConfirmar()"></i>
                 </div>
+
                 <button type="submit" class="btn-submit">Criar conta</button>
             </div>
+
 
         </form>
     </div>
