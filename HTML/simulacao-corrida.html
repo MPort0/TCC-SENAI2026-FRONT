@@ -90,55 +90,45 @@
 
         </aside>
         <!-- CONTEÚDO DA ENTREVISTA -->
+        <main class="interview">
+        
+            <section class="chat" id="chat-messages">
+            </section>
+        
+<div class="input-area">
+    <div id="previewContainer" class="preview-container"></div>
 
-<main class="interview">
-
-    <section class="chat" id="chat-messages">
-    </section>
-
-    <div class="input-area">
-
+    <div class="input-controls">
+        <!-- O onclick chama a função global toggleMenu -->
         <button type="button" class="add-button" onclick="toggleMenu()">
             <i data-lucide="plus"></i>
         </button>
 
-        <textarea
-            id="messageInput"
-            placeholder="Pergunte qualquer coisa"
-            rows="1"></textarea>
+        <textarea id="messageInput" placeholder="Pergunte qualquer coisa" rows="1"></textarea>
 
         <div class="add-menu" id="addMenu">
-
-            <button
-                type="button"
-                onclick="document.getElementById('fileInput').click()">
-
-                <i data-lucide="paperclip"></i>
+            <button type="button" onclick="document.getElementById('fileInput').click()">
+                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3.25 0C4.11195 0 4.9386 0.34241 5.5481 0.951903C6.15759 1.5614 6.5 2.38805 6.5 3.25V9C6.5 9.53043 6.28929 10.0391 5.91421 10.4142C5.53914 10.7893 5.03043 11 4.5 11C3.96957 11 3.46086 10.7893 3.08579 10.4142C2.71071 10.0391 2.5 9.53043 2.5 9V3.25C2.5 3.05109 2.57902 2.86032 2.71967 2.71967C2.86032 2.57902 3.05109 2.5 3.25 2.5C3.44891 2.5 3.63968 2.57902 3.78033 2.71967C3.92098 2.86032 4 3.05109 4 3.25V9C4 9.13261 4.05268 9.25979 4.14645 9.35355C4.24021 9.44732 4.36739 9.5 4.5 9.5C4.63261 9.5 4.75979 9.44732 4.85355 9.35355C4.94732 9.25979 5 9.13261 5 9V3.25C5 2.78587 4.81563 2.34075 4.48744 2.01256C4.15925 1.68437 3.71413 1.5 3.25 1.5C2.78587 1.5 2.34075 1.68437 2.01256 2.01256C1.68437 2.34075 1.5 2.78587 1.5 3.25V9C1.5 9.79565 1.81607 10.5587 2.37868 11.1213C2.94129 11.6839 3.70435 12 4.5 12C5.29565 12 6.05871 11.6839 6.62132 11.1213C7.18393 10.5587 7.5 9.79565 7.5 9V4.75C7.5 4.55109 7.57902 4.36032 7.71967 4.21967C7.86032 4.07902 8.05109 4 8.25 4C8.44891 4 8.63968 4.07902 8.78033 4.21967C8.92098 4.36032 9 4.55109 9 4.75V9C9 10.1935 8.52589 11.3381 7.68198 12.182C6.83807 13.0259 5.69347 13.5 4.5 13.5C3.30653 13.5 2.16193 13.0259 1.31802 12.182C0.474106 11.3381 0 10.1935 0 9V3.25C0 2.38805 0.34241 1.5614 0.951903 0.951903C1.5614 0.34241 2.38805 0 3.25 0Z"
+                        fill="#94A3B8" />
+                </svg>
                 Anexar arquivo
             </button>
-
-            <input
-                type="file"
-                id="fileInput"
-                hidden
-                multiple
-                accept="image/*,.pdf,.doc,.docx,.txt">
+            <input type="file" id="fileInput" hidden multiple accept="image/*,.pdf,.doc,.docx,.txt">
         </div>
 
-        <button type="button" class="send-button">
+        <button type="button" class="send-button" onclick="processarEnvio()">
             <i data-lucide="send-horizontal"></i>
         </button>
-
     </div>
-
-</main>
-
+</div>
+        </main>
     </div>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="../JS/simulacaoCorrida.js" defer></script>
+    <script src="../JS/simulacaoCorrida.js?v=2"></script>
     <script>
         lucide.createIcons();
     </script>
 </body>
-
 </html>

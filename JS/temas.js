@@ -1,47 +1,46 @@
-const temaSalvo = localStorage.getItem('app-theme') || 'dark';
 
-document.documentElement.setAttribute('data-theme', temaSalvo);
+const temaSalvo = localStorage.getItem('app-theme');
+
+// Modo escuro como padrão
+const temaInicial = temaSalvo === 'light' ? 'light' : 'dark';
+
+// Aplica o tema antes de carregar a página
+document.documentElement.setAttribute('data-theme', temaInicial);
+
 document.addEventListener('DOMContentLoaded', () => {
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeToggleText = document.getElementById('theme-toggle-text');
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleText = document.getElementById('theme-toggle-text');
 
-  function obterTemaPorHorario() {
-    const horaAtual = new Date().getHours();
-    return (horaAtual >= 18 || horaAtual < 6) ? 'dark' : 'light';
-  }
+    // Função responsável por alterar e salvar o tema
+    function aplicarTema(tema) {
+        document.documentElement.setAttribute('data-theme', tema);
 
-  function aplicarTema(tema) {
-    document.documentElement.setAttribute('data-theme', tema);
+        // Salva a preferência do usuário
+        localStorage.setItem('app-theme', tema);
 
-    if (themeToggleText) {
-      themeToggleText.textContent =
-        tema === 'dark' ? 'Modo Claro' : 'Modo Escuro';
+        // Atualiza o texto do botão
+        if (themeToggleText) {
+            themeToggleText.textContent =
+                tema === 'dark' ? 'Modo Claro' : 'Modo Escuro';
+        }
     }
-  }
 
-  // 1. Verifica se o usuário já escolheu um tema manualmente neste turno
-  const temaAutomatico = obterTemaPorHorario();
-  const temaSalvo = localStorage.getItem('app-theme');
-  const turnoQuandoSalvou = localStorage.getItem('app-theme-period');
+    // Define o texto inicial do botão
+    if (themeToggleText) {
+        themeToggleText.textContent =
+            temaInicial === 'dark' ? 'Modo Claro' : 'Modo Escuro';
+    }
 
-  if (temaSalvo && turnoQuandoSalvou === temaAutomatico) {
-    aplicarTema(temaSalvo);
-  } else {
-    localStorage.removeItem('app-theme');
-    localStorage.removeItem('app-theme-period');
-    aplicarTema(temaAutomatico);
-  }
+    // Alterna entre modo claro e escuro ao clicar
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const temaAtual =
+                document.documentElement.getAttribute('data-theme');
 
-  // 2. Salva a escolha ao clicar no botão
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const temaAtual = document.documentElement.getAttribute('data-theme');
-      const novoTema = temaAtual === 'dark' ? 'light' : 'dark';
+            const novoTema =
+                temaAtual === 'dark' ? 'light' : 'dark';
 
-      localStorage.setItem('app-theme', novoTema);
-      localStorage.setItem('app-theme-period', obterTemaPorHorario());
-
-      aplicarTema(novoTema);
-    });
-  }
+            aplicarTema(novoTema);
+        });
+    }
 });

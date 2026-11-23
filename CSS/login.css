@@ -61,7 +61,6 @@ body {
     font-weight: 700;
     margin-bottom: 8px;
     color: var(--text-primary);
-    transform: translateX(126px);
 }
  
 p {
