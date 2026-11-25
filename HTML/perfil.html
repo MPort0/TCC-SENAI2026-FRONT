@@ -16,16 +16,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="32x32" href="../IMG/favicon.ico">
-
 </head>
 
 <body>
     <div class="app">
         <!-- SIDEBAR CONTAINER -->
-        <!-- Botão flutuante para alternar a sidebar -->
-        <!-- <button id="btn-sidebar" class="btn-sidebar" aria-label="Alternar Menu">
-            <i data-lucide="menu"></i>
-        </button> -->
         <aside class="sidebar">
 
             <!-- Topo / Header -->
@@ -60,10 +55,8 @@
                 </a>
                 <a href="../HTML/perfil.html" class="nav-item active">
                     <i data-lucide="user"></i>
-
                     <span>Perfil</span>
                 </a>
-
             </nav>
 
             <!-- Rodapé / Usuário + Links -->
@@ -99,7 +92,6 @@
                     <h1>Meus dados</h1>
 
                     <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar tema">
-                        <!-- Mantenha aqui os SVGs e o span que já existem no seu botão -->
                         <!-- Ícone de Sol (visível no modo escuro) -->
                         <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor"
                             stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -119,15 +111,15 @@
                             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                         </svg>
                         <span id="theme-toggle-text">Modo Escuro</span>
-                        </a>
+                    </button>
                 </div>
 
                 <div class="user-heading">
-                    <div class="avatar">U</div>
+                    <div class="avatar" id="avatar-perfil" title="Clique para alterar a foto">U</div>
                     <div>
                         <div class="user-name">
                             User
-                            <span>
+                            <span id="btn-editar-foto" title="Alterar foto de perfil">
                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -144,6 +136,7 @@
                         <div class="user-subtitle">Usuário cadastrado</div>
                     </div>
                 </div>
+                <input type="file" id="input-foto-perfil" accept="image/*" hidden>
 
                 <form class="profile-form">
                     <label for="name">Nome:</label>
@@ -163,8 +156,8 @@
 
                 <div class="resume-grid">
                     <article class="resume-card">
-                        <button class="card-edit" aria-label="Editar currículo"><a href="../HTML/editar-curriculo.html">
-
+                        <button class="card-edit" aria-label="Editar currículo">
+                            <a href="../HTML/editar-curriculo.html">
                                 <svg width="37" height="37" viewBox="0 0 37 37" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -177,9 +170,7 @@
                                         stroke-linejoin="round" />
                                 </svg>
                             </a>
-
                         </button>
-
                     </article>
 
                     <article class="resume-card empty">
@@ -193,7 +184,6 @@
                                     d="M29.2916 23.1249V27.7499C29.2916 28.5677 28.9668 29.3519 28.3885 29.9302C27.8103 30.5084 27.026 30.8333 26.2083 30.8333H9.24996C8.43221 30.8333 7.64795 30.5084 7.06971 29.9302C6.49148 29.3519 6.16663 28.5677 6.16663 27.7499V10.7916C6.16663 9.97383 6.49148 9.18958 7.06971 8.61134C7.64795 8.0331 8.43221 7.70825 9.24996 7.70825H13.875"
                                     stroke="#98AACA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-
                         </button>
                     </article>
                 </div>
@@ -210,8 +200,6 @@
         </a>
     </div>
 
-    <script src="../JS/simulacao.js"></script>
-    <script src="../JS/sidebar.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
