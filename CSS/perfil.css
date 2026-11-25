@@ -114,11 +114,17 @@ input {
     margin-right: auto;
     position: relative;
 }
-
-.avatar {
+.avatar-wrapper {
     position: absolute;
     right: calc(100% + 1rem);
     width: clamp(5rem, 8vw, 6.2rem);
+    aspect-ratio: 1;
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
     aspect-ratio: 1;
     border-radius: 50%;
     background: var(--primary-brand);
@@ -127,7 +133,6 @@ input {
     place-items: center;
     font-size: clamp(2.2rem, 3.2vw, 3.2rem);
     font-weight: 500;
-    flex-shrink: 0;
     overflow: hidden;
     cursor: pointer;
 }
@@ -154,11 +159,48 @@ input {
     color: var(--primary-brand);
 }
 
+
 #btn-editar-foto {
-    cursor: pointer;
-    display: inline-flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    background: #29334e;
+    color: #ffffff;
+
+    border: 3px solid var(--bg-app);
+    border-radius: 50%;
+
+    display: flex;
     align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 2;
+
+    transition: transform 0.2s ease,
+                background 0.2s ease;
 }
+
+#btn-editar-foto svg {
+    width: 15px;
+    height: 15px;
+    stroke-width: 1.8;
+}
+
+#btn-editar-foto:hover {
+    background: var(--primary-brand);
+    transform: scale(1.1);
+}
+
+#btn-editar-foto:active {
+    transform: scale(0.95);
+}
+
 
 .user-subtitle {
     margin-top: 0.45rem;
@@ -453,10 +495,10 @@ input {
         margin-top: 6%;
     }
 
-    .avatar {
-        width: 22%;
-        min-width: 4.5rem;
-    }
+.avatar-wrapper {
+    width: 22%;
+    min-width: 4.5rem;
+}
 
     .profile-form {
         width: 100%;
