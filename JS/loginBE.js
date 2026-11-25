@@ -11,18 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!form) return;
 
-    // 1. AO CARREGAR A PÁGINA: Preenche apenas o e-mail se estiver salvo ("Lembrar de mim")
     const emailSalvo = localStorage.getItem('emailSalvo');
     if (emailSalvo) {
         emailInput.value = emailSalvo;
-        
+
         if (checkboxImg && checkboxImg.src.includes('checkbox-vazio.svg')) {
             checkboxImg.click();
         }
         if (lembrarCheckbox) lembrarCheckbox.checked = true;
     }
 
-    // 2. ENVIO DO FORMULÁRIO
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
@@ -33,10 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return showAlert('Email e senha são obrigatórios.');
         }
 
-        // Verifica se ESTE e-mail específico já aceitou os Termos de Uso
         const chaveTermos = `termosAceitos_${email}`;
         if (localStorage.getItem(chaveTermos) !== 'true') {
-            // Guarda temporariamente qual e-mail está tentando logar para vincular ao aceite
             sessionStorage.setItem('emailPendenteTermos', email);
             return showAlert('Erro ao conectar: você precisa ler e aceitar os Termos de Uso e Políticas de Privacidade antes de fazer login.');
         }
@@ -54,9 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return showAlert(data.error || 'Email ou senha incorretos.');
             }
 
-            // Salva ou remove o e-mail do "Lembrar de mim"
-            const estaMarcado = lembrarCheckbox?.checked || 
-                                (checkboxImg && !checkboxImg.src.includes('checkbox-vazio.svg'));
+            const estaMarcado = lembrarCheckbox?.checked ||
+                (checkboxImg && !checkboxImg.src.includes('checkbox-vazio.svg'));
 
             if (estaMarcado) {
                 localStorage.setItem('emailSalvo', email);

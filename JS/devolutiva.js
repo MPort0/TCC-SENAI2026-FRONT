@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     let relatorio = null;
 
-    // 1A. Se veio clicando na seta lá do Histórico (?id=...)
     if (devolutivaId) {
         try {
             const resp = await fetch(`${window.API_BASE}/ia/devolutivas/${devolutivaId}`);
@@ -15,24 +14,22 @@ document.addEventListener("DOMContentLoaded", async function () {
             alert("Não foi possível carregar esta devolutiva.");
             return;
         }
-    }
-    // 1B. Se acabou de terminar uma simulação
-    else {
+    } else {
         const dadosSalvos = localStorage.getItem("devolutiva_resultado");
 
         if (!dadosSalvos) {
-            console.warn("Nenhum resultado de devolutiva encontrado no localStorage.");
+            console.warn("Nenhum resultado de devolutiva encontrado.");
             return;
         }
 
         relatorio = JSON.parse(dadosSalvos);
 
-        // Salva no banco apenas uma vez (evita duplicar se apertar F5)
-        const jaSalva = localStorage.getItem("devolutiva_salva_banco");
+        // Compara com o último relatório salvo (evita duplicar no F5, mas salva todas as novas simulações!)
+        const ultimaSalva = localStorage.getItem("ultima_devolutiva_salva");
         const userId = localStorage.getItem("userId");
         const config = JSON.parse(localStorage.getItem("entrevista_config") || "{}");
 
-        if (userId && !jaSalva) {
+        if (userId && ultimaSalva !== dadosSalvos) {
             try {
                 const respSave = await fetch(`${window.API_BASE}/ia/devolutivas`, {
                     method: "POST",
@@ -41,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 });
 
                 if (respSave.ok) {
-                    localStorage.setItem("devolutiva_salva_banco", "true");
+                    localStorage.setItem("ultima_devolutiva_salva", dadosSalvos);
                 }
             } catch (err) {
                 console.error("Erro ao salvar devolutiva no banco:", err);
@@ -49,13 +46,11 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-    // 2. Preenche o Resumo da IA
     const summaryText = document.getElementById('resumo-ia');
     if (summaryText && relatorio.resumo) {
         summaryText.textContent = relatorio.resumo;
     }
 
-    // 3. Preenche as Competências e barras de progresso
     if (relatorio.competencias) {
         if (relatorio.competencias.fundamentais) {
             const nivelFund = document.getElementById('nivel-fundamentais');
@@ -72,7 +67,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-    // 4. Preenche as Listas (Pontos Fortes, Erros e Sugestões)
     preencherLista('lista-pontos-fortes', relatorio.pontosFortes);
     preencherLista('lista-principais-erros', relatorio.principaisErros);
     preencherLista('lista-sugestoes', relatorio.sugestoesEstudo);
@@ -81,7 +75,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const ul = document.getElementById(elementId);
         if (!ul || !itens || !Array.isArray(itens)) return;
 
-        ul.innerHTML = ""; // Limpa itens estáticos/anteriores
+        ul.innerHTML = "";
         itens.forEach(item => {
             const li = document.createElement("li");
             li.textContent = item;
@@ -89,16 +83,13 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
-    // 5. Botão Nova Entrevista
     const btnNova = document.getElementById('btn-nova-entrevista');
     if (btnNova) {
         btnNova.addEventListener('click', () => {
-            localStorage.removeItem("devolutiva_salva_banco");
             window.location.href = "../HTML/simulacao.html";
         });
     }
 
-    // 6. Botão Chat com a Lia
     const btnChatLia = document.getElementById('lia');
     if (btnChatLia) {
         btnChatLia.addEventListener('click', () => {
@@ -106,13 +97,11 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
     }
 
-    // 7. Botão de Gerar/Baixar PDF
     const btnPdf = document.getElementById('btn-baixar-pdf');
     if (btnPdf) {
         btnPdf.addEventListener('click', async function () {
             const elemento = document.querySelector('.content');
 
-            // Joga a tela para o topo e ativa o layout compacto do PDF
             window.scrollTo(0, 0);
             elemento.classList.add('modo-pdf');
 
@@ -120,10 +109,10 @@ document.addEventListener("DOMContentLoaded", async function () {
                 margin: [8, 8, 8, 8],
                 filename: 'Devolutiva_AvaLia.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { 
-                    scale: 2, 
-                    useCORS: true, 
-                    scrollY: 0, // <-- Elimina o espaço branco no início da página
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    scrollY: 0,
                     backgroundColor: '#ffffff'
                 },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
