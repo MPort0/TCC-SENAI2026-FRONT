@@ -52,8 +52,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-
-
 function abrirDevolutiva(id) {
     window.location.href = `../HTML/devolutiva.html?id=${id}`;
 }

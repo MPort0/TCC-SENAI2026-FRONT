@@ -1,6 +1,5 @@
 let arquivosAnexados = [];
 
-// Função global para o botão "+" abrir e fechar o menu sempre
 function toggleMenu() {
     const addMenu = document.getElementById("addMenu");
     if (addMenu) {
@@ -8,7 +7,6 @@ function toggleMenu() {
     }
 }
 
-// Fecha o menu ao clicar fora dele na tela
 document.addEventListener("click", function (event) {
     const addMenu = document.getElementById("addMenu");
     const addBtn = event.target.closest(".add-button");
@@ -79,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const configSalva = localStorage.getItem("entrevista_config");
     if (!configSalva) {
         alert("Nenhuma configuração encontrada! Redirecionando...");
-        window.location.href = "simulacao.html";
+        window.location.href = "../HTML/simulacao.html";
         return;
     }
 
@@ -89,7 +87,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     atualizarProgresso();
 
-    // Captura o arquivo, esconde o menu "Anexar arquivo" imediatamente e gera o preview
     if (fileInput) {
         fileInput.addEventListener("change", function (event) {
             if (addMenu) addMenu.classList.remove("show");
@@ -199,8 +196,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 
-    // Torna a função processarEnvio global para o botão de envio funcionar no HTML se necessário
-    window.processarEnvio = async function() {
+    window.processarEnvio = async function () {
         const texto = inputMsg.value.trim();
         if (!texto && arquivosAnexados.length === 0) return;
 
@@ -243,12 +239,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     };
 
-    // Vincula o botão de envio via JS também por segurança
     if (sendBtn) {
         sendBtn.addEventListener("click", window.processarEnvio);
     }
 
-    // Inicia a entrevista automaticamente
     const inicio = await enviarParaIA("INICIAR_ENTREVISTA");
     const mensagemInicial = inicio.texto || inicio.resposta || "Olá! Vamos começar a sua entrevista.";
     adicionarMensagemNoChat("bot", mensagemInicial);

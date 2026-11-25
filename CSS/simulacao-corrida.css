@@ -608,3 +608,8 @@ input {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+
+.bubble-ia,
+.message-bubble {
+    white-space: pre-line;
+}
