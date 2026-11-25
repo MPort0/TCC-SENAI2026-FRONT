@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             iconeVer.setAttribute('src', '../IMG/ocultar-senha.svg');
         }
     };
-
+    
     // 1. FUNÇÃO DE VALIDAÇÃO VISUAL DA BORDA (COLOCADA NO ESCOPO CORRETO)
     function validarCoincidencia() {
         if (!inputConfirmar || !inputSenha) return;
