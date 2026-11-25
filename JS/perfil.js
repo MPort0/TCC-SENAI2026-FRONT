@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const userId = localStorage.getItem("userId");
     const userName = localStorage.getItem("userName");
     const userEmail = localStorage.getItem("userEmail");
@@ -14,11 +14,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnSalvar = document.querySelector(".salvar-alteracoes");
 
     const headerUserName = document.querySelector(".user-name");
-    const avatarLetra = document.querySelector(".avatar");
+    const avatarPerfil = document.getElementById("avatar-perfil") || document.querySelector(".avatar");
+    const inputFoto = document.getElementById("input-foto-perfil");
+    const btnEditarFoto = document.getElementById("btn-editar-foto");
+
     const sidebarNome = document.querySelector(".user-nome");
     const sidebarEmail = document.querySelector(".user-email");
 
-    function atualizarTela(nome, email) {
+    function renderizarAvatar(container, fotoBase64, nome) {
+        if (!container) return;
+        if (fotoBase64) {
+            container.innerHTML = `<img src="${fotoBase64}" alt="Foto de perfil" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block;">`;
+        } else {
+            container.textContent = nome ? nome.charAt(0).toUpperCase() : "U";
+        }
+    }
+
+    function atualizarTela(nome, email, foto = null) {
         if (inputName) inputName.value = nome || "";
         if (inputEmail) inputEmail.value = email || "";
 
@@ -27,11 +39,80 @@ document.addEventListener("DOMContentLoaded", () => {
         if (headerUserName && headerUserName.firstChild) {
             headerUserName.firstChild.textContent = `${nome} `;
         }
-        if (avatarLetra && nome) {
-            avatarLetra.textContent = nome.charAt(0).toUpperCase();
-        }
+
+        renderizarAvatar(avatarPerfil, foto, nome);
+
         if (sidebarNome) sidebarNome.textContent = `Olá, ${primeiroNome}!`;
         if (sidebarEmail) sidebarEmail.textContent = email || "";
+
+        if (foto && typeof aplicarFotoNaSidebar === "function") {
+            aplicarFotoNaSidebar(foto);
+        }
+    }
+
+    // Abre o seletor de arquivos do dispositivo ao clicar na foto ou no ícone
+    if (avatarPerfil && inputFoto) {
+        avatarPerfil.addEventListener("click", () => inputFoto.click());
+    }
+    if (btnEditarFoto && inputFoto) {
+        btnEditarFoto.addEventListener("click", () => inputFoto.click());
+    }
+
+    // Quando o usuário escolhe uma imagem do dispositivo
+    if (inputFoto) {
+        inputFoto.addEventListener("change", (event) => {
+            const arquivo = event.target.files[0];
+            if (!arquivo) return;
+
+            if (!arquivo.type.startsWith("image/")) {
+                alert("Selecione um arquivo de imagem válido (JPG, PNG, etc.).");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.onload = async () => {
+                    // Redimensiona para 250x250px (recorte quadrado centralizado) para ficar leve no banco
+                    const canvas = document.createElement("canvas");
+                    const tamanho = 250;
+                    canvas.width = tamanho;
+                    canvas.height = tamanho;
+
+                    const menorLado = Math.min(img.width, img.height);
+                    const sx = (img.width - menorLado) / 2;
+                    const sy = (img.height - menorLado) / 2;
+
+                    const ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, sx, sy, menorLado, menorLado, 0, 0, tamanho, tamanho);
+
+                    const fotoBase64 = canvas.toDataURL("image/jpeg", 0.85);
+
+                    try {
+                        const resp = await fetch(`${window.API_BASE}/users/${userId}/foto`, {
+                            method: "PUT",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ foto: fotoBase64 })
+                        });
+
+                        if (!resp.ok) {
+                            throw new Error("Erro ao salvar foto no banco.");
+                        }
+
+                        renderizarAvatar(avatarPerfil, fotoBase64, inputName?.value || userName);
+                        if (typeof aplicarFotoNaSidebar === "function") {
+                            aplicarFotoNaSidebar(fotoBase64);
+                        }
+                    } catch (erro) {
+                        console.error(erro);
+                        alert("Não foi possível salvar a foto no servidor.");
+                    }
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(arquivo);
+            inputFoto.value = "";
+        });
     }
 
     function baixarCurriculoPDF(cv) {
@@ -108,13 +189,9 @@ document.addEventListener("DOMContentLoaded", () => {
             .set(opcoes)
             .from(elemento)
             .save()
-            .then(() => {
-                document.body.removeChild(wrapper);
-            })
+            .then(() => document.body.removeChild(wrapper))
             .catch(() => {
-                if (document.body.contains(wrapper)) {
-                    document.body.removeChild(wrapper);
-                }
+                if (document.body.contains(wrapper)) document.body.removeChild(wrapper);
             });
     }
 
@@ -122,11 +199,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const grid = document.querySelector(".resume-grid");
         if (!grid) return;
 
-        // Salva o ícone SVG do card vazio original antes de limpar o grid
         const modeloEmpty = grid.querySelector(".resume-card.empty");
         const templateCardHTML = modeloEmpty ? modeloEmpty.innerHTML : "";
-
-        // Limpa os 2 cards estáticos do HTML imediatamente
         grid.innerHTML = "";
 
         try {
@@ -136,7 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             const curriculos = await response.json();
 
-            // Cria 1 card preenchido para cada currículo salvo no banco
             curriculos.forEach((cv) => {
                 const habilidadesTexto = Array.isArray(cv.habilidades)
                     ? cv.habilidades.join(" • ")
@@ -221,9 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             const delResp = await fetch(`${window.API_BASE}/curriculos/${cv.id}`, {
                                 method: "DELETE"
                             });
-                            if (!delResp.ok) {
-                                throw new Error("Erro ao excluir currículo.");
-                            }
+                            if (!delResp.ok) throw new Error("Erro ao excluir currículo.");
                             carregarCurriculosNoPerfil();
                         } catch (err) {
                             console.error(err);
@@ -238,7 +309,6 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Falha ao carregar currículos do banco:", erro);
         }
 
-        // Sempre adiciona o card vazio clicável ao final (mesmo se a API ainda estiver offline)
         const cardVazioUnico = document.createElement("article");
         cardVazioUnico.className = "resume-card empty";
         cardVazioUnico.innerHTML = templateCardHTML;
@@ -249,7 +319,18 @@ document.addEventListener("DOMContentLoaded", () => {
         grid.appendChild(cardVazioUnico);
     }
 
-    atualizarTela(userName, userEmail);
+    // Carrega dados iniciais e busca a foto salva no banco de dados
+    atualizarTela(userName, userEmail, null);
+    try {
+        const respUser = await fetch(`${window.API_BASE}/users/${userId}`);
+        if (respUser.ok) {
+            const usuarioBanco = await respUser.json();
+            atualizarTela(usuarioBanco.name || userName, usuarioBanco.email || userEmail, usuarioBanco.foto);
+        }
+    } catch (e) {
+        console.error("Erro ao buscar foto do usuário:", e);
+    }
+
     carregarCurriculosNoPerfil();
 
     if (btnSalvar) {
@@ -281,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("userName", novoNome);
                 localStorage.setItem("userEmail", novoEmail);
 
-                atualizarTela(novoNome, novoEmail);
+                atualizarTela(novoNome, novoEmail, dados.foto || null);
                 alert("Perfil atualizado com sucesso!");
             } catch (erro) {
                 console.error(erro);
