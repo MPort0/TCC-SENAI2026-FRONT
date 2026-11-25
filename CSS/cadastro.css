@@ -144,24 +144,27 @@ input:focus {
     padding-right: 44px;
 }
 
+.toggle-icon-texto {
+    position: absolute;
+    right: 14px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
 
 .toggle-icon {
     position: absolute;
     right: 14px;
-    width: 18px;
-    height: 18px;
-    color: var(--icon-stroke);
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
-    transition: color 0.2s;
+    /* Se o seu ícone for preto e sumir no fundo escuro, este filtro o deixa branco: */
+    filter: brightness(0) invert(1); 
+    transition: opacity 0.2s;
 }
 
 .toggle-icon:hover {
-    color: var(--text-secondary);
+    opacity: 0.7; /* Efeito de transparência ao passar o mouse */
 }
 
 
